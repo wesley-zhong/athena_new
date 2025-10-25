@@ -49,10 +49,10 @@ add_library(${PROJECT_NAME} STATIC
 )
 # linked libs
 link_directories(${SOLUTION_DIR}/libs)
-set(PROJECT_LINK_LIBS hv lua engine)
+set(PROJECT_LINK_LIBS uv lua engine)
 
 if(WIN32)
-  set(PROJECT_LINK_LIBS hv lua54 engine)
+  set(PROJECT_LINK_LIBS uv lua54 engine)
 endif()
 
 

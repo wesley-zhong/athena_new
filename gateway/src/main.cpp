@@ -47,18 +47,18 @@ int main(int argc, char **argv) {
     Dal::Cache::init(ip, 6379, "", "", "");
 
 
-    AthenaTcpClient athena_tcp_client;
-    for (int i = 0; i < 2; ++i) {
-        int connRet = athena_tcp_client.connect("localhost", 38881);
-        if (connRet) {
-            ERR_LOG(" errror  connect rest ={}", connRet);
-        }
-    }
-    // 💡 主线程阻塞等待，无限期休眠（CPU 占用≈0）
-    {
-        std::unique_lock<std::mutex> lock(g_mutex);
-        g_cv.wait(lock, [] { return !g_running.load(); });
-    }
+   // AthenaTcpClient athena_tcp_client;
+    // for (int i = 0; i < 2; ++i) {
+    //     int connRet = athena_tcp_client.connect("localhost", 38881);
+    //     if (connRet) {
+    //         ERR_LOG(" errror  connect rest ={}", connRet);
+    //     }
+    // }
+    // // 💡 主线程阻塞等待，无限期休眠（CPU 占用≈0）
+    // {
+    //     std::unique_lock<std::mutex> lock(g_mutex);
+    //     g_cv.wait(lock, [] { return !g_running.load(); });
+    // }
 
     INFO_LOG("service exited");
 

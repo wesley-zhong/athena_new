@@ -23,6 +23,7 @@ include_directories(
         ${SOL2}/include
         ${LUA}
         ${3RD}
+        ${3RD}/uv/include
         ${3RD}/mysql
         ${3RD}/hiredis
         ${SPDLOG}/include

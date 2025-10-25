@@ -29,7 +29,7 @@ void AthenaTcpServer::onAccept(uv_stream_t *server, int status) {
     // accept into temporary uv_tcp_t to get the fd
     uv_tcp_t *client = new uv_tcp_t;
     uv_tcp_init(loopUptr->uv_loop(), client);
-    client->data = loopUptr.get();
+   // client->data = loopUptr.get();
     loopUptr->asyncAccept(server, client);
 }
 

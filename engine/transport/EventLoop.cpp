@@ -17,8 +17,8 @@ void EventLoop::uv_alloc_cb(uv_handle_t *h, size_t s, uv_buf_t *buf) {
 
 
 void EventLoop::uv_read_cb(uv_stream_t *client, ssize_t nread, const uv_buf_t *buf) {
-    EventLoop *event_loop = (EventLoop *) client->data;;
-    event_loop->onRead(client, nread, buf);
+    Channel *channel = (Channel *) client->data;;
+    channel->event_loop()->onRead(client, nread, buf);
 
 
     // EventLoop *pEventPool = (EventLoop *) client->data;
@@ -55,7 +55,8 @@ void async_write_cb(uv_async_t *handle) {
 }
 
 void EventLoop::asyncAccept(uv_stream_t *server, uv_tcp_t *client) {
-    push([server, client] {
+    EventLoop *event_loop = this;
+    push([event_loop,server, client] {
         if (uv_accept(server, (uv_stream_t *) client) != 0) {
             uv_close((uv_handle_t *) client, [](uv_handle_t *h) { free(h); });
             return;
@@ -63,6 +64,11 @@ void EventLoop::asyncAccept(uv_stream_t *server, uv_tcp_t *client) {
         uv_os_fd_t fd;
         uv_fileno((const uv_handle_t *) client, &fd);
         uv_read_start((uv_stream_t *) client, uv_alloc_cb, uv_read_cb);
+
+        //create channel
+        auto channel = std::make_unique<Channel>(event_loop, client, fd, 0);
+        client->data = channel.get();
+        event_loop->channels.emplace(1, std::move(channel));
         INFO_LOG(" =================== START READ read data ");
     });
     async_accept_task();
@@ -118,4 +124,3 @@ void EventLoop::onRead(uv_stream_t *client, ssize_t nread, const uv_buf_t *buf) 
     INFO_LOG("socket closed =");
     uv_close((uv_handle_t *) client, nullptr);
 }
-

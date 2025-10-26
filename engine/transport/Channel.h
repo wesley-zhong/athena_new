@@ -15,6 +15,7 @@ public:
     Channel(EventLoop *event_loop, uv_tcp_t *client, uv_os_fd_t fd) : _eventLoop(event_loop),
                                                                       client(client), fd((uint64) fd) {
     }
+
     void onRead(uv_stream_t *client, ssize_t nread, const uv_buf_t *buf);
 
     uint64 getFd() const {
@@ -23,6 +24,14 @@ public:
 
     EventLoop *event_loop() {
         return _eventLoop;
+    }
+
+    void setUserData(void *userData) {
+        this->userData = userData;
+    }
+
+    void *getUserData() {
+        return this->userData;
     }
 
     std::string getAddr() const;
@@ -35,6 +44,7 @@ private:
     EventLoop *_eventLoop;
     uv_tcp_t *client;
     uint64 fd;
+    void *userData;
     bool writing; // whether a uv_write is in-flight
     bool closed; // connection closed
 };

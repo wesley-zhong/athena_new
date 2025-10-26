@@ -61,10 +61,11 @@ void EventLoop::asyncAccept( uv_os_sock_t fd) {
         uv_tcp_t* client = new uv_tcp_t;
         uv_tcp_init(event_loop->uv_loop(), client);
        int ret =  uv_tcp_open(client, fd); // 绑定 socket 到本 loop
-        INFO_LOG("  -------tcp open ret ={}",ret);
+       if(ret != 0){
+           ERR_LOG("  -------tcp open faild ret ={}",ret);
+       }
 
         uv_read_start((uv_stream_t *) client, uv_alloc_cb, uv_read_cb);
-
         Channel* channel = new Channel(event_loop, client, fd);
         //create channel
 //        auto channel = std::make_unique<Channel>(event_loop, client, fd);
@@ -90,19 +91,24 @@ void EventLoop::onRead(Channel* channel, char*body , int len){
 
 
 void EventLoop::run() {
-    INFO_LOG(" event  run start ");
     _loop = new uv_loop_t;
     uv_loop_init(_loop);
     // store reactor pointer in loop->data for later retrieval in read callbacks
     _loop->data = this;
 
     int ret = uv_async_init(_loop, &uv_async_write, async_write_cb);
+    if(ret !=0){
+        ERR_LOG("uv_async_init  async_write  ret ={} ", ret);
+        return ;
+    }
     uv_async_write.data = this;
-    INFO_LOG("uv_async_init  async_write  ret ={} ", ret);
     ret = uv_async_init(_loop, &uv_async_accept, async_accept_cb);
+    if(ret != 0){
+        ERR_LOG("uv_async_init  async_accept ret ={} ", ret);
+        return;
+    }
     uv_async_accept.data = this;
-    INFO_LOG("uv_async_init  async_accept ret ={} ", ret);
-
+    INFO_LOG("############## event loop started");
     uv_run(_loop, UV_RUN_DEFAULT);
     uv_close((uv_handle_t *) &uv_async_write, nullptr);
     uv_close((uv_handle_t *) &uv_async_accept, nullptr);

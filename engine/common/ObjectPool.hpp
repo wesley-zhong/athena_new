@@ -121,7 +121,7 @@ public:
             _ownedObjects.push_back(std::move(up));
         }
         _allocCountObj.fetch_add(1, std::memory_order_relaxed);
-        INFO_LOG("[Pool]{} Miss, new obj {} ", fmt::ptr(this), fmt::ptr(obj));
+       // INFO_LOG("[Pool]{} Miss, new obj {} ", fmt::ptr(this), fmt::ptr(obj));
         return obj;
     }
 
@@ -161,8 +161,8 @@ public:
 
         pushNodeToHead(node);
         _freeCount.fetch_add(1, std::memory_order_relaxed);
-        INFO_LOG("[Pool] {} Release obj {} back to pool", fmt::ptr(this), fmt::ptr(obj));
-        printStats();
+       // INFO_LOG("[Pool] {} Release obj {} back to pool", fmt::ptr(this), fmt::ptr(obj));
+      //  printStats();
     }
 
     // ===== 统计接口 =====

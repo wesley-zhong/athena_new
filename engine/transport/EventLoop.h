@@ -23,26 +23,21 @@ public:
     ~EventLoop() {
     }
 
-    void add(std::unique_ptr<Channel> &channel) {
-        channels.insert({channel->getFd(), std::move(channel)});
-    }
-
     void asyncAccept(uv_os_sock_t client);
-
 
     void execute();
 
     void push(std::function<void()> func) {
         auto it = Thread::RunTask::create(func);
         _waitTasks.push(it);
-        INFO_LOG("--------  push task");
+        // INFO_LOG("--------  push task");
     }
 
     void onNewConnection(Channel *channel);
 
     void onClosed(Channel *channel);
 
-    void onRead(Channel* channel, char*body , int len);
+    void onRead(Channel *channel, char *body, int len);
 
 
     Thread::TaskPtr pop() {
@@ -81,7 +76,7 @@ private:
     uv_async_t uv_async_write; // used by biz threads to notify reactor for pending writes
     std::mutex write_mtx;
     uv_async_t async;
-    std::unordered_map<uint64, std::unique_ptr<Channel> > channels;
+    //  std::unordered_map<uint64, std::unique_ptr<Channel> > channels;
     TQueue<Thread::TaskPtr> _waitTasks;
     std::thread t;
     AthenaTcpServer *_tcpServer;

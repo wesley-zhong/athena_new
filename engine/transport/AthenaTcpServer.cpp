@@ -9,7 +9,7 @@
 static std::mutex g_conns_mtx;
 
 void AthenaTcpServer::uv_on_new_connection(uv_stream_t *server, int status) {
-    INFO_LOG("uv_on_new_connection accept  new socket");
+    INFO_LOG("--- uv_on_new_connection accept  new socket");
     AthenaTcpServer *tcpserver = (AthenaTcpServer *) server->data;
     tcpserver->onAccept(server, status);
 }
@@ -22,8 +22,6 @@ void AthenaTcpServer::onAccept(uv_stream_t *server, int status) {
     }
 
     INFO_LOG("event loop  accept  new socket");
-
-
     // accept into temporary uv_tcp_t to get the fd
     uv_tcp_t *client = new uv_tcp_t;
     uv_tcp_init(&main_loop, client);
@@ -73,14 +71,17 @@ void AthenaTcpServer::start(int eventLoopNum) {
 AthenaTcpServer &AthenaTcpServer::bind(int port) {
     // 主Reactor监听
     uv_loop_init(&main_loop);
-
     uv_tcp_init(&main_loop, &server);
     server.data = this;
 
     sockaddr_in addr;
     uv_ip4_addr("0.0.0.0", port, &addr);
     uv_tcp_bind(&server, reinterpret_cast<const sockaddr *>(&addr), 0);
-    uv_listen((uv_stream_t *) &server, 128, uv_on_new_connection);
-    INFO_LOG("server  bind socket port ={}", port);
+   int ret = uv_listen((uv_stream_t *) &server, 128, uv_on_new_connection);
+   if(ret != 0){
+       ERR_LOG(" listen faild: {}",ret);
+   }
+
+    INFO_LOG("#### server  bind socket port ={}", port);
     return *this;
 }

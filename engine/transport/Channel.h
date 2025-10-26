@@ -13,8 +13,9 @@ class EventLoop;
 class Channel {
 public:
     Channel(EventLoop *event_loop, uv_tcp_t *client, uv_os_fd_t fd) : _eventPool(event_loop),
-                                                                                 client(client), fd((uint64) fd) {
+                                                                      client(client), fd((uint64) fd) {
     }
+    void onRead(uv_stream_t *client, ssize_t nread, const uv_buf_t *buf);
 
     uint64 getFd() const {
         return fd;

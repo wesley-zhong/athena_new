@@ -19,10 +19,7 @@ void EventLoop::uv_alloc_cb(uv_handle_t *h, size_t s, uv_buf_t *buf) {
 
 void EventLoop::uv_read_cb(uv_stream_t *client, ssize_t nread, const uv_buf_t *buf) {
     Channel *channel = (Channel *) client->data;
-    INFO_LOG("==========   READ CB   nread ={}", nread);
-    channel->event_loop()->onRead(client, nread, buf);
-
-
+    channel->onRead(client, nread, buf);
     // EventLoop *pEventPool = (EventLoop *) client->data;
     // if (nread > 0) {
     //     std::string msg(buf->base, nread);
@@ -112,18 +109,4 @@ void EventLoop::execute() {
 
 void EventLoop::start() {
     t = std::thread(&EventLoop::run, this);
-}
-
-
-void EventLoop::onRead(uv_stream_t *client, ssize_t nread, const uv_buf_t *buf) {
-    INFO_LOG("MMMMMMMMMM  READ ={}",nread);
-    if (nread > 0) {
-        std::string msg(buf->base, nread);
-        INFO_LOG("-----------read msg ={}", msg);
-        INFO_LOG("MMMMMMMMMM  READ 1={}",nread);
-        delete[] buf->base;
-        return;
-    }
-    INFO_LOG("socket closed =");
-    uv_close((uv_handle_t *) client, nullptr);
 }

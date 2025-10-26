@@ -4,6 +4,7 @@
 
 #include "Channel.h"
 #include <sstream>
+#include "XLog.h"
 
 std::string Channel::getAddr() const {
     std::ostringstream ss;
@@ -33,3 +34,15 @@ std::string Channel::getAddr() const {
 void Channel::send(void *data, size_t size) {
 
 }
+
+void Channel::onRead(uv_stream_t *client, ssize_t nread, const uv_buf_t *buf) {
+    INFO_LOG("MMMMMMMMMM  READ ={}",nread);
+    if (nread > 0) {
+        std::string msg(buf->base, nread);
+        delete[] buf->base;
+        return;
+    }
+    INFO_LOG("socket closed =");
+    uv_close((uv_handle_t *) client, nullptr);
+}
+

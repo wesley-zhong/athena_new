@@ -27,8 +27,6 @@ public:
 
     void asyncAccept(uv_os_sock_t client);
 
-    void onRead(uv_stream_t *client, ssize_t nread, const uv_buf_t *buf);
-
     void execute();
 
     void push(std::function<void()> func) {

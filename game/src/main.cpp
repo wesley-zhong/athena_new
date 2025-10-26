@@ -38,9 +38,11 @@ int main(int argc, char **argv) {
 
     AthenaTcpServer  tcp_server;
     tcp_server.onNewConnection=[](Channel* channel){
-        INFO_LOG("ooooooooooo");
         INFO_LOG("on new connection ={}",channel->getAddr());
 
+    };
+    tcp_server.onClosed=[](Channel* channel){
+        INFO_LOG("connection ={}  closed ",channel->getAddr());
     };
     tcp_server.bind(9999).start(3);
 

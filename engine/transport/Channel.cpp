@@ -5,6 +5,7 @@
 #include "Channel.h"
 #include <sstream>
 #include "XLog.h"
+#include "EventLoop.h"
 std::string Channel::getAddr() const {
     std::ostringstream ss;
     struct sockaddr_storage addr;
@@ -55,6 +56,7 @@ void Channel::onRead(uv_stream_t *client, ssize_t nread, const uv_buf_t *buf) {
         return;
     }
     INFO_LOG("socket closed =");
+    _eventLoop->onClosed(this);
     uv_close((uv_handle_t *) client, nullptr);
 }
 

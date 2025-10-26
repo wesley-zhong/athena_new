@@ -21,6 +21,7 @@ void EventLoop::uv_alloc_cb(uv_handle_t *h, size_t s, uv_buf_t *buf) {
 void EventLoop::uv_read_cb(uv_stream_t *client, ssize_t nread, const uv_buf_t *buf) {
     Channel *channel = (Channel *) client->data;
     channel->onRead(client, nread, buf);
+   // channel->event_loop()->onRead(channel,)
     // EventLoop *pEventPool = (EventLoop *) client->data;
     // if (nread > 0) {
     //     std::string msg(buf->base, nread);
@@ -78,6 +79,16 @@ void EventLoop::asyncAccept( uv_os_sock_t fd) {
 void EventLoop::onNewConnection(Channel* channel){
     _tcpServer->onNewConnection(channel);
 }
+
+void EventLoop::onClosed(Channel *channel){
+    _tcpServer->onClosed(channel);
+}
+
+void EventLoop::onRead(Channel* channel, char*body , int len){
+  _tcpServer->onRead(channel, body, len);
+}
+
+
 void EventLoop::run() {
     INFO_LOG(" event  run start ");
     _loop = new uv_loop_t;

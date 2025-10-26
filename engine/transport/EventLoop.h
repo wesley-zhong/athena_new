@@ -12,10 +12,11 @@
 #include "uv.h"
 #include "ThreadPool.h"
 #include "XLog.h"
+class  AthenaTcpServer ;
 
 class EventLoop {
 public:
-    EventLoop() {
+    EventLoop(AthenaTcpServer*  tcpServer):_tcpServer(tcpServer) {
     }
 
     ~EventLoop() {
@@ -34,6 +35,8 @@ public:
         _waitTasks.push(it);
         INFO_LOG("--------  push task");
     }
+
+    void onNewConnection(Channel* channel);
 
     Thread::TaskPtr pop() {
         Thread::TaskPtr run_task;
@@ -74,6 +77,7 @@ private:
     std::unordered_map<uint64, std::unique_ptr<Channel> > channels;
     TQueue<Thread::TaskPtr> _waitTasks;
     std::thread t;
+    AthenaTcpServer  * _tcpServer;
 };
 
 #endif //ATHENA_EVENTLOOP_H

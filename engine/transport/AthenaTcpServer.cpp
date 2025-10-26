@@ -60,7 +60,7 @@ void AthenaTcpServer::onAccept(uv_stream_t *server, int status) {
 
 void AthenaTcpServer::start(int eventLoopNum) {
     for (int i = 0; i < eventLoopNum; i++) {
-        auto it = std::make_unique<EventLoop>();
+        auto it = std::make_unique<EventLoop>(this);
         event_loops_.push_back(std::move(it));
     }
     for (int i = 0; i < eventLoopNum; i++) {

@@ -5,6 +5,7 @@
 #include "EventLoop.h"
 #include "XLog.h"
 #include <string>
+#include "AthenaTcpServer.h"
 
 void async_accept_cb(uv_async_t *handle) {
     EventLoop *event_loop = (EventLoop *) handle->data;
@@ -63,15 +64,20 @@ void EventLoop::asyncAccept( uv_os_sock_t fd) {
 
         uv_read_start((uv_stream_t *) client, uv_alloc_cb, uv_read_cb);
 
+        Channel* channel = new Channel(event_loop, client, fd);
         //create channel
-        auto channel = std::make_unique<Channel>(event_loop, client, fd);
-        client->data = channel.get();
-        event_loop->channels.emplace(1, std::move(channel));
+//        auto channel = std::make_unique<Channel>(event_loop, client, fd);
+//        client->data = channel.get();
+//        event_loop->channels.emplace(1, std::move(channel));
+        client->data = channel;
+        event_loop->onNewConnection(channel);
         INFO_LOG(" =================== START READ read data ");
     });
     async_accept_task();
 }
-
+void EventLoop::onNewConnection(Channel* channel){
+    _tcpServer->onNewConnection(channel);
+}
 void EventLoop::run() {
     INFO_LOG(" event  run start ");
     _loop = new uv_loop_t;

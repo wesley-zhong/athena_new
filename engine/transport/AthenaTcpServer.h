@@ -10,7 +10,7 @@
 #include "EventLoop.h"
 
 #include "uv.h"
-
+#include "Channel.h"
 class AthenaTcpServer {
 public:
     AthenaTcpServer(){};
@@ -25,7 +25,12 @@ public:
 
     ~AthenaTcpServer(){};
 
+
     static void uv_on_new_connection(uv_stream_t *server, int status);
+
+    std::function<void (Channel*)> onNewConnection;
+    std::function<void (Channel* ,void*, int)> onRead;
+    std::function<void (Channel*)> onClosed;
 
 private:
     std::atomic<size_t> next_reactor{0};

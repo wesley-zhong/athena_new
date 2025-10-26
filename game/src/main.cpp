@@ -18,6 +18,7 @@
 #include <unistd.h>
 #endif
 #include "transport/AthenaTcpServer.h"
+#include "transport/Channel.h"
 
 
 static std::atomic<bool> g_running(true);
@@ -36,6 +37,10 @@ int main(int argc, char **argv) {
     xLogInitLog(LogLevel::LL_INFO, "../logs/game.log");
 
     AthenaTcpServer  tcp_server;
+    tcp_server.onNewConnection=[](Channel* channel){
+        INFO_LOG("on new connection ={}",channel->getAddr());
+
+    };
     tcp_server.bind(9999).start(3);
 
     std::string ip = "172.18.2.101";

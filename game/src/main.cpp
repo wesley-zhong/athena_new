@@ -12,11 +12,15 @@
 #include "thread/AthenaThreadPool.h"
 #include "common/ObjectPool.hpp"
 #include "db/Dal.hpp"
+
 #if defined(_WIN32)
 #include <windows.h>
 #else
+
 #include <unistd.h>
+
 #endif
+
 #include "transport/AthenaTcpServer.h"
 #include "transport/Channel.h"
 
@@ -36,14 +40,28 @@ int main(int argc, char **argv) {
     std::signal(SIGINT, handleSignal);
     xLogInitLog(LogLevel::LL_INFO, "../logs/game.log");
 
-    AthenaTcpServer  tcp_server;
-    tcp_server.onNewConnection=[](Channel* channel){
-        INFO_LOG("on new connection ={}",channel->getAddr());
+    Thread::ThreadPool *threadPool = new AthenaThreadPool();
+    threadPool->create(2);
+
+
+    AthenaTcpServer tcp_server;
+    tcp_server.onNewConnection = [](Channel *channel) {
+        INFO_LOG("on new connection ={}", channel->getAddr());
+    };
+    tcp_server.onRead = [threadPool](Channel *channel, void *buff, int len) {
+        INFO_LOG("  === on read ");
+        int msgId = 100;
+        int playerId = 999;
+        threadPool->execute([msgId, playerId, buff, len]() {
+            Dispatcher::Instance()->processMsg(msgId, playerId, buff, len);
+        }, 2);
 
     };
-    tcp_server.onClosed=[](Channel* channel){
-        INFO_LOG("connection ={}  closed ",channel->getAddr());
+    tcp_server.onClosed = [](Channel *channel) {
+        INFO_LOG("connection ={}  closed ", channel->getAddr());
     };
+
+
     tcp_server.bind(9999).start(3);
 
     std::string ip = "172.18.2.101";
@@ -83,15 +101,6 @@ int main(int argc, char **argv) {
     // Dispatcher::Instance()->processMsg(100, 8889, pServer.c_str(), pServer.length());
 
     REGISTER_MSG_ID_FUN(100, MsgHandler::onSomeMsg);
-    Thread::ThreadPool *threadPool = new AthenaThreadPool();
-    threadPool->create(2);
-
-    int msgId = 100;
-    int playerId = 999;
-    threadPool->execute([msgId, playerId, pServer]() {
-        Dispatcher::Instance()->processMsg(msgId, playerId, pServer.c_str(), pServer.length());
-    }, 2);
-
     int i = 1;
     i++;
     threadPool->execute([i]() {

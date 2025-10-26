@@ -4,6 +4,7 @@
 
 #ifndef ATHENA_EVENTLOOP_H
 #define ATHENA_EVENTLOOP_H
+
 #include <map>
 #include <mutex>
 
@@ -24,7 +25,7 @@ public:
         channels.insert({channel->getFd(), std::move(channel)});
     }
 
-    void asyncAccept(uv_stream_t *server, uv_tcp_t *client);
+    void asyncAccept(uv_os_sock_t client);
 
     void onRead(uv_stream_t *client, ssize_t nread, const uv_buf_t *buf);
 
@@ -76,4 +77,5 @@ private:
     TQueue<Thread::TaskPtr> _waitTasks;
     std::thread t;
 };
+
 #endif //ATHENA_EVENTLOOP_H

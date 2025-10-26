@@ -22,15 +22,40 @@ void AthenaTcpServer::onAccept(uv_stream_t *server, int status) {
     }
 
     INFO_LOG("event loop  accept  new socket");
-    // choose reactor
-    const int idx = next_reactor++ % event_loops_.size();
-    std::unique_ptr<EventLoop> &loopUptr = event_loops_[idx];
+
 
     // accept into temporary uv_tcp_t to get the fd
     uv_tcp_t *client = new uv_tcp_t;
-    uv_tcp_init(loopUptr->uv_loop(), client);
-   // client->data = loopUptr.get();
-    loopUptr->asyncAccept(server, client);
+    uv_tcp_init(&main_loop, client);
+    if (uv_accept(server, (uv_stream_t *) client) != 0) {
+        uv_close((uv_handle_t *) client, [](uv_handle_t *h) { free(h); });
+        return;
+    }
+    uv_os_sock_t sock;
+    int ret = uv_fileno((const uv_handle_t*)client, (uv_os_fd_t*)&sock);
+    if(ret !=0){
+        ERR_LOG(" uv_file no error ret ={}", ret);
+        uv_close((uv_handle_t *) client, [](uv_handle_t *h) { free(h); });
+        return;
+    }
+
+    int flags = fcntl(sock, F_GETFL, 0);
+    fcntl(sock, F_SETFL, flags | O_NONBLOCK);
+    //uv_close((uv_handle_t*)client, [](uv_handle_t* h){ delete (uv_tcp_t*)h; });
+
+    // choose reactor
+    const int idx = next_reactor++ % event_loops_.size();
+    std::unique_ptr<EventLoop> &loopUptr = event_loops_[idx];
+    loopUptr->asyncAccept(sock);
+
+    //  延迟关闭主 loop 的临时 client
+    uv_timer_t* timer = new uv_timer_t;
+    uv_timer_init(uv_default_loop(), timer);
+    timer->data = client;
+    uv_timer_start(timer, [](uv_timer_t* t){
+        uv_close((uv_handle_t*)t->data, [](uv_handle_t* h){ delete (uv_tcp_t*)h; });
+        uv_close((uv_handle_t*)t, [](uv_handle_t* h){ delete (uv_timer_t*)h; });
+    }, 100, 0);
 }
 
 void AthenaTcpServer::start(int eventLoopNum) {

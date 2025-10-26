@@ -4,20 +4,23 @@
 
 #ifndef ATHENA_CHANNEL_H
 #define ATHENA_CHANNEL_H
+
 #include "uv.h"
 #include "ByteBuffer.h"
+
 class EventLoop;
 
 class Channel {
 public:
-    Channel(EventLoop *event_loop, uv_tcp_t *client, uv_os_fd_t fd, int idexx) : _eventPool(event_loop),
-        fd((uint64) fd), client(client) {
+    Channel(EventLoop *event_loop, uv_tcp_t *client, uv_os_fd_t fd) : _eventPool(event_loop),
+                                                                                 client(client), fd((uint64) fd) {
     }
 
     uint64 getFd() const {
         return fd;
     }
-    EventLoop* event_loop() {
+
+    EventLoop *event_loop() {
         return _eventPool;
     }
 
@@ -28,9 +31,9 @@ private:
 
     ByteBuffer *recv_buffer;
     ByteBuffer *send_buff;
+    EventLoop *_eventPool;
     uv_tcp_t *client;
     uint64 fd;
-    EventLoop *_eventPool;
     bool writing; // whether a uv_write is in-flight
     bool closed; // connection closed
 };

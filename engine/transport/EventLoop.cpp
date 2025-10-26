@@ -4,6 +4,7 @@
 
 #include "EventLoop.h"
 #include "XLog.h"
+#include <string>
 
 void async_accept_cb(uv_async_t *handle) {
     EventLoop *event_loop = (EventLoop *) handle->data;
@@ -11,13 +12,14 @@ void async_accept_cb(uv_async_t *handle) {
 }
 
 void EventLoop::uv_alloc_cb(uv_handle_t *h, size_t s, uv_buf_t *buf) {
-    buf->base = new char[s];
+    buf->base = (  char*)malloc(s);
     buf->len = s;
 }
 
 
 void EventLoop::uv_read_cb(uv_stream_t *client, ssize_t nread, const uv_buf_t *buf) {
-    Channel *channel = (Channel *) client->data;;
+    Channel *channel = (Channel *) client->data;
+    INFO_LOG("==========   READ CB   nread ={}", nread);
     channel->event_loop()->onRead(client, nread, buf);
 
 
@@ -54,19 +56,18 @@ void async_write_cb(uv_async_t *handle) {
     EventLoop *event_loop = (EventLoop *) handle->data;
 }
 
-void EventLoop::asyncAccept(uv_stream_t *server, uv_tcp_t *client) {
+void EventLoop::asyncAccept( uv_os_sock_t fd) {
     EventLoop *event_loop = this;
-    push([event_loop,server, client] {
-        if (uv_accept(server, (uv_stream_t *) client) != 0) {
-            uv_close((uv_handle_t *) client, [](uv_handle_t *h) { free(h); });
-            return;
-        }
-        uv_os_fd_t fd;
-        uv_fileno((const uv_handle_t *) client, &fd);
+    push([event_loop, fd] {
+        uv_tcp_t* client = new uv_tcp_t;
+        uv_tcp_init(event_loop->uv_loop(), client);
+       int ret =  uv_tcp_open(client, fd); // 绑定 socket 到本 loop
+        INFO_LOG("  -------tcp open ret ={}",ret);
+
         uv_read_start((uv_stream_t *) client, uv_alloc_cb, uv_read_cb);
 
         //create channel
-        auto channel = std::make_unique<Channel>(event_loop, client, fd, 0);
+        auto channel = std::make_unique<Channel>(event_loop, client, fd);
         client->data = channel.get();
         event_loop->channels.emplace(1, std::move(channel));
         INFO_LOG(" =================== START READ read data ");
@@ -115,9 +116,11 @@ void EventLoop::start() {
 
 
 void EventLoop::onRead(uv_stream_t *client, ssize_t nread, const uv_buf_t *buf) {
+    INFO_LOG("MMMMMMMMMM  READ ={}",nread);
     if (nread > 0) {
         std::string msg(buf->base, nread);
         INFO_LOG("-----------read msg ={}", msg);
+        INFO_LOG("MMMMMMMMMM  READ 1={}",nread);
         delete[] buf->base;
         return;
     }

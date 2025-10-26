@@ -33,14 +33,7 @@ void handleSignal(int signum) {
 int main(int argc, char **argv) {
     std::signal(SIGTERM, handleSignal);
     std::signal(SIGINT, handleSignal);
-
     xLogInitLog(LogLevel::LL_INFO, "../logs/game.log");
-   // AthenaTcpServer athenaTcpServer;
-    // int ret = athenaTcpServer.start(38881, 4);
-    // if (ret != 0) {
-    //     ERR_LOG(" start tpc server ERROR ret  {} ", ret);
-    //     return -1;
-    // }
 
     AthenaTcpServer  tcp_server;
     tcp_server.bind(9999).start(3);

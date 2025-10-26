@@ -1,0 +1,1577 @@
+[2025-10-25 20:59:18.840] [thread 28580] [AthenaTcpServer.cpp:59] server  bind socket port =9999
+[2025-10-25 20:59:18.840] [thread 28684] [EventLoop.cpp:78]  event  run start 
+[2025-10-25 20:59:18.840] [thread 28580] [AthenaTcpServer.cpp:44] server  start io thread count =3
+[2025-10-25 20:59:18.840] [thread 28684] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-25 20:59:18.840] [thread 28684] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-25 20:59:18.840] [thread 28686] [EventLoop.cpp:78]  event  run start 
+[2025-10-25 20:59:18.840] [thread 28686] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-25 20:59:18.840] [thread 28686] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-25 20:59:18.840] [thread 28685] [EventLoop.cpp:78]  event  run start 
+[2025-10-25 20:59:18.840] [thread 28685] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-25 20:59:18.840] [thread 28685] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-25 20:59:25.330] [thread 28580] [main.cpp:28] Received signal 15 exiting...
+[2025-10-25 21:54:12.322] [thread 66240] [AthenaTcpServer.cpp:59] server  bind socket port =9999
+[2025-10-25 21:54:12.322] [thread 66261] [EventLoop.cpp:78]  event  run start 
+[2025-10-25 21:54:12.322] [thread 66240] [AthenaTcpServer.cpp:44] server  start io thread count =3
+[2025-10-25 21:54:12.322] [thread 66263] [EventLoop.cpp:78]  event  run start 
+[2025-10-25 21:54:12.322] [thread 66261] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-25 21:54:12.322] [thread 66261] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-25 21:54:12.322] [thread 66263] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-25 21:54:12.322] [thread 66263] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-25 21:54:12.322] [thread 66262] [EventLoop.cpp:78]  event  run start 
+[2025-10-25 21:54:12.322] [thread 66262] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-25 21:54:12.322] [thread 66262] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-25 21:54:26.151] [thread 66240] [main.cpp:28] Received signal 15 exiting...
+[2025-10-25 21:54:44.852] [thread 66636] [AthenaTcpServer.cpp:59] server  bind socket port =9999
+[2025-10-25 21:54:44.852] [thread 66639] [EventLoop.cpp:78]  event  run start 
+[2025-10-25 21:54:44.852] [thread 66636] [AthenaTcpServer.cpp:44] server  start io thread count =3
+[2025-10-25 21:54:44.852] [thread 66641] [EventLoop.cpp:78]  event  run start 
+[2025-10-25 21:54:44.852] [thread 66640] [EventLoop.cpp:78]  event  run start 
+[2025-10-25 21:54:44.852] [thread 66640] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-25 21:54:44.852] [thread 66640] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-25 21:54:44.852] [thread 66639] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-25 21:54:44.852] [thread 66639] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-25 21:54:44.852] [thread 66641] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-25 21:54:44.852] [thread 66641] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-25 21:54:58.432] [thread 66636] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-25 21:54:58.433] [thread 66636] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-25 21:54:58.433] [thread 66636] [ObjectPool.hpp:124] [Pool]0x102ac8360 Miss, new obj 0x6000006a4000 
+[2025-10-25 21:54:58.433] [thread 66636] [EventLoop.h:36] --------  push task
+[2025-10-25 21:57:59.550] [thread 68938] [AthenaTcpServer.cpp:59] server  bind socket port =9999
+[2025-10-25 21:57:59.550] [thread 68938] [AthenaTcpServer.cpp:44] server  start io thread count =3
+[2025-10-25 21:57:59.550] [thread 68974] [EventLoop.cpp:78]  event  run start 
+[2025-10-25 21:57:59.550] [thread 68975] [EventLoop.cpp:78]  event  run start 
+[2025-10-25 21:57:59.550] [thread 68976] [EventLoop.cpp:78]  event  run start 
+[2025-10-25 21:57:59.550] [thread 68976] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-25 21:57:59.550] [thread 68975] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-25 21:57:59.550] [thread 68976] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-25 21:57:59.550] [thread 68975] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-25 21:57:59.550] [thread 68974] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-25 21:57:59.550] [thread 68974] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-25 21:58:03.571] [thread 68938] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-25 21:58:03.571] [thread 68938] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-25 21:58:19.737] [thread 69262] [AthenaTcpServer.cpp:59] server  bind socket port =9999
+[2025-10-25 21:58:19.737] [thread 69266] [EventLoop.cpp:78]  event  run start 
+[2025-10-25 21:58:19.737] [thread 69265] [EventLoop.cpp:78]  event  run start 
+[2025-10-25 21:58:19.737] [thread 69262] [AthenaTcpServer.cpp:44] server  start io thread count =3
+[2025-10-25 21:58:19.737] [thread 69267] [EventLoop.cpp:78]  event  run start 
+[2025-10-25 21:58:19.737] [thread 69266] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-25 21:58:19.737] [thread 69266] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-25 21:58:19.737] [thread 69267] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-25 21:58:19.737] [thread 69265] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-25 21:58:19.737] [thread 69267] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-25 21:58:19.737] [thread 69265] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-25 21:58:22.622] [thread 69262] [main.cpp:28] Received signal 15 exiting...
+[2025-10-25 21:58:39.669] [thread 69522] [AthenaTcpServer.cpp:59] server  bind socket port =9999
+[2025-10-25 21:58:39.669] [thread 69522] [AthenaTcpServer.cpp:44] server  start io thread count =3
+[2025-10-25 21:58:39.669] [thread 69674] [EventLoop.cpp:78]  event  run start 
+[2025-10-25 21:58:39.669] [thread 69674] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-25 21:58:39.669] [thread 69675] [EventLoop.cpp:78]  event  run start 
+[2025-10-25 21:58:39.669] [thread 69674] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-25 21:58:39.669] [thread 69676] [EventLoop.cpp:78]  event  run start 
+[2025-10-25 21:58:39.669] [thread 69676] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-25 21:58:39.669] [thread 69675] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-25 21:58:39.669] [thread 69676] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-25 21:58:39.669] [thread 69675] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-25 21:58:52.335] [thread 69522] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-25 21:58:52.336] [thread 69522] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-25 22:00:08.044] [thread 71011] [AthenaTcpServer.cpp:62] server  bind socket port =9999
+[2025-10-25 22:00:08.044] [thread 71011] [AthenaTcpServer.cpp:47] server  start io thread count =3
+[2025-10-25 22:00:08.044] [thread 71053] [EventLoop.cpp:74]  event  run start 
+[2025-10-25 22:00:08.044] [thread 71052] [EventLoop.cpp:74]  event  run start 
+[2025-10-25 22:00:08.044] [thread 71053] [EventLoop.cpp:82] uv_async_init  async_write  ret =0 
+[2025-10-25 22:00:08.044] [thread 71053] [EventLoop.cpp:85] uv_async_init  async_accept ret =0 
+[2025-10-25 22:00:08.044] [thread 71054] [EventLoop.cpp:74]  event  run start 
+[2025-10-25 22:00:08.044] [thread 71052] [EventLoop.cpp:82] uv_async_init  async_write  ret =0 
+[2025-10-25 22:00:08.044] [thread 71052] [EventLoop.cpp:85] uv_async_init  async_accept ret =0 
+[2025-10-25 22:00:08.044] [thread 71054] [EventLoop.cpp:82] uv_async_init  async_write  ret =0 
+[2025-10-25 22:00:08.044] [thread 71054] [EventLoop.cpp:85] uv_async_init  async_accept ret =0 
+[2025-10-25 22:01:19.151] [thread 71991] [AthenaTcpServer.cpp:62] server  bind socket port =9999
+[2025-10-25 22:01:19.151] [thread 71994] [EventLoop.cpp:74]  event  run start 
+[2025-10-25 22:01:19.151] [thread 71991] [AthenaTcpServer.cpp:47] server  start io thread count =3
+[2025-10-25 22:01:19.151] [thread 71994] [EventLoop.cpp:82] uv_async_init  async_write  ret =0 
+[2025-10-25 22:01:19.151] [thread 71994] [EventLoop.cpp:85] uv_async_init  async_accept ret =0 
+[2025-10-25 22:01:19.151] [thread 71995] [EventLoop.cpp:74]  event  run start 
+[2025-10-25 22:01:19.151] [thread 71996] [EventLoop.cpp:74]  event  run start 
+[2025-10-25 22:01:19.151] [thread 71995] [EventLoop.cpp:82] uv_async_init  async_write  ret =0 
+[2025-10-25 22:01:19.151] [thread 71995] [EventLoop.cpp:85] uv_async_init  async_accept ret =0 
+[2025-10-25 22:01:19.151] [thread 71996] [EventLoop.cpp:82] uv_async_init  async_write  ret =0 
+[2025-10-25 22:01:19.151] [thread 71996] [EventLoop.cpp:85] uv_async_init  async_accept ret =0 
+[2025-10-25 22:01:23.224] [thread 71991] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-25 22:01:23.224] [thread 71991] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-25 22:01:31.779] [thread 72223] [AthenaTcpServer.cpp:62] server  bind socket port =9999
+[2025-10-25 22:01:31.779] [thread 72223] [AthenaTcpServer.cpp:47] server  start io thread count =3
+[2025-10-25 22:01:31.779] [thread 72251] [EventLoop.cpp:74]  event  run start 
+[2025-10-25 22:01:31.779] [thread 72253] [EventLoop.cpp:74]  event  run start 
+[2025-10-25 22:01:31.779] [thread 72252] [EventLoop.cpp:74]  event  run start 
+[2025-10-25 22:01:31.779] [thread 72253] [EventLoop.cpp:82] uv_async_init  async_write  ret =0 
+[2025-10-25 22:01:31.779] [thread 72253] [EventLoop.cpp:85] uv_async_init  async_accept ret =0 
+[2025-10-25 22:01:31.779] [thread 72252] [EventLoop.cpp:82] uv_async_init  async_write  ret =0 
+[2025-10-25 22:01:31.779] [thread 72251] [EventLoop.cpp:82] uv_async_init  async_write  ret =0 
+[2025-10-25 22:01:31.779] [thread 72252] [EventLoop.cpp:85] uv_async_init  async_accept ret =0 
+[2025-10-25 22:01:31.779] [thread 72251] [EventLoop.cpp:85] uv_async_init  async_accept ret =0 
+[2025-10-25 22:01:35.878] [thread 72223] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-25 22:01:35.878] [thread 72223] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-25 22:03:30.198] [thread 73753] [AthenaTcpServer.cpp:62] server  bind socket port =9999
+[2025-10-25 22:03:30.198] [thread 73760] [EventLoop.cpp:74]  event  run start 
+[2025-10-25 22:03:30.198] [thread 73761] [EventLoop.cpp:74]  event  run start 
+[2025-10-25 22:03:30.198] [thread 73753] [AthenaTcpServer.cpp:47] server  start io thread count =3
+[2025-10-25 22:03:30.198] [thread 73762] [EventLoop.cpp:74]  event  run start 
+[2025-10-25 22:03:30.198] [thread 73762] [EventLoop.cpp:82] uv_async_init  async_write  ret =0 
+[2025-10-25 22:03:30.198] [thread 73761] [EventLoop.cpp:82] uv_async_init  async_write  ret =0 
+[2025-10-25 22:03:30.198] [thread 73760] [EventLoop.cpp:82] uv_async_init  async_write  ret =0 
+[2025-10-25 22:03:30.198] [thread 73762] [EventLoop.cpp:85] uv_async_init  async_accept ret =0 
+[2025-10-25 22:03:30.198] [thread 73761] [EventLoop.cpp:85] uv_async_init  async_accept ret =0 
+[2025-10-25 22:03:30.198] [thread 73760] [EventLoop.cpp:85] uv_async_init  async_accept ret =0 
+[2025-10-25 22:03:36.214] [thread 73753] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-25 22:03:36.214] [thread 73753] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-25 22:05:27.553] [thread 75730] [AthenaTcpServer.cpp:62] server  bind socket port =9999
+[2025-10-25 22:05:27.553] [thread 75730] [AthenaTcpServer.cpp:47] server  start io thread count =3
+[2025-10-25 22:05:27.553] [thread 75815] [EventLoop.cpp:74]  event  run start 
+[2025-10-25 22:05:27.553] [thread 75815] [EventLoop.cpp:82] uv_async_init  async_write  ret =0 
+[2025-10-25 22:05:27.553] [thread 75815] [EventLoop.cpp:85] uv_async_init  async_accept ret =0 
+[2025-10-25 22:05:27.553] [thread 75817] [EventLoop.cpp:74]  event  run start 
+[2025-10-25 22:05:27.553] [thread 75816] [EventLoop.cpp:74]  event  run start 
+[2025-10-25 22:05:27.553] [thread 75817] [EventLoop.cpp:82] uv_async_init  async_write  ret =0 
+[2025-10-25 22:05:27.553] [thread 75816] [EventLoop.cpp:82] uv_async_init  async_write  ret =0 
+[2025-10-25 22:05:27.553] [thread 75817] [EventLoop.cpp:85] uv_async_init  async_accept ret =0 
+[2025-10-25 22:05:27.553] [thread 75816] [EventLoop.cpp:85] uv_async_init  async_accept ret =0 
+[2025-10-25 22:05:29.263] [thread 75730] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-25 22:05:29.263] [thread 75730] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-25 22:06:52.819] [thread 76728] [AthenaTcpServer.cpp:62] server  bind socket port =9999
+[2025-10-25 22:06:52.819] [thread 76728] [AthenaTcpServer.cpp:47] server  start io thread count =3
+[2025-10-25 22:06:52.819] [thread 76898] [EventLoop.cpp:74]  event  run start 
+[2025-10-25 22:06:52.819] [thread 76899] [EventLoop.cpp:74]  event  run start 
+[2025-10-25 22:06:52.819] [thread 76900] [EventLoop.cpp:74]  event  run start 
+[2025-10-25 22:06:52.819] [thread 76898] [EventLoop.cpp:82] uv_async_init  async_write  ret =0 
+[2025-10-25 22:06:52.819] [thread 76899] [EventLoop.cpp:82] uv_async_init  async_write  ret =0 
+[2025-10-25 22:06:52.819] [thread 76899] [EventLoop.cpp:85] uv_async_init  async_accept ret =0 
+[2025-10-25 22:06:52.819] [thread 76898] [EventLoop.cpp:85] uv_async_init  async_accept ret =0 
+[2025-10-25 22:06:52.819] [thread 76900] [EventLoop.cpp:82] uv_async_init  async_write  ret =0 
+[2025-10-25 22:06:52.819] [thread 76900] [EventLoop.cpp:85] uv_async_init  async_accept ret =0 
+[2025-10-25 22:06:57.116] [thread 76728] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-25 22:06:57.116] [thread 76728] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-25 22:10:00.218] [thread 79276] [AthenaTcpServer.cpp:62] server  bind socket port =9999
+[2025-10-25 22:10:00.218] [thread 79336] [EventLoop.cpp:74]  event  run start 
+[2025-10-25 22:10:00.218] [thread 79276] [AthenaTcpServer.cpp:47] server  start io thread count =3
+[2025-10-25 22:10:00.218] [thread 79336] [EventLoop.cpp:82] uv_async_init  async_write  ret =0 
+[2025-10-25 22:10:00.218] [thread 79336] [EventLoop.cpp:85] uv_async_init  async_accept ret =0 
+[2025-10-25 22:10:00.218] [thread 79338] [EventLoop.cpp:74]  event  run start 
+[2025-10-25 22:10:00.218] [thread 79338] [EventLoop.cpp:82] uv_async_init  async_write  ret =0 
+[2025-10-25 22:10:00.218] [thread 79337] [EventLoop.cpp:74]  event  run start 
+[2025-10-25 22:10:00.218] [thread 79338] [EventLoop.cpp:85] uv_async_init  async_accept ret =0 
+[2025-10-25 22:10:00.218] [thread 79337] [EventLoop.cpp:82] uv_async_init  async_write  ret =0 
+[2025-10-25 22:10:00.218] [thread 79337] [EventLoop.cpp:85] uv_async_init  async_accept ret =0 
+[2025-10-25 22:10:04.390] [thread 79276] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-25 22:10:04.390] [thread 79276] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-25 22:10:04.390] [thread 79276] [ObjectPool.hpp:124] [Pool]0x1010c0360 Miss, new obj 0x600003a54000 
+[2025-10-25 22:10:04.390] [thread 79276] [EventLoop.h:36] --------  push task
+[2025-10-25 22:10:04.390] [thread 79336] [EventLoop.cpp:68]  =================== START READ read data 
+[2025-10-25 22:10:04.390] [thread 79336] [ObjectPool.hpp:164] [Pool] 0x1010c0360 Release obj 0x600003a54000 back to pool
+[2025-10-25 22:10:04.390] [thread 79336] [ObjectPool.hpp:177] ==== ObjectPool Stats ====
+[2025-10-25 22:10:04.390] [thread 79336] [ObjectPool.hpp:178] freeCount     :   1 
+[2025-10-25 22:10:04.390] [thread 79336] [ObjectPool.hpp:179] hitCount      :   0 
+[2025-10-25 22:10:04.390] [thread 79336] [ObjectPool.hpp:180] missCount     :   1 
+[2025-10-25 22:10:04.390] [thread 79336] [ObjectPool.hpp:181] allocCountObj :   1 
+[2025-10-25 22:10:04.390] [thread 79336] [ObjectPool.hpp:182] allocCountNode:   1 
+[2025-10-25 22:10:04.390] [thread 79336] [ObjectPool.hpp:183] ==========================
+[2025-10-25 22:10:46.407] [thread 79276] [main.cpp:28] Received signal 15 exiting...
+[2025-10-25 22:11:46.995] [thread 80999] [AthenaTcpServer.cpp:62] server  bind socket port =9999
+[2025-10-25 22:11:46.995] [thread 80999] [AthenaTcpServer.cpp:47] server  start io thread count =3
+[2025-10-25 22:11:46.996] [thread 81025] [EventLoop.cpp:74]  event  run start 
+[2025-10-25 22:11:46.995] [thread 81024] [EventLoop.cpp:74]  event  run start 
+[2025-10-25 22:11:46.996] [thread 81025] [EventLoop.cpp:82] uv_async_init  async_write  ret =0 
+[2025-10-25 22:11:46.996] [thread 81025] [EventLoop.cpp:85] uv_async_init  async_accept ret =0 
+[2025-10-25 22:11:46.996] [thread 81026] [EventLoop.cpp:74]  event  run start 
+[2025-10-25 22:11:46.996] [thread 81024] [EventLoop.cpp:82] uv_async_init  async_write  ret =0 
+[2025-10-25 22:11:46.996] [thread 81026] [EventLoop.cpp:82] uv_async_init  async_write  ret =0 
+[2025-10-25 22:11:46.996] [thread 81024] [EventLoop.cpp:85] uv_async_init  async_accept ret =0 
+[2025-10-25 22:11:46.996] [thread 81026] [EventLoop.cpp:85] uv_async_init  async_accept ret =0 
+[2025-10-25 22:11:50.470] [thread 80999] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-25 22:11:50.470] [thread 80999] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-25 22:11:50.471] [thread 80999] [ObjectPool.hpp:124] [Pool]0x1007dc360 Miss, new obj 0x600003b78000 
+[2025-10-25 22:11:50.471] [thread 80999] [EventLoop.h:37] --------  push task
+[2025-10-25 22:11:50.471] [thread 81024] [EventLoop.cpp:68]  =================== START READ read data 
+[2025-10-25 22:11:50.471] [thread 81024] [ObjectPool.hpp:164] [Pool] 0x1007dc360 Release obj 0x600003b78000 back to pool
+[2025-10-25 22:11:50.471] [thread 81024] [ObjectPool.hpp:177] ==== ObjectPool Stats ====
+[2025-10-25 22:11:50.471] [thread 81024] [ObjectPool.hpp:178] freeCount     :   1 
+[2025-10-25 22:11:50.471] [thread 81024] [ObjectPool.hpp:179] hitCount      :   0 
+[2025-10-25 22:11:50.471] [thread 81024] [ObjectPool.hpp:180] missCount     :   1 
+[2025-10-25 22:11:50.471] [thread 81024] [ObjectPool.hpp:181] allocCountObj :   1 
+[2025-10-25 22:11:50.471] [thread 81024] [ObjectPool.hpp:182] allocCountNode:   1 
+[2025-10-25 22:11:50.471] [thread 81024] [ObjectPool.hpp:183] ==========================
+[2025-10-25 22:12:47.524] [thread 80999] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-25 22:12:47.524] [thread 80999] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-25 22:12:47.524] [thread 80999] [ObjectPool.hpp:113] [Pool] 0x1007dc360 Hit, reuse obj 0x600003b78000 
+[2025-10-25 22:12:47.524] [thread 80999] [EventLoop.h:37] --------  push task
+[2025-10-25 22:12:47.525] [thread 80999] [EventLoop.cpp:116] -----------read msg =sdsdsds
+ddd
+ss
+ddsdsdsd
+
+[2025-10-25 22:12:47.525] [thread 80999] [EventLoop.cpp:120] socket closed =
+[2025-10-25 22:12:47.525] [thread 81025] [EventLoop.cpp:68]  =================== START READ read data 
+[2025-10-25 22:12:47.525] [thread 81025] [ObjectPool.hpp:164] [Pool] 0x1007dc360 Release obj 0x600003b78000 back to pool
+[2025-10-25 22:12:47.525] [thread 81025] [ObjectPool.hpp:177] ==== ObjectPool Stats ====
+[2025-10-25 22:12:47.525] [thread 81025] [ObjectPool.hpp:178] freeCount     :   1 
+[2025-10-25 22:12:47.525] [thread 81025] [ObjectPool.hpp:179] hitCount      :   1 
+[2025-10-25 22:12:47.525] [thread 81025] [ObjectPool.hpp:180] missCount     :   1 
+[2025-10-25 22:12:47.525] [thread 81025] [ObjectPool.hpp:181] allocCountObj :   1 
+[2025-10-25 22:12:47.525] [thread 81025] [ObjectPool.hpp:182] allocCountNode:   2 
+[2025-10-25 22:12:47.525] [thread 81025] [ObjectPool.hpp:183] ==========================
+[2025-10-25 22:24:30.477] [thread 80999] [main.cpp:28] Received signal 15 exiting...
+[2025-10-25 22:24:42.235] [thread 91179] [AthenaTcpServer.cpp:67] server  bind socket port =9999
+[2025-10-25 22:24:42.235] [thread 91179] [AthenaTcpServer.cpp:52] server  start io thread count =3
+[2025-10-25 22:24:42.235] [thread 91212] [EventLoop.cpp:76]  event  run start 
+[2025-10-25 22:24:42.235] [thread 91213] [EventLoop.cpp:76]  event  run start 
+[2025-10-25 22:24:42.235] [thread 91212] [EventLoop.cpp:84] uv_async_init  async_write  ret =0 
+[2025-10-25 22:24:42.235] [thread 91212] [EventLoop.cpp:87] uv_async_init  async_accept ret =0 
+[2025-10-25 22:24:42.235] [thread 91213] [EventLoop.cpp:84] uv_async_init  async_write  ret =0 
+[2025-10-25 22:24:42.235] [thread 91213] [EventLoop.cpp:87] uv_async_init  async_accept ret =0 
+[2025-10-25 22:24:42.235] [thread 91214] [EventLoop.cpp:76]  event  run start 
+[2025-10-25 22:24:42.235] [thread 91214] [EventLoop.cpp:84] uv_async_init  async_write  ret =0 
+[2025-10-25 22:24:42.235] [thread 91214] [EventLoop.cpp:87] uv_async_init  async_accept ret =0 
+[2025-10-25 22:24:53.139] [thread 91179] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-25 22:24:53.139] [thread 91179] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-25 22:26:27.200] [thread 92671] [AthenaTcpServer.cpp:67] server  bind socket port =9999
+[2025-10-25 22:26:27.200] [thread 92671] [AthenaTcpServer.cpp:52] server  start io thread count =3
+[2025-10-25 22:26:27.200] [thread 92700] [EventLoop.cpp:76]  event  run start 
+[2025-10-25 22:26:27.200] [thread 92698] [EventLoop.cpp:76]  event  run start 
+[2025-10-25 22:26:27.200] [thread 92699] [EventLoop.cpp:76]  event  run start 
+[2025-10-25 22:26:27.200] [thread 92700] [EventLoop.cpp:84] uv_async_init  async_write  ret =0 
+[2025-10-25 22:26:27.200] [thread 92700] [EventLoop.cpp:87] uv_async_init  async_accept ret =0 
+[2025-10-25 22:26:27.200] [thread 92698] [EventLoop.cpp:84] uv_async_init  async_write  ret =0 
+[2025-10-25 22:26:27.200] [thread 92698] [EventLoop.cpp:87] uv_async_init  async_accept ret =0 
+[2025-10-25 22:26:27.200] [thread 92699] [EventLoop.cpp:84] uv_async_init  async_write  ret =0 
+[2025-10-25 22:26:27.200] [thread 92699] [EventLoop.cpp:87] uv_async_init  async_accept ret =0 
+[2025-10-25 22:26:32.952] [thread 92671] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-25 22:26:32.952] [thread 92671] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-25 22:26:32.952] [thread 92671] [ObjectPool.hpp:124] [Pool]0x104414360 Miss, new obj 0x6000012e8000 
+[2025-10-25 22:26:32.952] [thread 92671] [EventLoop.h:37] --------  push task
+[2025-10-25 22:26:32.952] [thread 92698] [EventLoop.cpp:70]  =================== START READ read data 
+[2025-10-25 22:26:32.952] [thread 92698] [ObjectPool.hpp:164] [Pool] 0x104414360 Release obj 0x6000012e8000 back to pool
+[2025-10-25 22:26:32.952] [thread 92698] [ObjectPool.hpp:177] ==== ObjectPool Stats ====
+[2025-10-25 22:26:32.952] [thread 92698] [ObjectPool.hpp:178] freeCount     :   1 
+[2025-10-25 22:26:32.952] [thread 92698] [ObjectPool.hpp:179] hitCount      :   0 
+[2025-10-25 22:26:32.952] [thread 92698] [ObjectPool.hpp:180] missCount     :   1 
+[2025-10-25 22:26:32.952] [thread 92698] [ObjectPool.hpp:181] allocCountObj :   1 
+[2025-10-25 22:26:32.952] [thread 92698] [ObjectPool.hpp:182] allocCountNode:   1 
+[2025-10-25 22:26:32.952] [thread 92698] [ObjectPool.hpp:183] ==========================
+[2025-10-25 22:28:07.549] [thread 92671] [main.cpp:28] Received signal 15 exiting...
+[2025-10-25 22:28:25.863] [thread 94099] [AthenaTcpServer.cpp:67] server  bind socket port =9999
+[2025-10-25 22:28:25.863] [thread 94099] [AthenaTcpServer.cpp:52] server  start io thread count =3
+[2025-10-25 22:28:25.863] [thread 94306] [EventLoop.cpp:76]  event  run start 
+[2025-10-25 22:28:25.863] [thread 94307] [EventLoop.cpp:76]  event  run start 
+[2025-10-25 22:28:25.863] [thread 94306] [EventLoop.cpp:84] uv_async_init  async_write  ret =0 
+[2025-10-25 22:28:25.863] [thread 94306] [EventLoop.cpp:87] uv_async_init  async_accept ret =0 
+[2025-10-25 22:28:25.863] [thread 94307] [EventLoop.cpp:84] uv_async_init  async_write  ret =0 
+[2025-10-25 22:28:25.863] [thread 94307] [EventLoop.cpp:87] uv_async_init  async_accept ret =0 
+[2025-10-25 22:28:25.863] [thread 94308] [EventLoop.cpp:76]  event  run start 
+[2025-10-25 22:28:25.863] [thread 94308] [EventLoop.cpp:84] uv_async_init  async_write  ret =0 
+[2025-10-25 22:28:25.863] [thread 94308] [EventLoop.cpp:87] uv_async_init  async_accept ret =0 
+[2025-10-25 22:28:29.612] [thread 94099] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-25 22:28:29.612] [thread 94099] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-25 22:28:29.612] [thread 94099] [ObjectPool.hpp:124] [Pool]0x1046d8360 Miss, new obj 0x60000280c000 
+[2025-10-25 22:28:29.612] [thread 94099] [EventLoop.h:37] --------  push task
+[2025-10-25 22:28:29.613] [thread 94306] [EventLoop.cpp:70]  =================== START READ read data 
+[2025-10-25 22:28:29.613] [thread 94306] [ObjectPool.hpp:164] [Pool] 0x1046d8360 Release obj 0x60000280c000 back to pool
+[2025-10-25 22:28:29.613] [thread 94306] [ObjectPool.hpp:177] ==== ObjectPool Stats ====
+[2025-10-25 22:28:29.613] [thread 94306] [ObjectPool.hpp:178] freeCount     :   1 
+[2025-10-25 22:28:29.613] [thread 94306] [ObjectPool.hpp:179] hitCount      :   0 
+[2025-10-25 22:28:29.613] [thread 94306] [ObjectPool.hpp:180] missCount     :   1 
+[2025-10-25 22:28:29.613] [thread 94306] [ObjectPool.hpp:181] allocCountObj :   1 
+[2025-10-25 22:28:29.613] [thread 94306] [ObjectPool.hpp:182] allocCountNode:   1 
+[2025-10-25 22:28:29.613] [thread 94306] [ObjectPool.hpp:183] ==========================
+[2025-10-25 22:30:14.061] [thread 95712] [AthenaTcpServer.cpp:66] server  bind socket port =9999
+[2025-10-25 22:30:14.061] [thread 95712] [AthenaTcpServer.cpp:51] server  start io thread count =3
+[2025-10-25 22:30:14.061] [thread 95753] [EventLoop.cpp:76]  event  run start 
+[2025-10-25 22:30:14.061] [thread 95754] [EventLoop.cpp:76]  event  run start 
+[2025-10-25 22:30:14.061] [thread 95755] [EventLoop.cpp:76]  event  run start 
+[2025-10-25 22:30:14.061] [thread 95755] [EventLoop.cpp:84] uv_async_init  async_write  ret =0 
+[2025-10-25 22:30:14.061] [thread 95755] [EventLoop.cpp:87] uv_async_init  async_accept ret =0 
+[2025-10-25 22:30:14.061] [thread 95753] [EventLoop.cpp:84] uv_async_init  async_write  ret =0 
+[2025-10-25 22:30:14.061] [thread 95754] [EventLoop.cpp:84] uv_async_init  async_write  ret =0 
+[2025-10-25 22:30:14.061] [thread 95753] [EventLoop.cpp:87] uv_async_init  async_accept ret =0 
+[2025-10-25 22:30:14.061] [thread 95754] [EventLoop.cpp:87] uv_async_init  async_accept ret =0 
+[2025-10-25 22:30:20.363] [thread 95712] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-25 22:30:20.363] [thread 95712] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-25 22:31:41.645] [thread 96983] [AthenaTcpServer.cpp:68] server  bind socket port =9999
+[2025-10-25 22:31:41.645] [thread 96983] [AthenaTcpServer.cpp:53] server  start io thread count =3
+[2025-10-25 22:31:41.645] [thread 97012] [EventLoop.cpp:76]  event  run start 
+[2025-10-25 22:31:41.645] [thread 97013] [EventLoop.cpp:76]  event  run start 
+[2025-10-25 22:31:41.645] [thread 97014] [EventLoop.cpp:76]  event  run start 
+[2025-10-25 22:31:41.645] [thread 97012] [EventLoop.cpp:84] uv_async_init  async_write  ret =0 
+[2025-10-25 22:31:41.645] [thread 97012] [EventLoop.cpp:87] uv_async_init  async_accept ret =0 
+[2025-10-25 22:31:41.645] [thread 97014] [EventLoop.cpp:84] uv_async_init  async_write  ret =0 
+[2025-10-25 22:31:41.645] [thread 97014] [EventLoop.cpp:87] uv_async_init  async_accept ret =0 
+[2025-10-25 22:31:41.645] [thread 97013] [EventLoop.cpp:84] uv_async_init  async_write  ret =0 
+[2025-10-25 22:31:41.645] [thread 97013] [EventLoop.cpp:87] uv_async_init  async_accept ret =0 
+[2025-10-25 22:31:45.117] [thread 96983] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-25 22:31:45.117] [thread 96983] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-25 22:31:45.117] [thread 96983] [ObjectPool.hpp:124] [Pool]0x10429c360 Miss, new obj 0x600003350000 
+[2025-10-25 22:31:45.117] [thread 96983] [EventLoop.h:37] --------  push task
+[2025-10-25 22:31:45.118] [thread 97012] [EventLoop.cpp:70]  =================== START READ read data 
+[2025-10-25 22:31:45.118] [thread 97012] [ObjectPool.hpp:164] [Pool] 0x10429c360 Release obj 0x600003350000 back to pool
+[2025-10-25 22:31:45.118] [thread 97012] [ObjectPool.hpp:177] ==== ObjectPool Stats ====
+[2025-10-25 22:31:45.118] [thread 97012] [ObjectPool.hpp:178] freeCount     :   1 
+[2025-10-25 22:31:45.118] [thread 97012] [ObjectPool.hpp:179] hitCount      :   0 
+[2025-10-25 22:31:45.118] [thread 97012] [ObjectPool.hpp:180] missCount     :   1 
+[2025-10-25 22:31:45.118] [thread 97012] [ObjectPool.hpp:181] allocCountObj :   1 
+[2025-10-25 22:31:45.118] [thread 97012] [ObjectPool.hpp:182] allocCountNode:   1 
+[2025-10-25 22:31:45.118] [thread 97012] [ObjectPool.hpp:183] ==========================
+[2025-10-25 22:31:55.471] [thread 96983] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-25 22:31:55.471] [thread 96983] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-25 22:31:55.471] [thread 96983] [ObjectPool.hpp:113] [Pool] 0x10429c360 Hit, reuse obj 0x600003350000 
+[2025-10-25 22:31:55.471] [thread 96983] [EventLoop.h:37] --------  push task
+[2025-10-25 22:31:55.471] [thread 97013] [EventLoop.cpp:70]  =================== START READ read data 
+[2025-10-25 22:31:55.471] [thread 97013] [ObjectPool.hpp:164] [Pool] 0x10429c360 Release obj 0x600003350000 back to pool
+[2025-10-25 22:31:55.471] [thread 97013] [ObjectPool.hpp:177] ==== ObjectPool Stats ====
+[2025-10-25 22:31:55.471] [thread 97013] [ObjectPool.hpp:178] freeCount     :   1 
+[2025-10-25 22:31:55.471] [thread 97013] [ObjectPool.hpp:179] hitCount      :   1 
+[2025-10-25 22:31:55.471] [thread 97013] [ObjectPool.hpp:180] missCount     :   1 
+[2025-10-25 22:31:55.471] [thread 97013] [ObjectPool.hpp:181] allocCountObj :   1 
+[2025-10-25 22:31:55.471] [thread 97013] [ObjectPool.hpp:182] allocCountNode:   2 
+[2025-10-25 22:31:55.471] [thread 97013] [ObjectPool.hpp:183] ==========================
+[2025-10-25 22:34:43.793] [thread 99521] [AthenaTcpServer.cpp:66] server  bind socket port =9999
+[2025-10-25 22:34:43.793] [thread 99555] [EventLoop.cpp:76]  event  run start 
+[2025-10-25 22:34:43.793] [thread 99521] [AthenaTcpServer.cpp:51] server  start io thread count =3
+[2025-10-25 22:34:43.793] [thread 99556] [EventLoop.cpp:76]  event  run start 
+[2025-10-25 22:34:43.793] [thread 99557] [EventLoop.cpp:76]  event  run start 
+[2025-10-25 22:34:43.793] [thread 99557] [EventLoop.cpp:84] uv_async_init  async_write  ret =0 
+[2025-10-25 22:34:43.793] [thread 99555] [EventLoop.cpp:84] uv_async_init  async_write  ret =0 
+[2025-10-25 22:34:43.793] [thread 99557] [EventLoop.cpp:87] uv_async_init  async_accept ret =0 
+[2025-10-25 22:34:43.793] [thread 99555] [EventLoop.cpp:87] uv_async_init  async_accept ret =0 
+[2025-10-25 22:34:43.793] [thread 99556] [EventLoop.cpp:84] uv_async_init  async_write  ret =0 
+[2025-10-25 22:34:43.793] [thread 99556] [EventLoop.cpp:87] uv_async_init  async_accept ret =0 
+[2025-10-25 22:34:44.690] [thread 99521] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-25 22:34:44.691] [thread 99521] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-25 22:34:44.691] [thread 99521] [ObjectPool.hpp:124] [Pool]0x1028e4360 Miss, new obj 0x6000032c0000 
+[2025-10-25 22:34:44.691] [thread 99521] [EventLoop.h:37] --------  push task
+[2025-10-25 22:34:44.691] [thread 99555] [EventLoop.cpp:70]  =================== START READ read data 
+[2025-10-25 22:34:44.691] [thread 99555] [ObjectPool.hpp:164] [Pool] 0x1028e4360 Release obj 0x6000032c0000 back to pool
+[2025-10-25 22:34:44.691] [thread 99555] [ObjectPool.hpp:177] ==== ObjectPool Stats ====
+[2025-10-25 22:34:44.691] [thread 99555] [ObjectPool.hpp:178] freeCount     :   1 
+[2025-10-25 22:34:44.691] [thread 99555] [ObjectPool.hpp:179] hitCount      :   0 
+[2025-10-25 22:34:44.691] [thread 99555] [ObjectPool.hpp:180] missCount     :   1 
+[2025-10-25 22:34:44.691] [thread 99555] [ObjectPool.hpp:181] allocCountObj :   1 
+[2025-10-25 22:34:44.691] [thread 99555] [ObjectPool.hpp:182] allocCountNode:   1 
+[2025-10-25 22:34:44.691] [thread 99555] [ObjectPool.hpp:183] ==========================
+[2025-10-25 22:38:31.843] [thread 102715] [AthenaTcpServer.cpp:66] server  bind socket port =9999
+[2025-10-25 22:38:31.843] [thread 102715] [AthenaTcpServer.cpp:51] server  start io thread count =3
+[2025-10-25 22:38:31.843] [thread 102760] [EventLoop.cpp:77]  event  run start 
+[2025-10-25 22:38:31.843] [thread 102760] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-25 22:38:31.843] [thread 102761] [EventLoop.cpp:77]  event  run start 
+[2025-10-25 22:38:31.843] [thread 102760] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-25 22:38:31.843] [thread 102762] [EventLoop.cpp:77]  event  run start 
+[2025-10-25 22:38:31.843] [thread 102761] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-25 22:38:31.843] [thread 102761] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-25 22:38:31.843] [thread 102762] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-25 22:38:31.843] [thread 102762] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-25 22:41:17.643] [thread 105011] [AthenaTcpServer.cpp:76] server  bind socket port =9999
+[2025-10-25 22:41:17.643] [thread 105015] [EventLoop.cpp:77]  event  run start 
+[2025-10-25 22:41:17.643] [thread 105011] [AthenaTcpServer.cpp:61] server  start io thread count =3
+[2025-10-25 22:41:17.643] [thread 105016] [EventLoop.cpp:77]  event  run start 
+[2025-10-25 22:41:17.643] [thread 105015] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-25 22:41:17.643] [thread 105015] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-25 22:41:17.643] [thread 105017] [EventLoop.cpp:77]  event  run start 
+[2025-10-25 22:41:17.643] [thread 105016] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-25 22:41:17.643] [thread 105016] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-25 22:41:17.643] [thread 105017] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-25 22:41:17.643] [thread 105017] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-25 22:41:23.434] [thread 105011] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-25 22:41:23.434] [thread 105011] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-25 22:41:23.434] [thread 105011] [ObjectPool.hpp:124] [Pool]0x1030f4360 Miss, new obj 0x600003e20000 
+[2025-10-25 22:41:23.434] [thread 105011] [EventLoop.h:37] --------  push task
+[2025-10-25 22:41:23.435] [thread 105015] [EventLoop.cpp:63]   -------tcp open ret =-9
+[2025-10-25 22:41:23.435] [thread 105015] [EventLoop.cpp:71]  =================== START READ read data 
+[2025-10-25 22:41:23.435] [thread 105015] [ObjectPool.hpp:164] [Pool] 0x1030f4360 Release obj 0x600003e20000 back to pool
+[2025-10-25 22:41:23.435] [thread 105015] [ObjectPool.hpp:177] ==== ObjectPool Stats ====
+[2025-10-25 22:41:23.435] [thread 105015] [ObjectPool.hpp:178] freeCount     :   1 
+[2025-10-25 22:41:23.435] [thread 105015] [ObjectPool.hpp:179] hitCount      :   0 
+[2025-10-25 22:41:23.435] [thread 105015] [ObjectPool.hpp:180] missCount     :   1 
+[2025-10-25 22:41:23.435] [thread 105015] [ObjectPool.hpp:181] allocCountObj :   1 
+[2025-10-25 22:41:23.435] [thread 105015] [ObjectPool.hpp:182] allocCountNode:   1 
+[2025-10-25 22:41:23.435] [thread 105015] [ObjectPool.hpp:183] ==========================
+[2025-10-25 22:42:01.827] [thread 105011] [main.cpp:28] Received signal 15 exiting...
+[2025-10-25 22:42:09.780] [thread 105820] [AthenaTcpServer.cpp:76] server  bind socket port =9999
+[2025-10-25 22:42:09.780] [thread 105820] [AthenaTcpServer.cpp:61] server  start io thread count =3
+[2025-10-25 22:42:09.780] [thread 105839] [EventLoop.cpp:77]  event  run start 
+[2025-10-25 22:42:09.780] [thread 105839] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-25 22:42:09.780] [thread 105839] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-25 22:42:09.780] [thread 105840] [EventLoop.cpp:77]  event  run start 
+[2025-10-25 22:42:09.780] [thread 105841] [EventLoop.cpp:77]  event  run start 
+[2025-10-25 22:42:09.780] [thread 105840] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-25 22:42:09.780] [thread 105840] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-25 22:42:09.780] [thread 105841] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-25 22:42:09.780] [thread 105841] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-25 22:42:34.853] [thread 106223] [AthenaTcpServer.cpp:76] server  bind socket port =9999
+[2025-10-25 22:42:34.853] [thread 106223] [AthenaTcpServer.cpp:61] server  start io thread count =3
+[2025-10-25 22:42:34.854] [thread 106244] [EventLoop.cpp:77]  event  run start 
+[2025-10-25 22:42:34.854] [thread 106244] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-25 22:42:34.854] [thread 106244] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-25 22:42:34.854] [thread 106245] [EventLoop.cpp:77]  event  run start 
+[2025-10-25 22:42:34.854] [thread 106246] [EventLoop.cpp:77]  event  run start 
+[2025-10-25 22:42:34.854] [thread 106245] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-25 22:42:34.854] [thread 106245] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-25 22:42:34.854] [thread 106246] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-25 22:42:34.854] [thread 106246] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-25 22:46:06.006] [thread 109122] [AthenaTcpServer.cpp:76] server  bind socket port =9999
+[2025-10-25 22:46:06.006] [thread 109122] [AthenaTcpServer.cpp:61] server  start io thread count =3
+[2025-10-25 22:46:06.006] [thread 109143] [EventLoop.cpp:77]  event  run start 
+[2025-10-25 22:46:06.006] [thread 109143] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-25 22:46:06.006] [thread 109143] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-25 22:46:06.006] [thread 109144] [EventLoop.cpp:77]  event  run start 
+[2025-10-25 22:46:06.006] [thread 109144] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-25 22:46:06.006] [thread 109144] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-25 22:46:06.006] [thread 109145] [EventLoop.cpp:77]  event  run start 
+[2025-10-25 22:46:06.006] [thread 109145] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-25 22:46:06.006] [thread 109145] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-25 22:50:47.186] [thread 113151] [AthenaTcpServer.cpp:77] server  bind socket port =9999
+[2025-10-25 22:50:47.186] [thread 113151] [AthenaTcpServer.cpp:62] server  start io thread count =3
+[2025-10-25 22:50:47.186] [thread 113172] [EventLoop.cpp:77]  event  run start 
+[2025-10-25 22:50:47.186] [thread 113170] [EventLoop.cpp:77]  event  run start 
+[2025-10-25 22:50:47.186] [thread 113172] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-25 22:50:47.186] [thread 113171] [EventLoop.cpp:77]  event  run start 
+[2025-10-25 22:50:47.186] [thread 113172] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-25 22:50:47.186] [thread 113170] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-25 22:50:47.186] [thread 113170] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-25 22:50:47.186] [thread 113171] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-25 22:50:47.186] [thread 113171] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-25 22:50:49.061] [thread 113151] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-25 22:50:49.062] [thread 113151] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-25 22:51:49.867] [thread 113942] [AthenaTcpServer.cpp:77] server  bind socket port =9999
+[2025-10-25 22:51:49.867] [thread 113942] [AthenaTcpServer.cpp:62] server  start io thread count =3
+[2025-10-25 22:51:49.867] [thread 113963] [EventLoop.cpp:77]  event  run start 
+[2025-10-25 22:51:49.867] [thread 113961] [EventLoop.cpp:77]  event  run start 
+[2025-10-25 22:51:49.867] [thread 113962] [EventLoop.cpp:77]  event  run start 
+[2025-10-25 22:51:49.867] [thread 113963] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-25 22:51:49.867] [thread 113963] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-25 22:51:49.867] [thread 113961] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-25 22:51:49.867] [thread 113961] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-25 22:51:49.867] [thread 113962] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-25 22:51:49.867] [thread 113962] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-25 22:55:51.066] [thread 117141] [AthenaTcpServer.cpp:77] server  bind socket port =9999
+[2025-10-25 22:55:51.066] [thread 117183] [EventLoop.cpp:77]  event  run start 
+[2025-10-25 22:55:51.066] [thread 117184] [EventLoop.cpp:77]  event  run start 
+[2025-10-25 22:55:51.066] [thread 117141] [AthenaTcpServer.cpp:62] server  start io thread count =3
+[2025-10-25 22:55:51.066] [thread 117183] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-25 22:55:51.066] [thread 117185] [EventLoop.cpp:77]  event  run start 
+[2025-10-25 22:55:51.066] [thread 117183] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-25 22:55:51.066] [thread 117185] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-25 22:55:51.066] [thread 117185] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-25 22:55:51.066] [thread 117184] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-25 22:55:51.066] [thread 117184] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-25 22:55:53.457] [thread 117141] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-25 22:55:53.457] [thread 117141] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-25 22:55:53.457] [thread 117141] [AthenaTcpServer.cpp:38] --------- ret =0
+[2025-10-25 22:55:53.457] [thread 117141] [ObjectPool.hpp:124] [Pool]0x102c10360 Miss, new obj 0x60000305c000 
+[2025-10-25 22:55:53.457] [thread 117141] [EventLoop.h:37] --------  push task
+[2025-10-25 22:55:53.457] [thread 117183] [EventLoop.cpp:63]   -------tcp open ret =0
+[2025-10-25 22:55:53.457] [thread 117183] [EventLoop.cpp:71]  =================== START READ read data 
+[2025-10-25 22:55:53.457] [thread 117183] [ObjectPool.hpp:164] [Pool] 0x102c10360 Release obj 0x60000305c000 back to pool
+[2025-10-25 22:55:53.457] [thread 117183] [ObjectPool.hpp:177] ==== ObjectPool Stats ====
+[2025-10-25 22:55:53.457] [thread 117183] [ObjectPool.hpp:178] freeCount     :   1 
+[2025-10-25 22:55:53.457] [thread 117183] [ObjectPool.hpp:179] hitCount      :   0 
+[2025-10-25 22:55:53.457] [thread 117183] [ObjectPool.hpp:180] missCount     :   1 
+[2025-10-25 22:55:53.457] [thread 117183] [ObjectPool.hpp:181] allocCountObj :   1 
+[2025-10-25 22:55:53.457] [thread 117183] [ObjectPool.hpp:182] allocCountNode:   1 
+[2025-10-25 22:55:53.457] [thread 117183] [ObjectPool.hpp:183] ==========================
+[2025-10-25 22:55:55.408] [thread 117183] [EventLoop.cpp:119] -----------read msg =fff
+
+[2025-10-25 22:56:35.541] [thread 117141] [main.cpp:28] Received signal 15 exiting...
+[2025-10-25 22:56:43.553] [thread 117920] [AthenaTcpServer.cpp:77] server  bind socket port =9999
+[2025-10-25 22:56:43.553] [thread 117942] [EventLoop.cpp:77]  event  run start 
+[2025-10-25 22:56:43.554] [thread 117943] [EventLoop.cpp:77]  event  run start 
+[2025-10-25 22:56:43.554] [thread 117920] [AthenaTcpServer.cpp:62] server  start io thread count =3
+[2025-10-25 22:56:43.554] [thread 117942] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-25 22:56:43.554] [thread 117942] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-25 22:56:43.554] [thread 117943] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-25 22:56:43.554] [thread 117943] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-25 22:56:43.554] [thread 117944] [EventLoop.cpp:77]  event  run start 
+[2025-10-25 22:56:43.554] [thread 117944] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-25 22:56:43.554] [thread 117944] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-25 22:56:52.671] [thread 117920] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-25 22:56:52.671] [thread 117920] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-25 22:56:59.399] [thread 117920] [AthenaTcpServer.cpp:38] --------- ret =0
+[2025-10-25 22:57:02.119] [thread 117920] [ObjectPool.hpp:124] [Pool]0x1010c0360 Miss, new obj 0x60000288c000 
+[2025-10-25 22:57:02.119] [thread 117920] [EventLoop.h:37] --------  push task
+[2025-10-25 22:57:07.916] [thread 117942] [EventLoop.cpp:63]   -------tcp open ret =0
+[2025-10-25 22:57:13.372] [thread 117942] [EventLoop.cpp:71]  =================== START READ read data 
+[2025-10-25 22:57:13.372] [thread 117942] [ObjectPool.hpp:164] [Pool] 0x1010c0360 Release obj 0x60000288c000 back to pool
+[2025-10-25 22:57:13.372] [thread 117942] [ObjectPool.hpp:177] ==== ObjectPool Stats ====
+[2025-10-25 22:57:13.372] [thread 117942] [ObjectPool.hpp:178] freeCount     :   1 
+[2025-10-25 22:57:13.372] [thread 117942] [ObjectPool.hpp:179] hitCount      :   0 
+[2025-10-25 22:57:13.372] [thread 117942] [ObjectPool.hpp:180] missCount     :   1 
+[2025-10-25 22:57:13.372] [thread 117942] [ObjectPool.hpp:181] allocCountObj :   1 
+[2025-10-25 22:57:13.372] [thread 117942] [ObjectPool.hpp:182] allocCountNode:   1 
+[2025-10-25 22:57:13.372] [thread 117942] [ObjectPool.hpp:183] ==========================
+[2025-10-25 22:58:32.887] [thread 119847] [AthenaTcpServer.cpp:77] server  bind socket port =9999
+[2025-10-25 22:58:32.887] [thread 119847] [AthenaTcpServer.cpp:62] server  start io thread count =3
+[2025-10-25 22:58:32.887] [thread 119886] [EventLoop.cpp:77]  event  run start 
+[2025-10-25 22:58:32.887] [thread 119887] [EventLoop.cpp:77]  event  run start 
+[2025-10-25 22:58:32.887] [thread 119888] [EventLoop.cpp:77]  event  run start 
+[2025-10-25 22:58:32.887] [thread 119886] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-25 22:58:32.887] [thread 119886] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-25 22:58:32.887] [thread 119887] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-25 22:58:32.887] [thread 119887] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-25 22:58:32.887] [thread 119888] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-25 22:58:32.887] [thread 119888] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-25 22:58:37.576] [thread 119847] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-25 22:58:37.576] [thread 119847] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-25 22:58:37.576] [thread 119847] [AthenaTcpServer.cpp:38] --------- ret =0
+[2025-10-25 22:58:37.576] [thread 119847] [ObjectPool.hpp:124] [Pool]0x100884360 Miss, new obj 0x6000011b4000 
+[2025-10-25 22:58:37.576] [thread 119847] [EventLoop.h:37] --------  push task
+[2025-10-25 22:58:37.577] [thread 119886] [EventLoop.cpp:63]   -------tcp open ret =0
+[2025-10-25 22:58:37.577] [thread 119886] [EventLoop.cpp:71]  =================== START READ read data 
+[2025-10-25 22:58:37.577] [thread 119886] [ObjectPool.hpp:164] [Pool] 0x100884360 Release obj 0x6000011b4000 back to pool
+[2025-10-25 22:58:37.577] [thread 119886] [ObjectPool.hpp:177] ==== ObjectPool Stats ====
+[2025-10-25 22:58:37.577] [thread 119886] [ObjectPool.hpp:178] freeCount     :   1 
+[2025-10-25 22:58:37.577] [thread 119886] [ObjectPool.hpp:179] hitCount      :   0 
+[2025-10-25 22:58:37.577] [thread 119886] [ObjectPool.hpp:180] missCount     :   1 
+[2025-10-25 22:58:37.577] [thread 119886] [ObjectPool.hpp:181] allocCountObj :   1 
+[2025-10-25 22:58:37.577] [thread 119886] [ObjectPool.hpp:182] allocCountNode:   1 
+[2025-10-25 22:58:37.577] [thread 119886] [ObjectPool.hpp:183] ==========================
+[2025-10-25 22:58:39.576] [thread 119886] [EventLoop.cpp:119] -----------read msg =hhhhh
+
+[2025-10-25 22:58:50.828] [thread 119886] [EventLoop.cpp:119] -----------read msg =sddd
+
+[2025-10-25 22:59:08.376] [thread 119886] [EventLoop.cpp:123] socket closed =
+[2025-10-25 22:59:29.383] [thread 119847] [main.cpp:28] Received signal 15 exiting...
+[2025-10-25 22:59:40.913] [thread 120947] [AthenaTcpServer.cpp:77] server  bind socket port =9999
+[2025-10-25 22:59:40.913] [thread 120947] [AthenaTcpServer.cpp:62] server  start io thread count =3
+[2025-10-25 22:59:40.913] [thread 120973] [EventLoop.cpp:77]  event  run start 
+[2025-10-25 22:59:40.913] [thread 120974] [EventLoop.cpp:77]  event  run start 
+[2025-10-25 22:59:40.913] [thread 120975] [EventLoop.cpp:77]  event  run start 
+[2025-10-25 22:59:40.913] [thread 120975] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-25 22:59:40.913] [thread 120973] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-25 22:59:40.913] [thread 120973] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-25 22:59:40.913] [thread 120975] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-25 22:59:40.913] [thread 120974] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-25 22:59:40.913] [thread 120974] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-25 22:59:44.811] [thread 120947] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-25 22:59:44.811] [thread 120947] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-25 22:59:44.811] [thread 120947] [AthenaTcpServer.cpp:38] --------- ret =0
+[2025-10-25 22:59:44.811] [thread 120947] [ObjectPool.hpp:124] [Pool]0x1010d4360 Miss, new obj 0x600002b90000 
+[2025-10-25 22:59:44.811] [thread 120947] [EventLoop.h:37] --------  push task
+[2025-10-25 22:59:44.812] [thread 120973] [EventLoop.cpp:63]   -------tcp open ret =0
+[2025-10-25 22:59:44.812] [thread 120973] [EventLoop.cpp:71]  =================== START READ read data 
+[2025-10-25 22:59:44.812] [thread 120973] [ObjectPool.hpp:164] [Pool] 0x1010d4360 Release obj 0x600002b90000 back to pool
+[2025-10-25 22:59:44.812] [thread 120973] [ObjectPool.hpp:177] ==== ObjectPool Stats ====
+[2025-10-25 22:59:44.812] [thread 120973] [ObjectPool.hpp:178] freeCount     :   1 
+[2025-10-25 22:59:44.812] [thread 120973] [ObjectPool.hpp:179] hitCount      :   0 
+[2025-10-25 22:59:44.812] [thread 120973] [ObjectPool.hpp:180] missCount     :   1 
+[2025-10-25 22:59:44.812] [thread 120973] [ObjectPool.hpp:181] allocCountObj :   1 
+[2025-10-25 22:59:44.812] [thread 120973] [ObjectPool.hpp:182] allocCountNode:   1 
+[2025-10-25 22:59:44.812] [thread 120973] [ObjectPool.hpp:183] ==========================
+[2025-10-25 22:59:46.858] [thread 120973] [EventLoop.cpp:119] -----------read msg =gggggg
+
+[2025-10-25 23:00:09.104] [thread 120973] [EventLoop.cpp:119] -----------read msg =fdfdf
+
+[2025-10-25 23:00:18.032] [thread 120947] [main.cpp:28] Received signal 15 exiting...
+[2025-10-25 23:01:00.471] [thread 122191] [AthenaTcpServer.cpp:77] server  bind socket port =9999
+[2025-10-25 23:01:00.471] [thread 122191] [AthenaTcpServer.cpp:62] server  start io thread count =3
+[2025-10-25 23:01:00.471] [thread 122226] [EventLoop.cpp:77]  event  run start 
+[2025-10-25 23:01:00.471] [thread 122226] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-25 23:01:00.471] [thread 122227] [EventLoop.cpp:77]  event  run start 
+[2025-10-25 23:01:00.471] [thread 122228] [EventLoop.cpp:77]  event  run start 
+[2025-10-25 23:01:00.471] [thread 122226] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-25 23:01:00.471] [thread 122228] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-25 23:01:00.471] [thread 122228] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-25 23:01:00.471] [thread 122227] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-25 23:01:00.471] [thread 122227] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-25 23:01:04.051] [thread 122191] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-25 23:01:04.051] [thread 122191] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-25 23:01:04.052] [thread 122191] [AthenaTcpServer.cpp:38] --------- ret =0
+[2025-10-25 23:01:04.052] [thread 122191] [ObjectPool.hpp:124] [Pool]0x102720360 Miss, new obj 0x6000038d4000 
+[2025-10-25 23:01:04.052] [thread 122191] [EventLoop.h:37] --------  push task
+[2025-10-25 23:01:04.052] [thread 122226] [EventLoop.cpp:63]   -------tcp open ret =0
+[2025-10-25 23:01:04.052] [thread 122226] [EventLoop.cpp:71]  =================== START READ read data 
+[2025-10-25 23:01:04.052] [thread 122226] [ObjectPool.hpp:164] [Pool] 0x102720360 Release obj 0x6000038d4000 back to pool
+[2025-10-25 23:01:04.052] [thread 122226] [ObjectPool.hpp:177] ==== ObjectPool Stats ====
+[2025-10-25 23:01:04.052] [thread 122226] [ObjectPool.hpp:178] freeCount     :   1 
+[2025-10-25 23:01:04.052] [thread 122226] [ObjectPool.hpp:179] hitCount      :   0 
+[2025-10-25 23:01:04.052] [thread 122226] [ObjectPool.hpp:180] missCount     :   1 
+[2025-10-25 23:01:04.052] [thread 122226] [ObjectPool.hpp:181] allocCountObj :   1 
+[2025-10-25 23:01:04.052] [thread 122226] [ObjectPool.hpp:182] allocCountNode:   1 
+[2025-10-25 23:01:04.052] [thread 122226] [ObjectPool.hpp:183] ==========================
+[2025-10-25 23:01:16.724] [thread 122226] [EventLoop.cpp:119] -----------read msg =sdddddd
+
+[2025-10-25 23:01:30.247] [thread 122226] [EventLoop.cpp:119] -----------read msg =dddd
+
+[2025-10-25 23:01:33.540] [thread 122191] [main.cpp:28] Received signal 15 exiting...
+[2025-10-25 23:01:41.885] [thread 122885] [AthenaTcpServer.cpp:77] server  bind socket port =9999
+[2025-10-25 23:01:41.885] [thread 122885] [AthenaTcpServer.cpp:62] server  start io thread count =3
+[2025-10-25 23:01:41.885] [thread 122912] [EventLoop.cpp:77]  event  run start 
+[2025-10-25 23:01:41.885] [thread 122913] [EventLoop.cpp:77]  event  run start 
+[2025-10-25 23:01:41.885] [thread 122914] [EventLoop.cpp:77]  event  run start 
+[2025-10-25 23:01:41.885] [thread 122912] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-25 23:01:41.885] [thread 122912] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-25 23:01:41.885] [thread 122913] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-25 23:01:41.885] [thread 122913] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-25 23:01:41.885] [thread 122914] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-25 23:01:41.885] [thread 122914] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-25 23:01:47.088] [thread 122885] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-25 23:01:47.088] [thread 122885] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-25 23:01:51.547] [thread 122885] [AthenaTcpServer.cpp:38] --------- ret =0
+[2025-10-25 23:01:52.676] [thread 122885] [ObjectPool.hpp:124] [Pool]0x100c1c360 Miss, new obj 0x600002d6c000 
+[2025-10-25 23:01:52.676] [thread 122885] [EventLoop.h:37] --------  push task
+[2025-10-25 23:01:53.249] [thread 122912] [EventLoop.cpp:63]   -------tcp open ret =0
+[2025-10-25 23:01:54.120] [thread 122912] [EventLoop.cpp:71]  =================== START READ read data 
+[2025-10-25 23:01:54.120] [thread 122912] [ObjectPool.hpp:164] [Pool] 0x100c1c360 Release obj 0x600002d6c000 back to pool
+[2025-10-25 23:01:54.120] [thread 122912] [ObjectPool.hpp:177] ==== ObjectPool Stats ====
+[2025-10-25 23:01:54.120] [thread 122912] [ObjectPool.hpp:178] freeCount     :   1 
+[2025-10-25 23:01:54.120] [thread 122912] [ObjectPool.hpp:179] hitCount      :   0 
+[2025-10-25 23:01:54.120] [thread 122912] [ObjectPool.hpp:180] missCount     :   1 
+[2025-10-25 23:01:54.120] [thread 122912] [ObjectPool.hpp:181] allocCountObj :   1 
+[2025-10-25 23:01:54.120] [thread 122912] [ObjectPool.hpp:182] allocCountNode:   1 
+[2025-10-25 23:01:54.120] [thread 122912] [ObjectPool.hpp:183] ==========================
+[2025-10-25 23:02:10.068] [thread 123432] [AthenaTcpServer.cpp:77] server  bind socket port =9999
+[2025-10-25 23:02:10.068] [thread 123432] [AthenaTcpServer.cpp:62] server  start io thread count =3
+[2025-10-25 23:02:10.068] [thread 123435] [EventLoop.cpp:77]  event  run start 
+[2025-10-25 23:02:10.068] [thread 123436] [EventLoop.cpp:77]  event  run start 
+[2025-10-25 23:02:10.068] [thread 123437] [EventLoop.cpp:77]  event  run start 
+[2025-10-25 23:02:10.068] [thread 123435] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-25 23:02:10.068] [thread 123435] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-25 23:02:10.068] [thread 123436] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-25 23:02:10.068] [thread 123437] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-25 23:02:10.068] [thread 123436] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-25 23:02:10.068] [thread 123437] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-25 23:02:15.103] [thread 123432] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-25 23:02:15.103] [thread 123432] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-25 23:02:15.103] [thread 123432] [AthenaTcpServer.cpp:38] --------- ret =0
+[2025-10-25 23:02:15.103] [thread 123432] [ObjectPool.hpp:124] [Pool]0x1008cc360 Miss, new obj 0x600002db8000 
+[2025-10-25 23:02:15.103] [thread 123432] [EventLoop.h:37] --------  push task
+[2025-10-25 23:02:15.103] [thread 123435] [EventLoop.cpp:63]   -------tcp open ret =0
+[2025-10-25 23:02:15.103] [thread 123435] [EventLoop.cpp:71]  =================== START READ read data 
+[2025-10-25 23:02:15.103] [thread 123435] [ObjectPool.hpp:164] [Pool] 0x1008cc360 Release obj 0x600002db8000 back to pool
+[2025-10-25 23:02:15.103] [thread 123435] [ObjectPool.hpp:177] ==== ObjectPool Stats ====
+[2025-10-25 23:02:15.103] [thread 123435] [ObjectPool.hpp:178] freeCount     :   1 
+[2025-10-25 23:02:15.103] [thread 123435] [ObjectPool.hpp:179] hitCount      :   0 
+[2025-10-25 23:02:15.103] [thread 123435] [ObjectPool.hpp:180] missCount     :   1 
+[2025-10-25 23:02:15.103] [thread 123435] [ObjectPool.hpp:181] allocCountObj :   1 
+[2025-10-25 23:02:15.103] [thread 123435] [ObjectPool.hpp:182] allocCountNode:   1 
+[2025-10-25 23:02:15.103] [thread 123435] [ObjectPool.hpp:183] ==========================
+[2025-10-25 23:02:28.022] [thread 123435] [EventLoop.cpp:119] -----------read msg =ggg
+
+[2025-10-25 23:02:47.181] [thread 123435] [EventLoop.cpp:119] -----------read msg =ffff
+
+[2025-10-25 23:02:50.416] [thread 123432] [main.cpp:28] Received signal 15 exiting...
+[2025-10-26 08:37:15.555] [thread 10382] [AthenaTcpServer.cpp:77] server  bind socket port =9999
+[2025-10-26 08:37:15.555] [thread 10382] [AthenaTcpServer.cpp:62] server  start io thread count =3
+[2025-10-26 08:37:15.555] [thread 10390] [EventLoop.cpp:77]  event  run start 
+[2025-10-26 08:37:15.555] [thread 10388] [EventLoop.cpp:77]  event  run start 
+[2025-10-26 08:37:15.555] [thread 10389] [EventLoop.cpp:77]  event  run start 
+[2025-10-26 08:37:15.555] [thread 10390] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-26 08:37:15.555] [thread 10390] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-26 08:37:15.555] [thread 10388] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-26 08:37:15.555] [thread 10388] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-26 08:37:15.555] [thread 10389] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-26 08:37:15.555] [thread 10389] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-26 08:37:25.157] [thread 10382] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-26 08:37:25.157] [thread 10382] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-26 08:37:25.157] [thread 10382] [AthenaTcpServer.cpp:38] --------- ret =0
+[2025-10-26 08:37:25.157] [thread 10382] [ObjectPool.hpp:124] [Pool]0x1042d8360 Miss, new obj 0x600002efc000 
+[2025-10-26 08:37:25.158] [thread 10382] [EventLoop.h:37] --------  push task
+[2025-10-26 08:37:25.158] [thread 10388] [EventLoop.cpp:63]   -------tcp open ret =0
+[2025-10-26 08:37:25.158] [thread 10388] [EventLoop.cpp:71]  =================== START READ read data 
+[2025-10-26 08:37:25.158] [thread 10388] [ObjectPool.hpp:164] [Pool] 0x1042d8360 Release obj 0x600002efc000 back to pool
+[2025-10-26 08:37:25.158] [thread 10388] [ObjectPool.hpp:177] ==== ObjectPool Stats ====
+[2025-10-26 08:37:25.158] [thread 10388] [ObjectPool.hpp:178] freeCount     :   1 
+[2025-10-26 08:37:25.158] [thread 10388] [ObjectPool.hpp:179] hitCount      :   0 
+[2025-10-26 08:37:25.158] [thread 10388] [ObjectPool.hpp:180] missCount     :   1 
+[2025-10-26 08:37:25.158] [thread 10388] [ObjectPool.hpp:181] allocCountObj :   1 
+[2025-10-26 08:37:25.158] [thread 10388] [ObjectPool.hpp:182] allocCountNode:   1 
+[2025-10-26 08:37:25.158] [thread 10388] [ObjectPool.hpp:183] ==========================
+[2025-10-26 08:37:36.538] [thread 10388] [EventLoop.cpp:119] -----------read msg =jjjff
+
+[2025-10-26 08:38:45.822] [thread 10382] [main.cpp:28] Received signal 15 exiting...
+[2025-10-26 08:39:11.785] [thread 12636] [AthenaTcpServer.cpp:75] server  bind socket port =9999
+[2025-10-26 08:39:11.785] [thread 12636] [AthenaTcpServer.cpp:60] server  start io thread count =3
+[2025-10-26 08:39:11.785] [thread 12856] [EventLoop.cpp:77]  event  run start 
+[2025-10-26 08:39:11.785] [thread 12857] [EventLoop.cpp:77]  event  run start 
+[2025-10-26 08:39:11.785] [thread 12856] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-26 08:39:11.785] [thread 12856] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-26 08:39:11.785] [thread 12858] [EventLoop.cpp:77]  event  run start 
+[2025-10-26 08:39:11.785] [thread 12857] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-26 08:39:11.785] [thread 12858] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-26 08:39:11.785] [thread 12857] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-26 08:39:11.785] [thread 12858] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-26 08:39:19.311] [thread 12636] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-26 08:39:19.311] [thread 12636] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-26 08:39:25.686] [thread 12636] [AthenaTcpServer.cpp:38] --------- ret =0
+[2025-10-26 08:39:27.360] [thread 12636] [ObjectPool.hpp:124] [Pool]0x104c90360 Miss, new obj 0x600002898000 
+[2025-10-26 08:39:27.360] [thread 12636] [EventLoop.h:37] --------  push task
+[2025-10-26 08:39:28.377] [thread 12856] [EventLoop.cpp:63]   -------tcp open ret =0
+[2025-10-26 08:39:29.333] [thread 12856] [EventLoop.cpp:71]  =================== START READ read data 
+[2025-10-26 08:39:29.333] [thread 12856] [ObjectPool.hpp:164] [Pool] 0x104c90360 Release obj 0x600002898000 back to pool
+[2025-10-26 08:39:29.333] [thread 12856] [ObjectPool.hpp:177] ==== ObjectPool Stats ====
+[2025-10-26 08:39:29.333] [thread 12856] [ObjectPool.hpp:178] freeCount     :   1 
+[2025-10-26 08:39:29.333] [thread 12856] [ObjectPool.hpp:179] hitCount      :   0 
+[2025-10-26 08:39:29.333] [thread 12856] [ObjectPool.hpp:180] missCount     :   1 
+[2025-10-26 08:39:29.333] [thread 12856] [ObjectPool.hpp:181] allocCountObj :   1 
+[2025-10-26 08:39:29.333] [thread 12856] [ObjectPool.hpp:182] allocCountNode:   1 
+[2025-10-26 08:39:29.333] [thread 12856] [ObjectPool.hpp:183] ==========================
+[2025-10-26 08:39:43.328] [thread 12856] [EventLoop.cpp:119] -----------read msg =ddd
+
+[2025-10-26 08:39:56.752] [thread 13579] [AthenaTcpServer.cpp:75] server  bind socket port =9999
+[2025-10-26 08:39:56.752] [thread 13597] [EventLoop.cpp:77]  event  run start 
+[2025-10-26 08:39:56.752] [thread 13579] [AthenaTcpServer.cpp:60] server  start io thread count =3
+[2025-10-26 08:39:56.752] [thread 13597] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-26 08:39:56.752] [thread 13597] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-26 08:39:56.752] [thread 13599] [EventLoop.cpp:77]  event  run start 
+[2025-10-26 08:39:56.752] [thread 13599] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-26 08:39:56.752] [thread 13599] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-26 08:39:56.752] [thread 13598] [EventLoop.cpp:77]  event  run start 
+[2025-10-26 08:39:56.752] [thread 13598] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-26 08:39:56.752] [thread 13598] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-26 08:40:09.184] [thread 13579] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-26 08:40:09.184] [thread 13579] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-26 08:40:09.184] [thread 13579] [AthenaTcpServer.cpp:38] --------- ret =0
+[2025-10-26 08:40:22.826] [thread 13579] [ObjectPool.hpp:124] [Pool]0x104268360 Miss, new obj 0x600000e5c000 
+[2025-10-26 08:40:22.826] [thread 13579] [EventLoop.h:37] --------  push task
+[2025-10-26 08:40:24.649] [thread 13597] [EventLoop.cpp:63]   -------tcp open ret =0
+[2025-10-26 08:40:24.649] [thread 13597] [EventLoop.cpp:71]  =================== START READ read data 
+[2025-10-26 08:40:24.649] [thread 13597] [ObjectPool.hpp:164] [Pool] 0x104268360 Release obj 0x600000e5c000 back to pool
+[2025-10-26 08:40:24.649] [thread 13597] [ObjectPool.hpp:177] ==== ObjectPool Stats ====
+[2025-10-26 08:40:24.649] [thread 13597] [ObjectPool.hpp:178] freeCount     :   1 
+[2025-10-26 08:40:24.649] [thread 13597] [ObjectPool.hpp:179] hitCount      :   0 
+[2025-10-26 08:40:24.649] [thread 13597] [ObjectPool.hpp:180] missCount     :   1 
+[2025-10-26 08:40:24.649] [thread 13597] [ObjectPool.hpp:181] allocCountObj :   1 
+[2025-10-26 08:40:24.649] [thread 13597] [ObjectPool.hpp:182] allocCountNode:   1 
+[2025-10-26 08:40:24.649] [thread 13597] [ObjectPool.hpp:183] ==========================
+[2025-10-26 08:40:35.145] [thread 13597] [EventLoop.cpp:119] -----------read msg =fff
+
+[2025-10-26 08:40:42.368] [thread 14428] [AthenaTcpServer.cpp:75] server  bind socket port =9999
+[2025-10-26 08:40:42.368] [thread 14428] [AthenaTcpServer.cpp:60] server  start io thread count =3
+[2025-10-26 08:40:42.368] [thread 14450] [EventLoop.cpp:77]  event  run start 
+[2025-10-26 08:40:42.368] [thread 14452] [EventLoop.cpp:77]  event  run start 
+[2025-10-26 08:40:42.368] [thread 14451] [EventLoop.cpp:77]  event  run start 
+[2025-10-26 08:40:42.368] [thread 14452] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-26 08:40:42.368] [thread 14452] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-26 08:40:42.369] [thread 14450] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-26 08:40:42.369] [thread 14451] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-26 08:40:42.369] [thread 14450] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-26 08:40:42.369] [thread 14451] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-26 08:40:44.834] [thread 14428] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-26 08:40:44.834] [thread 14428] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-26 08:40:44.834] [thread 14428] [AthenaTcpServer.cpp:38] --------- ret =0
+[2025-10-26 08:40:44.835] [thread 14428] [ObjectPool.hpp:124] [Pool]0x1041a0360 Miss, new obj 0x600003630000 
+[2025-10-26 08:40:44.835] [thread 14428] [EventLoop.h:37] --------  push task
+[2025-10-26 08:40:44.835] [thread 14450] [EventLoop.cpp:63]   -------tcp open ret =0
+[2025-10-26 08:40:44.835] [thread 14450] [EventLoop.cpp:71]  =================== START READ read data 
+[2025-10-26 08:40:44.835] [thread 14450] [ObjectPool.hpp:164] [Pool] 0x1041a0360 Release obj 0x600003630000 back to pool
+[2025-10-26 08:40:44.835] [thread 14450] [ObjectPool.hpp:177] ==== ObjectPool Stats ====
+[2025-10-26 08:40:44.835] [thread 14450] [ObjectPool.hpp:178] freeCount     :   1 
+[2025-10-26 08:40:44.835] [thread 14450] [ObjectPool.hpp:179] hitCount      :   0 
+[2025-10-26 08:40:44.835] [thread 14450] [ObjectPool.hpp:180] missCount     :   1 
+[2025-10-26 08:40:44.835] [thread 14450] [ObjectPool.hpp:181] allocCountObj :   1 
+[2025-10-26 08:40:44.835] [thread 14450] [ObjectPool.hpp:182] allocCountNode:   1 
+[2025-10-26 08:40:44.835] [thread 14450] [ObjectPool.hpp:183] ==========================
+[2025-10-26 08:40:51.297] [thread 14450] [EventLoop.cpp:119] -----------read msg =fff
+
+[2025-10-26 08:41:03.203] [thread 15007] [AthenaTcpServer.cpp:75] server  bind socket port =9999
+[2025-10-26 08:41:03.203] [thread 15007] [AthenaTcpServer.cpp:60] server  start io thread count =3
+[2025-10-26 08:41:03.203] [thread 15030] [EventLoop.cpp:77]  event  run start 
+[2025-10-26 08:41:03.203] [thread 15032] [EventLoop.cpp:77]  event  run start 
+[2025-10-26 08:41:03.203] [thread 15031] [EventLoop.cpp:77]  event  run start 
+[2025-10-26 08:41:03.203] [thread 15032] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-26 08:41:03.203] [thread 15032] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-26 08:41:03.203] [thread 15030] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-26 08:41:03.203] [thread 15030] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-26 08:41:03.203] [thread 15031] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-26 08:41:03.203] [thread 15031] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-26 08:41:06.888] [thread 15007] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-26 08:41:06.888] [thread 15007] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-26 08:41:06.888] [thread 15007] [AthenaTcpServer.cpp:38] --------- ret =0
+[2025-10-26 08:41:06.888] [thread 15007] [ObjectPool.hpp:124] [Pool]0x1027e8360 Miss, new obj 0x600000248000 
+[2025-10-26 08:41:06.888] [thread 15007] [EventLoop.h:37] --------  push task
+[2025-10-26 08:41:06.888] [thread 15030] [EventLoop.cpp:63]   -------tcp open ret =0
+[2025-10-26 08:41:06.888] [thread 15030] [EventLoop.cpp:71]  =================== START READ read data 
+[2025-10-26 08:41:06.888] [thread 15030] [ObjectPool.hpp:164] [Pool] 0x1027e8360 Release obj 0x600000248000 back to pool
+[2025-10-26 08:41:06.888] [thread 15030] [ObjectPool.hpp:177] ==== ObjectPool Stats ====
+[2025-10-26 08:41:06.888] [thread 15030] [ObjectPool.hpp:178] freeCount     :   1 
+[2025-10-26 08:41:06.888] [thread 15030] [ObjectPool.hpp:179] hitCount      :   0 
+[2025-10-26 08:41:06.888] [thread 15030] [ObjectPool.hpp:180] missCount     :   1 
+[2025-10-26 08:41:06.888] [thread 15030] [ObjectPool.hpp:181] allocCountObj :   1 
+[2025-10-26 08:41:06.888] [thread 15030] [ObjectPool.hpp:182] allocCountNode:   1 
+[2025-10-26 08:41:06.888] [thread 15030] [ObjectPool.hpp:183] ==========================
+[2025-10-26 08:41:13.083] [thread 15030] [EventLoop.cpp:119] -----------read msg =ddd
+
+[2025-10-26 08:41:17.429] [thread 15030] [EventLoop.cpp:119] -----------read msg =ddd
+
+[2025-10-26 08:41:22.624] [thread 15455] [AthenaTcpServer.cpp:75] server  bind socket port =9999
+[2025-10-26 08:41:22.624] [thread 15458] [EventLoop.cpp:77]  event  run start 
+[2025-10-26 08:41:22.624] [thread 15459] [EventLoop.cpp:77]  event  run start 
+[2025-10-26 08:41:22.624] [thread 15455] [AthenaTcpServer.cpp:60] server  start io thread count =3
+[2025-10-26 08:41:22.624] [thread 15460] [EventLoop.cpp:77]  event  run start 
+[2025-10-26 08:41:22.624] [thread 15458] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-26 08:41:22.624] [thread 15458] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-26 08:41:22.624] [thread 15460] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-26 08:41:22.624] [thread 15460] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-26 08:41:22.624] [thread 15459] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-26 08:41:22.624] [thread 15459] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-26 08:41:26.544] [thread 15455] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-26 08:41:26.544] [thread 15455] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-26 08:41:26.544] [thread 15455] [AthenaTcpServer.cpp:38] --------- ret =0
+[2025-10-26 08:41:26.544] [thread 15455] [ObjectPool.hpp:124] [Pool]0x102194360 Miss, new obj 0x6000019c8000 
+[2025-10-26 08:41:26.544] [thread 15455] [EventLoop.h:37] --------  push task
+[2025-10-26 08:41:26.545] [thread 15458] [EventLoop.cpp:63]   -------tcp open ret =0
+[2025-10-26 08:41:26.545] [thread 15458] [EventLoop.cpp:71]  =================== START READ read data 
+[2025-10-26 08:41:26.545] [thread 15458] [ObjectPool.hpp:164] [Pool] 0x102194360 Release obj 0x6000019c8000 back to pool
+[2025-10-26 08:41:26.545] [thread 15458] [ObjectPool.hpp:177] ==== ObjectPool Stats ====
+[2025-10-26 08:41:26.545] [thread 15458] [ObjectPool.hpp:178] freeCount     :   1 
+[2025-10-26 08:41:26.545] [thread 15458] [ObjectPool.hpp:179] hitCount      :   0 
+[2025-10-26 08:41:26.545] [thread 15458] [ObjectPool.hpp:180] missCount     :   1 
+[2025-10-26 08:41:26.545] [thread 15458] [ObjectPool.hpp:181] allocCountObj :   1 
+[2025-10-26 08:41:26.545] [thread 15458] [ObjectPool.hpp:182] allocCountNode:   1 
+[2025-10-26 08:41:26.545] [thread 15458] [ObjectPool.hpp:183] ==========================
+[2025-10-26 08:41:27.779] [thread 15458] [EventLoop.cpp:119] -----------read msg =ddd
+
+[2025-10-26 08:41:28.962] [thread 15458] [EventLoop.cpp:119] -----------read msg =fff
+
+[2025-10-26 08:41:42.724] [thread 15455] [main.cpp:28] Received signal 15 exiting...
+[2025-10-26 08:41:57.412] [thread 16055] [AthenaTcpServer.cpp:75] server  bind socket port =9999
+[2025-10-26 08:41:57.412] [thread 16055] [AthenaTcpServer.cpp:60] server  start io thread count =3
+[2025-10-26 08:41:57.412] [thread 16084] [EventLoop.cpp:77]  event  run start 
+[2025-10-26 08:41:57.412] [thread 16084] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-26 08:41:57.412] [thread 16084] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-26 08:41:57.412] [thread 16085] [EventLoop.cpp:77]  event  run start 
+[2025-10-26 08:41:57.412] [thread 16086] [EventLoop.cpp:77]  event  run start 
+[2025-10-26 08:41:57.412] [thread 16085] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-26 08:41:57.412] [thread 16085] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-26 08:41:57.412] [thread 16086] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-26 08:41:57.412] [thread 16086] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-26 08:42:08.594] [thread 16055] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-26 08:42:08.594] [thread 16055] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-26 08:42:08.594] [thread 16055] [AthenaTcpServer.cpp:38] --------- ret =0
+[2025-10-26 08:42:08.594] [thread 16055] [ObjectPool.hpp:124] [Pool]0x100fd0360 Miss, new obj 0x600000a84000 
+[2025-10-26 08:42:08.594] [thread 16055] [EventLoop.h:37] --------  push task
+[2025-10-26 08:42:08.594] [thread 16084] [EventLoop.cpp:63]   -------tcp open ret =0
+[2025-10-26 08:42:08.594] [thread 16084] [EventLoop.cpp:71]  =================== START READ read data 
+[2025-10-26 08:42:08.594] [thread 16084] [ObjectPool.hpp:164] [Pool] 0x100fd0360 Release obj 0x600000a84000 back to pool
+[2025-10-26 08:42:08.594] [thread 16084] [ObjectPool.hpp:177] ==== ObjectPool Stats ====
+[2025-10-26 08:42:08.594] [thread 16084] [ObjectPool.hpp:178] freeCount     :   1 
+[2025-10-26 08:42:08.594] [thread 16084] [ObjectPool.hpp:179] hitCount      :   0 
+[2025-10-26 08:42:08.594] [thread 16084] [ObjectPool.hpp:180] missCount     :   1 
+[2025-10-26 08:42:08.594] [thread 16084] [ObjectPool.hpp:181] allocCountObj :   1 
+[2025-10-26 08:42:08.594] [thread 16084] [ObjectPool.hpp:182] allocCountNode:   1 
+[2025-10-26 08:42:08.594] [thread 16084] [ObjectPool.hpp:183] ==========================
+[2025-10-26 08:42:11.175] [thread 16084] [EventLoop.cpp:119] -----------read msg =dddd
+
+[2025-10-26 08:56:57.198] [thread 27380] [AthenaTcpServer.cpp:83] server  bind socket port =9999
+[2025-10-26 08:56:57.198] [thread 27413] [EventLoop.cpp:77]  event  run start 
+[2025-10-26 08:56:57.198] [thread 27380] [AthenaTcpServer.cpp:68] server  start io thread count =3
+[2025-10-26 08:56:57.198] [thread 27415] [EventLoop.cpp:77]  event  run start 
+[2025-10-26 08:56:57.198] [thread 27414] [EventLoop.cpp:77]  event  run start 
+[2025-10-26 08:56:57.198] [thread 27415] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-26 08:56:57.198] [thread 27413] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-26 08:56:57.198] [thread 27415] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-26 08:56:57.198] [thread 27413] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-26 08:56:57.198] [thread 27414] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-26 08:56:57.198] [thread 27414] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-26 08:57:01.413] [thread 27380] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-26 08:57:01.413] [thread 27380] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-26 08:57:01.413] [thread 27380] [ObjectPool.hpp:124] [Pool]0x1042d8360 Miss, new obj 0x600003630000 
+[2025-10-26 08:57:01.413] [thread 27380] [EventLoop.h:37] --------  push task
+[2025-10-26 08:57:01.414] [thread 27413] [EventLoop.cpp:63]   -------tcp open ret =0
+[2025-10-26 08:57:01.414] [thread 27413] [EventLoop.cpp:71]  =================== START READ read data 
+[2025-10-26 08:57:01.414] [thread 27413] [ObjectPool.hpp:164] [Pool] 0x1042d8360 Release obj 0x600003630000 back to pool
+[2025-10-26 08:57:01.414] [thread 27413] [ObjectPool.hpp:177] ==== ObjectPool Stats ====
+[2025-10-26 08:57:01.414] [thread 27413] [ObjectPool.hpp:178] freeCount     :   1 
+[2025-10-26 08:57:01.414] [thread 27413] [ObjectPool.hpp:179] hitCount      :   0 
+[2025-10-26 08:57:01.414] [thread 27413] [ObjectPool.hpp:180] missCount     :   1 
+[2025-10-26 08:57:01.414] [thread 27413] [ObjectPool.hpp:181] allocCountObj :   1 
+[2025-10-26 08:57:01.414] [thread 27413] [ObjectPool.hpp:182] allocCountNode:   1 
+[2025-10-26 08:57:01.414] [thread 27413] [ObjectPool.hpp:183] ==========================
+[2025-10-26 08:57:01.415] [thread 27413] [EventLoop.cpp:123] socket closed =
+[2025-10-26 09:00:04.699] [thread 27380] [main.cpp:28] Received signal 15 exiting...
+[2025-10-26 09:00:14.932] [thread 29650] [AthenaTcpServer.cpp:84] server  bind socket port =9999
+[2025-10-26 09:00:14.932] [thread 29650] [AthenaTcpServer.cpp:69] server  start io thread count =3
+[2025-10-26 09:00:14.932] [thread 29687] [EventLoop.cpp:77]  event  run start 
+[2025-10-26 09:00:14.932] [thread 29689] [EventLoop.cpp:77]  event  run start 
+[2025-10-26 09:00:14.932] [thread 29688] [EventLoop.cpp:77]  event  run start 
+[2025-10-26 09:00:14.932] [thread 29687] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-26 09:00:14.932] [thread 29687] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-26 09:00:14.932] [thread 29688] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-26 09:00:14.932] [thread 29688] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-26 09:00:14.932] [thread 29689] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-26 09:00:14.932] [thread 29689] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-26 09:00:19.114] [thread 29650] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-26 09:00:19.114] [thread 29650] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-26 09:00:19.115] [thread 29650] [ObjectPool.hpp:124] [Pool]0x102c68360 Miss, new obj 0x6000010bc000 
+[2025-10-26 09:00:19.115] [thread 29650] [EventLoop.h:37] --------  push task
+[2025-10-26 09:00:19.115] [thread 29687] [EventLoop.cpp:63]   -------tcp open ret =0
+[2025-10-26 09:00:19.115] [thread 29687] [EventLoop.cpp:71]  =================== START READ read data 
+[2025-10-26 09:00:19.115] [thread 29687] [ObjectPool.hpp:164] [Pool] 0x102c68360 Release obj 0x6000010bc000 back to pool
+[2025-10-26 09:00:19.115] [thread 29687] [ObjectPool.hpp:177] ==== ObjectPool Stats ====
+[2025-10-26 09:00:19.115] [thread 29687] [ObjectPool.hpp:178] freeCount     :   1 
+[2025-10-26 09:00:19.115] [thread 29687] [ObjectPool.hpp:179] hitCount      :   0 
+[2025-10-26 09:00:19.115] [thread 29687] [ObjectPool.hpp:180] missCount     :   1 
+[2025-10-26 09:00:19.115] [thread 29687] [ObjectPool.hpp:181] allocCountObj :   1 
+[2025-10-26 09:00:19.115] [thread 29687] [ObjectPool.hpp:182] allocCountNode:   1 
+[2025-10-26 09:00:19.115] [thread 29687] [ObjectPool.hpp:183] ==========================
+[2025-10-26 09:00:22.393] [thread 29687] [EventLoop.cpp:119] -----------read msg =ddd
+
+[2025-10-26 09:00:24.845] [thread 29687] [EventLoop.cpp:119] -----------read msg =fffff
+
+[2025-10-26 09:00:39.798] [thread 29687] [EventLoop.cpp:119] -----------read msg =gfgg
+
+[2025-10-26 09:00:40.821] [thread 29687] [EventLoop.cpp:119] -----------read msg =gg
+
+[2025-10-26 09:00:41.265] [thread 29687] [EventLoop.cpp:119] -----------read msg =g
+
+[2025-10-26 09:00:41.552] [thread 29687] [EventLoop.cpp:119] -----------read msg =g
+
+[2025-10-26 09:00:41.808] [thread 29687] [EventLoop.cpp:119] -----------read msg =g
+
+[2025-10-26 09:00:42.384] [thread 29687] [EventLoop.cpp:119] -----------read msg =s
+
+[2025-10-26 09:00:42.862] [thread 29687] [EventLoop.cpp:119] -----------read msg =d
+
+[2025-10-26 09:00:43.121] [thread 29687] [EventLoop.cpp:119] -----------read msg =ff
+
+[2025-10-26 09:00:46.399] [thread 29650] [main.cpp:28] Received signal 15 exiting...
+[2025-10-26 09:17:22.525] [thread 40522] [AthenaTcpServer.cpp:90] server  bind socket port =9999
+[2025-10-26 09:17:22.525] [thread 40522] [AthenaTcpServer.cpp:75] server  start io thread count =3
+[2025-10-26 09:17:22.525] [thread 40552] [EventLoop.cpp:77]  event  run start 
+[2025-10-26 09:17:22.525] [thread 40553] [EventLoop.cpp:77]  event  run start 
+[2025-10-26 09:17:22.525] [thread 40552] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-26 09:17:22.525] [thread 40554] [EventLoop.cpp:77]  event  run start 
+[2025-10-26 09:17:22.525] [thread 40552] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-26 09:17:22.525] [thread 40553] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-26 09:17:22.525] [thread 40553] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-26 09:17:22.525] [thread 40554] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-26 09:17:22.525] [thread 40554] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-26 09:17:33.264] [thread 40522] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-26 09:17:33.264] [thread 40522] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-26 09:17:33.264] [thread 40522] [ObjectPool.hpp:124] [Pool]0x104f28360 Miss, new obj 0x6000011005d0 
+[2025-10-26 09:17:33.264] [thread 40522] [EventLoop.h:37] --------  push task
+[2025-10-26 09:17:33.264] [thread 40552] [EventLoop.cpp:63]   -------tcp open ret =0
+[2025-10-26 09:17:33.264] [thread 40552] [EventLoop.cpp:71]  =================== START READ read data 
+[2025-10-26 09:17:33.264] [thread 40552] [ObjectPool.hpp:164] [Pool] 0x104f28360 Release obj 0x6000011005d0 back to pool
+[2025-10-26 09:17:33.264] [thread 40552] [ObjectPool.hpp:177] ==== ObjectPool Stats ====
+[2025-10-26 09:17:33.264] [thread 40552] [ObjectPool.hpp:178] freeCount     :   1 
+[2025-10-26 09:17:33.264] [thread 40552] [ObjectPool.hpp:179] hitCount      :   0 
+[2025-10-26 09:17:33.264] [thread 40552] [ObjectPool.hpp:180] missCount     :   1 
+[2025-10-26 09:17:33.264] [thread 40552] [ObjectPool.hpp:181] allocCountObj :   1 
+[2025-10-26 09:17:33.264] [thread 40552] [ObjectPool.hpp:182] allocCountNode:   1 
+[2025-10-26 09:17:33.264] [thread 40552] [ObjectPool.hpp:183] ==========================
+[2025-10-26 09:17:33.264] [thread 40552] [EventLoop.cpp:123] socket closed =
+[2025-10-26 09:17:35.154] [thread 40522] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-26 09:17:35.154] [thread 40522] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-26 09:17:35.154] [thread 40522] [ObjectPool.hpp:113] [Pool] 0x104f28360 Hit, reuse obj 0x6000011005d0 
+[2025-10-26 09:17:35.154] [thread 40522] [EventLoop.h:37] --------  push task
+[2025-10-26 09:17:35.154] [thread 40553] [EventLoop.cpp:63]   -------tcp open ret =0
+[2025-10-26 09:17:35.154] [thread 40553] [EventLoop.cpp:71]  =================== START READ read data 
+[2025-10-26 09:17:35.154] [thread 40553] [ObjectPool.hpp:164] [Pool] 0x104f28360 Release obj 0x6000011005d0 back to pool
+[2025-10-26 09:17:35.154] [thread 40553] [ObjectPool.hpp:177] ==== ObjectPool Stats ====
+[2025-10-26 09:17:35.154] [thread 40553] [ObjectPool.hpp:178] freeCount     :   1 
+[2025-10-26 09:17:35.154] [thread 40553] [ObjectPool.hpp:179] hitCount      :   1 
+[2025-10-26 09:17:35.154] [thread 40553] [ObjectPool.hpp:180] missCount     :   1 
+[2025-10-26 09:17:35.154] [thread 40553] [ObjectPool.hpp:181] allocCountObj :   1 
+[2025-10-26 09:17:35.154] [thread 40553] [ObjectPool.hpp:182] allocCountNode:   2 
+[2025-10-26 09:17:35.154] [thread 40553] [ObjectPool.hpp:183] ==========================
+[2025-10-26 09:17:35.154] [thread 40553] [EventLoop.cpp:123] socket closed =
+[2025-10-26 09:20:47.040] [thread 40522] [main.cpp:28] Received signal 15 exiting...
+[2025-10-26 09:20:55.771] [thread 43060] [AthenaTcpServer.cpp:84] server  bind socket port =9999
+[2025-10-26 09:20:55.771] [thread 43060] [AthenaTcpServer.cpp:69] server  start io thread count =3
+[2025-10-26 09:20:55.771] [thread 43076] [EventLoop.cpp:77]  event  run start 
+[2025-10-26 09:20:55.771] [thread 43077] [EventLoop.cpp:77]  event  run start 
+[2025-10-26 09:20:55.771] [thread 43078] [EventLoop.cpp:77]  event  run start 
+[2025-10-26 09:20:55.771] [thread 43078] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-26 09:20:55.771] [thread 43078] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-26 09:20:55.771] [thread 43077] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-26 09:20:55.771] [thread 43077] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-26 09:20:55.771] [thread 43076] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-26 09:20:55.771] [thread 43076] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-26 09:22:17.380] [thread 43060] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-26 09:22:17.380] [thread 43060] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-26 09:22:17.380] [thread 43060] [ObjectPool.hpp:124] [Pool]0x100914360 Miss, new obj 0x600001bb4000 
+[2025-10-26 09:22:17.381] [thread 43060] [EventLoop.h:37] --------  push task
+[2025-10-26 09:22:17.381] [thread 43076] [EventLoop.cpp:63]   -------tcp open ret =0
+[2025-10-26 09:22:17.381] [thread 43076] [EventLoop.cpp:71]  =================== START READ read data 
+[2025-10-26 09:22:17.381] [thread 43076] [ObjectPool.hpp:164] [Pool] 0x100914360 Release obj 0x600001bb4000 back to pool
+[2025-10-26 09:22:17.381] [thread 43076] [ObjectPool.hpp:177] ==== ObjectPool Stats ====
+[2025-10-26 09:22:17.381] [thread 43076] [ObjectPool.hpp:178] freeCount     :   1 
+[2025-10-26 09:22:17.381] [thread 43076] [ObjectPool.hpp:179] hitCount      :   0 
+[2025-10-26 09:22:17.381] [thread 43076] [ObjectPool.hpp:180] missCount     :   1 
+[2025-10-26 09:22:17.381] [thread 43076] [ObjectPool.hpp:181] allocCountObj :   1 
+[2025-10-26 09:22:17.381] [thread 43076] [ObjectPool.hpp:182] allocCountNode:   1 
+[2025-10-26 09:22:17.381] [thread 43076] [ObjectPool.hpp:183] ==========================
+[2025-10-26 09:22:23.286] [thread 43076] [EventLoop.cpp:119] -----------read msg =dfff
+
+[2025-10-26 09:22:27.676] [thread 43076] [EventLoop.cpp:119] -----------read msg =ffff
+
+[2025-10-26 09:22:41.978] [thread 43076] [EventLoop.cpp:119] -----------read msg =ffff
+
+[2025-10-26 09:22:43.492] [thread 43076] [EventLoop.cpp:119] -----------read msg =fff
+
+[2025-10-26 09:23:41.938] [thread 45135] [AthenaTcpServer.cpp:84] server  bind socket port =9999
+[2025-10-26 09:23:41.938] [thread 45135] [AthenaTcpServer.cpp:69] server  start io thread count =3
+[2025-10-26 09:23:41.938] [thread 45139] [EventLoop.cpp:77]  event  run start 
+[2025-10-26 09:23:41.938] [thread 45140] [EventLoop.cpp:77]  event  run start 
+[2025-10-26 09:23:41.938] [thread 45141] [EventLoop.cpp:77]  event  run start 
+[2025-10-26 09:23:41.938] [thread 45140] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-26 09:23:41.938] [thread 45140] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-26 09:23:41.938] [thread 45139] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-26 09:23:41.938] [thread 45139] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-26 09:23:41.938] [thread 45141] [EventLoop.cpp:85] uv_async_init  async_write  ret =0 
+[2025-10-26 09:23:41.938] [thread 45141] [EventLoop.cpp:88] uv_async_init  async_accept ret =0 
+[2025-10-26 09:23:48.009] [thread 45135] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-26 09:23:48.009] [thread 45135] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-26 09:23:48.009] [thread 45135] [ObjectPool.hpp:124] [Pool]0x1021a4360 Miss, new obj 0x6000031fc000 
+[2025-10-26 09:23:48.009] [thread 45135] [EventLoop.h:37] --------  push task
+[2025-10-26 09:23:48.010] [thread 45139] [EventLoop.cpp:63]   -------tcp open ret =0
+[2025-10-26 09:23:48.010] [thread 45139] [EventLoop.cpp:71]  =================== START READ read data 
+[2025-10-26 09:23:48.010] [thread 45139] [ObjectPool.hpp:164] [Pool] 0x1021a4360 Release obj 0x6000031fc000 back to pool
+[2025-10-26 09:23:48.010] [thread 45139] [ObjectPool.hpp:177] ==== ObjectPool Stats ====
+[2025-10-26 09:23:48.010] [thread 45139] [ObjectPool.hpp:178] freeCount     :   1 
+[2025-10-26 09:23:48.010] [thread 45139] [ObjectPool.hpp:179] hitCount      :   0 
+[2025-10-26 09:23:48.010] [thread 45139] [ObjectPool.hpp:180] missCount     :   1 
+[2025-10-26 09:23:48.010] [thread 45139] [ObjectPool.hpp:181] allocCountObj :   1 
+[2025-10-26 09:23:48.010] [thread 45139] [ObjectPool.hpp:182] allocCountNode:   1 
+[2025-10-26 09:23:48.010] [thread 45139] [ObjectPool.hpp:183] ==========================
+[2025-10-26 09:23:52.411] [thread 45139] [EventLoop.cpp:119] -----------read msg =33333
+
+[2025-10-26 09:23:54.842] [thread 45139] [EventLoop.cpp:119] -----------read msg =3444
+
+[2025-10-26 09:23:57.728] [thread 45139] [EventLoop.cpp:119] -----------read msg =4444444444
+
+[2025-10-26 09:23:59.992] [thread 45139] [EventLoop.cpp:119] -----------read msg =4444444
+
+[2025-10-26 09:24:01.822] [thread 45139] [EventLoop.cpp:119] -----------read msg =4444
+
+[2025-10-26 09:27:38.443] [thread 45135] [main.cpp:28] Received signal 15 exiting...
+[2025-10-26 09:27:45.328] [thread 47664] [AthenaTcpServer.cpp:84] server  bind socket port =9999
+[2025-10-26 09:27:45.328] [thread 47664] [AthenaTcpServer.cpp:69] server  start io thread count =3
+[2025-10-26 09:27:45.328] [thread 47704] [EventLoop.cpp:78]  event  run start 
+[2025-10-26 09:27:45.328] [thread 47705] [EventLoop.cpp:78]  event  run start 
+[2025-10-26 09:27:45.328] [thread 47706] [EventLoop.cpp:78]  event  run start 
+[2025-10-26 09:27:45.328] [thread 47704] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-26 09:27:45.328] [thread 47704] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-26 09:27:45.328] [thread 47705] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-26 09:27:45.328] [thread 47705] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-26 09:27:45.328] [thread 47706] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-26 09:27:45.328] [thread 47706] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-26 09:27:49.502] [thread 47664] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-26 09:27:49.502] [thread 47664] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-26 09:27:49.503] [thread 47664] [ObjectPool.hpp:124] [Pool]0x100a98360 Miss, new obj 0x600001b8c000 
+[2025-10-26 09:27:49.503] [thread 47664] [EventLoop.h:37] --------  push task
+[2025-10-26 09:27:49.503] [thread 47704] [EventLoop.cpp:64]   -------tcp open ret =0
+[2025-10-26 09:27:49.503] [thread 47704] [EventLoop.cpp:72]  =================== START READ read data 
+[2025-10-26 09:27:49.503] [thread 47704] [ObjectPool.hpp:164] [Pool] 0x100a98360 Release obj 0x600001b8c000 back to pool
+[2025-10-26 09:27:49.503] [thread 47704] [ObjectPool.hpp:177] ==== ObjectPool Stats ====
+[2025-10-26 09:27:49.503] [thread 47704] [ObjectPool.hpp:178] freeCount     :   1 
+[2025-10-26 09:27:49.503] [thread 47704] [ObjectPool.hpp:179] hitCount      :   0 
+[2025-10-26 09:27:49.503] [thread 47704] [ObjectPool.hpp:180] missCount     :   1 
+[2025-10-26 09:27:49.503] [thread 47704] [ObjectPool.hpp:181] allocCountObj :   1 
+[2025-10-26 09:27:49.503] [thread 47704] [ObjectPool.hpp:182] allocCountNode:   1 
+[2025-10-26 09:27:49.503] [thread 47704] [ObjectPool.hpp:183] ==========================
+[2025-10-26 09:27:51.424] [thread 47704] [EventLoop.cpp:21] ==========   READ CB
+[2025-10-26 09:27:51.424] [thread 47704] [EventLoop.cpp:120] -----------read msg =JJJ
+
+[2025-10-26 09:27:53.635] [thread 47704] [EventLoop.cpp:21] ==========   READ CB
+[2025-10-26 09:27:53.635] [thread 47704] [EventLoop.cpp:120] -----------read msg =GGGG
+
+[2025-10-26 09:27:57.196] [thread 47704] [EventLoop.cpp:21] ==========   READ CB
+[2025-10-26 09:27:57.196] [thread 47704] [EventLoop.cpp:120] -----------read msg =HYIIIIIII
+
+[2025-10-26 09:28:00.979] [thread 47704] [EventLoop.cpp:21] ==========   READ CB
+[2025-10-26 09:28:00.979] [thread 47704] [EventLoop.cpp:120] -----------read msg =HHJHJHJ
+
+[2025-10-26 09:28:50.956] [thread 47664] [main.cpp:28] Received signal 15 exiting...
+[2025-10-26 09:29:06.138] [thread 48783] [AthenaTcpServer.cpp:84] server  bind socket port =9999
+[2025-10-26 09:29:06.138] [thread 48783] [AthenaTcpServer.cpp:69] server  start io thread count =3
+[2025-10-26 09:29:06.138] [thread 48809] [EventLoop.cpp:78]  event  run start 
+[2025-10-26 09:29:06.138] [thread 48810] [EventLoop.cpp:78]  event  run start 
+[2025-10-26 09:29:06.138] [thread 48811] [EventLoop.cpp:78]  event  run start 
+[2025-10-26 09:29:06.138] [thread 48811] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-26 09:29:06.138] [thread 48811] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-26 09:29:06.138] [thread 48809] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-26 09:29:06.138] [thread 48809] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-26 09:29:06.138] [thread 48810] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-26 09:29:06.138] [thread 48810] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-26 09:29:59.566] [thread 48783] [main.cpp:28] Received signal 15 exiting...
+[2025-10-26 09:31:51.050] [thread 50919] [AthenaTcpServer.cpp:84] server  bind socket port =9999
+[2025-10-26 09:31:51.050] [thread 50945] [EventLoop.cpp:78]  event  run start 
+[2025-10-26 09:31:51.050] [thread 50919] [AthenaTcpServer.cpp:69] server  start io thread count =3
+[2025-10-26 09:31:51.050] [thread 50947] [EventLoop.cpp:78]  event  run start 
+[2025-10-26 09:31:51.050] [thread 50945] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-26 09:31:51.050] [thread 50945] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-26 09:31:51.050] [thread 50947] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-26 09:31:51.050] [thread 50947] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-26 09:31:51.050] [thread 50946] [EventLoop.cpp:78]  event  run start 
+[2025-10-26 09:31:51.050] [thread 50946] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-26 09:31:51.050] [thread 50946] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-26 09:31:55.290] [thread 50919] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-26 09:31:55.290] [thread 50919] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-26 09:31:55.290] [thread 50919] [ObjectPool.hpp:124] [Pool]0x102aac360 Miss, new obj 0x6000013c04b0 
+[2025-10-26 09:31:55.290] [thread 50919] [EventLoop.h:37] --------  push task
+[2025-10-26 09:31:55.290] [thread 50945] [EventLoop.cpp:64]   -------tcp open ret =0
+[2025-10-26 09:31:55.291] [thread 50945] [EventLoop.cpp:72]  =================== START READ read data 
+[2025-10-26 09:31:55.291] [thread 50945] [ObjectPool.hpp:164] [Pool] 0x102aac360 Release obj 0x6000013c04b0 back to pool
+[2025-10-26 09:31:55.291] [thread 50945] [ObjectPool.hpp:177] ==== ObjectPool Stats ====
+[2025-10-26 09:31:55.291] [thread 50945] [ObjectPool.hpp:178] freeCount     :   1 
+[2025-10-26 09:31:55.291] [thread 50945] [ObjectPool.hpp:179] hitCount      :   0 
+[2025-10-26 09:31:55.291] [thread 50945] [ObjectPool.hpp:180] missCount     :   1 
+[2025-10-26 09:31:55.291] [thread 50945] [ObjectPool.hpp:181] allocCountObj :   1 
+[2025-10-26 09:31:55.291] [thread 50945] [ObjectPool.hpp:182] allocCountNode:   1 
+[2025-10-26 09:31:55.291] [thread 50945] [ObjectPool.hpp:183] ==========================
+[2025-10-26 09:31:58.011] [thread 50945] [EventLoop.cpp:21] ==========   READ CB   nread =5
+[2025-10-26 09:31:58.011] [thread 50945] [EventLoop.cpp:120] -----------read msg =fff
+
+[2025-10-26 09:32:01.687] [thread 50945] [EventLoop.cpp:21] ==========   READ CB   nread =7
+[2025-10-26 09:32:01.687] [thread 50945] [EventLoop.cpp:120] -----------read msg =gggee
+
+[2025-10-26 09:32:04.266] [thread 50945] [EventLoop.cpp:21] ==========   READ CB   nread =11
+[2025-10-26 09:32:04.266] [thread 50945] [EventLoop.cpp:120] -----------read msg =trttrtrtr
+
+[2025-10-26 09:32:06.519] [thread 50945] [EventLoop.cpp:21] ==========   READ CB   nread =9
+[2025-10-26 09:32:06.519] [thread 50945] [EventLoop.cpp:120] -----------read msg =weqeweq
+
+[2025-10-26 09:34:28.080] [thread 50919] [main.cpp:28] Received signal 15 exiting...
+[2025-10-26 09:34:43.336] [thread 52895] [AthenaTcpServer.cpp:84] server  bind socket port =9999
+[2025-10-26 09:34:43.336] [thread 52931] [EventLoop.cpp:78]  event  run start 
+[2025-10-26 09:34:43.336] [thread 52895] [AthenaTcpServer.cpp:69] server  start io thread count =3
+[2025-10-26 09:34:43.336] [thread 52933] [EventLoop.cpp:78]  event  run start 
+[2025-10-26 09:34:43.336] [thread 52931] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-26 09:34:43.336] [thread 52931] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-26 09:34:43.336] [thread 52932] [EventLoop.cpp:78]  event  run start 
+[2025-10-26 09:34:43.336] [thread 52932] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-26 09:34:43.336] [thread 52932] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-26 09:34:43.336] [thread 52933] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-26 09:34:43.336] [thread 52933] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-26 09:34:47.490] [thread 52895] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-26 09:34:47.490] [thread 52895] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-26 09:34:47.490] [thread 52895] [ObjectPool.hpp:124] [Pool]0x100e88360 Miss, new obj 0x6000026d4000 
+[2025-10-26 09:34:47.490] [thread 52895] [EventLoop.h:37] --------  push task
+[2025-10-26 09:34:47.491] [thread 52931] [EventLoop.cpp:64]   -------tcp open ret =0
+[2025-10-26 09:34:47.491] [thread 52931] [EventLoop.cpp:72]  =================== START READ read data 
+[2025-10-26 09:34:47.491] [thread 52931] [ObjectPool.hpp:164] [Pool] 0x100e88360 Release obj 0x6000026d4000 back to pool
+[2025-10-26 09:34:47.491] [thread 52931] [ObjectPool.hpp:177] ==== ObjectPool Stats ====
+[2025-10-26 09:34:47.491] [thread 52931] [ObjectPool.hpp:178] freeCount     :   1 
+[2025-10-26 09:34:47.491] [thread 52931] [ObjectPool.hpp:179] hitCount      :   0 
+[2025-10-26 09:34:47.491] [thread 52931] [ObjectPool.hpp:180] missCount     :   1 
+[2025-10-26 09:34:47.491] [thread 52931] [ObjectPool.hpp:181] allocCountObj :   1 
+[2025-10-26 09:34:47.491] [thread 52931] [ObjectPool.hpp:182] allocCountNode:   1 
+[2025-10-26 09:34:47.491] [thread 52931] [ObjectPool.hpp:183] ==========================
+[2025-10-26 09:34:49.606] [thread 52931] [EventLoop.cpp:21] ==========   READ CB   nread =6
+[2025-10-26 09:34:49.606] [thread 52931] [EventLoop.cpp:120] -----------read msg =hhhh
+
+[2025-10-26 09:34:52.270] [thread 52931] [EventLoop.cpp:21] ==========   READ CB   nread =8
+[2025-10-26 09:34:52.270] [thread 52931] [EventLoop.cpp:120] -----------read msg =jhjhjh
+
+[2025-10-26 09:34:55.546] [thread 52931] [EventLoop.cpp:21] ==========   READ CB   nread =4
+[2025-10-26 09:34:55.546] [thread 52931] [EventLoop.cpp:120] -----------read msg =12
+
+[2025-10-26 09:35:29.246] [thread 52895] [main.cpp:28] Received signal 15 exiting...
+[2025-10-26 09:35:37.860] [thread 53777] [AthenaTcpServer.cpp:84] server  bind socket port =9999
+[2025-10-26 09:35:37.860] [thread 53836] [EventLoop.cpp:78]  event  run start 
+[2025-10-26 09:35:37.860] [thread 53777] [AthenaTcpServer.cpp:69] server  start io thread count =3
+[2025-10-26 09:35:37.860] [thread 53838] [EventLoop.cpp:78]  event  run start 
+[2025-10-26 09:35:37.860] [thread 53836] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-26 09:35:37.860] [thread 53836] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-26 09:35:37.860] [thread 53837] [EventLoop.cpp:78]  event  run start 
+[2025-10-26 09:35:37.860] [thread 53838] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-26 09:35:37.860] [thread 53838] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-26 09:35:37.860] [thread 53837] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-26 09:35:37.860] [thread 53837] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-26 09:35:41.157] [thread 53777] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-26 09:35:41.157] [thread 53777] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-26 09:35:41.157] [thread 53777] [ObjectPool.hpp:124] [Pool]0x100e60360 Miss, new obj 0x600003a94000 
+[2025-10-26 09:35:41.157] [thread 53777] [EventLoop.h:37] --------  push task
+[2025-10-26 09:35:41.157] [thread 53836] [EventLoop.cpp:64]   -------tcp open ret =0
+[2025-10-26 09:35:41.157] [thread 53836] [EventLoop.cpp:72]  =================== START READ read data 
+[2025-10-26 09:35:41.157] [thread 53836] [ObjectPool.hpp:164] [Pool] 0x100e60360 Release obj 0x600003a94000 back to pool
+[2025-10-26 09:35:41.157] [thread 53836] [ObjectPool.hpp:177] ==== ObjectPool Stats ====
+[2025-10-26 09:35:41.157] [thread 53836] [ObjectPool.hpp:178] freeCount     :   1 
+[2025-10-26 09:35:41.157] [thread 53836] [ObjectPool.hpp:179] hitCount      :   0 
+[2025-10-26 09:35:41.157] [thread 53836] [ObjectPool.hpp:180] missCount     :   1 
+[2025-10-26 09:35:41.157] [thread 53836] [ObjectPool.hpp:181] allocCountObj :   1 
+[2025-10-26 09:35:41.157] [thread 53836] [ObjectPool.hpp:182] allocCountNode:   1 
+[2025-10-26 09:35:41.157] [thread 53836] [ObjectPool.hpp:183] ==========================
+[2025-10-26 09:35:42.667] [thread 53836] [EventLoop.cpp:21] ==========   READ CB   nread =4
+[2025-10-26 09:35:42.667] [thread 53836] [EventLoop.cpp:118] MMMMMMMMMM  READ =4
+[2025-10-26 09:35:42.667] [thread 53836] [EventLoop.cpp:121] -----------read msg =dd
+
+[2025-10-26 09:36:07.594] [thread 54353] [AthenaTcpServer.cpp:84] server  bind socket port =9999
+[2025-10-26 09:36:07.594] [thread 54353] [AthenaTcpServer.cpp:69] server  start io thread count =3
+[2025-10-26 09:36:07.594] [thread 54364] [EventLoop.cpp:78]  event  run start 
+[2025-10-26 09:36:07.594] [thread 54366] [EventLoop.cpp:78]  event  run start 
+[2025-10-26 09:36:07.594] [thread 54365] [EventLoop.cpp:78]  event  run start 
+[2025-10-26 09:36:07.594] [thread 54366] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-26 09:36:07.594] [thread 54366] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-26 09:36:07.594] [thread 54364] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-26 09:36:07.594] [thread 54364] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-26 09:36:07.594] [thread 54365] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-26 09:36:07.594] [thread 54365] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-26 09:36:11.986] [thread 54353] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-26 09:36:11.986] [thread 54353] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-26 09:36:11.986] [thread 54353] [ObjectPool.hpp:124] [Pool]0x102c84360 Miss, new obj 0x600003514000 
+[2025-10-26 09:36:11.987] [thread 54353] [EventLoop.h:37] --------  push task
+[2025-10-26 09:36:11.987] [thread 54364] [EventLoop.cpp:64]   -------tcp open ret =0
+[2025-10-26 09:36:11.987] [thread 54364] [EventLoop.cpp:72]  =================== START READ read data 
+[2025-10-26 09:36:11.987] [thread 54364] [ObjectPool.hpp:164] [Pool] 0x102c84360 Release obj 0x600003514000 back to pool
+[2025-10-26 09:36:11.987] [thread 54364] [ObjectPool.hpp:177] ==== ObjectPool Stats ====
+[2025-10-26 09:36:11.987] [thread 54364] [ObjectPool.hpp:178] freeCount     :   1 
+[2025-10-26 09:36:11.987] [thread 54364] [ObjectPool.hpp:179] hitCount      :   0 
+[2025-10-26 09:36:11.987] [thread 54364] [ObjectPool.hpp:180] missCount     :   1 
+[2025-10-26 09:36:11.987] [thread 54364] [ObjectPool.hpp:181] allocCountObj :   1 
+[2025-10-26 09:36:11.987] [thread 54364] [ObjectPool.hpp:182] allocCountNode:   1 
+[2025-10-26 09:36:11.987] [thread 54364] [ObjectPool.hpp:183] ==========================
+[2025-10-26 09:36:13.450] [thread 54364] [EventLoop.cpp:21] ==========   READ CB   nread =5
+[2025-10-26 09:36:13.450] [thread 54364] [EventLoop.cpp:118] MMMMMMMMMM  READ =5
+[2025-10-26 09:36:13.450] [thread 54364] [EventLoop.cpp:121] -----------read msg =ddd
+
+[2025-10-26 09:36:16.511] [thread 54364] [EventLoop.cpp:21] ==========   READ CB   nread =11
+[2025-10-26 09:36:16.511] [thread 54364] [EventLoop.cpp:118] MMMMMMMMMM  READ =11
+[2025-10-26 09:36:16.511] [thread 54364] [EventLoop.cpp:121] -----------read msg =fdfdfdfdf
+
+[2025-10-26 09:36:18.909] [thread 54364] [EventLoop.cpp:21] ==========   READ CB   nread =7
+[2025-10-26 09:36:18.909] [thread 54364] [EventLoop.cpp:118] MMMMMMMMMM  READ =7
+[2025-10-26 09:36:18.909] [thread 54364] [EventLoop.cpp:121] -----------read msg =ddfdf
+
+[2025-10-26 09:36:21.928] [thread 54364] [EventLoop.cpp:21] ==========   READ CB   nread =6
+[2025-10-26 09:36:21.928] [thread 54364] [EventLoop.cpp:118] MMMMMMMMMM  READ =6
+[2025-10-26 09:36:21.928] [thread 54364] [EventLoop.cpp:121] -----------read msg =fff1
+
+[2025-10-26 09:36:23.615] [thread 54364] [EventLoop.cpp:21] ==========   READ CB   nread =3
+[2025-10-26 09:36:23.615] [thread 54364] [EventLoop.cpp:118] MMMMMMMMMM  READ =3
+[2025-10-26 09:36:23.615] [thread 54364] [EventLoop.cpp:121] -----------read msg =1
+
+[2025-10-26 09:36:25.714] [thread 54364] [EventLoop.cpp:21] ==========   READ CB   nread =3
+[2025-10-26 09:36:25.714] [thread 54364] [EventLoop.cpp:118] MMMMMMMMMM  READ =3
+[2025-10-26 09:36:25.714] [thread 54364] [EventLoop.cpp:121] -----------read msg =2
+
+[2025-10-26 09:36:29.229] [thread 54364] [EventLoop.cpp:21] ==========   READ CB   nread =2
+[2025-10-26 09:36:29.229] [thread 54364] [EventLoop.cpp:118] MMMMMMMMMM  READ =2
+[2025-10-26 09:36:29.229] [thread 54364] [EventLoop.cpp:121] -----------read msg =
+
+[2025-10-26 09:36:29.450] [thread 54364] [EventLoop.cpp:21] ==========   READ CB   nread =2
+[2025-10-26 09:36:29.451] [thread 54364] [EventLoop.cpp:118] MMMMMMMMMM  READ =2
+[2025-10-26 09:36:29.451] [thread 54364] [EventLoop.cpp:121] -----------read msg =
+
+[2025-10-26 09:36:29.667] [thread 54364] [EventLoop.cpp:21] ==========   READ CB   nread =2
+[2025-10-26 09:36:29.667] [thread 54364] [EventLoop.cpp:118] MMMMMMMMMM  READ =2
+[2025-10-26 09:36:29.667] [thread 54364] [EventLoop.cpp:121] -----------read msg =
+
+[2025-10-26 09:36:29.848] [thread 54364] [EventLoop.cpp:21] ==========   READ CB   nread =2
+[2025-10-26 09:36:29.848] [thread 54364] [EventLoop.cpp:118] MMMMMMMMMM  READ =2
+[2025-10-26 09:36:29.848] [thread 54364] [EventLoop.cpp:121] -----------read msg =
+
+[2025-10-26 09:36:30.037] [thread 54364] [EventLoop.cpp:21] ==========   READ CB   nread =2
+[2025-10-26 09:36:30.037] [thread 54364] [EventLoop.cpp:118] MMMMMMMMMM  READ =2
+[2025-10-26 09:36:30.037] [thread 54364] [EventLoop.cpp:121] -----------read msg =
+
+[2025-10-26 09:36:30.225] [thread 54364] [EventLoop.cpp:21] ==========   READ CB   nread =2
+[2025-10-26 09:36:30.225] [thread 54364] [EventLoop.cpp:118] MMMMMMMMMM  READ =2
+[2025-10-26 09:36:30.225] [thread 54364] [EventLoop.cpp:121] -----------read msg =
+
+[2025-10-26 09:36:30.375] [thread 54364] [EventLoop.cpp:21] ==========   READ CB   nread =2
+[2025-10-26 09:36:30.375] [thread 54364] [EventLoop.cpp:118] MMMMMMMMMM  READ =2
+[2025-10-26 09:36:30.375] [thread 54364] [EventLoop.cpp:121] -----------read msg =
+
+[2025-10-26 09:36:30.553] [thread 54364] [EventLoop.cpp:21] ==========   READ CB   nread =2
+[2025-10-26 09:36:30.553] [thread 54364] [EventLoop.cpp:118] MMMMMMMMMM  READ =2
+[2025-10-26 09:36:30.553] [thread 54364] [EventLoop.cpp:121] -----------read msg =
+
+[2025-10-26 09:36:30.725] [thread 54364] [EventLoop.cpp:21] ==========   READ CB   nread =2
+[2025-10-26 09:36:30.725] [thread 54364] [EventLoop.cpp:118] MMMMMMMMMM  READ =2
+[2025-10-26 09:36:30.725] [thread 54364] [EventLoop.cpp:121] -----------read msg =
+
+[2025-10-26 09:36:31.162] [thread 54364] [EventLoop.cpp:21] ==========   READ CB   nread =2
+[2025-10-26 09:36:31.162] [thread 54364] [EventLoop.cpp:118] MMMMMMMMMM  READ =2
+[2025-10-26 09:36:31.162] [thread 54364] [EventLoop.cpp:121] -----------read msg =
+
+[2025-10-26 09:36:34.463] [thread 54364] [EventLoop.cpp:21] ==========   READ CB   nread =3
+[2025-10-26 09:36:34.463] [thread 54364] [EventLoop.cpp:118] MMMMMMMMMM  READ =3
+[2025-10-26 09:36:34.463] [thread 54364] [EventLoop.cpp:121] -----------read msg =1
+
+[2025-10-26 09:36:37.937] [thread 54364] [EventLoop.cpp:21] ==========   READ CB   nread =4
+[2025-10-26 09:36:37.937] [thread 54364] [EventLoop.cpp:118] MMMMMMMMMM  READ =4
+[2025-10-26 09:36:37.937] [thread 54364] [EventLoop.cpp:121] -----------read msg =12
+
+[2025-10-26 09:36:51.739] [thread 54353] [main.cpp:28] Received signal 15 exiting...
+[2025-10-26 09:36:59.169] [thread 55048] [AthenaTcpServer.cpp:84] server  bind socket port =9999
+[2025-10-26 09:36:59.169] [thread 55048] [AthenaTcpServer.cpp:69] server  start io thread count =3
+[2025-10-26 09:36:59.169] [thread 55078] [EventLoop.cpp:78]  event  run start 
+[2025-10-26 09:36:59.169] [thread 55079] [EventLoop.cpp:78]  event  run start 
+[2025-10-26 09:36:59.169] [thread 55080] [EventLoop.cpp:78]  event  run start 
+[2025-10-26 09:36:59.169] [thread 55080] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-26 09:36:59.169] [thread 55080] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-26 09:36:59.169] [thread 55079] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-26 09:36:59.169] [thread 55078] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-26 09:36:59.169] [thread 55079] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-26 09:36:59.169] [thread 55078] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-26 09:37:12.186] [thread 55048] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-26 09:37:12.186] [thread 55048] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-26 09:37:12.186] [thread 55048] [ObjectPool.hpp:124] [Pool]0x1043a8360 Miss, new obj 0x6000006f8d50 
+[2025-10-26 09:37:12.186] [thread 55048] [EventLoop.h:37] --------  push task
+[2025-10-26 09:37:12.186] [thread 55078] [EventLoop.cpp:64]   -------tcp open ret =0
+[2025-10-26 09:37:12.186] [thread 55078] [EventLoop.cpp:72]  =================== START READ read data 
+[2025-10-26 09:37:12.186] [thread 55078] [ObjectPool.hpp:164] [Pool] 0x1043a8360 Release obj 0x6000006f8d50 back to pool
+[2025-10-26 09:37:12.186] [thread 55078] [ObjectPool.hpp:177] ==== ObjectPool Stats ====
+[2025-10-26 09:37:12.186] [thread 55078] [ObjectPool.hpp:178] freeCount     :   1 
+[2025-10-26 09:37:12.186] [thread 55078] [ObjectPool.hpp:179] hitCount      :   0 
+[2025-10-26 09:37:12.186] [thread 55078] [ObjectPool.hpp:180] missCount     :   1 
+[2025-10-26 09:37:12.186] [thread 55078] [ObjectPool.hpp:181] allocCountObj :   1 
+[2025-10-26 09:37:12.186] [thread 55078] [ObjectPool.hpp:182] allocCountNode:   1 
+[2025-10-26 09:37:12.186] [thread 55078] [ObjectPool.hpp:183] ==========================
+[2025-10-26 09:37:14.262] [thread 55078] [EventLoop.cpp:21] ==========   READ CB   nread =3
+[2025-10-26 09:37:14.262] [thread 55078] [EventLoop.cpp:118] MMMMMMMMMM  READ =3
+[2025-10-26 09:37:14.262] [thread 55078] [EventLoop.cpp:121] -----------read msg =e
+
+[2025-10-26 09:37:22.371] [thread 55048] [main.cpp:28] Received signal 15 exiting...
+[2025-10-26 09:38:35.666] [thread 56443] [AthenaTcpServer.cpp:84] server  bind socket port =9999
+[2025-10-26 09:38:35.666] [thread 56443] [AthenaTcpServer.cpp:69] server  start io thread count =3
+[2025-10-26 09:38:35.666] [thread 56474] [EventLoop.cpp:78]  event  run start 
+[2025-10-26 09:38:35.666] [thread 56475] [EventLoop.cpp:78]  event  run start 
+[2025-10-26 09:38:35.666] [thread 56476] [EventLoop.cpp:78]  event  run start 
+[2025-10-26 09:38:35.666] [thread 56476] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-26 09:38:35.666] [thread 56476] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-26 09:38:35.666] [thread 56474] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-26 09:38:35.666] [thread 56474] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-26 09:38:35.666] [thread 56475] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-26 09:38:35.666] [thread 56475] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-26 09:38:37.638] [thread 56443] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-26 09:38:37.638] [thread 56443] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-26 09:38:37.638] [thread 56443] [ObjectPool.hpp:124] [Pool]0x100830360 Miss, new obj 0x600001ce4000 
+[2025-10-26 09:38:37.639] [thread 56443] [EventLoop.h:37] --------  push task
+[2025-10-26 09:38:37.639] [thread 56474] [EventLoop.cpp:64]   -------tcp open ret =0
+[2025-10-26 09:38:37.639] [thread 56474] [EventLoop.cpp:72]  =================== START READ read data 
+[2025-10-26 09:38:37.639] [thread 56474] [ObjectPool.hpp:164] [Pool] 0x100830360 Release obj 0x600001ce4000 back to pool
+[2025-10-26 09:38:37.639] [thread 56474] [ObjectPool.hpp:177] ==== ObjectPool Stats ====
+[2025-10-26 09:38:37.639] [thread 56474] [ObjectPool.hpp:178] freeCount     :   1 
+[2025-10-26 09:38:37.639] [thread 56474] [ObjectPool.hpp:179] hitCount      :   0 
+[2025-10-26 09:38:37.639] [thread 56474] [ObjectPool.hpp:180] missCount     :   1 
+[2025-10-26 09:38:37.639] [thread 56474] [ObjectPool.hpp:181] allocCountObj :   1 
+[2025-10-26 09:38:37.639] [thread 56474] [ObjectPool.hpp:182] allocCountNode:   1 
+[2025-10-26 09:38:37.639] [thread 56474] [ObjectPool.hpp:183] ==========================
+[2025-10-26 09:38:39.254] [thread 56474] [EventLoop.cpp:21] ==========   READ CB   nread =3
+[2025-10-26 09:38:39.254] [thread 56474] [EventLoop.cpp:118] MMMMMMMMMM  READ =3
+[2025-10-26 09:38:39.254] [thread 56474] [EventLoop.cpp:121] -----------read msg =h
+
+[2025-10-26 09:38:39.254] [thread 56474] [EventLoop.cpp:122] MMMMMMMMMM  READ 1=3
+[2025-10-26 09:38:46.258] [thread 56474] [EventLoop.cpp:21] ==========   READ CB   nread =4
+[2025-10-26 09:38:46.258] [thread 56474] [EventLoop.cpp:118] MMMMMMMMMM  READ =4
+[2025-10-26 09:38:46.258] [thread 56474] [EventLoop.cpp:121] -----------read msg ='f
+
+[2025-10-26 09:38:46.258] [thread 56474] [EventLoop.cpp:122] MMMMMMMMMM  READ 1=4
+[2025-10-26 09:38:52.204] [thread 56443] [main.cpp:28] Received signal 15 exiting...
+[2025-10-26 15:18:24.888] [thread 9756] [AthenaTcpServer.cpp:84] server  bind socket port =9999
+[2025-10-26 15:18:24.888] [thread 9772] [EventLoop.cpp:78]  event  run start 
+[2025-10-26 15:18:24.888] [thread 9756] [AthenaTcpServer.cpp:69] server  start io thread count =3
+[2025-10-26 15:18:24.888] [thread 9773] [EventLoop.cpp:78]  event  run start 
+[2025-10-26 15:18:24.888] [thread 9772] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-26 15:18:24.888] [thread 9772] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-26 15:18:24.888] [thread 9774] [EventLoop.cpp:78]  event  run start 
+[2025-10-26 15:18:24.889] [thread 9773] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-26 15:18:24.889] [thread 9773] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-26 15:18:24.889] [thread 9774] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-26 15:18:24.889] [thread 9774] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-26 15:18:37.543] [thread 9756] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-26 15:18:37.543] [thread 9756] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-26 15:18:37.543] [thread 9756] [ObjectPool.hpp:124] [Pool]0x104c74360 Miss, new obj 0x600002700000 
+[2025-10-26 15:18:37.543] [thread 9756] [EventLoop.h:37] --------  push task
+[2025-10-26 15:18:37.544] [thread 9772] [EventLoop.cpp:64]   -------tcp open ret =0
+[2025-10-26 15:18:37.544] [thread 9772] [EventLoop.cpp:72]  =================== START READ read data 
+[2025-10-26 15:18:37.544] [thread 9772] [ObjectPool.hpp:164] [Pool] 0x104c74360 Release obj 0x600002700000 back to pool
+[2025-10-26 15:18:37.544] [thread 9772] [ObjectPool.hpp:177] ==== ObjectPool Stats ====
+[2025-10-26 15:18:37.544] [thread 9772] [ObjectPool.hpp:178] freeCount     :   1 
+[2025-10-26 15:18:37.544] [thread 9772] [ObjectPool.hpp:179] hitCount      :   0 
+[2025-10-26 15:18:37.544] [thread 9772] [ObjectPool.hpp:180] missCount     :   1 
+[2025-10-26 15:18:37.544] [thread 9772] [ObjectPool.hpp:181] allocCountObj :   1 
+[2025-10-26 15:18:37.544] [thread 9772] [ObjectPool.hpp:182] allocCountNode:   1 
+[2025-10-26 15:18:37.544] [thread 9772] [ObjectPool.hpp:183] ==========================
+[2025-10-26 15:18:40.814] [thread 9772] [EventLoop.cpp:21] ==========   READ CB   nread =7
+[2025-10-26 15:18:40.814] [thread 9772] [EventLoop.cpp:118] MMMMMMMMMM  READ =7
+[2025-10-26 15:18:40.814] [thread 9772] [EventLoop.cpp:121] -----------read msg =fffff
+
+[2025-10-26 15:18:40.814] [thread 9772] [EventLoop.cpp:122] MMMMMMMMMM  READ 1=7
+[2025-10-26 15:21:04.844] [thread 9756] [main.cpp:28] Received signal 15 exiting...
+[2025-10-26 15:21:14.193] [thread 14590] [AthenaTcpServer.cpp:84] server  bind socket port =9999
+[2025-10-26 15:21:14.193] [thread 14641] [EventLoop.cpp:78]  event  run start 
+[2025-10-26 15:21:14.193] [thread 14590] [AthenaTcpServer.cpp:69] server  start io thread count =3
+[2025-10-26 15:21:14.193] [thread 14642] [EventLoop.cpp:78]  event  run start 
+[2025-10-26 15:21:14.193] [thread 14641] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-26 15:21:14.193] [thread 14641] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-26 15:21:14.193] [thread 14642] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-26 15:21:14.193] [thread 14642] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-26 15:21:14.193] [thread 14643] [EventLoop.cpp:78]  event  run start 
+[2025-10-26 15:21:14.193] [thread 14643] [EventLoop.cpp:86] uv_async_init  async_write  ret =0 
+[2025-10-26 15:21:14.193] [thread 14643] [EventLoop.cpp:89] uv_async_init  async_accept ret =0 
+[2025-10-26 15:21:17.739] [thread 14590] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-26 15:21:17.739] [thread 14590] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-26 15:21:17.739] [thread 14590] [ObjectPool.hpp:124] [Pool]0x100d30360 Miss, new obj 0x6000008e0000 
+[2025-10-26 15:21:17.739] [thread 14590] [EventLoop.h:37] --------  push task
+[2025-10-26 15:21:17.740] [thread 14641] [EventLoop.cpp:64]   -------tcp open ret =0
+[2025-10-26 15:21:17.740] [thread 14641] [EventLoop.cpp:72]  =================== START READ read data 
+[2025-10-26 15:21:17.740] [thread 14641] [ObjectPool.hpp:164] [Pool] 0x100d30360 Release obj 0x6000008e0000 back to pool
+[2025-10-26 15:21:17.740] [thread 14641] [ObjectPool.hpp:177] ==== ObjectPool Stats ====
+[2025-10-26 15:21:17.741] [thread 14641] [ObjectPool.hpp:178] freeCount     :   1 
+[2025-10-26 15:21:17.741] [thread 14641] [ObjectPool.hpp:179] hitCount      :   0 
+[2025-10-26 15:21:17.741] [thread 14641] [ObjectPool.hpp:180] missCount     :   1 
+[2025-10-26 15:21:17.741] [thread 14641] [ObjectPool.hpp:181] allocCountObj :   1 
+[2025-10-26 15:21:17.741] [thread 14641] [ObjectPool.hpp:182] allocCountNode:   1 
+[2025-10-26 15:21:17.741] [thread 14641] [ObjectPool.hpp:183] ==========================
+[2025-10-26 15:21:22.952] [thread 14641] [EventLoop.cpp:21] ==========   READ CB   nread =3
+[2025-10-26 15:21:22.952] [thread 14641] [EventLoop.cpp:118] MMMMMMMMMM  READ =3
+[2025-10-26 15:21:22.952] [thread 14641] [EventLoop.cpp:121] -----------read msg =f
+
+[2025-10-26 15:21:22.952] [thread 14641] [EventLoop.cpp:122] MMMMMMMMMM  READ 1=3
+[2025-10-26 15:22:32.276] [thread 16350] [AthenaTcpServer.cpp:84] server  bind socket port =9999
+[2025-10-26 15:22:32.276] [thread 16350] [AthenaTcpServer.cpp:69] server  start io thread count =3
+[2025-10-26 15:22:32.276] [thread 16536] [EventLoop.cpp:79]  event  run start 
+[2025-10-26 15:22:32.276] [thread 16536] [EventLoop.cpp:87] uv_async_init  async_write  ret =0 
+[2025-10-26 15:22:32.276] [thread 16537] [EventLoop.cpp:79]  event  run start 
+[2025-10-26 15:22:32.276] [thread 16536] [EventLoop.cpp:90] uv_async_init  async_accept ret =0 
+[2025-10-26 15:22:32.276] [thread 16537] [EventLoop.cpp:87] uv_async_init  async_write  ret =0 
+[2025-10-26 15:22:32.276] [thread 16537] [EventLoop.cpp:90] uv_async_init  async_accept ret =0 
+[2025-10-26 15:22:32.276] [thread 16538] [EventLoop.cpp:79]  event  run start 
+[2025-10-26 15:22:32.276] [thread 16538] [EventLoop.cpp:87] uv_async_init  async_write  ret =0 
+[2025-10-26 15:22:32.276] [thread 16538] [EventLoop.cpp:90] uv_async_init  async_accept ret =0 
+[2025-10-26 15:22:36.114] [thread 16350] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-26 15:22:36.114] [thread 16350] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-26 15:22:36.114] [thread 16350] [ObjectPool.hpp:124] [Pool]0x1048f0360 Miss, new obj 0x600000e90000 
+[2025-10-26 15:22:36.114] [thread 16350] [EventLoop.h:37] --------  push task
+[2025-10-26 15:22:36.115] [thread 16536] [EventLoop.cpp:65]   -------tcp open ret =0
+[2025-10-26 15:22:36.115] [thread 16536] [EventLoop.cpp:73]  =================== START READ read data 
+[2025-10-26 15:22:36.115] [thread 16536] [ObjectPool.hpp:164] [Pool] 0x1048f0360 Release obj 0x600000e90000 back to pool
+[2025-10-26 15:22:36.115] [thread 16536] [ObjectPool.hpp:177] ==== ObjectPool Stats ====
+[2025-10-26 15:22:36.115] [thread 16536] [ObjectPool.hpp:178] freeCount     :   1 
+[2025-10-26 15:22:36.115] [thread 16536] [ObjectPool.hpp:179] hitCount      :   0 
+[2025-10-26 15:22:36.115] [thread 16536] [ObjectPool.hpp:180] missCount     :   1 
+[2025-10-26 15:22:36.115] [thread 16536] [ObjectPool.hpp:181] allocCountObj :   1 
+[2025-10-26 15:22:36.115] [thread 16536] [ObjectPool.hpp:182] allocCountNode:   1 
+[2025-10-26 15:22:36.115] [thread 16536] [ObjectPool.hpp:183] ==========================
+[2025-10-26 15:22:38.832] [thread 16536] [EventLoop.cpp:22] ==========   READ CB   nread =3
+[2025-10-26 15:22:38.832] [thread 16536] [EventLoop.cpp:119] MMMMMMMMMM  READ =3
+[2025-10-26 15:22:38.832] [thread 16536] [EventLoop.cpp:122] -----------read msg =g
+
+[2025-10-26 15:22:54.009] [thread 16931] [AthenaTcpServer.cpp:84] server  bind socket port =9999
+[2025-10-26 15:22:54.009] [thread 16931] [AthenaTcpServer.cpp:69] server  start io thread count =3
+[2025-10-26 15:22:54.009] [thread 16934] [EventLoop.cpp:79]  event  run start 
+[2025-10-26 15:22:54.009] [thread 16935] [EventLoop.cpp:79]  event  run start 
+[2025-10-26 15:22:54.009] [thread 16934] [EventLoop.cpp:87] uv_async_init  async_write  ret =0 
+[2025-10-26 15:22:54.009] [thread 16934] [EventLoop.cpp:90] uv_async_init  async_accept ret =0 
+[2025-10-26 15:22:54.009] [thread 16936] [EventLoop.cpp:79]  event  run start 
+[2025-10-26 15:22:54.009] [thread 16936] [EventLoop.cpp:87] uv_async_init  async_write  ret =0 
+[2025-10-26 15:22:54.009] [thread 16936] [EventLoop.cpp:90] uv_async_init  async_accept ret =0 
+[2025-10-26 15:22:54.009] [thread 16935] [EventLoop.cpp:87] uv_async_init  async_write  ret =0 
+[2025-10-26 15:22:54.009] [thread 16935] [EventLoop.cpp:90] uv_async_init  async_accept ret =0 
+[2025-10-26 15:23:00.732] [thread 16931] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-26 15:23:00.732] [thread 16931] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-26 15:23:00.732] [thread 16931] [ObjectPool.hpp:124] [Pool]0x1047d8360 Miss, new obj 0x600002334000 
+[2025-10-26 15:23:00.732] [thread 16931] [EventLoop.h:37] --------  push task
+[2025-10-26 15:23:00.733] [thread 16934] [EventLoop.cpp:65]   -------tcp open ret =0
+[2025-10-26 15:23:00.733] [thread 16934] [EventLoop.cpp:73]  =================== START READ read data 
+[2025-10-26 15:23:00.733] [thread 16934] [ObjectPool.hpp:164] [Pool] 0x1047d8360 Release obj 0x600002334000 back to pool
+[2025-10-26 15:23:00.733] [thread 16934] [ObjectPool.hpp:177] ==== ObjectPool Stats ====
+[2025-10-26 15:23:00.733] [thread 16934] [ObjectPool.hpp:178] freeCount     :   1 
+[2025-10-26 15:23:00.733] [thread 16934] [ObjectPool.hpp:179] hitCount      :   0 
+[2025-10-26 15:23:00.733] [thread 16934] [ObjectPool.hpp:180] missCount     :   1 
+[2025-10-26 15:23:00.733] [thread 16934] [ObjectPool.hpp:181] allocCountObj :   1 
+[2025-10-26 15:23:00.733] [thread 16934] [ObjectPool.hpp:182] allocCountNode:   1 
+[2025-10-26 15:23:00.733] [thread 16934] [ObjectPool.hpp:183] ==========================
+[2025-10-26 15:23:02.355] [thread 16934] [EventLoop.cpp:22] ==========   READ CB   nread =3
+[2025-10-26 15:23:02.355] [thread 16934] [EventLoop.cpp:119] MMMMMMMMMM  READ =3
+[2025-10-26 15:23:02.355] [thread 16934] [EventLoop.cpp:122] -----------read msg =g
+
+[2025-10-26 15:23:02.355] [thread 16934] [EventLoop.cpp:123] MMMMMMMMMM  READ 1=3
+[2025-10-26 15:23:47.494] [thread 16934] [EventLoop.cpp:22] ==========   READ CB   nread =4
+[2025-10-26 15:23:47.494] [thread 16934] [EventLoop.cpp:119] MMMMMMMMMM  READ =4
+[2025-10-26 15:23:47.494] [thread 16934] [EventLoop.cpp:122] -----------read msg =hh
+
+[2025-10-26 15:23:47.494] [thread 16934] [EventLoop.cpp:123] MMMMMMMMMM  READ 1=4
+[2025-10-26 15:26:21.850] [thread 19826] [main.cpp:40] uuuuuuuuuuuuuu =hahaha
+[2025-10-26 15:26:21.850] [thread 19826] [AthenaTcpServer.cpp:84] server  bind socket port =9999
+[2025-10-26 15:26:21.850] [thread 19858] [EventLoop.cpp:79]  event  run start 
+[2025-10-26 15:26:21.850] [thread 19859] [EventLoop.cpp:79]  event  run start 
+[2025-10-26 15:26:21.850] [thread 19858] [EventLoop.cpp:87] uv_async_init  async_write  ret =0 
+[2025-10-26 15:26:21.850] [thread 19826] [AthenaTcpServer.cpp:69] server  start io thread count =3
+[2025-10-26 15:26:21.850] [thread 19858] [EventLoop.cpp:90] uv_async_init  async_accept ret =0 
+[2025-10-26 15:26:21.850] [thread 19860] [EventLoop.cpp:79]  event  run start 
+[2025-10-26 15:26:21.850] [thread 19859] [EventLoop.cpp:87] uv_async_init  async_write  ret =0 
+[2025-10-26 15:26:21.850] [thread 19859] [EventLoop.cpp:90] uv_async_init  async_accept ret =0 
+[2025-10-26 15:26:21.850] [thread 19860] [EventLoop.cpp:87] uv_async_init  async_write  ret =0 
+[2025-10-26 15:26:21.850] [thread 19860] [EventLoop.cpp:90] uv_async_init  async_accept ret =0 
+[2025-10-26 15:27:03.214] [thread 19826] [main.cpp:28] Received signal 15 exiting...
+[2025-10-26 15:27:13.108] [thread 20395] [main.cpp:40] uuuuuuuuuuuuuu =hahaha
+
+[2025-10-26 15:27:13.109] [thread 20395] [AthenaTcpServer.cpp:84] server  bind socket port =9999
+[2025-10-26 15:27:13.109] [thread 20425] [EventLoop.cpp:79]  event  run start 
+[2025-10-26 15:27:13.109] [thread 20395] [AthenaTcpServer.cpp:69] server  start io thread count =3
+[2025-10-26 15:27:13.109] [thread 20427] [EventLoop.cpp:79]  event  run start 
+[2025-10-26 15:27:13.109] [thread 20425] [EventLoop.cpp:87] uv_async_init  async_write  ret =0 
+[2025-10-26 15:27:13.109] [thread 20425] [EventLoop.cpp:90] uv_async_init  async_accept ret =0 
+[2025-10-26 15:27:13.109] [thread 20427] [EventLoop.cpp:87] uv_async_init  async_write  ret =0 
+[2025-10-26 15:27:13.109] [thread 20427] [EventLoop.cpp:90] uv_async_init  async_accept ret =0 
+[2025-10-26 15:27:13.109] [thread 20426] [EventLoop.cpp:79]  event  run start 
+[2025-10-26 15:27:13.109] [thread 20426] [EventLoop.cpp:87] uv_async_init  async_write  ret =0 
+[2025-10-26 15:27:13.109] [thread 20426] [EventLoop.cpp:90] uv_async_init  async_accept ret =0 
+[2025-10-26 15:32:07.110] [thread 20395] [main.cpp:28] Received signal 15 exiting...
+[2025-10-26 15:32:17.733] [thread 24478] [main.cpp:40] uuuuuuuuuuuuuu =hahaha
+
+[2025-10-26 15:32:17.733] [thread 24478] [AthenaTcpServer.cpp:84] server  bind socket port =9999
+[2025-10-26 15:32:17.733] [thread 24478] [AthenaTcpServer.cpp:69] server  start io thread count =3
+[2025-10-26 15:32:17.733] [thread 24482] [EventLoop.cpp:79]  event  run start 
+[2025-10-26 15:32:17.733] [thread 24484] [EventLoop.cpp:79]  event  run start 
+[2025-10-26 15:32:17.733] [thread 24483] [EventLoop.cpp:79]  event  run start 
+[2025-10-26 15:32:17.733] [thread 24484] [EventLoop.cpp:87] uv_async_init  async_write  ret =0 
+[2025-10-26 15:32:17.733] [thread 24484] [EventLoop.cpp:90] uv_async_init  async_accept ret =0 
+[2025-10-26 15:32:17.733] [thread 24482] [EventLoop.cpp:87] uv_async_init  async_write  ret =0 
+[2025-10-26 15:32:17.733] [thread 24482] [EventLoop.cpp:90] uv_async_init  async_accept ret =0 
+[2025-10-26 15:32:17.733] [thread 24483] [EventLoop.cpp:87] uv_async_init  async_write  ret =0 
+[2025-10-26 15:32:17.733] [thread 24483] [EventLoop.cpp:90] uv_async_init  async_accept ret =0 
+[2025-10-26 15:32:21.127] [thread 24478] [main.cpp:28] Received signal 15 exiting...
+[2025-10-26 15:37:00.085] [thread 28989] [main.cpp:40] uuuuuuuuuuuuuu =hahaha
+
+[2025-10-26 15:37:00.085] [thread 28989] [AthenaTcpServer.cpp:84] server  bind socket port =9999
+[2025-10-26 15:37:00.085] [thread 28989] [AthenaTcpServer.cpp:69] server  start io thread count =3
+[2025-10-26 15:37:00.085] [thread 29013] [EventLoop.cpp:79]  event  run start 
+[2025-10-26 15:37:00.085] [thread 29014] [EventLoop.cpp:79]  event  run start 
+[2025-10-26 15:37:00.085] [thread 29012] [EventLoop.cpp:79]  event  run start 
+[2025-10-26 15:37:00.085] [thread 29013] [EventLoop.cpp:87] uv_async_init  async_write  ret =0 
+[2025-10-26 15:37:00.085] [thread 29012] [EventLoop.cpp:87] uv_async_init  async_write  ret =0 
+[2025-10-26 15:37:00.085] [thread 29012] [EventLoop.cpp:90] uv_async_init  async_accept ret =0 
+[2025-10-26 15:37:00.085] [thread 29013] [EventLoop.cpp:90] uv_async_init  async_accept ret =0 
+[2025-10-26 15:37:00.085] [thread 29014] [EventLoop.cpp:87] uv_async_init  async_write  ret =0 
+[2025-10-26 15:37:00.085] [thread 29014] [EventLoop.cpp:90] uv_async_init  async_accept ret =0 
+[2025-10-26 15:37:08.103] [thread 28989] [AthenaTcpServer.cpp:12] uv_on_new_connection accept  new socket
+[2025-10-26 15:37:08.103] [thread 28989] [AthenaTcpServer.cpp:24] event loop  accept  new socket
+[2025-10-26 15:37:08.103] [thread 28989] [ObjectPool.hpp:124] [Pool]0x1046cc370 Miss, new obj 0x600001134000 
+[2025-10-26 15:37:08.103] [thread 28989] [EventLoop.h:37] --------  push task
+[2025-10-26 15:37:08.104] [thread 29012] [EventLoop.cpp:65]   -------tcp open ret =0
+[2025-10-26 15:37:08.104] [thread 29012] [EventLoop.cpp:73]  =================== START READ read data 
+[2025-10-26 15:37:08.104] [thread 29012] [ObjectPool.hpp:164] [Pool] 0x1046cc370 Release obj 0x600001134000 back to pool
+[2025-10-26 15:37:08.104] [thread 29012] [ObjectPool.hpp:177] ==== ObjectPool Stats ====
+[2025-10-26 15:37:08.104] [thread 29012] [ObjectPool.hpp:178] freeCount     :   1 
+[2025-10-26 15:37:08.104] [thread 29012] [ObjectPool.hpp:179] hitCount      :   0 
+[2025-10-26 15:37:08.104] [thread 29012] [ObjectPool.hpp:180] missCount     :   1 
+[2025-10-26 15:37:08.104] [thread 29012] [ObjectPool.hpp:181] allocCountObj :   1 
+[2025-10-26 15:37:08.104] [thread 29012] [ObjectPool.hpp:182] allocCountNode:   1 
+[2025-10-26 15:37:08.104] [thread 29012] [ObjectPool.hpp:183] ==========================
+[2025-10-26 15:37:10.661] [thread 29012] [EventLoop.cpp:22] ==========   READ CB   nread =6
+[2025-10-26 15:37:10.661] [thread 29012] [EventLoop.cpp:119] MMMMMMMMMM  READ =6
+[2025-10-26 15:37:10.661] [thread 29012] [EventLoop.cpp:122] -----------read msg =2222
+
+[2025-10-26 15:37:10.661] [thread 29012] [EventLoop.cpp:123] MMMMMMMMMM  READ 1=6
+[2025-10-26 15:41:59.598] [thread 29012] [EventLoop.cpp:22] ==========   READ CB   nread =5
+[2025-10-26 15:41:59.598] [thread 29012] [EventLoop.cpp:119] MMMMMMMMMM  READ =5
+[2025-10-26 15:41:59.598] [thread 29012] [EventLoop.cpp:122] -----------read msg =fff
+
+[2025-10-26 15:41:59.598] [thread 29012] [EventLoop.cpp:123] MMMMMMMMMM  READ 1=5
+[2025-10-26 15:42:52.292] [thread 34406] [main.cpp:40] uuuuuuuuuuuuuu =hahaha
+
+[2025-10-26 15:42:52.292] [thread 34406] [AthenaTcpServer.cpp:84] server  bind socket port =9999
+[2025-10-26 15:42:52.292] [thread 34431] [EventLoop.cpp:79]  event  run start 
+[2025-10-26 15:42:52.292] [thread 34406] [AthenaTcpServer.cpp:69] server  start io thread count =3
+[2025-10-26 15:42:52.292] [thread 34432] [EventLoop.cpp:79]  event  run start 
+[2025-10-26 15:42:52.292] [thread 34433] [EventLoop.cpp:79]  event  run start 
+[2025-10-26 15:42:52.292] [thread 34431] [EventLoop.cpp:87] uv_async_init  async_write  ret =0 
+[2025-10-26 15:42:52.292] [thread 34431] [EventLoop.cpp:90] uv_async_init  async_accept ret =0 
+[2025-10-26 15:42:52.292] [thread 34433] [EventLoop.cpp:87] uv_async_init  async_write  ret =0 
+[2025-10-26 15:42:52.292] [thread 34433] [EventLoop.cpp:90] uv_async_init  async_accept ret =0 
+[2025-10-26 15:42:52.292] [thread 34432] [EventLoop.cpp:87] uv_async_init  async_write  ret =0 
+[2025-10-26 15:42:52.292] [thread 34432] [EventLoop.cpp:90] uv_async_init  async_accept ret =0 
+[2025-10-26 15:43:13.389] [thread 34406] [main.cpp:28] Received signal 15 exiting...

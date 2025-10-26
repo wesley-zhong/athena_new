@@ -42,7 +42,7 @@ public:
 	void append(T value)
 	{
 		static_assert(std::is_trivially_copyable<T>::value, "append(T) must be used with trivially copyable types");
-		EndianConvert(value);
+        EndianConvertReverse<T>(value);
 		append((uint8 *)&value, sizeof(value));
 	}
 
@@ -50,9 +50,10 @@ public:
 	void put(std::size_t pos, T value)
 	{
 		static_assert(std::is_trivially_copyable<T>::value, "put(size_t, T) must be used with trivially copyable types");
-		EndianConvert(value);
+        EndianConvertReverse<T>(value);
 		put(pos, (uint8 *)&value, sizeof(value));
 	}
+
 
 	ByteBuffer &operator<<(uint8 value)
 	{
@@ -255,7 +256,7 @@ public:
 	T read(size_t pos) const
 	{
 		T val = *((T const*)&(*_storage)[pos]);
-		EndianConvert(val);
+		EndianConvert<T>(val);
 		return val;
 	}
 

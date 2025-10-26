@@ -38,6 +38,7 @@ int main(int argc, char **argv) {
 
     AthenaTcpServer  tcp_server;
     tcp_server.onNewConnection=[](Channel* channel){
+        INFO_LOG("ooooooooooo");
         INFO_LOG("on new connection ={}",channel->getAddr());
 
     };

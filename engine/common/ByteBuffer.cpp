@@ -18,7 +18,7 @@ RingByteBuf *ByteBuffer::createBuffer() {
 }
 
 
-int ByteBuffer::getNextPack() {
+int ByteBuffer::getNextPackLen() {
     int readableBytes = _storage->readableBytes();
     if (readableBytes < 4) {
         return -1;

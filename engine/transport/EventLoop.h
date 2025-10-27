@@ -13,11 +13,12 @@
 #include "ThreadPool.h"
 #include "XLog.h"
 
-class AthenaTcpServer;
+class NetInterface;
 
 class EventLoop {
 public:
-    EventLoop(AthenaTcpServer *tcpServer) : _tcpServer(tcpServer) {
+    EventLoop(NetInterface *tcpInterFace) : _netInterface(tcpInterFace) {
+        maxPackBody = static_cast<char *>(malloc(8192));
     }
 
     ~EventLoop() {
@@ -33,11 +34,13 @@ public:
         // INFO_LOG("--------  push task");
     }
 
-    void onNewConnection(Channel *channel);
+    void onNewConnection(Channel *channel) const;
 
-    void onClosed(Channel *channel);
+    void onClosed(Channel *channel) const;
 
-    void onRead(Channel *channel, char *body, int len);
+    void onRead(Channel *channel, char *body, int len) const;
+
+    void asyncConnect(const std::string &ip, int port);
 
 
     Thread::TaskPtr pop() {
@@ -61,25 +64,37 @@ public:
         uv_async_send(&uv_async_accept);
     }
 
+    void async_connect_task() {
+        uv_async_send(&uv_async_connect);
+    }
+
 
     uv_loop_t *uv_loop() {
         return _loop;
+    }
+
+    char *getPacketBuff() {
+        return maxPackBody;
     }
 
     static void uv_alloc_cb(uv_handle_t *h, size_t s, uv_buf_t *buf);
 
     static void uv_read_cb(uv_stream_t *client, ssize_t nread, const uv_buf_t *buf);
 
+    static void uv_on_connect(uv_connect_t *req, int status);
+
 private:
     uv_loop_t *_loop;
     uv_async_t uv_async_accept; // not used in this sample (accept in main thread)
     uv_async_t uv_async_write; // used by biz threads to notify reactor for pending writes
+    uv_async_t uv_async_connect;
     std::mutex write_mtx;
     uv_async_t async;
     //  std::unordered_map<uint64, std::unique_ptr<Channel> > channels;
     TQueue<Thread::TaskPtr> _waitTasks;
     std::thread t;
-    AthenaTcpServer *_tcpServer;
+    NetInterface *_netInterface;
+    char *maxPackBody;
 };
 
 #endif //ATHENA_EVENTLOOP_H

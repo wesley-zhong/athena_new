@@ -36,8 +36,12 @@ public:
 
     std::string getAddr() const;
 
-    int getPack() const {
-        return recv_buffer->getNextPack();
+    int getPack(char *outPacket) const {
+        int packetLen = recv_buffer->getNextPackLen();
+        if (packetLen > 0) {
+            recv_buffer->readBytes(outPacket, packetLen);
+        }
+        return packetLen;
     }
 
 private:

@@ -23,7 +23,7 @@
 #else
 #include <unistd.h>
 #endif
-
+#include "transport/TcpClient.h"
 
 static std::atomic<bool> g_running(true);
 static std::condition_variable g_cv;
@@ -40,11 +40,20 @@ int main(int argc, char **argv) {
     std::signal(SIGINT, handleSignal);
 
     xLogInitLog(LogLevel::LL_INFO, "../logs/gateway.log");
-    AthenaTcpServer athenaTcpServer;
-    athenaTcpServer.bind(6666).start(4);
+    // AthenaTcpServer athenaTcpServer;
+    // athenaTcpServer.bind(6666).start(4);
+    //
+    // std::string ip = "172.18.2.101";
+    // Dal::Cache::init(ip, 6379, "", "", "");
 
-    std::string ip = "172.18.2.101";
-    Dal::Cache::init(ip, 6379, "", "", "");
+    TcpClient tcp_client;
+    tcp_client.onConnected = [](Channel *channel) {
+        INFO_LOG(" on   Connected...  {}", channel->getAddr());
+    };
+    tcp_client.start();
+
+    std::this_thread::sleep_for(std::chrono::milliseconds(100));
+    tcp_client.connect("127.0.0.1",9999);
 
 
    // AthenaTcpClient athena_tcp_client;
@@ -54,11 +63,11 @@ int main(int argc, char **argv) {
     //         ERR_LOG(" errror  connect rest ={}", connRet);
     //     }
     // }
-    // // 💡 主线程阻塞等待，无限期休眠（CPU 占用≈0）
-    // {
-    //     std::unique_lock<std::mutex> lock(g_mutex);
-    //     g_cv.wait(lock, [] { return !g_running.load(); });
-    // }
+    // 💡 主线程阻塞等待，无限期休眠（CPU 占用≈0）
+    {
+        std::unique_lock<std::mutex> lock(g_mutex);
+        g_cv.wait(lock, [] { return !g_running.load(); });
+    }
 
     INFO_LOG("service exited");
 

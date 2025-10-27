@@ -12,20 +12,40 @@ void async_accept_cb(uv_async_t *handle) {
     event_loop->execute();
 }
 
+void async_connect_cb(uv_async_t *handle) {
+    EventLoop *event_loop = (EventLoop *) handle->data;
+    event_loop->execute();
+}
+
 void EventLoop::uv_alloc_cb(uv_handle_t *h, size_t s, uv_buf_t *buf) {
-    buf->base = (  char*)malloc(s);
+    buf->base = (char *) malloc(s);
     buf->len = s;
+}
+
+void EventLoop::uv_on_connect(uv_connect_t *req, int status) {
+    if (status < 0) {
+        INFO_LOG("xxxxxxxxxxxxxx CONNECT FAILED");
+        // this should free channel
+        return;
+    }
+    Channel *channel = (Channel *) req->data;
+    EventLoop *event_loop = (EventLoop *) channel->event_loop();
+    event_loop->_netInterface->on_connected(channel);
 }
 
 
 void EventLoop::uv_read_cb(uv_stream_t *client, ssize_t nread, const uv_buf_t *buf) {
     Channel *channel = (Channel *) client->data;
     channel->onRead(client, nread, buf);
-    int ret = channel->getPack();
-    if (ret <0) {
+    EventLoop *event_loop = (EventLoop *) client->data;
+    int packageLen = channel->getPack(event_loop->maxPackBody);
+    if (packageLen < 0) {
         return;
     }
-   // channel->event_loop()->onRead(channel,)
+
+    event_loop->_netInterface->on_read(channel, event_loop->maxPackBody, packageLen);
+
+    // channel->event_loop()->onRead(channel,)
     // EventLoop *pEventPool = (EventLoop *) client->data;
     // if (nread > 0) {
     //     std::string msg(buf->base, nread);
@@ -59,38 +79,62 @@ void async_write_cb(uv_async_t *handle) {
     EventLoop *event_loop = (EventLoop *) handle->data;
 }
 
-void EventLoop::asyncAccept( uv_os_sock_t fd) {
+void EventLoop::asyncConnect(const std::string &ip, int port) {
+    EventLoop *event_loop = this;
+    push([ip, port, event_loop]() {
+        sockaddr_in dest;
+        int ret = uv_ip4_addr(ip.c_str(), port, &dest);
+        if (ret != 0) {
+            ERR_LOG("uv_ip4_addr failed code =code {}:{}", ret, uv_strerror(ret));
+            return;
+        }
+        uv_connect_t *connect_req = new uv_connect_t;
+        uv_tcp_t *client = new uv_tcp_t;
+        uv_tcp_init(event_loop->uv_loop(), client);
+        Channel *clientChannel = new Channel(event_loop, client, 1);
+        connect_req->data = clientChannel;
+        ret = uv_tcp_connect(connect_req, client, (const struct sockaddr *) &dest, uv_on_connect);
+        if (ret != 0) {
+            ERR_LOG("uv_tcp_connect  failed code =code {}:{}", ret, uv_strerror(ret));
+        }
+    });
+
+    async_connect_task();
+}
+
+void EventLoop::asyncAccept(uv_os_sock_t fd) {
     EventLoop *event_loop = this;
     push([event_loop, fd] {
-        uv_tcp_t* client = new uv_tcp_t;
+        uv_tcp_t *client = new uv_tcp_t;
         uv_tcp_init(event_loop->uv_loop(), client);
-       int ret =  uv_tcp_open(client, fd); // 绑定 socket 到本 loop
-       if(ret != 0){
-           ERR_LOG("  -------tcp open faild ret ={}",ret);
-       }
+        int ret = uv_tcp_open(client, fd); // 绑定 socket 到本 loop
+        if (ret != 0) {
+            ERR_LOG("  -------tcp open faild ret ={}", ret);
+        }
 
         uv_read_start((uv_stream_t *) client, uv_alloc_cb, uv_read_cb);
-        Channel* channel = new Channel(event_loop, client, fd);
+        Channel *channel = new Channel(event_loop, client, fd);
         //create channel
-//        auto channel = std::make_unique<Channel>(event_loop, client, fd);
-//        client->data = channel.get();
-//        event_loop->channels.emplace(1, std::move(channel));
+        //        auto channel = std::make_unique<Channel>(event_loop, client, fd);
+        //        client->data = channel.get();
+        //        event_loop->channels.emplace(1, std::move(channel));
         client->data = channel;
         event_loop->onNewConnection(channel);
         INFO_LOG(" =================== START READ read data ");
     });
     async_accept_task();
 }
-void EventLoop::onNewConnection(Channel* channel){
-    _tcpServer->onNewConnection(channel);
+
+void EventLoop::onNewConnection(Channel *channel) const {
+    _netInterface->on_new_connection(channel);
 }
 
-void EventLoop::onClosed(Channel *channel){
-    _tcpServer->onClosed(channel);
+void EventLoop::onClosed(Channel *channel) const {
+    _netInterface->on_closed(channel);
 }
 
-void EventLoop::onRead(Channel* channel, char*body , int len){
-  _tcpServer->onRead(channel, body, len);
+void EventLoop::onRead(Channel *channel, char *body, int len) const {
+    _netInterface->on_read(channel, body, len);
 }
 
 
@@ -101,17 +145,24 @@ void EventLoop::run() {
     _loop->data = this;
 
     int ret = uv_async_init(_loop, &uv_async_write, async_write_cb);
-    if(ret !=0){
+    if (ret != 0) {
         ERR_LOG("uv_async_init  async_write  ret ={} ", ret);
-        return ;
+        return;
     }
     uv_async_write.data = this;
     ret = uv_async_init(_loop, &uv_async_accept, async_accept_cb);
-    if(ret != 0){
+    if (ret != 0) {
         ERR_LOG("uv_async_init  async_accept ret ={} ", ret);
         return;
     }
     uv_async_accept.data = this;
+
+    ret = uv_async_init(_loop, &uv_async_connect, async_connect_cb);
+    if (ret != 0) {
+        ERR_LOG("uv_async_init  async_accept ret ={} ", ret);
+        return;
+    }
+    uv_async_connect.data = this;
     INFO_LOG("############## event loop started");
     uv_run(_loop, UV_RUN_DEFAULT);
     uv_close((uv_handle_t *) &uv_async_write, nullptr);

@@ -9,11 +9,17 @@
 #include <vector>
 #include "EventLoop.h"
 
-#include "uv.h"
+#include "NetInterface.h"
 #include "Channel.h"
-class AthenaTcpServer {
+
+class AthenaTcpServer : public NetInterface {
 public:
-    AthenaTcpServer(){};
+    AthenaTcpServer() {
+    }
+
+    ~AthenaTcpServer() {
+    }
+
 
     AthenaTcpServer &bind(int port);
 
@@ -23,14 +29,32 @@ public:
 
     void onAccept(uv_stream_t *server, int status);
 
-    ~AthenaTcpServer(){};
+    void on_connected(Channel *channel) override {
+    }
 
+    void on_new_connection(Channel *channel) override {
+        if (onNewConnection != nullptr) {
+            onNewConnection(channel);
+        }
+    }
+
+    void on_read(Channel *channel, char *body, int len) override {
+        if (onRead != nullptr) {
+            onRead(channel, body, len);
+        }
+    }
+
+    void on_closed(Channel *channel) override {
+        if (onClosed != nullptr) {
+            onClosed(channel);
+        }
+    }
+
+    std::function<void(Channel *)> onNewConnection;
+    std::function<void(Channel *, char *, int)> onRead;
+    std::function<void(Channel *)> onClosed;
 
     static void uv_on_new_connection(uv_stream_t *server, int status);
-
-    std::function<void (Channel*)> onNewConnection;
-    std::function<void (Channel* ,void*, int)> onRead;
-    std::function<void (Channel*)> onClosed;
 
 private:
     std::atomic<size_t> next_reactor{0};

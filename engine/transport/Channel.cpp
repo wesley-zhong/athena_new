@@ -6,6 +6,7 @@
 #include <sstream>
 #include "XLog.h"
 #include "EventLoop.h"
+
 std::string Channel::getAddr() const {
     std::ostringstream ss;
     struct sockaddr_storage addr;
@@ -17,12 +18,12 @@ std::string Channel::getAddr() const {
     if (addr.ss_family == AF_INET) {
         struct sockaddr_in *addr4 = (struct sockaddr_in *) &addr;
         uv_ip4_name(addr4, ip, sizeof(ip));
-        port = ntohs(addr4->sin_port);
+        port = Endian::fromNetwork16(addr4->sin_port);
         ss << ip << ":" << port;
     } else if (addr.ss_family == AF_INET6) {
         struct sockaddr_in6 *addr6 = (struct sockaddr_in6 *) &addr;
         uv_ip6_name(addr6, ip, sizeof(ip));
-        port = ntohs(addr6->sin6_port);
+        port = Endian::fromNetwork16(addr6->sin6_port);
         ss << ip << ":" << port;
     } else {
         fprintf(stderr, "Unknown address family\n");

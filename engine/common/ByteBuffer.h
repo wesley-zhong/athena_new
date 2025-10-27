@@ -53,7 +53,7 @@ public:
     uint16 getInt16() const {
         uint16 value;
         uint16 ret = _storage->peek(&value, sizeof(value));
-        return Endian::fromNetwork<uint16>(ret);
+        return Endian::fromNetwork<uint16>(value);
     }
 
     void writeInt32(uint32 value) const {
@@ -72,17 +72,21 @@ public:
         _storage->write(&value, sizeof(value));
     }
 
-    uint64 getInt64() {
+    uint64 getInt64() const {
         uint64 value;
         uint64 ret = _storage->peek(&value, sizeof(value));
         return Endian::fromNetwork<uint64>(ret);
     }
 
-    void writeBytes(char *body, size_t size) {
-        _storage->write(body, size);
+    size_t writeBytes(char *body, size_t size) const {
+        return _storage->write(body, size);
     }
 
-    int getNextPack();
+    size_t readBytes(char *body, size_t size) const {
+        return _storage->read(body, size);
+    }
+
+    int getNextPackLen();
 
 private:
     RingByteBuf *_storage;

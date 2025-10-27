@@ -37,24 +37,24 @@ void Channel::send(void *data, size_t size) {
     uv_buf_t b = uv_buf_init((char*)data, size);
     req->data = data;
     uv_write(req, (uv_stream_t *) client, &b, 1,
-             [](uv_write_t *req, int status) {
-                 delete (std::string *) req->data;
-                 delete req;
+             [](uv_write_t *req1, int status) {
+                 INFO_LOG(" ------------write complete call back ={}", status);
+                 delete  req1->data;
+                 delete req1;
              });
 }
 
 void Channel::onRead(uv_stream_t *client, ssize_t nread, const uv_buf_t *buf) {
     INFO_LOG("MMMMMMMMMM  READ ={}", nread);
     if (nread > 0) {
-        recv_buffer->put()
-
-        std::string msg(buf->base, nread);
-        delete[] buf->base;
-
-         char*   body  =(char *) malloc(6);
-         body[0]='a';
-         body[1]='b';
-        send((void*)body, 2);
+        recv_buffer->writeBytes(buf->base, nread);
+        // std::string msg(buf->base, nread);
+        // delete[] buf->base;
+        //
+        //  char*   body  =(char *) malloc(6);
+        //  body[0]='a';
+        //  body[1]='b';
+        // send((void*)body, 2);
         return;
     }
     INFO_LOG("socket closed =");

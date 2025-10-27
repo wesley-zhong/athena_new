@@ -21,6 +21,10 @@ void EventLoop::uv_alloc_cb(uv_handle_t *h, size_t s, uv_buf_t *buf) {
 void EventLoop::uv_read_cb(uv_stream_t *client, ssize_t nread, const uv_buf_t *buf) {
     Channel *channel = (Channel *) client->data;
     channel->onRead(client, nread, buf);
+    int ret = channel->getPack();
+    if (ret <0) {
+        return;
+    }
    // channel->event_loop()->onRead(channel,)
     // EventLoop *pEventPool = (EventLoop *) client->data;
     // if (nread > 0) {

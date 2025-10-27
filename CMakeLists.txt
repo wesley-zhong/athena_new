@@ -14,6 +14,13 @@ if(UNIX)
 	add_definitions("-Wall -g")
 endif()
 
+if(MSVC)
+	add_compile_options("$<$<C_COMPILER_ID:MSVC>:/utf-8>")
+	add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/utf-8>")
+	# Or simply:
+	add_compile_options(/utf-8)
+endif()
+
 #add_compile_definitions(WIN32_LEAN_AND_MEAN NOMINMAX)
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 # 打印消息

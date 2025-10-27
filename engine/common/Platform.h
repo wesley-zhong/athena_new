@@ -1,7 +1,7 @@
 #ifndef PLATFORM_H
 #define PLATFORM_H
 /**
- * ƽ̨���
+ * ƽ̨���
  */
 #if defined(_WIN32) || defined(__WIN32__) || defined(WIN32)
 #define SYSTEM_WIN // win ƽ̨

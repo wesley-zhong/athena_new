@@ -3,7 +3,6 @@
 //
 
 #include "AthenaTcpServer.h"
-
 #include "Channel.h"
 #include "XLog.h"
 static std::mutex g_conns_mtx;
@@ -37,8 +36,8 @@ void AthenaTcpServer::onAccept(uv_stream_t *server, int status) {
         return;
     }
 
-    int flags = fcntl(sock, F_GETFL, 0);
-    fcntl(sock, F_SETFL, flags | O_NONBLOCK);
+    // int flags = fcntl(sock, F_GETFL, 0);
+    // fcntl(sock, F_SETFL, flags | O_NONBLOCK);
     //uv_close((uv_handle_t*)client, [](uv_handle_t* h){ delete (uv_tcp_t*)h; });
 
     // choose reactor

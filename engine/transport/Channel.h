@@ -12,8 +12,8 @@ class EventLoop;
 
 class Channel {
 public:
-    Channel(EventLoop *event_loop, uv_tcp_t *client, uv_os_fd_t fd) : _eventLoop(event_loop),
-                                                                      client(client), fd((uint64) fd) {
+    Channel(EventLoop *event_loop, uv_tcp_t *client, uv_os_sock_t fd) : _eventLoop(event_loop),
+                                                                        client(client), fd((uint64) fd) {
     }
 
     void onRead(uv_stream_t *client, ssize_t nread, const uv_buf_t *buf);
@@ -35,6 +35,10 @@ public:
     }
 
     std::string getAddr() const;
+
+    int getPack() const {
+        return recv_buffer->getNextPack();
+    }
 
 private:
     void send(void *data, size_t size);

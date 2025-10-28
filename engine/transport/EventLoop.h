@@ -19,6 +19,7 @@ class EventLoop {
 public:
     EventLoop(NetInterface *tcpInterFace) : _netInterface(tcpInterFace) {
         maxPackBody = static_cast<char *>(malloc(8192));
+        INFO_LOG("create msg buff {} len 8192", fmt::ptr(maxPackBody));
     }
 
     ~EventLoop() {

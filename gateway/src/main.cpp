@@ -24,6 +24,7 @@
 #include <unistd.h>
 #endif
 #include "transport/TcpClient.h"
+#include "ProtoInner.pb.h"
 
 static std::atomic<bool> g_running(true);
 static std::condition_variable g_cv;
@@ -49,14 +50,23 @@ int main(int argc, char **argv) {
     TcpClient tcp_client;
     tcp_client.onConnected = [](Channel *channel) {
         INFO_LOG(" on   Connected...  {}", channel->getAddr());
+        std::shared_ptr<InnerLoginRequest> inner_login_request = std::make_shared<InnerLoginRequest>();
+        inner_login_request->set_sid(1111333);
+        inner_login_request->set_roleid(222222);
+        channel->sendMsg(INNER_LOGIN_REQ, inner_login_request);
+    };
+    tcp_client.onRead = [](Channel *channel, char *body, int len) {
+        SPackage spackage;
+        spackage.parseBody(body, len);
+        INFO_LOG("============ receive from {} msg Id= {}", channel->getAddr(), spackage._msgId);
     };
     tcp_client.start();
 
     std::this_thread::sleep_for(std::chrono::milliseconds(100));
-    tcp_client.connect("127.0.0.1",9999);
+    tcp_client.connect("127.0.0.1", 9999);
 
 
-   // AthenaTcpClient athena_tcp_client;
+    // AthenaTcpClient athena_tcp_client;
     // for (int i = 0; i < 2; ++i) {
     //     int connRet = athena_tcp_client.connect("localhost", 38881);
     //     if (connRet) {

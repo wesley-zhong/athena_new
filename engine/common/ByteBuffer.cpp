@@ -20,15 +20,15 @@ RingByteBuf *ByteBuffer::createBuffer() {
 
 int ByteBuffer::getNextPackLen() {
     int readableBytes = _storage->readableBytes();
-    if (readableBytes < 4) {
+    if (readableBytes < 8) {
         return -1;
     }
 
     uint32 packLen = 0;
     _storage->peek(&packLen, 4);
-    Endian::fromNetwork<uint32>(packLen);
-    if (packLen < readableBytes) {
+    packLen = Endian::fromNetwork<uint32>(packLen);
+    if (packLen > readableBytes - 4) {
         return -1;
     }
-    return packLen;
+    return packLen + 4;
 }

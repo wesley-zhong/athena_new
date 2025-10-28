@@ -4,17 +4,35 @@
 
 #ifndef ATHENA_CHANNEL_H
 #define ATHENA_CHANNEL_H
-
+#include "google/protobuf/message.h"
 #include "uv.h"
 #include "ByteBuffer.h"
+#include "ByteUtils.h"
 
 class EventLoop;
+
+struct SPackage {
+    int32 _msgId;
+    char *_body;
+    int32 _bodyLen;
+
+    void parseBody(char *body, int32 bodyLen) {
+        _msgId = ByteUtils::readInt32(body);
+        _body = body + sizeof(int32);
+    }
+};
 
 class Channel {
 public:
     Channel(EventLoop *event_loop, uv_tcp_t *client, uv_os_sock_t fd) : _eventLoop(event_loop),
                                                                         client(client), fd((uint64) fd) {
+        recv_buffer = new ByteBuffer();
+        send_buff = new ByteBuffer();
     }
+
+    void sendMsg(int msgId, char *body, size_t size);
+
+    void sendMsg(int msgId, std::shared_ptr<google::protobuf::Message> msg);
 
     void onRead(uv_stream_t *client, ssize_t nread, const uv_buf_t *buf);
 
@@ -34,7 +52,7 @@ public:
         return this->userData;
     }
 
-    std::string getAddr() const;
+    std::string getAddr();
 
     int getPack(char *outPacket) const {
         int packetLen = recv_buffer->getNextPackLen();
@@ -45,7 +63,13 @@ public:
     }
 
 private:
-    void send(void *data, size_t size);
+    void eventLoopWrite(int msgId, std::shared_ptr<google::protobuf::Message> body);
+
+    void eventLoopDoSend(int msgId, char *body, int32 bodyLen);
+
+    void eventLoopUvSend(void *data, size_t size);
+
+    std::string getAddrString(const struct sockaddr_storage &addr);
 
     ByteBuffer *recv_buffer;
     ByteBuffer *send_buff;

@@ -55,9 +55,9 @@ add_library(${PROJECT_NAME} STATIC
 
 # linked libs
 link_directories(${PROJECT_SOURCE_DIR}/../libs)
-set(PROJECT_LINK_LIBS uv lua spdlog)
+set(PROJECT_LINK_LIBS uv lua spdlog protobuf::libprotobuf)
 if (WIN32)
-    set(PROJECT_LINK_LIBS uv lua54)
+    set(PROJECT_LINK_LIBS uv lua54 spdlog protobuf::libprotobuf)
 endif ()
 
 # 链接操作

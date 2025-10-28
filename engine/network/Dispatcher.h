@@ -4,7 +4,7 @@
 #include <functional>
 #include <map>
 #include <iostream>
-#include <google/protobuf/message.h>
+#include "google/protobuf/message.h"
 #include "Singleton.h"
 
 
@@ -13,11 +13,10 @@ Dispatcher::Instance()->registerMsgHandler(MSGID, std::function(FUNCTION))
 
 struct MsgFunction {
     std::function<void(int64_t, void *)> function;
-    std::function<void *()> newParam;    //this may be use obj pool
+    std::function<void *()> newParam; //this may be use obj pool
 };
 
 class Dispatcher : public Singleton<Dispatcher> {
-
 public:
     Dispatcher() = default;
 
@@ -26,11 +25,20 @@ public:
     template<typename T>
     void registerMsgHandler(int msgId, std::function<void(int64_t, T *)> msgFuc);
 
-//  template <typename T>
-//  void  registerMsgHandlers(int msgId, std::function<void(int, std::shared_ptr<T>)> msgFuc);
+    //  template <typename T>
+    //  void  registerMsgHandlers(int msgId, std::function<void(int, std::shared_ptr<T>)> msgFuc);
 
     void processMsg(int msgId, int64_t playerId, const void *body, int len);
-    // template <typename T>
+
+    MsgFunction *findMsgFuncion(int msgId) {
+        auto it = msgMap.find(msgId);
+        if (it != msgMap.end()) {
+            return it->second;
+        }
+        return nullptr;
+    }
+
+    // template <typename T>>
     // void callFunction(int msgId, std::shared_ptr<T> param_);
 
 private:
@@ -49,6 +57,7 @@ void Dispatcher::registerMsgHandler(int msgId, std::function<void(int64_t, T *)>
     };
     msgMap[msgId] = msgFunction;
 }
+
 // template <typename T>
 // void Dispatcher::registerMsgHandlers(int msgId, std::function<void(int, std::shared_ptr<T>)> msgFuc)
 // {

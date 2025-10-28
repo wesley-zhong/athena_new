@@ -21,11 +21,11 @@ message InnerHead {
 }
 
 message  InnerHeartBeatRequest{
-
+  int64 time =1;
 }
 
 message  InnerHeartBeatResponse{
-
+  int64  time  = 2;
 }
 
 message InnerLoginRequest {

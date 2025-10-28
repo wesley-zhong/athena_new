@@ -1,0 +1,20 @@
+//
+// Created by zhongweiqi on 2025/10/28.
+//
+
+#include "ByteUtils.h"
+
+#include "ByteConverter.h"
+
+
+uint32 ByteUtils::readInt32(void *body) {
+    int32 value = 0;
+    memcpy(&value, body, 4);
+    return Endian::fromNetwork32(value);
+}
+
+uint16 ByteUtils::readInt16(void *body) {
+    int16 value = 0;
+    memcpy(&value, body, 2);
+    return Endian::fromNetwork16(value);
+}

@@ -3,17 +3,24 @@
 #include "common/Singleton.h"
 #include <iostream>
 
+#include "ProtoInner.pb.h"
 class GameRole;
-class InnerHead;
-class MsgHandler :public Singleton<MsgHandler>
-{
+
+class MsgHandler : public Singleton<MsgHandler> {
 private:
     /* data */
 public:
-    MsgHandler(/* args */){};
-    ~MsgHandler(){};
-    static void  onLogin(int64_t playerId, GameRole* GameRole);
-    static void  onSomeMsg(int64_t playerId, InnerHead* InnerHead );
+    MsgHandler(/* args */) {
+    };
+
+    ~MsgHandler() {
+    };
+
+    static void onLogin(int64_t playerId, GameRole *GameRole);
+
+    static void onSomeMsg(int64_t playerId, InnerHead *InnerHead);
+
+    static void onInnerLogin(int64_t playerId, InnerLoginRequest *GameRole);
 };
 
 #endif

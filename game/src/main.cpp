@@ -4,12 +4,7 @@
 #include <csignal>
 #include "common/RingBuffer.hpp"
 #include "common/XLog.h"
-#include "network/Dispatcher.h"
-#include "MsgHandler.h"
 #include "GameRole.h"
-#include "ProtoInner.pb.h"
-
-#include "thread/AthenaThreadPool.h"
 #include "common/ObjectPool.hpp"
 #include "db/Dal.hpp"
 
@@ -22,7 +17,8 @@
 #endif
 
 #include "transport/AthenaTcpServer.h"
-#include "transport/Channel.h"
+
+#include "network/NetWorkHandler.h"
 
 
 static std::atomic<bool> g_running(true);
@@ -40,27 +36,16 @@ int main(int argc, char **argv) {
     std::signal(SIGINT, handleSignal);
     xLogInitLog(LogLevel::LL_INFO, "../logs/game.log");
 
-    Thread::ThreadPool *threadPool = new AthenaThreadPool();
-    threadPool->create(2);
 
+    // init all functions call
+    NetWorkHandler::initAllMsgRegister();
+    NetWorkHandler::startThread(3);
 
+    //start server
     AthenaTcpServer tcp_server;
-    tcp_server.onNewConnection = [](Channel *channel) {
-        INFO_LOG("on new connection ={}", channel->getAddr());
-    };
-    tcp_server.onRead = [threadPool](Channel *channel, void *buff, int len) {
-        INFO_LOG("  === on read ");
-        int msgId = 100;
-        int playerId = 999;
-        threadPool->execute([msgId, playerId, buff, len]() {
-            Dispatcher::Instance()->processMsg(msgId, playerId, buff, len);
-        }, 2);
-
-    };
-    tcp_server.onClosed = [](Channel *channel) {
-        INFO_LOG("connection ={}  closed ", channel->getAddr());
-    };
-
+    tcp_server.onNewConnection = NetWorkHandler::onConnect;
+    tcp_server.onRead = NetWorkHandler::onMsg;
+    tcp_server.onClosed = NetWorkHandler::onClosed;
 
     tcp_server.bind(9999).start(3);
 
@@ -89,9 +74,9 @@ int main(int argc, char **argv) {
     //
     //    // pRingBuf->push(&i4);
     //
-    std::shared_ptr<InnerHead> pInnherHead = std::make_shared<InnerHead>();
-    pInnherHead->set_id(14441);
-    std::string pServer = pInnherHead->SerializeAsString();
+    // std::shared_ptr<InnerHead> pInnherHead = std::make_shared<InnerHead>();
+    // pInnherHead->set_id(14441);
+    // std::string pServer = pInnherHead->SerializeAsString();
     // std::shared_ptr<InnerHead> pInnherHead2 = std::make_shared<InnerHead>();
     // bool ret = pInnherHead2->ParseFromString(pServer);
     // // std::cout<<"------ "<<pInnherHead2->id() <<std::endl;
@@ -100,16 +85,16 @@ int main(int argc, char **argv) {
     // REGISTER_MSG_ID_FUN(100, MsgHandler::onSomeMsg);
     // Dispatcher::Instance()->processMsg(100, 8889, pServer.c_str(), pServer.length());
 
-    REGISTER_MSG_ID_FUN(100, MsgHandler::onSomeMsg);
-    int i = 1;
-    i++;
-    threadPool->execute([i]() {
-        INFO_LOG("thread test 2={}", i);
-    }, 2);
-
-    threadPool->execute([i]() {
-        INFO_LOG("thread test 2={}", i);
-    }, 2);
+    // REGISTER_MSG_ID_FUN(100, MsgHandler::onSomeMsg);
+    // int i = 1;
+    // i++;
+    // threadPool->execute([i]() {
+    //     INFO_LOG("thread test 2={}", i);
+    // }, 2);
+    //
+    // threadPool->execute([i]() {
+    //     INFO_LOG("thread test 2={}", i);
+    // }, 2);
 
     {
         ObjectPool<GameRole>::PoolObjRef ref = ObjPool::acquire<GameRole>(100);
@@ -117,20 +102,20 @@ int main(int argc, char **argv) {
     }
     INFO_LOG("==========================  wait release");
     std::this_thread::sleep_for(std::chrono::seconds(5));
-    threadPool->execute([]() {
-        INFO_LOG("thread test   obj=3");
-    }, 2);
-
-
-    INFO_LOG("========================== should be hit");
-    int x = 100;
-    threadPool->execute([x]() {
-        INFO_LOG("thread test x=2={}", x);
-    }, 2);
-
-    threadPool->execute([] {
-        INFO_LOG(" thread test 1={}", 1);
-    }, 1);
+    // threadPool->execute([]() {
+    //     INFO_LOG("thread test   obj=3");
+    // }, 2);
+    //
+    //
+    // INFO_LOG("========================== should be hit");
+    // int x = 100;
+    // threadPool->execute([x]() {
+    //     INFO_LOG("thread test x=2={}", x);
+    // }, 2);
+    //
+    // threadPool->execute([] {
+    //     INFO_LOG(" thread test 1={}", 1);
+    // }, 1);
 
     {
         ObjectPool<GameRole>::PoolObjRef poolRef = GameRole::claim(888);

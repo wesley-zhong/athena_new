@@ -52,7 +52,7 @@ public:
 
     uint16 getInt16() const {
         uint16 value;
-        uint16 ret = _storage->peek(&value, sizeof(value));
+        _storage->peek(&value, sizeof(value));
         return Endian::fromNetwork<uint16>(value);
     }
 

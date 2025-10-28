@@ -57,7 +57,6 @@ link_directories(${PROJECT_SOURCE_DIR}/../libs)
 
 set (PROJECT_LINK_LIBS  mysqlclient  hiredis  engine-lua protobuf::libprotobuf)
 message("======== begin to configure game objs: ${PROTO_OBJS}")
-message("======== begin to configure game libs: ${PROJECT_LINK_LIBS}")
 
 
 # 生成可执行文件

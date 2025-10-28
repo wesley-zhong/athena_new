@@ -37,46 +37,21 @@ void EventLoop::uv_on_connect(uv_connect_t *req, int status) {
 void EventLoop::uv_read_cb(uv_stream_t *client, ssize_t nread, const uv_buf_t *buf) {
     Channel *channel = (Channel *) client->data;
     channel->onRead(client, nread, buf);
-    EventLoop *event_loop = (EventLoop *) client->data;
-    int packageLen = channel->getPack(event_loop->maxPackBody);
-    if (packageLen < 0) {
-        return;
+    EventLoop *event_loop =  channel->event_loop();
+    // get one complete packet
+    while (true) {
+        int packageLen = channel->getPack(event_loop->maxPackBody);
+        if (packageLen < 0) {
+            return;
+        }
+        event_loop->_netInterface->on_read(channel, event_loop->maxPackBody, packageLen);
     }
-
-    event_loop->_netInterface->on_read(channel, event_loop->maxPackBody, packageLen);
-
-    // channel->event_loop()->onRead(channel,)
-    // EventLoop *pEventPool = (EventLoop *) client->data;
-    // if (nread > 0) {
-    //     std::string msg(buf->base, nread);
-    //     INFO_LOG("-----------read msg ={}", msg);
-    //     // 投递到逻辑线程
-    //     // g_logicPool.post([client, msg] {
-    //     //     std::string reply = "echo: " + msg;
-    //     //     // 回到对应 Reactor 写回
-    //     //     auto *r = (ReactorThread *) client->data;
-    //     //     r->q.push([client, reply] {
-    //     //         auto *req = new uv_write_t;
-    //     //         auto *data = new std::string(reply);
-    //     //         uv_buf_t b = uv_buf_init(data->data(), data->size());
-    //     //         req->data = data;
-    //     //         uv_write(req, (uv_stream_t *) client, &b, 1,
-    //     //                  [](uv_write_t *req, int status) {
-    //     //                      delete (std::string *) req->data;
-    //     //                      delete req;
-    //     //                  });
-    //     //     });
-    //     //     uv_async_send(&r->async);
-    //     // });
-    // } else {
-    //     uv_close((uv_handle_t *) client, nullptr);
-    // }
-    // delete[] buf->base;
 }
 
 
 void async_write_cb(uv_async_t *handle) {
     EventLoop *event_loop = (EventLoop *) handle->data;
+    event_loop->execute();
 }
 
 void EventLoop::asyncConnect(const std::string &ip, int port) {

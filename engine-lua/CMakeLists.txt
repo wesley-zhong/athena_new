@@ -40,5 +40,3 @@ endif ()
 
 # 链接操作
 target_link_libraries(${PROJECT_NAME} PUBLIC ${PROJECT_LINK_LIBS})
-
-set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 17)

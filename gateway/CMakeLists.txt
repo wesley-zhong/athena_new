@@ -1,8 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 project(gateway VERSION 0.1.0 LANGUAGES C CXX)
 
-set(SOLUTION_DIR ${PROJECT_SOURCE_DIR}/../)
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${SOLUTION_DIR}/bin)
+set(SOLUTION_DIR ${PROJECT_SOURCE_DIR}/..)
 
 find_package(protobuf CONFIG REQUIRED)
 
@@ -26,11 +25,7 @@ target_include_directories(${PROJECT_NAME} PRIVATE
         ${PROJECT_SOURCE_DIR}/src
         ${PROJECT_SOURCE_DIR}/progen
 )
-
-# 只需要链接 engine，所有 include 会自动继承
-target_link_libraries(${PROJECT_NAME} PRIVATE engine  hiredis protobuf::libprotobuf)
-
-set_target_properties(${PROJECT_NAME} PROPERTIES
-        CXX_STANDARD 17
-        CXX_STANDARD_REQUIRED ON
-)
+target_link_directories(${PROJECT_NAME} PRIVATE ${SOLUTION_DIR}/libs)
+# 链接操作
+set(PROJECT_LINK_LIBS  hiredis engine engine-lua protobuf::libprotobuf)
+target_link_libraries(${PROJECT_NAME} PRIVATE ${PROJECT_LINK_LIBS})

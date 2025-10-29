@@ -8,6 +8,9 @@
 #include "transport/Channel.h"
 #include "XLog.h"
 #include "transport/ByteUtils.h"
+#include "ProtoInner.pb.h"
+
+
 
 void PlayerNetWorkHandller::initAllMsgRegister() {
     REGISTER_MSG_ID_FUN(INNER_LOGIN_REQ, MsgHandler::onLoginRes);
@@ -54,7 +57,7 @@ void PlayerNetWorkHandller::onClosed(Channel *channel) {
     INFO_LOG("connection ={}  closed ", channel->getAddr());
 }
 
-void PlayerNetWorkHandller::processInnerLogin(MsgFunction *msg_function, Channel *channel, void *body, int len) {
+void PlayerNetWorkHandller::processPlayerLogin(MsgFunction *msg_function, Channel *channel, void *body, int len) {
     InnerLogin *inner_login = static_cast<InnerLogin *>(msg_function->newParam());
     inner_login->req.ParseFromArray(body, len);
     inner_login->channel = channel;

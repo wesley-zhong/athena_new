@@ -23,6 +23,7 @@ public:
 
     static Thread::ThreadPool *threadPool;
 
+    static void processPlayerLogin(MsgFunction *msg_function, Channel *channel, void *body, int len);
 };
 
 

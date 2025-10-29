@@ -47,4 +47,3 @@ target_link_libraries(engine PUBLIC
         protobuf::libprotobuf
         spdlog
 )
-set_target_properties(engine PROPERTIES CXX_STANDARD 17)

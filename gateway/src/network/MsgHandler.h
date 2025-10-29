@@ -3,7 +3,12 @@
 
 #include "BaseType.h"
 #include "ProtoInner.pb.h"
+#include "transport/Channel.h"
 
+struct InnerLogin {
+    InnerLoginRequest req;
+    Channel *channel;
+};
 
 class MsgHandler {
 public:

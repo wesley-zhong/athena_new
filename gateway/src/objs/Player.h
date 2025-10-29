@@ -22,9 +22,7 @@ public:
         return pid;
     }
 
-    void setPid(uint32_t pid){
-        this->pid = pid;
-    }
+    void setPid(uint32_t pid);
 
 };
 

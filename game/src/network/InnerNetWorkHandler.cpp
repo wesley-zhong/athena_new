@@ -39,11 +39,11 @@ void InnerNetWorkHandler::onMsg(Channel *channel, void *buff, int len) {
         return;
     }
     if (msgId == INNER_TO_GAME_LOGIN_REQ) {
-        processInnerLogin(msg_function, channel, data, len);
+        processMsgWithChannel<InnerLoginRequest>(msg_function, channel, data, len);
         return;
     }
     if (msgId == INNER_SERVER_HAND_SHAKE_REQ) {
-        processInnerShakeReq(msg_function, channel, data, len);
+        processMsgWithChannel<InnerServerHandShakeReq>(msg_function, channel, data, len);
         return;
     }
     auto *param = static_cast<google::protobuf::Message *>(msg_function->newParam());
@@ -59,22 +59,13 @@ void InnerNetWorkHandler::onClosed(Channel *channel) {
     INFO_LOG("connection ={}  closed ", channel->getAddr());
 }
 
-void InnerNetWorkHandler::processInnerLogin(MsgFunction *msg_function, Channel *channel, void *body, int len) {
-    InnerLogin *inner_login = static_cast<InnerLogin *>(msg_function->newParam());
-    inner_login->req.ParseFromArray(body, len);
-    inner_login->channel = channel;
-    threadPool->execute([msg_function, inner_login]() {
-        msg_function->function(0, inner_login);
-    }, 0);
-}
-
-
-void InnerNetWorkHandler::processInnerShakeReq(MsgFunction *msg_function, Channel *channel, void *body, int len) {
-    InnerShakeHand *inner_shake = static_cast<InnerShakeHand *>(msg_function->newParam());
-    inner_shake->req.ParseFromArray(body, len);
-    inner_shake->channel = channel;
-    threadPool->execute([msg_function, inner_shake]() {
-        msg_function->function(0, inner_shake);
+template<class T>
+void InnerNetWorkHandler::processMsgWithChannel(MsgFunction *msg_function, Channel *channel, void *body, int len) {
+    auto msg = static_cast<ReqChannel<T> *>(msg_function->newParam());
+    msg->req.ParseFromArray(body, len);
+    msg->channel = channel;
+    threadPool->execute([msg_function, msg]() {
+        msg_function->function(0, msg);
     }, 0);
 }
 

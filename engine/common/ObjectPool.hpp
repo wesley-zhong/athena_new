@@ -161,7 +161,7 @@ public:
 
         pushNodeToHead(node);
         _freeCount.fetch_add(1, std::memory_order_relaxed);
-       // INFO_LOG("[Pool] {} Release obj {} back to pool", fmt::ptr(this), fmt::ptr(obj));
+        INFO_LOG("[Pool] {} Release obj {} back to pool", fmt::ptr(this), fmt::ptr(obj));
       //  printStats();
     }
 

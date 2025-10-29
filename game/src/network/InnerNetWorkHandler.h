@@ -24,9 +24,7 @@ public:
     static Thread::ThreadPool *threadPool;
 
 private:
-    static void processInnerLogin(MsgFunction *msg_function, Channel *channel, void *body, int len);
-    static void processInnerShakeReq(MsgFunction *msg_function, Channel *channel, void *body, int len);
+    template<class  T>
+    static void processMsgWithChannel(MsgFunction *msg_function, Channel *channel, void *body, int len);
 };
-
-
 #endif //ATHENA_NETWORKHANDLER_H

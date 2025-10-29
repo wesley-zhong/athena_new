@@ -4,21 +4,22 @@
 #include "transport/Channel.h"
 class Player;
 
-struct InnerLogin {
-    InnerLoginRequest req;
+template<class T>
+struct ReqChannel {
     Channel *channel;
-};
+    T req;
 
-struct InnerShakeHand {
-    InnerServerHandShakeReq req;
-    Channel *channel;
+    ~ReqChannel() {
+        channel = nullptr;
+        req.Clear();
+    }
 };
 
 class MsgHandler {
 public:
-    static void onShakHandReq(int64_t playerId, InnerShakeHand *req);
+    static void onShakHandReq(int64_t playerId, ReqChannel<InnerServerHandShakeReq> *req);
 
-    static void onInnerLogin(int64_t playerId, InnerLogin *req);
+    static void onInnerLogin(int64_t playerId, ReqChannel<InnerLoginRequest> *req);
 };
 
 #endif

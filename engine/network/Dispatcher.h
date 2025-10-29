@@ -3,9 +3,9 @@
 
 #include <functional>
 #include <map>
-#include <iostream>
 #include "google/protobuf/message.h"
 #include "Singleton.h"
+#include "ObjectPool.hpp"
 
 
 #define REGISTER_MSG_ID_FUN(MSGID, FUNCTION) \
@@ -25,9 +25,6 @@ public:
     template<typename T>
     void registerMsgHandler(int msgId, std::function<void(int64_t, T *)> msgFuc);
 
-    //  template <typename T>
-    //  void  registerMsgHandlers(int msgId, std::function<void(int, std::shared_ptr<T>)> msgFuc);
-
     void processMsg(int msgId, int64_t playerId, const void *body, int len);
 
     MsgFunction *findMsgFuncion(int msgId) {
@@ -37,9 +34,6 @@ public:
         }
         return nullptr;
     }
-
-    // template <typename T>>
-    // void callFunction(int msgId, std::shared_ptr<T> param_);
 
 private:
     std::map<int, MsgFunction *> msgMap;
@@ -51,9 +45,11 @@ void Dispatcher::registerMsgHandler(int msgId, std::function<void(int64_t, T *)>
     auto *msgFunction = new MsgFunction();
     msgFunction->function = [msgFuc](int64_t p1, void *p2) {
         msgFuc(p1, (T *) p2);
+        ObjPool::release<T>((T *) p2, true);
     };
     msgFunction->newParam = []() {
-        return new T();
+        // return new T();
+        return ObjPool::acquirePtr<T>();
     };
     msgMap[msgId] = msgFunction;
 }
@@ -66,7 +62,6 @@ void Dispatcher::registerMsgHandler(int msgId, std::function<void(int64_t, T *)>
 //     msgFuc(msgId, (std::shared_ptr<T>)p2);
 //   };
 // }
-
 
 
 #endif

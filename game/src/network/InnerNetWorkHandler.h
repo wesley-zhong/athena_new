@@ -4,11 +4,12 @@
 
 #ifndef ATHENA_NETWORKHANDLER_H
 #define ATHENA_NETWORKHANDLER_H
-#include "AthenaThreadPool.h"
+#include "thread/AthenaThreadPool.h"
+struct MsgFunction;
 class Channel;
 
 
-class NetWorkHandler {
+class InnerNetWorkHandler {
 public:
     static void initAllMsgRegister();
 
@@ -21,6 +22,9 @@ public:
     static void onClosed(Channel *channel);
 
     static Thread::ThreadPool *threadPool;
+
+private:
+    static void processInnerLogin(MsgFunction *msg_function, Channel *channel, void *body, int len);
 };
 
 

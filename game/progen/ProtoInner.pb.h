@@ -26,7 +26,6 @@
 #include "google/protobuf/io/coded_stream.h"
 #include "google/protobuf/arena.h"
 #include "google/protobuf/arenastring.h"
-#include "google/protobuf/generated_message_bases.h"
 #include "google/protobuf/generated_message_tctable_decl.h"
 #include "google/protobuf/generated_message_util.h"
 #include "google/protobuf/metadata_lite.h"
@@ -90,9 +89,12 @@ extern InnerPlayerDisconnectRequestDefaultTypeInternal _InnerPlayerDisconnectReq
 class InnerPlayerDisconnectResponse;
 struct InnerPlayerDisconnectResponseDefaultTypeInternal;
 extern InnerPlayerDisconnectResponseDefaultTypeInternal _InnerPlayerDisconnectResponse_default_instance_;
-class InnerServerHandShake;
-struct InnerServerHandShakeDefaultTypeInternal;
-extern InnerServerHandShakeDefaultTypeInternal _InnerServerHandShake_default_instance_;
+class InnerServerHandShakeReq;
+struct InnerServerHandShakeReqDefaultTypeInternal;
+extern InnerServerHandShakeReqDefaultTypeInternal _InnerServerHandShakeReq_default_instance_;
+class InnerServerHandShakeRes;
+struct InnerServerHandShakeResDefaultTypeInternal;
+extern InnerServerHandShakeResDefaultTypeInternal _InnerServerHandShakeRes_default_instance_;
 class KickOutRequest;
 struct KickOutRequestDefaultTypeInternal;
 extern KickOutRequestDefaultTypeInternal _KickOutRequest_default_instance_;
@@ -208,7 +210,7 @@ class KickOutResponse final :
                &_KickOutResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    14;
 
   friend void swap(KickOutResponse& a, KickOutResponse& b) {
     a.Swap(&b);
@@ -383,7 +385,7 @@ class KickOutRequest final :
                &_KickOutRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    13;
 
   friend void swap(KickOutRequest& a, KickOutRequest& b) {
     a.Swap(&b);
@@ -523,26 +525,26 @@ class KickOutRequest final :
   friend struct ::TableStruct_ProtoInner_2eproto;
 };// -------------------------------------------------------------------
 
-class InnerServerHandShake final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:InnerServerHandShake) */ {
+class InnerServerHandShakeRes final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:InnerServerHandShakeRes) */ {
  public:
-  inline InnerServerHandShake() : InnerServerHandShake(nullptr) {}
-  ~InnerServerHandShake() override;
+  inline InnerServerHandShakeRes() : InnerServerHandShakeRes(nullptr) {}
+  ~InnerServerHandShakeRes() override;
   template<typename = void>
-  explicit PROTOBUF_CONSTEXPR InnerServerHandShake(::google::protobuf::internal::ConstantInitialized);
+  explicit PROTOBUF_CONSTEXPR InnerServerHandShakeRes(::google::protobuf::internal::ConstantInitialized);
 
-  inline InnerServerHandShake(const InnerServerHandShake& from)
-      : InnerServerHandShake(nullptr, from) {}
-  InnerServerHandShake(InnerServerHandShake&& from) noexcept
-    : InnerServerHandShake() {
+  inline InnerServerHandShakeRes(const InnerServerHandShakeRes& from)
+      : InnerServerHandShakeRes(nullptr, from) {}
+  InnerServerHandShakeRes(InnerServerHandShakeRes&& from) noexcept
+    : InnerServerHandShakeRes() {
     *this = ::std::move(from);
   }
 
-  inline InnerServerHandShake& operator=(const InnerServerHandShake& from) {
+  inline InnerServerHandShakeRes& operator=(const InnerServerHandShakeRes& from) {
     CopyFrom(from);
     return *this;
   }
-  inline InnerServerHandShake& operator=(InnerServerHandShake&& from) noexcept {
+  inline InnerServerHandShakeRes& operator=(InnerServerHandShakeRes&& from) noexcept {
     if (this == &from) return *this;
     if (GetArena() == from.GetArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -574,20 +576,20 @@ class InnerServerHandShake final :
   static const ::google::protobuf::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const InnerServerHandShake& default_instance() {
+  static const InnerServerHandShakeRes& default_instance() {
     return *internal_default_instance();
   }
-  static inline const InnerServerHandShake* internal_default_instance() {
-    return reinterpret_cast<const InnerServerHandShake*>(
-               &_InnerServerHandShake_default_instance_);
+  static inline const InnerServerHandShakeRes* internal_default_instance() {
+    return reinterpret_cast<const InnerServerHandShakeRes*>(
+               &_InnerServerHandShakeRes_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    12;
 
-  friend void swap(InnerServerHandShake& a, InnerServerHandShake& b) {
+  friend void swap(InnerServerHandShakeRes& a, InnerServerHandShakeRes& b) {
     a.Swap(&b);
   }
-  inline void Swap(InnerServerHandShake* other) {
+  inline void Swap(InnerServerHandShakeRes* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetArena() != nullptr &&
@@ -600,7 +602,7 @@ class InnerServerHandShake final :
       ::google::protobuf::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(InnerServerHandShake* other) {
+  void UnsafeArenaSwap(InnerServerHandShakeRes* other) {
     if (other == this) return;
     ABSL_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -608,14 +610,14 @@ class InnerServerHandShake final :
 
   // implements Message ----------------------------------------------
 
-  InnerServerHandShake* New(::google::protobuf::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<InnerServerHandShake>(arena);
+  InnerServerHandShakeRes* New(::google::protobuf::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<InnerServerHandShakeRes>(arena);
   }
   using ::google::protobuf::Message::CopyFrom;
-  void CopyFrom(const InnerServerHandShake& from);
+  void CopyFrom(const InnerServerHandShakeRes& from);
   using ::google::protobuf::Message::MergeFrom;
-  void MergeFrom( const InnerServerHandShake& from) {
-    InnerServerHandShake::MergeImpl(*this, from);
+  void MergeFrom( const InnerServerHandShakeRes& from) {
+    InnerServerHandShakeRes::MergeImpl(*this, from);
   }
   private:
   static void MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg);
@@ -633,16 +635,16 @@ class InnerServerHandShake final :
   ::google::protobuf::internal::CachedSize* AccessCachedSize() const final;
   void SharedCtor(::google::protobuf::Arena* arena);
   void SharedDtor();
-  void InternalSwap(InnerServerHandShake* other);
+  void InternalSwap(InnerServerHandShakeRes* other);
 
   private:
   friend class ::google::protobuf::internal::AnyMetadata;
   static ::absl::string_view FullMessageName() {
-    return "InnerServerHandShake";
+    return "InnerServerHandShakeRes";
   }
   protected:
-  explicit InnerServerHandShake(::google::protobuf::Arena* arena);
-  InnerServerHandShake(::google::protobuf::Arena* arena, const InnerServerHandShake& from);
+  explicit InnerServerHandShakeRes(::google::protobuf::Arena* arena);
+  InnerServerHandShakeRes(::google::protobuf::Arena* arena, const InnerServerHandShakeRes& from);
   public:
 
   static const ClassData _class_data_;
@@ -655,37 +657,60 @@ class InnerServerHandShake final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kFromServerIdFieldNumber = 1,
-    kFromServerTypeFieldNumber = 2,
+    kServiceNameFieldNumber = 1,
+    kServiceIdFieldNumber = 2,
+    kAreaIdFieldNumber = 3,
   };
-  // int64 fromServerId = 1;
-  void clear_fromserverid() ;
-  ::int64_t fromserverid() const;
-  void set_fromserverid(::int64_t value);
+  // string service_name = 1;
+  void clear_service_name() ;
+  const std::string& service_name() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_service_name(Arg_&& arg, Args_... args);
+  std::string* mutable_service_name();
+  PROTOBUF_NODISCARD std::string* release_service_name();
+  void set_allocated_service_name(std::string* value);
 
   private:
-  ::int64_t _internal_fromserverid() const;
-  void _internal_set_fromserverid(::int64_t value);
+  const std::string& _internal_service_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_service_name(
+      const std::string& value);
+  std::string* _internal_mutable_service_name();
 
   public:
-  // int32 fromServerType = 2;
-  void clear_fromservertype() ;
-  ::int32_t fromservertype() const;
-  void set_fromservertype(::int32_t value);
+  // string service_id = 2;
+  void clear_service_id() ;
+  const std::string& service_id() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_service_id(Arg_&& arg, Args_... args);
+  std::string* mutable_service_id();
+  PROTOBUF_NODISCARD std::string* release_service_id();
+  void set_allocated_service_id(std::string* value);
 
   private:
-  ::int32_t _internal_fromservertype() const;
-  void _internal_set_fromservertype(::int32_t value);
+  const std::string& _internal_service_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_service_id(
+      const std::string& value);
+  std::string* _internal_mutable_service_id();
 
   public:
-  // @@protoc_insertion_point(class_scope:InnerServerHandShake)
+  // int32 areaId = 3;
+  void clear_areaid() ;
+  ::int32_t areaid() const;
+  void set_areaid(::int32_t value);
+
+  private:
+  ::int32_t _internal_areaid() const;
+  void _internal_set_areaid(::int32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:InnerServerHandShakeRes)
  private:
   class _Internal;
 
   friend class ::google::protobuf::internal::TcParser;
   static const ::google::protobuf::internal::TcParseTable<
-      1, 2, 0,
-      0, 2>
+      2, 3, 0,
+      54, 2>
       _table_;
   friend class ::google::protobuf::MessageLite;
   friend class ::google::protobuf::Arena;
@@ -701,8 +726,232 @@ class InnerServerHandShake final :
                               ::google::protobuf::Arena* arena);
         inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
                               ::google::protobuf::Arena* arena, const Impl_& from);
-    ::int64_t fromserverid_;
-    ::int32_t fromservertype_;
+    ::google::protobuf::internal::ArenaStringPtr service_name_;
+    ::google::protobuf::internal::ArenaStringPtr service_id_;
+    ::int32_t areaid_;
+    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_ProtoInner_2eproto;
+};// -------------------------------------------------------------------
+
+class InnerServerHandShakeReq final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:InnerServerHandShakeReq) */ {
+ public:
+  inline InnerServerHandShakeReq() : InnerServerHandShakeReq(nullptr) {}
+  ~InnerServerHandShakeReq() override;
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR InnerServerHandShakeReq(::google::protobuf::internal::ConstantInitialized);
+
+  inline InnerServerHandShakeReq(const InnerServerHandShakeReq& from)
+      : InnerServerHandShakeReq(nullptr, from) {}
+  InnerServerHandShakeReq(InnerServerHandShakeReq&& from) noexcept
+    : InnerServerHandShakeReq() {
+    *this = ::std::move(from);
+  }
+
+  inline InnerServerHandShakeReq& operator=(const InnerServerHandShakeReq& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline InnerServerHandShakeReq& operator=(InnerServerHandShakeReq&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetArena() == from.GetArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const InnerServerHandShakeReq& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const InnerServerHandShakeReq* internal_default_instance() {
+    return reinterpret_cast<const InnerServerHandShakeReq*>(
+               &_InnerServerHandShakeReq_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    11;
+
+  friend void swap(InnerServerHandShakeReq& a, InnerServerHandShakeReq& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(InnerServerHandShakeReq* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() != nullptr &&
+        GetArena() == other->GetArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() == other->GetArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(InnerServerHandShakeReq* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  InnerServerHandShakeReq* New(::google::protobuf::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<InnerServerHandShakeReq>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const InnerServerHandShakeReq& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom( const InnerServerHandShakeReq& from) {
+    InnerServerHandShakeReq::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target, ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  ::google::protobuf::internal::CachedSize* AccessCachedSize() const final;
+  void SharedCtor(::google::protobuf::Arena* arena);
+  void SharedDtor();
+  void InternalSwap(InnerServerHandShakeReq* other);
+
+  private:
+  friend class ::google::protobuf::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "InnerServerHandShakeReq";
+  }
+  protected:
+  explicit InnerServerHandShakeReq(::google::protobuf::Arena* arena);
+  InnerServerHandShakeReq(::google::protobuf::Arena* arena, const InnerServerHandShakeReq& from);
+  public:
+
+  static const ClassData _class_data_;
+  const ::google::protobuf::Message::ClassData*GetClassData() const final;
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kServiceNameFieldNumber = 1,
+    kServiceIdFieldNumber = 2,
+    kAreaIdFieldNumber = 3,
+    kIdFieldNumber = 4,
+  };
+  // string service_name = 1;
+  void clear_service_name() ;
+  const std::string& service_name() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_service_name(Arg_&& arg, Args_... args);
+  std::string* mutable_service_name();
+  PROTOBUF_NODISCARD std::string* release_service_name();
+  void set_allocated_service_name(std::string* value);
+
+  private:
+  const std::string& _internal_service_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_service_name(
+      const std::string& value);
+  std::string* _internal_mutable_service_name();
+
+  public:
+  // string service_id = 2;
+  void clear_service_id() ;
+  const std::string& service_id() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_service_id(Arg_&& arg, Args_... args);
+  std::string* mutable_service_id();
+  PROTOBUF_NODISCARD std::string* release_service_id();
+  void set_allocated_service_id(std::string* value);
+
+  private:
+  const std::string& _internal_service_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_service_id(
+      const std::string& value);
+  std::string* _internal_mutable_service_id();
+
+  public:
+  // int32 areaId = 3;
+  void clear_areaid() ;
+  ::int32_t areaid() const;
+  void set_areaid(::int32_t value);
+
+  private:
+  ::int32_t _internal_areaid() const;
+  void _internal_set_areaid(::int32_t value);
+
+  public:
+  // int32 id = 4;
+  void clear_id() ;
+  ::int32_t id() const;
+  void set_id(::int32_t value);
+
+  private:
+  ::int32_t _internal_id() const;
+  void _internal_set_id(::int32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:InnerServerHandShakeReq)
+ private:
+  class _Internal;
+
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<
+      2, 4, 0,
+      54, 2>
+      _table_;
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+
+        inline explicit constexpr Impl_(
+            ::google::protobuf::internal::ConstantInitialized) noexcept;
+        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                              ::google::protobuf::Arena* arena);
+        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                              ::google::protobuf::Arena* arena, const Impl_& from);
+    ::google::protobuf::internal::ArenaStringPtr service_name_;
+    ::google::protobuf::internal::ArenaStringPtr service_id_;
+    ::int32_t areaid_;
+    ::int32_t id_;
     mutable ::google::protobuf::internal::CachedSize _cached_size_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
@@ -2237,9 +2486,10 @@ class InnerLoginInitNotify final :
 };// -------------------------------------------------------------------
 
 class InnerHeartBeatResponse final :
-    public ::google::protobuf::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:InnerHeartBeatResponse) */ {
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:InnerHeartBeatResponse) */ {
  public:
   inline InnerHeartBeatResponse() : InnerHeartBeatResponse(nullptr) {}
+  ~InnerHeartBeatResponse() override;
   template<typename = void>
   explicit PROTOBUF_CONSTEXPR InnerHeartBeatResponse(::google::protobuf::internal::ConstantInitialized);
 
@@ -2323,15 +2573,29 @@ class InnerHeartBeatResponse final :
   InnerHeartBeatResponse* New(::google::protobuf::Arena* arena = nullptr) const final {
     return CreateMaybeMessage<InnerHeartBeatResponse>(arena);
   }
-  using ::google::protobuf::internal::ZeroFieldsBase::CopyFrom;
-  inline void CopyFrom(const InnerHeartBeatResponse& from) {
-    ::google::protobuf::internal::ZeroFieldsBase::CopyImpl(*this, from);
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const InnerHeartBeatResponse& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom( const InnerHeartBeatResponse& from) {
+    InnerHeartBeatResponse::MergeImpl(*this, from);
   }
-  using ::google::protobuf::internal::ZeroFieldsBase::MergeFrom;
-  void MergeFrom(const InnerHeartBeatResponse& from) {
-    ::google::protobuf::internal::ZeroFieldsBase::MergeImpl(*this, from);
-  }
+  private:
+  static void MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg);
   public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target, ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  ::google::protobuf::internal::CachedSize* AccessCachedSize() const final;
+  void SharedCtor(::google::protobuf::Arena* arena);
+  void SharedDtor();
+  void InternalSwap(InnerHeartBeatResponse* other);
 
   private:
   friend class ::google::protobuf::internal::AnyMetadata;
@@ -2343,16 +2607,37 @@ class InnerHeartBeatResponse final :
   InnerHeartBeatResponse(::google::protobuf::Arena* arena, const InnerHeartBeatResponse& from);
   public:
 
+  static const ClassData _class_data_;
+  const ::google::protobuf::Message::ClassData*GetClassData() const final;
+
   ::google::protobuf::Metadata GetMetadata() const final;
 
   // nested types ----------------------------------------------------
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kTimeFieldNumber = 2,
+  };
+  // int64 time = 2;
+  void clear_time() ;
+  ::int64_t time() const;
+  void set_time(::int64_t value);
+
+  private:
+  ::int64_t _internal_time() const;
+  void _internal_set_time(::int64_t value);
+
+  public:
   // @@protoc_insertion_point(class_scope:InnerHeartBeatResponse)
  private:
   class _Internal;
 
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<
+      0, 1, 0,
+      0, 2>
+      _table_;
   friend class ::google::protobuf::MessageLite;
   friend class ::google::protobuf::Arena;
   template <typename T>
@@ -2367,15 +2652,19 @@ class InnerHeartBeatResponse final :
                               ::google::protobuf::Arena* arena);
         inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
                               ::google::protobuf::Arena* arena, const Impl_& from);
+    ::int64_t time_;
+    mutable ::google::protobuf::internal::CachedSize _cached_size_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
+  union { Impl_ _impl_; };
   friend struct ::TableStruct_ProtoInner_2eproto;
 };// -------------------------------------------------------------------
 
 class InnerHeartBeatRequest final :
-    public ::google::protobuf::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:InnerHeartBeatRequest) */ {
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:InnerHeartBeatRequest) */ {
  public:
   inline InnerHeartBeatRequest() : InnerHeartBeatRequest(nullptr) {}
+  ~InnerHeartBeatRequest() override;
   template<typename = void>
   explicit PROTOBUF_CONSTEXPR InnerHeartBeatRequest(::google::protobuf::internal::ConstantInitialized);
 
@@ -2459,15 +2748,29 @@ class InnerHeartBeatRequest final :
   InnerHeartBeatRequest* New(::google::protobuf::Arena* arena = nullptr) const final {
     return CreateMaybeMessage<InnerHeartBeatRequest>(arena);
   }
-  using ::google::protobuf::internal::ZeroFieldsBase::CopyFrom;
-  inline void CopyFrom(const InnerHeartBeatRequest& from) {
-    ::google::protobuf::internal::ZeroFieldsBase::CopyImpl(*this, from);
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const InnerHeartBeatRequest& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom( const InnerHeartBeatRequest& from) {
+    InnerHeartBeatRequest::MergeImpl(*this, from);
   }
-  using ::google::protobuf::internal::ZeroFieldsBase::MergeFrom;
-  void MergeFrom(const InnerHeartBeatRequest& from) {
-    ::google::protobuf::internal::ZeroFieldsBase::MergeImpl(*this, from);
-  }
+  private:
+  static void MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg);
   public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target, ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  ::google::protobuf::internal::CachedSize* AccessCachedSize() const final;
+  void SharedCtor(::google::protobuf::Arena* arena);
+  void SharedDtor();
+  void InternalSwap(InnerHeartBeatRequest* other);
 
   private:
   friend class ::google::protobuf::internal::AnyMetadata;
@@ -2479,16 +2782,37 @@ class InnerHeartBeatRequest final :
   InnerHeartBeatRequest(::google::protobuf::Arena* arena, const InnerHeartBeatRequest& from);
   public:
 
+  static const ClassData _class_data_;
+  const ::google::protobuf::Message::ClassData*GetClassData() const final;
+
   ::google::protobuf::Metadata GetMetadata() const final;
 
   // nested types ----------------------------------------------------
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kTimeFieldNumber = 1,
+  };
+  // int64 time = 1;
+  void clear_time() ;
+  ::int64_t time() const;
+  void set_time(::int64_t value);
+
+  private:
+  ::int64_t _internal_time() const;
+  void _internal_set_time(::int64_t value);
+
+  public:
   // @@protoc_insertion_point(class_scope:InnerHeartBeatRequest)
  private:
   class _Internal;
 
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<
+      0, 1, 0,
+      0, 2>
+      _table_;
   friend class ::google::protobuf::MessageLite;
   friend class ::google::protobuf::Arena;
   template <typename T>
@@ -2503,8 +2827,11 @@ class InnerHeartBeatRequest final :
                               ::google::protobuf::Arena* arena);
         inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
                               ::google::protobuf::Arena* arena, const Impl_& from);
+    ::int64_t time_;
+    mutable ::google::protobuf::internal::CachedSize _cached_size_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
+  union { Impl_ _impl_; };
   friend struct ::TableStruct_ProtoInner_2eproto;
 };// -------------------------------------------------------------------
 
@@ -2726,9 +3053,55 @@ inline void InnerHead::_internal_set_id(::int64_t value) {
 
 // InnerHeartBeatRequest
 
+// int64 time = 1;
+inline void InnerHeartBeatRequest::clear_time() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.time_ = ::int64_t{0};
+}
+inline ::int64_t InnerHeartBeatRequest::time() const {
+  // @@protoc_insertion_point(field_get:InnerHeartBeatRequest.time)
+  return _internal_time();
+}
+inline void InnerHeartBeatRequest::set_time(::int64_t value) {
+  _internal_set_time(value);
+  // @@protoc_insertion_point(field_set:InnerHeartBeatRequest.time)
+}
+inline ::int64_t InnerHeartBeatRequest::_internal_time() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.time_;
+}
+inline void InnerHeartBeatRequest::_internal_set_time(::int64_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.time_ = value;
+}
+
 // -------------------------------------------------------------------
 
 // InnerHeartBeatResponse
+
+// int64 time = 2;
+inline void InnerHeartBeatResponse::clear_time() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.time_ = ::int64_t{0};
+}
+inline ::int64_t InnerHeartBeatResponse::time() const {
+  // @@protoc_insertion_point(field_get:InnerHeartBeatResponse.time)
+  return _internal_time();
+}
+inline void InnerHeartBeatResponse::set_time(::int64_t value) {
+  _internal_set_time(value);
+  // @@protoc_insertion_point(field_set:InnerHeartBeatResponse.time)
+}
+inline ::int64_t InnerHeartBeatResponse::_internal_time() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.time_;
+}
+inline void InnerHeartBeatResponse::_internal_set_time(::int64_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.time_ = value;
+}
 
 // -------------------------------------------------------------------
 
@@ -3208,52 +3581,291 @@ inline void InnerLoginInitNotify::_internal_set_roleid(::int64_t value) {
 
 // -------------------------------------------------------------------
 
-// InnerServerHandShake
+// InnerServerHandShakeReq
 
-// int64 fromServerId = 1;
-inline void InnerServerHandShake::clear_fromserverid() {
+// string service_name = 1;
+inline void InnerServerHandShakeReq::clear_service_name() {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  _impl_.fromserverid_ = ::int64_t{0};
+  _impl_.service_name_.ClearToEmpty();
 }
-inline ::int64_t InnerServerHandShake::fromserverid() const {
-  // @@protoc_insertion_point(field_get:InnerServerHandShake.fromServerId)
-  return _internal_fromserverid();
+inline const std::string& InnerServerHandShakeReq::service_name() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:InnerServerHandShakeReq.service_name)
+  return _internal_service_name();
 }
-inline void InnerServerHandShake::set_fromserverid(::int64_t value) {
-  _internal_set_fromserverid(value);
-  // @@protoc_insertion_point(field_set:InnerServerHandShake.fromServerId)
-}
-inline ::int64_t InnerServerHandShake::_internal_fromserverid() const {
-  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
-  return _impl_.fromserverid_;
-}
-inline void InnerServerHandShake::_internal_set_fromserverid(::int64_t value) {
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void InnerServerHandShakeReq::set_service_name(Arg_&& arg,
+                                                     Args_... args) {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   ;
-  _impl_.fromserverid_ = value;
+  _impl_.service_name_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:InnerServerHandShakeReq.service_name)
 }
-
-// int32 fromServerType = 2;
-inline void InnerServerHandShake::clear_fromservertype() {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  _impl_.fromservertype_ = 0;
+inline std::string* InnerServerHandShakeReq::mutable_service_name() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_service_name();
+  // @@protoc_insertion_point(field_mutable:InnerServerHandShakeReq.service_name)
+  return _s;
 }
-inline ::int32_t InnerServerHandShake::fromservertype() const {
-  // @@protoc_insertion_point(field_get:InnerServerHandShake.fromServerType)
-  return _internal_fromservertype();
-}
-inline void InnerServerHandShake::set_fromservertype(::int32_t value) {
-  _internal_set_fromservertype(value);
-  // @@protoc_insertion_point(field_set:InnerServerHandShake.fromServerType)
-}
-inline ::int32_t InnerServerHandShake::_internal_fromservertype() const {
+inline const std::string& InnerServerHandShakeReq::_internal_service_name() const {
   PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
-  return _impl_.fromservertype_;
+  return _impl_.service_name_.Get();
 }
-inline void InnerServerHandShake::_internal_set_fromservertype(::int32_t value) {
+inline void InnerServerHandShakeReq::_internal_set_service_name(const std::string& value) {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   ;
-  _impl_.fromservertype_ = value;
+  _impl_.service_name_.Set(value, GetArena());
+}
+inline std::string* InnerServerHandShakeReq::_internal_mutable_service_name() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  return _impl_.service_name_.Mutable( GetArena());
+}
+inline std::string* InnerServerHandShakeReq::release_service_name() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  // @@protoc_insertion_point(field_release:InnerServerHandShakeReq.service_name)
+  return _impl_.service_name_.Release();
+}
+inline void InnerServerHandShakeReq::set_allocated_service_name(std::string* value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.service_name_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.service_name_.IsDefault()) {
+          _impl_.service_name_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:InnerServerHandShakeReq.service_name)
+}
+
+// string service_id = 2;
+inline void InnerServerHandShakeReq::clear_service_id() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.service_id_.ClearToEmpty();
+}
+inline const std::string& InnerServerHandShakeReq::service_id() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:InnerServerHandShakeReq.service_id)
+  return _internal_service_id();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void InnerServerHandShakeReq::set_service_id(Arg_&& arg,
+                                                     Args_... args) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.service_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:InnerServerHandShakeReq.service_id)
+}
+inline std::string* InnerServerHandShakeReq::mutable_service_id() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_service_id();
+  // @@protoc_insertion_point(field_mutable:InnerServerHandShakeReq.service_id)
+  return _s;
+}
+inline const std::string& InnerServerHandShakeReq::_internal_service_id() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.service_id_.Get();
+}
+inline void InnerServerHandShakeReq::_internal_set_service_id(const std::string& value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.service_id_.Set(value, GetArena());
+}
+inline std::string* InnerServerHandShakeReq::_internal_mutable_service_id() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  return _impl_.service_id_.Mutable( GetArena());
+}
+inline std::string* InnerServerHandShakeReq::release_service_id() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  // @@protoc_insertion_point(field_release:InnerServerHandShakeReq.service_id)
+  return _impl_.service_id_.Release();
+}
+inline void InnerServerHandShakeReq::set_allocated_service_id(std::string* value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.service_id_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.service_id_.IsDefault()) {
+          _impl_.service_id_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:InnerServerHandShakeReq.service_id)
+}
+
+// int32 areaId = 3;
+inline void InnerServerHandShakeReq::clear_areaid() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.areaid_ = 0;
+}
+inline ::int32_t InnerServerHandShakeReq::areaid() const {
+  // @@protoc_insertion_point(field_get:InnerServerHandShakeReq.areaId)
+  return _internal_areaid();
+}
+inline void InnerServerHandShakeReq::set_areaid(::int32_t value) {
+  _internal_set_areaid(value);
+  // @@protoc_insertion_point(field_set:InnerServerHandShakeReq.areaId)
+}
+inline ::int32_t InnerServerHandShakeReq::_internal_areaid() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.areaid_;
+}
+inline void InnerServerHandShakeReq::_internal_set_areaid(::int32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.areaid_ = value;
+}
+
+// int32 id = 4;
+inline void InnerServerHandShakeReq::clear_id() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.id_ = 0;
+}
+inline ::int32_t InnerServerHandShakeReq::id() const {
+  // @@protoc_insertion_point(field_get:InnerServerHandShakeReq.id)
+  return _internal_id();
+}
+inline void InnerServerHandShakeReq::set_id(::int32_t value) {
+  _internal_set_id(value);
+  // @@protoc_insertion_point(field_set:InnerServerHandShakeReq.id)
+}
+inline ::int32_t InnerServerHandShakeReq::_internal_id() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.id_;
+}
+inline void InnerServerHandShakeReq::_internal_set_id(::int32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.id_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// InnerServerHandShakeRes
+
+// string service_name = 1;
+inline void InnerServerHandShakeRes::clear_service_name() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.service_name_.ClearToEmpty();
+}
+inline const std::string& InnerServerHandShakeRes::service_name() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:InnerServerHandShakeRes.service_name)
+  return _internal_service_name();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void InnerServerHandShakeRes::set_service_name(Arg_&& arg,
+                                                     Args_... args) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.service_name_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:InnerServerHandShakeRes.service_name)
+}
+inline std::string* InnerServerHandShakeRes::mutable_service_name() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_service_name();
+  // @@protoc_insertion_point(field_mutable:InnerServerHandShakeRes.service_name)
+  return _s;
+}
+inline const std::string& InnerServerHandShakeRes::_internal_service_name() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.service_name_.Get();
+}
+inline void InnerServerHandShakeRes::_internal_set_service_name(const std::string& value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.service_name_.Set(value, GetArena());
+}
+inline std::string* InnerServerHandShakeRes::_internal_mutable_service_name() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  return _impl_.service_name_.Mutable( GetArena());
+}
+inline std::string* InnerServerHandShakeRes::release_service_name() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  // @@protoc_insertion_point(field_release:InnerServerHandShakeRes.service_name)
+  return _impl_.service_name_.Release();
+}
+inline void InnerServerHandShakeRes::set_allocated_service_name(std::string* value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.service_name_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.service_name_.IsDefault()) {
+          _impl_.service_name_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:InnerServerHandShakeRes.service_name)
+}
+
+// string service_id = 2;
+inline void InnerServerHandShakeRes::clear_service_id() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.service_id_.ClearToEmpty();
+}
+inline const std::string& InnerServerHandShakeRes::service_id() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:InnerServerHandShakeRes.service_id)
+  return _internal_service_id();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void InnerServerHandShakeRes::set_service_id(Arg_&& arg,
+                                                     Args_... args) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.service_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:InnerServerHandShakeRes.service_id)
+}
+inline std::string* InnerServerHandShakeRes::mutable_service_id() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_service_id();
+  // @@protoc_insertion_point(field_mutable:InnerServerHandShakeRes.service_id)
+  return _s;
+}
+inline const std::string& InnerServerHandShakeRes::_internal_service_id() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.service_id_.Get();
+}
+inline void InnerServerHandShakeRes::_internal_set_service_id(const std::string& value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.service_id_.Set(value, GetArena());
+}
+inline std::string* InnerServerHandShakeRes::_internal_mutable_service_id() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  return _impl_.service_id_.Mutable( GetArena());
+}
+inline std::string* InnerServerHandShakeRes::release_service_id() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  // @@protoc_insertion_point(field_release:InnerServerHandShakeRes.service_id)
+  return _impl_.service_id_.Release();
+}
+inline void InnerServerHandShakeRes::set_allocated_service_id(std::string* value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.service_id_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.service_id_.IsDefault()) {
+          _impl_.service_id_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:InnerServerHandShakeRes.service_id)
+}
+
+// int32 areaId = 3;
+inline void InnerServerHandShakeRes::clear_areaid() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.areaid_ = 0;
+}
+inline ::int32_t InnerServerHandShakeRes::areaid() const {
+  // @@protoc_insertion_point(field_get:InnerServerHandShakeRes.areaId)
+  return _internal_areaid();
+}
+inline void InnerServerHandShakeRes::set_areaid(::int32_t value) {
+  _internal_set_areaid(value);
+  // @@protoc_insertion_point(field_set:InnerServerHandShakeRes.areaId)
+}
+inline ::int32_t InnerServerHandShakeRes::_internal_areaid() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.areaid_;
+}
+inline void InnerServerHandShakeRes::_internal_set_areaid(::int32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.areaid_ = value;
 }
 
 // -------------------------------------------------------------------

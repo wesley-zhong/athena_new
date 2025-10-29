@@ -9,8 +9,6 @@
 #include "common/XLog.h"
 #include "network/Dispatcher.h"
 
-#include "MsgHandler.h"
-#include "GameRole.h"
 #include "ProtoInner.pb.h"
 
 #include "thread/AthenaThreadPool.h"
@@ -24,7 +22,7 @@
 #include <unistd.h>
 #endif
 #include "transport/TcpClient.h"
-#include "ProtoInner.pb.h"
+#include "network/InnerNetWorkHandler.h"
 
 static std::atomic<bool> g_running(true);
 static std::condition_variable g_cv;
@@ -46,20 +44,22 @@ int main(int argc, char **argv) {
     //
     // std::string ip = "172.18.2.101";
     // Dal::Cache::init(ip, 6379, "", "", "");
-
+    InnerNetWorkHandler::initAllMsgRegister();
+    InnerNetWorkHandler::startThread(2);
     TcpClient tcp_client;
-    tcp_client.onConnected = [](Channel *channel) {
+    tcp_client.onConnected = InnerNetWorkHandler::onClosed;
+    tcp_client.onRead = InnerNetWorkHandler::onMsg;
+
+    /**
+    *[](Channel *channel) {
         INFO_LOG(" on   Connected...  {}", channel->getAddr());
         std::shared_ptr<InnerLoginRequest> inner_login_request = std::make_shared<InnerLoginRequest>();
         inner_login_request->set_sid(1111333);
         inner_login_request->set_roleid(222222);
         channel->sendMsg(INNER_LOGIN_REQ, inner_login_request);
     };
-    tcp_client.onRead = [](Channel *channel, char *body, int len) {
-        SPackage spackage;
-        spackage.parseBody(body, len);
-        INFO_LOG("============ receive from {} msg Id= {}", channel->getAddr(), spackage._msgId);
-    };
+     **/
+
     tcp_client.start();
 
     std::this_thread::sleep_for(std::chrono::milliseconds(100));

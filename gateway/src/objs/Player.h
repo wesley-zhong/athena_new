@@ -2,20 +2,20 @@
 #define GAME_ROLE_HPP_
 #include "ObjectPool.hpp"
 #include "XLog.h"
-class GameRole :public  ObjPool::PoolObjClass<GameRole>
+class Player :public  ObjPool::PoolObjClass<Player>
 {
 private:
    uint32_t  pid;
 
     /* data */
 public:
-    GameRole(/* args */) {
+    Player(/* args */) {
 
     };
-    GameRole(uint32_t pid) {
+    Player(uint32_t pid) {
         this->pid = pid;
     }
-    ~GameRole() {
+    ~Player() {
       INFO_LOG("------ CALL  ~GameRole");
     };
     uint32_t  getPid(){

@@ -5,7 +5,6 @@
 #include <string>
 #include  "BaseType.h"
 #include "RingByteBuf.h"
-#include "sol/lua_value.hpp"
 #include "spdlog/fmt/bundled/base.h"
 
 

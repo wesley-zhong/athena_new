@@ -1,19 +1,15 @@
 #ifndef MSGHANDLER_H_
 #define MSGHANDLER_H_
-#include "common/Singleton.h"
-#include <iostream>
 
-class GameRole;
-class InnerHead;
-class MsgHandler :public Singleton<MsgHandler>
-{
-private:
-    /* data */
+#include "BaseType.h"
+#include "ProtoInner.pb.h"
+
+
+class MsgHandler {
 public:
-    MsgHandler(/* args */){};
-    ~MsgHandler(){};
-    static void  onLogin(int64_t playerId, GameRole* GameRole);
-    static void  onSomeMsg(int64_t playerId, InnerHead* InnerHead );
+    static void onLoginRes(int64_t playerId, InnerLoginResponse *res);
+
+    static void onShakeHandRes(int64_t playerId, InnerServerHandShakeRes *res);
 };
 
 #endif

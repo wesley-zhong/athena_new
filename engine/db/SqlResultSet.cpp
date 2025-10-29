@@ -1,4 +1,4 @@
-#include "mysql.h"
+﻿#include "mysql.h"
 #include "SqlResultSet.h"
 #include "XLog.h"
 

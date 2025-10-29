@@ -1,17 +1,14 @@
 #include "MsgHandler.h"
 #include "common/XLog.h"
-#include "GameRole.h"
+#include "objs/Player.h"
 #include "ProtoInner.pb.h"
 
 
-void MsgHandler::onLogin(int64_t playerId, GameRole *gameRole) {
-    INFO_LOG("HELLO playerId ={} roleId = {}", playerId, gameRole->getPid());
+void MsgHandler::onShakHand(int64_t playerId, InnerServerHandShakeReq *req) {
+    INFO_LOG("HELLO playerId ={} innherHeaderId = {}", playerId, req->service_id());
 }
 
-void MsgHandler::onSomeMsg(int64_t playerId, InnerHead *InnerHead) {
-    INFO_LOG("HELLO playerId ={} innherHeaderId = {}", playerId, InnerHead->id());
-}
-
-void MsgHandler::onInnerLogin(int64_t playerId, InnerLoginRequest *request) {
-    INFO_LOG(" ON INNER LOGIN sid = {} roleId ={}", request->sid(), request->roleid());
+void MsgHandler::onInnerLogin(int64_t playerId, InnerLogin *request) {
+    INFO_LOG(" ON INNER LOGIN sid = {} roleId ={} channel ={}", request->req.sid(), request->req.roleid(),
+             request->channel->getAddr());
 }

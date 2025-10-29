@@ -4,7 +4,7 @@
 #include <csignal>
 #include "common/RingBuffer.hpp"
 #include "common/XLog.h"
-#include "GameRole.h"
+#include "objs/Player.h"
 #include "common/ObjectPool.hpp"
 #include "db/Dal.hpp"
 
@@ -18,7 +18,7 @@
 
 #include "transport/AthenaTcpServer.h"
 
-#include "network/NetWorkHandler.h"
+#include "network/InnerNetWorkHandler.h"
 
 
 static std::atomic<bool> g_running(true);
@@ -38,14 +38,14 @@ int main(int argc, char **argv) {
 
 
     // init all functions call
-    NetWorkHandler::initAllMsgRegister();
-    NetWorkHandler::startThread(3);
+    InnerNetWorkHandler::initAllMsgRegister();
+    InnerNetWorkHandler::startThread(3);
 
     //start server
     AthenaTcpServer tcp_server;
-    tcp_server.onNewConnection = NetWorkHandler::onConnect;
-    tcp_server.onRead = NetWorkHandler::onMsg;
-    tcp_server.onClosed = NetWorkHandler::onClosed;
+    tcp_server.onNewConnection = InnerNetWorkHandler::onConnect;
+    tcp_server.onRead = InnerNetWorkHandler::onMsg;
+    tcp_server.onClosed = InnerNetWorkHandler::onClosed;
 
     tcp_server.bind(9999).start(3);
 
@@ -96,10 +96,10 @@ int main(int argc, char **argv) {
     //     INFO_LOG("thread test 2={}", i);
     // }, 2);
 
-    {
-        ObjectPool<GameRole>::PoolObjRef ref = ObjPool::acquire<GameRole>(100);
-        INFO_LOG("pool obj GameRole test  pid ={}", ref->getPid());
-    }
+    // {
+    //     ObjectPool<Player>::PoolObjRef ref = ObjPool::acquire<Player>(100);
+    //     INFO_LOG("pool obj GameRole test  pid ={}", ref->getPid());
+    // }
     INFO_LOG("==========================  wait release");
     std::this_thread::sleep_for(std::chrono::seconds(5));
     // threadPool->execute([]() {
@@ -117,10 +117,10 @@ int main(int argc, char **argv) {
     //     INFO_LOG(" thread test 1={}", 1);
     // }, 1);
 
-    {
-        ObjectPool<GameRole>::PoolObjRef poolRef = GameRole::claim(888);
-        INFO_LOG("pool obj GameRole test  pid ={}", poolRef->getPid());
-    }
+    // {
+    //     ObjectPool<Player>::PoolObjRef poolRef = Player::claim(888);
+    //     INFO_LOG("pool obj GameRole test  pid ={}", poolRef->getPid());
+    // }
     // std::this_thread::sleep_for(std::chrono::seconds(1));
 
     // 💡 主线程阻塞等待，无限期休眠（CPU 占用≈0）

@@ -73,9 +73,18 @@ message InnerLoginInitNotify {
 }
 
 
-message InnerServerHandShake{
-  int64 fromServerId = 1;
-  int32  fromServerType = 2;
+
+message InnerServerHandShakeReq {
+  string service_name = 1;
+  string service_id = 2;
+  int32 areaId = 3;
+  int32 id = 4;
+}
+
+message InnerServerHandShakeRes {
+  string service_name = 1;
+  string service_id = 2;
+  int32 areaId = 3;
 }
 
 message KickOutRequest {

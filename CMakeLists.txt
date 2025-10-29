@@ -26,14 +26,8 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 # 打印消息
 message("begin to compiler Athena ")
 
-# 设置变量，下面的代码都可以用到
-set(ENGINE ${PROJECT_SOURCE_DIR}/engine)
-set(ENGINE-LUA ${PROJECT_SOURCE_DIR}/engine-lua)
-set(GAME ${PROJECT_SOURCE_DIR}/game)
-set(GATEWAY ${PROJECT_SOURCE_DIR}/gateway)
-
-
-add_subdirectory(${ENGINE})
-add_subdirectory(${ENGINE-LUA})
-add_subdirectory(${GAME})
-add_subdirectory(${GATEWAY})
+add_subdirectory(engine)
+add_subdirectory(engine-lua)
+add_subdirectory(game)
+add_subdirectory(gateway)
+target_compile_features(engine PUBLIC cxx_std_17)

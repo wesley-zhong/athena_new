@@ -8,7 +8,8 @@ extern "C" {
 #include <stdlib.h>
 #include "../common/XLog.h"
 #include "sol/sol.hpp"
-#include "pb.h"
+//#include "pb.h"
+#include "XLog.h"
 
 #include <map>
 
@@ -27,13 +28,13 @@ extern void luabind_httpserver(sol::state & lua);
 
 void init_lua_pb(lua_State* L)
 {
-	luaL_requiref(L, "pb", luaopen_pb, 0);
-	luaL_requiref(L, "pb.slice", luaopen_pb_slice, 0);
-	luaL_requiref(L, "pb.buffer", luaopen_pb_buffer, 0);
-	luaL_requiref(L, "pb.conv", luaopen_pb_conv, 0);
+	// luaL_requiref(L, "pb", luaopen_pb, 0);
+	// luaL_requiref(L, "pb.slice", luaopen_pb_slice, 0);
+	// luaL_requiref(L, "pb.buffer", luaopen_pb_buffer, 0);
+	// luaL_requiref(L, "pb.conv", luaopen_pb_conv, 0);
 }
 
-int main(int argc, char* argv[])
+int main1(int argc, char* argv[])
 {
     xLogInitLog(LogLevel::LL_INFO, "../logs/engine_lua_app.log");
 
@@ -62,8 +63,8 @@ int main(int argc, char* argv[])
 //		}
 //	}
 
-    auto p = std::make_shared<int>(1);
-    INFO_LOG("HAHA ={}",*p);
+    // auto p = std::make_shared<int>(1);
+    // INFO_LOG("HAHA ={}",*p);
 
 //	system("pause");
 
@@ -93,5 +94,6 @@ int main(int argc, char* argv[])
 //  std::string*  pstr = new (buff) std::string("hello");
 //  INFO_LOG("hha ={}", pstr->c_str());
 
+	return 0;
 
 }

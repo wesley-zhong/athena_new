@@ -61,25 +61,56 @@ struct KickOutRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 KickOutRequestDefaultTypeInternal _KickOutRequest_default_instance_;
 
-inline constexpr InnerServerHandShake::Impl_::Impl_(
+inline constexpr InnerServerHandShakeRes::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
-      : fromserverid_{::int64_t{0}},
-        fromservertype_{0},
+      : service_name_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        service_id_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        areaid_{0},
         _cached_size_{0} {}
 
 template <typename>
-PROTOBUF_CONSTEXPR InnerServerHandShake::InnerServerHandShake(::_pbi::ConstantInitialized)
+PROTOBUF_CONSTEXPR InnerServerHandShakeRes::InnerServerHandShakeRes(::_pbi::ConstantInitialized)
     : _impl_(::_pbi::ConstantInitialized()) {}
-struct InnerServerHandShakeDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR InnerServerHandShakeDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~InnerServerHandShakeDefaultTypeInternal() {}
+struct InnerServerHandShakeResDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR InnerServerHandShakeResDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~InnerServerHandShakeResDefaultTypeInternal() {}
   union {
-    InnerServerHandShake _instance;
+    InnerServerHandShakeRes _instance;
   };
 };
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InnerServerHandShakeDefaultTypeInternal _InnerServerHandShake_default_instance_;
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InnerServerHandShakeResDefaultTypeInternal _InnerServerHandShakeRes_default_instance_;
+
+inline constexpr InnerServerHandShakeReq::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : service_name_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        service_id_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        areaid_{0},
+        id_{0},
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR InnerServerHandShakeReq::InnerServerHandShakeReq(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
+struct InnerServerHandShakeReqDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR InnerServerHandShakeReqDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~InnerServerHandShakeReqDefaultTypeInternal() {}
+  union {
+    InnerServerHandShakeReq _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InnerServerHandShakeReqDefaultTypeInternal _InnerServerHandShakeReq_default_instance_;
 
 inline constexpr InnerPlayerDisconnectResponse::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
@@ -244,8 +275,15 @@ struct InnerLoginInitNotifyDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InnerLoginInitNotifyDefaultTypeInternal _InnerLoginInitNotify_default_instance_;
-      template <typename>
-PROTOBUF_CONSTEXPR InnerHeartBeatResponse::InnerHeartBeatResponse(::_pbi::ConstantInitialized) {}
+
+inline constexpr InnerHeartBeatResponse::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : time_{::int64_t{0}},
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR InnerHeartBeatResponse::InnerHeartBeatResponse(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
 struct InnerHeartBeatResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR InnerHeartBeatResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
   ~InnerHeartBeatResponseDefaultTypeInternal() {}
@@ -256,8 +294,15 @@ struct InnerHeartBeatResponseDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InnerHeartBeatResponseDefaultTypeInternal _InnerHeartBeatResponse_default_instance_;
-      template <typename>
-PROTOBUF_CONSTEXPR InnerHeartBeatRequest::InnerHeartBeatRequest(::_pbi::ConstantInitialized) {}
+
+inline constexpr InnerHeartBeatRequest::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : time_{::int64_t{0}},
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR InnerHeartBeatRequest::InnerHeartBeatRequest(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
 struct InnerHeartBeatRequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR InnerHeartBeatRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
   ~InnerHeartBeatRequestDefaultTypeInternal() {}
@@ -287,7 +332,7 @@ struct InnerHeadDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InnerHeadDefaultTypeInternal _InnerHead_default_instance_;
-static ::_pb::Metadata file_level_metadata_ProtoInner_2eproto[14];
+static ::_pb::Metadata file_level_metadata_ProtoInner_2eproto[15];
 static const ::_pb::EnumDescriptor* file_level_enum_descriptors_ProtoInner_2eproto[1];
 static constexpr const ::_pb::ServiceDescriptor**
     file_level_service_descriptors_ProtoInner_2eproto = nullptr;
@@ -310,6 +355,7 @@ const ::uint32_t TableStruct_ProtoInner_2eproto::offsets[] PROTOBUF_SECTION_VARI
     ~0u,  // no _inlined_string_donated_
     ~0u,  // no _split_
     ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::InnerHeartBeatRequest, _impl_.time_),
     ~0u,  // no _has_bits_
     PROTOBUF_FIELD_OFFSET(::InnerHeartBeatResponse, _internal_metadata_),
     ~0u,  // no _extensions_
@@ -318,6 +364,7 @@ const ::uint32_t TableStruct_ProtoInner_2eproto::offsets[] PROTOBUF_SECTION_VARI
     ~0u,  // no _inlined_string_donated_
     ~0u,  // no _split_
     ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::InnerHeartBeatResponse, _impl_.time_),
     ~0u,  // no _has_bits_
     PROTOBUF_FIELD_OFFSET(::InnerLoginRequest, _internal_metadata_),
     ~0u,  // no _extensions_
@@ -401,15 +448,28 @@ const ::uint32_t TableStruct_ProtoInner_2eproto::offsets[] PROTOBUF_SECTION_VARI
     ~0u,  // no sizeof(Split)
     PROTOBUF_FIELD_OFFSET(::InnerLoginInitNotify, _impl_.roleid_),
     ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::InnerServerHandShake, _internal_metadata_),
+    PROTOBUF_FIELD_OFFSET(::InnerServerHandShakeReq, _internal_metadata_),
     ~0u,  // no _extensions_
     ~0u,  // no _oneof_case_
     ~0u,  // no _weak_field_map_
     ~0u,  // no _inlined_string_donated_
     ~0u,  // no _split_
     ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::InnerServerHandShake, _impl_.fromserverid_),
-    PROTOBUF_FIELD_OFFSET(::InnerServerHandShake, _impl_.fromservertype_),
+    PROTOBUF_FIELD_OFFSET(::InnerServerHandShakeReq, _impl_.service_name_),
+    PROTOBUF_FIELD_OFFSET(::InnerServerHandShakeReq, _impl_.service_id_),
+    PROTOBUF_FIELD_OFFSET(::InnerServerHandShakeReq, _impl_.areaid_),
+    PROTOBUF_FIELD_OFFSET(::InnerServerHandShakeReq, _impl_.id_),
+    ~0u,  // no _has_bits_
+    PROTOBUF_FIELD_OFFSET(::InnerServerHandShakeRes, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::InnerServerHandShakeRes, _impl_.service_name_),
+    PROTOBUF_FIELD_OFFSET(::InnerServerHandShakeRes, _impl_.service_id_),
+    PROTOBUF_FIELD_OFFSET(::InnerServerHandShakeRes, _impl_.areaid_),
     ~0u,  // no _has_bits_
     PROTOBUF_FIELD_OFFSET(::KickOutRequest, _internal_metadata_),
     ~0u,  // no _extensions_
@@ -436,18 +496,19 @@ static const ::_pbi::MigrationSchema
     schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
         {0, -1, -1, sizeof(::InnerHead)},
         {9, -1, -1, sizeof(::InnerHeartBeatRequest)},
-        {17, -1, -1, sizeof(::InnerHeartBeatResponse)},
-        {25, -1, -1, sizeof(::InnerLoginRequest)},
-        {35, -1, -1, sizeof(::InnerLoginResponse)},
-        {45, -1, -1, sizeof(::InnerPlayerDisconnectRequest)},
-        {55, -1, -1, sizeof(::InnerPlayerDisconnectResponse)},
-        {65, -1, -1, sizeof(::InnerLoginWorldRequest)},
-        {78, -1, -1, sizeof(::InnerLoginWorldResponse)},
-        {88, -1, -1, sizeof(::InnerLogoutNotify)},
-        {98, -1, -1, sizeof(::InnerLoginInitNotify)},
-        {107, -1, -1, sizeof(::InnerServerHandShake)},
-        {117, -1, -1, sizeof(::KickOutRequest)},
-        {128, -1, -1, sizeof(::KickOutResponse)},
+        {18, -1, -1, sizeof(::InnerHeartBeatResponse)},
+        {27, -1, -1, sizeof(::InnerLoginRequest)},
+        {37, -1, -1, sizeof(::InnerLoginResponse)},
+        {47, -1, -1, sizeof(::InnerPlayerDisconnectRequest)},
+        {57, -1, -1, sizeof(::InnerPlayerDisconnectResponse)},
+        {67, -1, -1, sizeof(::InnerLoginWorldRequest)},
+        {80, -1, -1, sizeof(::InnerLoginWorldResponse)},
+        {90, -1, -1, sizeof(::InnerLogoutNotify)},
+        {100, -1, -1, sizeof(::InnerLoginInitNotify)},
+        {109, -1, -1, sizeof(::InnerServerHandShakeReq)},
+        {121, -1, -1, sizeof(::InnerServerHandShakeRes)},
+        {132, -1, -1, sizeof(::KickOutRequest)},
+        {143, -1, -1, sizeof(::KickOutResponse)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -462,51 +523,55 @@ static const ::_pb::Message* const file_default_instances[] = {
     &::_InnerLoginWorldResponse_default_instance_._instance,
     &::_InnerLogoutNotify_default_instance_._instance,
     &::_InnerLoginInitNotify_default_instance_._instance,
-    &::_InnerServerHandShake_default_instance_._instance,
+    &::_InnerServerHandShakeReq_default_instance_._instance,
+    &::_InnerServerHandShakeRes_default_instance_._instance,
     &::_KickOutRequest_default_instance_._instance,
     &::_KickOutResponse_default_instance_._instance,
 };
 const char descriptor_table_protodef_ProtoInner_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
     "\n\020ProtoInner.proto\"\027\n\tInnerHead\022\n\n\002id\030\001 "
-    "\001(\003\"\027\n\025InnerHeartBeatRequest\"\030\n\026InnerHea"
-    "rtBeatResponse\"0\n\021InnerLoginRequest\022\013\n\003s"
-    "id\030\001 \001(\003\022\016\n\006roleId\030\002 \001(\003\"1\n\022InnerLoginRe"
-    "sponse\022\013\n\003sid\030\001 \001(\003\022\016\n\006roleId\030\002 \001(\003\";\n\034I"
-    "nnerPlayerDisconnectRequest\022\013\n\003sid\030\001 \001(\003"
-    "\022\016\n\006roleId\030\002 \001(\003\"<\n\035InnerPlayerDisconnec"
-    "tResponse\022\013\n\003sid\030\001 \001(\003\022\016\n\006roleId\030\002 \001(\003\"z"
-    "\n\026InnerLoginWorldRequest\022\016\n\006roleId\030\001 \001(\003"
-    "\022\030\n\020gatewayServerUid\030\002 \001(\003\022\025\n\rgameServer"
-    "Uid\030\003 \001(\003\022\014\n\004name\030\004 \001(\t\022\021\n\tsessionId\030\005 \001"
-    "(\003\"<\n\027InnerLoginWorldResponse\022\021\n\terrorCo"
-    "de\030\001 \001(\005\022\016\n\006unitId\030\002 \001(\003\"6\n\021InnerLogoutN"
-    "otify\022\016\n\006roleId\030\001 \001(\003\022\021\n\tsessionId\030\002 \001(\003"
-    "\"&\n\024InnerLoginInitNotify\022\016\n\006roleId\030\001 \001(\003"
-    "\"D\n\024InnerServerHandShake\022\024\n\014fromServerId"
-    "\030\001 \001(\003\022\026\n\016fromServerType\030\002 \001(\005\"=\n\016KickOu"
-    "tRequest\022\016\n\006roleId\030\001 \001(\003\022\013\n\003sid\030\002 \001(\003\022\016\n"
-    "\006reason\030\003 \001(\005\"!\n\017KickOutResponse\022\016\n\006reas"
-    "on\030\001 \001(\005*\237\002\n\016InnerProtoCode\022\021\n\rINNER_INV"
-    "ALID\020\000\022$\n\027INNER_SERVER_HAND_SHAKE\020\377\377\377\377\377\377"
-    "\377\377\377\001\022!\n\024INNER_HEART_BEAT_REQ\020\376\377\377\377\377\377\377\377\377\001\022"
-    "!\n\024INNER_HEART_BEAT_RES\020\375\377\377\377\377\377\377\377\377\001\022\034\n\017IN"
-    "NER_LOGIN_REQ\020\374\377\377\377\377\377\377\377\377\001\022\034\n\017INNER_LOGIN_"
-    "RES\020\373\377\377\377\377\377\377\377\377\001\022(\n\033INNER_PLAYER_DISCONNEC"
-    "T_REQ\020\372\377\377\377\377\377\377\377\377\001\022(\n\033INNER_PLAYER_DISCONN"
-    "ECT_RES\020\371\377\377\377\377\377\377\377\377\001B\033\n\016com.game.protoZ\t/p"
-    "rotoGenb\006proto3"
+    "\001(\003\"%\n\025InnerHeartBeatRequest\022\014\n\004time\030\001 \001"
+    "(\003\"&\n\026InnerHeartBeatResponse\022\014\n\004time\030\002 \001"
+    "(\003\"0\n\021InnerLoginRequest\022\013\n\003sid\030\001 \001(\003\022\016\n\006"
+    "roleId\030\002 \001(\003\"1\n\022InnerLoginResponse\022\013\n\003si"
+    "d\030\001 \001(\003\022\016\n\006roleId\030\002 \001(\003\";\n\034InnerPlayerDi"
+    "sconnectRequest\022\013\n\003sid\030\001 \001(\003\022\016\n\006roleId\030\002"
+    " \001(\003\"<\n\035InnerPlayerDisconnectResponse\022\013\n"
+    "\003sid\030\001 \001(\003\022\016\n\006roleId\030\002 \001(\003\"z\n\026InnerLogin"
+    "WorldRequest\022\016\n\006roleId\030\001 \001(\003\022\030\n\020gatewayS"
+    "erverUid\030\002 \001(\003\022\025\n\rgameServerUid\030\003 \001(\003\022\014\n"
+    "\004name\030\004 \001(\t\022\021\n\tsessionId\030\005 \001(\003\"<\n\027InnerL"
+    "oginWorldResponse\022\021\n\terrorCode\030\001 \001(\005\022\016\n\006"
+    "unitId\030\002 \001(\003\"6\n\021InnerLogoutNotify\022\016\n\006rol"
+    "eId\030\001 \001(\003\022\021\n\tsessionId\030\002 \001(\003\"&\n\024InnerLog"
+    "inInitNotify\022\016\n\006roleId\030\001 \001(\003\"_\n\027InnerSer"
+    "verHandShakeReq\022\024\n\014service_name\030\001 \001(\t\022\022\n"
+    "\nservice_id\030\002 \001(\t\022\016\n\006areaId\030\003 \001(\005\022\n\n\002id\030"
+    "\004 \001(\005\"S\n\027InnerServerHandShakeRes\022\024\n\014serv"
+    "ice_name\030\001 \001(\t\022\022\n\nservice_id\030\002 \001(\t\022\016\n\006ar"
+    "eaId\030\003 \001(\005\"=\n\016KickOutRequest\022\016\n\006roleId\030\001"
+    " \001(\003\022\013\n\003sid\030\002 \001(\003\022\016\n\006reason\030\003 \001(\005\"!\n\017Kic"
+    "kOutResponse\022\016\n\006reason\030\001 \001(\005*\237\002\n\016InnerPr"
+    "otoCode\022\021\n\rINNER_INVALID\020\000\022$\n\027INNER_SERV"
+    "ER_HAND_SHAKE\020\377\377\377\377\377\377\377\377\377\001\022!\n\024INNER_HEART_"
+    "BEAT_REQ\020\376\377\377\377\377\377\377\377\377\001\022!\n\024INNER_HEART_BEAT_"
+    "RES\020\375\377\377\377\377\377\377\377\377\001\022\034\n\017INNER_LOGIN_REQ\020\374\377\377\377\377\377"
+    "\377\377\377\001\022\034\n\017INNER_LOGIN_RES\020\373\377\377\377\377\377\377\377\377\001\022(\n\033IN"
+    "NER_PLAYER_DISCONNECT_REQ\020\372\377\377\377\377\377\377\377\377\001\022(\n\033"
+    "INNER_PLAYER_DISCONNECT_RES\020\371\377\377\377\377\377\377\377\377\001B\033"
+    "\n\016com.game.protoZ\t/protoGenb\006proto3"
 };
 static ::absl::once_flag descriptor_table_ProtoInner_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_ProtoInner_2eproto = {
     false,
     false,
-    1095,
+    1235,
     descriptor_table_protodef_ProtoInner_2eproto,
     "ProtoInner.proto",
     &descriptor_table_ProtoInner_2eproto_once,
     nullptr,
     0,
-    14,
+    15,
     schemas,
     file_default_instances,
     TableStruct_ProtoInner_2eproto::offsets,
@@ -718,28 +783,163 @@ class InnerHeartBeatRequest::_Internal {
 };
 
 InnerHeartBeatRequest::InnerHeartBeatRequest(::google::protobuf::Arena* arena)
-    : ::google::protobuf::internal::ZeroFieldsBase(arena) {
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
   // @@protoc_insertion_point(arena_constructor:InnerHeartBeatRequest)
 }
 InnerHeartBeatRequest::InnerHeartBeatRequest(
-    ::google::protobuf::Arena* arena,
-    const InnerHeartBeatRequest& from)
-    : ::google::protobuf::internal::ZeroFieldsBase(arena) {
-  InnerHeartBeatRequest* const _this = this;
-  (void)_this;
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+    ::google::protobuf::Arena* arena, const InnerHeartBeatRequest& from)
+    : InnerHeartBeatRequest(arena) {
+  MergeFrom(from);
+}
+inline PROTOBUF_NDEBUG_INLINE InnerHeartBeatRequest::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : _cached_size_{0} {}
 
-  // @@protoc_insertion_point(copy_constructor:InnerHeartBeatRequest)
+inline void InnerHeartBeatRequest::SharedCtor(::_pb::Arena* arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  _impl_.time_ = {};
+}
+InnerHeartBeatRequest::~InnerHeartBeatRequest() {
+  // @@protoc_insertion_point(destructor:InnerHeartBeatRequest)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  SharedDtor();
+}
+inline void InnerHeartBeatRequest::SharedDtor() {
+  ABSL_DCHECK(GetArena() == nullptr);
+  _impl_.~Impl_();
+}
+
+PROTOBUF_NOINLINE void InnerHeartBeatRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:InnerHeartBeatRequest)
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.time_ = ::int64_t{0};
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+const char* InnerHeartBeatRequest::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
 }
 
 
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<0, 1, 0, 0, 2> InnerHeartBeatRequest::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    1, 0,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967294,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    1,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_InnerHeartBeatRequest_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    // int64 time = 1;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(InnerHeartBeatRequest, _impl_.time_), 63>(),
+     {8, 63, 0, PROTOBUF_FIELD_OFFSET(InnerHeartBeatRequest, _impl_.time_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // int64 time = 1;
+    {PROTOBUF_FIELD_OFFSET(InnerHeartBeatRequest, _impl_.time_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kInt64)},
+  }},
+  // no aux_entries
+  {{
+  }},
+};
 
+::uint8_t* InnerHeartBeatRequest::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:InnerHeartBeatRequest)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
+  // int64 time = 1;
+  if (this->_internal_time() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::
+        WriteInt64ToArrayWithField<1>(
+            stream, this->_internal_time(), target);
+  }
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:InnerHeartBeatRequest)
+  return target;
+}
 
+::size_t InnerHeartBeatRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:InnerHeartBeatRequest)
+  ::size_t total_size = 0;
 
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
 
+  // int64 time = 1;
+  if (this->_internal_time() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(
+        this->_internal_time());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::google::protobuf::Message::ClassData InnerHeartBeatRequest::_class_data_ = {
+    InnerHeartBeatRequest::MergeImpl,
+    nullptr,  // OnDemandRegisterArenaDtor
+};
+const ::google::protobuf::Message::ClassData* InnerHeartBeatRequest::GetClassData() const {
+  return &_class_data_;
+}
+
+void InnerHeartBeatRequest::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<InnerHeartBeatRequest*>(&to_msg);
+  auto& from = static_cast<const InnerHeartBeatRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:InnerHeartBeatRequest)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_time() != 0) {
+    _this->_internal_set_time(from._internal_time());
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void InnerHeartBeatRequest::CopyFrom(const InnerHeartBeatRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:InnerHeartBeatRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+PROTOBUF_NOINLINE bool InnerHeartBeatRequest::IsInitialized() const {
+  return true;
+}
+
+::_pbi::CachedSize* InnerHeartBeatRequest::AccessCachedSize() const {
+  return &_impl_._cached_size_;
+}
+void InnerHeartBeatRequest::InternalSwap(InnerHeartBeatRequest* PROTOBUF_RESTRICT other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+        swap(_impl_.time_, other->_impl_.time_);
+}
 
 ::google::protobuf::Metadata InnerHeartBeatRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
@@ -753,28 +953,163 @@ class InnerHeartBeatResponse::_Internal {
 };
 
 InnerHeartBeatResponse::InnerHeartBeatResponse(::google::protobuf::Arena* arena)
-    : ::google::protobuf::internal::ZeroFieldsBase(arena) {
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
   // @@protoc_insertion_point(arena_constructor:InnerHeartBeatResponse)
 }
 InnerHeartBeatResponse::InnerHeartBeatResponse(
-    ::google::protobuf::Arena* arena,
-    const InnerHeartBeatResponse& from)
-    : ::google::protobuf::internal::ZeroFieldsBase(arena) {
-  InnerHeartBeatResponse* const _this = this;
-  (void)_this;
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+    ::google::protobuf::Arena* arena, const InnerHeartBeatResponse& from)
+    : InnerHeartBeatResponse(arena) {
+  MergeFrom(from);
+}
+inline PROTOBUF_NDEBUG_INLINE InnerHeartBeatResponse::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : _cached_size_{0} {}
 
-  // @@protoc_insertion_point(copy_constructor:InnerHeartBeatResponse)
+inline void InnerHeartBeatResponse::SharedCtor(::_pb::Arena* arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  _impl_.time_ = {};
+}
+InnerHeartBeatResponse::~InnerHeartBeatResponse() {
+  // @@protoc_insertion_point(destructor:InnerHeartBeatResponse)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  SharedDtor();
+}
+inline void InnerHeartBeatResponse::SharedDtor() {
+  ABSL_DCHECK(GetArena() == nullptr);
+  _impl_.~Impl_();
+}
+
+PROTOBUF_NOINLINE void InnerHeartBeatResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:InnerHeartBeatResponse)
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.time_ = ::int64_t{0};
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+const char* InnerHeartBeatResponse::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
 }
 
 
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<0, 1, 0, 0, 2> InnerHeartBeatResponse::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    2, 0,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967293,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    1,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_InnerHeartBeatResponse_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    // int64 time = 2;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(InnerHeartBeatResponse, _impl_.time_), 63>(),
+     {16, 63, 0, PROTOBUF_FIELD_OFFSET(InnerHeartBeatResponse, _impl_.time_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // int64 time = 2;
+    {PROTOBUF_FIELD_OFFSET(InnerHeartBeatResponse, _impl_.time_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kInt64)},
+  }},
+  // no aux_entries
+  {{
+  }},
+};
 
+::uint8_t* InnerHeartBeatResponse::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:InnerHeartBeatResponse)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
+  // int64 time = 2;
+  if (this->_internal_time() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::
+        WriteInt64ToArrayWithField<2>(
+            stream, this->_internal_time(), target);
+  }
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:InnerHeartBeatResponse)
+  return target;
+}
 
+::size_t InnerHeartBeatResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:InnerHeartBeatResponse)
+  ::size_t total_size = 0;
 
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
 
+  // int64 time = 2;
+  if (this->_internal_time() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(
+        this->_internal_time());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::google::protobuf::Message::ClassData InnerHeartBeatResponse::_class_data_ = {
+    InnerHeartBeatResponse::MergeImpl,
+    nullptr,  // OnDemandRegisterArenaDtor
+};
+const ::google::protobuf::Message::ClassData* InnerHeartBeatResponse::GetClassData() const {
+  return &_class_data_;
+}
+
+void InnerHeartBeatResponse::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<InnerHeartBeatResponse*>(&to_msg);
+  auto& from = static_cast<const InnerHeartBeatResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:InnerHeartBeatResponse)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_time() != 0) {
+    _this->_internal_set_time(from._internal_time());
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void InnerHeartBeatResponse::CopyFrom(const InnerHeartBeatResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:InnerHeartBeatResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+PROTOBUF_NOINLINE bool InnerHeartBeatResponse::IsInitialized() const {
+  return true;
+}
+
+::_pbi::CachedSize* InnerHeartBeatResponse::AccessCachedSize() const {
+  return &_impl_._cached_size_;
+}
+void InnerHeartBeatResponse::InternalSwap(InnerHeartBeatResponse* PROTOBUF_RESTRICT other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+        swap(_impl_.time_, other->_impl_.time_);
+}
 
 ::google::protobuf::Metadata InnerHeartBeatResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
@@ -2480,58 +2815,85 @@ void InnerLoginInitNotify::InternalSwap(InnerLoginInitNotify* PROTOBUF_RESTRICT 
 }
 // ===================================================================
 
-class InnerServerHandShake::_Internal {
+class InnerServerHandShakeReq::_Internal {
  public:
 };
 
-InnerServerHandShake::InnerServerHandShake(::google::protobuf::Arena* arena)
+InnerServerHandShakeReq::InnerServerHandShakeReq(::google::protobuf::Arena* arena)
     : ::google::protobuf::Message(arena) {
   SharedCtor(arena);
-  // @@protoc_insertion_point(arena_constructor:InnerServerHandShake)
+  // @@protoc_insertion_point(arena_constructor:InnerServerHandShakeReq)
 }
-InnerServerHandShake::InnerServerHandShake(
-    ::google::protobuf::Arena* arena, const InnerServerHandShake& from)
-    : InnerServerHandShake(arena) {
-  MergeFrom(from);
+inline PROTOBUF_NDEBUG_INLINE InnerServerHandShakeReq::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
+    const Impl_& from)
+      : service_name_(arena, from.service_name_),
+        service_id_(arena, from.service_id_),
+        _cached_size_{0} {}
+
+InnerServerHandShakeReq::InnerServerHandShakeReq(
+    ::google::protobuf::Arena* arena,
+    const InnerServerHandShakeReq& from)
+    : ::google::protobuf::Message(arena) {
+  InnerServerHandShakeReq* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_);
+  ::memcpy(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, areaid_),
+           reinterpret_cast<const char *>(&from._impl_) +
+               offsetof(Impl_, areaid_),
+           offsetof(Impl_, id_) -
+               offsetof(Impl_, areaid_) +
+               sizeof(Impl_::id_));
+
+  // @@protoc_insertion_point(copy_constructor:InnerServerHandShakeReq)
 }
-inline PROTOBUF_NDEBUG_INLINE InnerServerHandShake::Impl_::Impl_(
+inline PROTOBUF_NDEBUG_INLINE InnerServerHandShakeReq::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* arena)
-      : _cached_size_{0} {}
+      : service_name_(arena),
+        service_id_(arena),
+        _cached_size_{0} {}
 
-inline void InnerServerHandShake::SharedCtor(::_pb::Arena* arena) {
+inline void InnerServerHandShakeReq::SharedCtor(::_pb::Arena* arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
   ::memset(reinterpret_cast<char *>(&_impl_) +
-               offsetof(Impl_, fromserverid_),
+               offsetof(Impl_, areaid_),
            0,
-           offsetof(Impl_, fromservertype_) -
-               offsetof(Impl_, fromserverid_) +
-               sizeof(Impl_::fromservertype_));
+           offsetof(Impl_, id_) -
+               offsetof(Impl_, areaid_) +
+               sizeof(Impl_::id_));
 }
-InnerServerHandShake::~InnerServerHandShake() {
-  // @@protoc_insertion_point(destructor:InnerServerHandShake)
+InnerServerHandShakeReq::~InnerServerHandShakeReq() {
+  // @@protoc_insertion_point(destructor:InnerServerHandShakeReq)
   _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-inline void InnerServerHandShake::SharedDtor() {
+inline void InnerServerHandShakeReq::SharedDtor() {
   ABSL_DCHECK(GetArena() == nullptr);
+  _impl_.service_name_.Destroy();
+  _impl_.service_id_.Destroy();
   _impl_.~Impl_();
 }
 
-PROTOBUF_NOINLINE void InnerServerHandShake::Clear() {
-// @@protoc_insertion_point(message_clear_start:InnerServerHandShake)
+PROTOBUF_NOINLINE void InnerServerHandShakeReq::Clear() {
+// @@protoc_insertion_point(message_clear_start:InnerServerHandShakeReq)
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&_impl_.fromserverid_, 0, static_cast<::size_t>(
-      reinterpret_cast<char*>(&_impl_.fromservertype_) -
-      reinterpret_cast<char*>(&_impl_.fromserverid_)) + sizeof(_impl_.fromservertype_));
+  _impl_.service_name_.ClearToEmpty();
+  _impl_.service_id_.ClearToEmpty();
+  ::memset(&_impl_.areaid_, 0, static_cast<::size_t>(
+      reinterpret_cast<char*>(&_impl_.id_) -
+      reinterpret_cast<char*>(&_impl_.areaid_)) + sizeof(_impl_.id_));
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-const char* InnerServerHandShake::_InternalParse(
+const char* InnerServerHandShakeReq::_InternalParse(
     const char* ptr, ::_pbi::ParseContext* ctx) {
   ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
   return ptr;
@@ -2539,60 +2901,92 @@ const char* InnerServerHandShake::_InternalParse(
 
 
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<1, 2, 0, 0, 2> InnerServerHandShake::_table_ = {
+const ::_pbi::TcParseTable<2, 4, 0, 54, 2> InnerServerHandShakeReq::_table_ = {
   {
     0,  // no _has_bits_
     0, // no _extensions_
-    2, 8,  // max_field_number, fast_idx_mask
+    4, 24,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4294967292,  // skipmap
+    4294967280,  // skipmap
     offsetof(decltype(_table_), field_entries),
-    2,  // num_field_entries
+    4,  // num_field_entries
     0,  // num_aux_entries
     offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_InnerServerHandShake_default_instance_._instance,
+    &_InnerServerHandShakeReq_default_instance_._instance,
     ::_pbi::TcParser::GenericFallback,  // fallback
   }, {{
-    // int32 fromServerType = 2;
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(InnerServerHandShake, _impl_.fromservertype_), 63>(),
-     {16, 63, 0, PROTOBUF_FIELD_OFFSET(InnerServerHandShake, _impl_.fromservertype_)}},
-    // int64 fromServerId = 1;
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(InnerServerHandShake, _impl_.fromserverid_), 63>(),
-     {8, 63, 0, PROTOBUF_FIELD_OFFSET(InnerServerHandShake, _impl_.fromserverid_)}},
+    // int32 id = 4;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(InnerServerHandShakeReq, _impl_.id_), 63>(),
+     {32, 63, 0, PROTOBUF_FIELD_OFFSET(InnerServerHandShakeReq, _impl_.id_)}},
+    // string service_name = 1;
+    {::_pbi::TcParser::FastUS1,
+     {10, 63, 0, PROTOBUF_FIELD_OFFSET(InnerServerHandShakeReq, _impl_.service_name_)}},
+    // string service_id = 2;
+    {::_pbi::TcParser::FastUS1,
+     {18, 63, 0, PROTOBUF_FIELD_OFFSET(InnerServerHandShakeReq, _impl_.service_id_)}},
+    // int32 areaId = 3;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(InnerServerHandShakeReq, _impl_.areaid_), 63>(),
+     {24, 63, 0, PROTOBUF_FIELD_OFFSET(InnerServerHandShakeReq, _impl_.areaid_)}},
   }}, {{
     65535, 65535
   }}, {{
-    // int64 fromServerId = 1;
-    {PROTOBUF_FIELD_OFFSET(InnerServerHandShake, _impl_.fromserverid_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt64)},
-    // int32 fromServerType = 2;
-    {PROTOBUF_FIELD_OFFSET(InnerServerHandShake, _impl_.fromservertype_), 0, 0,
+    // string service_name = 1;
+    {PROTOBUF_FIELD_OFFSET(InnerServerHandShakeReq, _impl_.service_name_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // string service_id = 2;
+    {PROTOBUF_FIELD_OFFSET(InnerServerHandShakeReq, _impl_.service_id_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // int32 areaId = 3;
+    {PROTOBUF_FIELD_OFFSET(InnerServerHandShakeReq, _impl_.areaid_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
+    // int32 id = 4;
+    {PROTOBUF_FIELD_OFFSET(InnerServerHandShakeReq, _impl_.id_), 0, 0,
     (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
   }},
   // no aux_entries
   {{
+    "\27\14\12\0\0\0\0\0"
+    "InnerServerHandShakeReq"
+    "service_name"
+    "service_id"
   }},
 };
 
-::uint8_t* InnerServerHandShake::_InternalSerialize(
+::uint8_t* InnerServerHandShakeReq::_InternalSerialize(
     ::uint8_t* target,
     ::google::protobuf::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:InnerServerHandShake)
+  // @@protoc_insertion_point(serialize_to_array_start:InnerServerHandShakeReq)
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
-  // int64 fromServerId = 1;
-  if (this->_internal_fromserverid() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt64ToArrayWithField<1>(
-            stream, this->_internal_fromserverid(), target);
+  // string service_name = 1;
+  if (!this->_internal_service_name().empty()) {
+    const std::string& _s = this->_internal_service_name();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "InnerServerHandShakeReq.service_name");
+    target = stream->WriteStringMaybeAliased(1, _s, target);
   }
 
-  // int32 fromServerType = 2;
-  if (this->_internal_fromservertype() != 0) {
+  // string service_id = 2;
+  if (!this->_internal_service_id().empty()) {
+    const std::string& _s = this->_internal_service_id();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "InnerServerHandShakeReq.service_id");
+    target = stream->WriteStringMaybeAliased(2, _s, target);
+  }
+
+  // int32 areaId = 3;
+  if (this->_internal_areaid() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<2>(
-            stream, this->_internal_fromservertype(), target);
+        WriteInt32ToArrayWithField<3>(
+            stream, this->_internal_areaid(), target);
+  }
+
+  // int32 id = 4;
+  if (this->_internal_id() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::
+        WriteInt32ToArrayWithField<4>(
+            stream, this->_internal_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2600,87 +2994,355 @@ const ::_pbi::TcParseTable<1, 2, 0, 0, 2> InnerServerHandShake::_table_ = {
         ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
             _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:InnerServerHandShake)
+  // @@protoc_insertion_point(serialize_to_array_end:InnerServerHandShakeReq)
   return target;
 }
 
-::size_t InnerServerHandShake::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:InnerServerHandShake)
+::size_t InnerServerHandShakeReq::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:InnerServerHandShakeReq)
   ::size_t total_size = 0;
 
   ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // int64 fromServerId = 1;
-  if (this->_internal_fromserverid() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(
-        this->_internal_fromserverid());
+  // string service_name = 1;
+  if (!this->_internal_service_name().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                    this->_internal_service_name());
   }
 
-  // int32 fromServerType = 2;
-  if (this->_internal_fromservertype() != 0) {
+  // string service_id = 2;
+  if (!this->_internal_service_id().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                    this->_internal_service_id());
+  }
+
+  // int32 areaId = 3;
+  if (this->_internal_areaid() != 0) {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_fromservertype());
+        this->_internal_areaid());
+  }
+
+  // int32 id = 4;
+  if (this->_internal_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+        this->_internal_id());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData InnerServerHandShake::_class_data_ = {
-    InnerServerHandShake::MergeImpl,
+const ::google::protobuf::Message::ClassData InnerServerHandShakeReq::_class_data_ = {
+    InnerServerHandShakeReq::MergeImpl,
     nullptr,  // OnDemandRegisterArenaDtor
 };
-const ::google::protobuf::Message::ClassData* InnerServerHandShake::GetClassData() const {
+const ::google::protobuf::Message::ClassData* InnerServerHandShakeReq::GetClassData() const {
   return &_class_data_;
 }
 
-void InnerServerHandShake::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
-  auto* const _this = static_cast<InnerServerHandShake*>(&to_msg);
-  auto& from = static_cast<const InnerServerHandShake&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:InnerServerHandShake)
+void InnerServerHandShakeReq::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<InnerServerHandShakeReq*>(&to_msg);
+  auto& from = static_cast<const InnerServerHandShakeReq&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:InnerServerHandShakeReq)
   ABSL_DCHECK_NE(&from, _this);
   ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_fromserverid() != 0) {
-    _this->_internal_set_fromserverid(from._internal_fromserverid());
+  if (!from._internal_service_name().empty()) {
+    _this->_internal_set_service_name(from._internal_service_name());
   }
-  if (from._internal_fromservertype() != 0) {
-    _this->_internal_set_fromservertype(from._internal_fromservertype());
+  if (!from._internal_service_id().empty()) {
+    _this->_internal_set_service_id(from._internal_service_id());
+  }
+  if (from._internal_areaid() != 0) {
+    _this->_internal_set_areaid(from._internal_areaid());
+  }
+  if (from._internal_id() != 0) {
+    _this->_internal_set_id(from._internal_id());
   }
   _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void InnerServerHandShake::CopyFrom(const InnerServerHandShake& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:InnerServerHandShake)
+void InnerServerHandShakeReq::CopyFrom(const InnerServerHandShakeReq& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:InnerServerHandShakeReq)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool InnerServerHandShake::IsInitialized() const {
+PROTOBUF_NOINLINE bool InnerServerHandShakeReq::IsInitialized() const {
   return true;
 }
 
-::_pbi::CachedSize* InnerServerHandShake::AccessCachedSize() const {
+::_pbi::CachedSize* InnerServerHandShakeReq::AccessCachedSize() const {
   return &_impl_._cached_size_;
 }
-void InnerServerHandShake::InternalSwap(InnerServerHandShake* PROTOBUF_RESTRICT other) {
+void InnerServerHandShakeReq::InternalSwap(InnerServerHandShakeReq* PROTOBUF_RESTRICT other) {
   using std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.service_name_, &other->_impl_.service_name_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.service_id_, &other->_impl_.service_id_, arena);
   ::google::protobuf::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(InnerServerHandShake, _impl_.fromservertype_)
-      + sizeof(InnerServerHandShake::_impl_.fromservertype_)
-      - PROTOBUF_FIELD_OFFSET(InnerServerHandShake, _impl_.fromserverid_)>(
-          reinterpret_cast<char*>(&_impl_.fromserverid_),
-          reinterpret_cast<char*>(&other->_impl_.fromserverid_));
+      PROTOBUF_FIELD_OFFSET(InnerServerHandShakeReq, _impl_.id_)
+      + sizeof(InnerServerHandShakeReq::_impl_.id_)
+      - PROTOBUF_FIELD_OFFSET(InnerServerHandShakeReq, _impl_.areaid_)>(
+          reinterpret_cast<char*>(&_impl_.areaid_),
+          reinterpret_cast<char*>(&other->_impl_.areaid_));
 }
 
-::google::protobuf::Metadata InnerServerHandShake::GetMetadata() const {
+::google::protobuf::Metadata InnerServerHandShakeReq::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_ProtoInner_2eproto_getter, &descriptor_table_ProtoInner_2eproto_once,
       file_level_metadata_ProtoInner_2eproto[11]);
+}
+// ===================================================================
+
+class InnerServerHandShakeRes::_Internal {
+ public:
+};
+
+InnerServerHandShakeRes::InnerServerHandShakeRes(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:InnerServerHandShakeRes)
+}
+inline PROTOBUF_NDEBUG_INLINE InnerServerHandShakeRes::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
+    const Impl_& from)
+      : service_name_(arena, from.service_name_),
+        service_id_(arena, from.service_id_),
+        _cached_size_{0} {}
+
+InnerServerHandShakeRes::InnerServerHandShakeRes(
+    ::google::protobuf::Arena* arena,
+    const InnerServerHandShakeRes& from)
+    : ::google::protobuf::Message(arena) {
+  InnerServerHandShakeRes* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_);
+  _impl_.areaid_ = from._impl_.areaid_;
+
+  // @@protoc_insertion_point(copy_constructor:InnerServerHandShakeRes)
+}
+inline PROTOBUF_NDEBUG_INLINE InnerServerHandShakeRes::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : service_name_(arena),
+        service_id_(arena),
+        _cached_size_{0} {}
+
+inline void InnerServerHandShakeRes::SharedCtor(::_pb::Arena* arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  _impl_.areaid_ = {};
+}
+InnerServerHandShakeRes::~InnerServerHandShakeRes() {
+  // @@protoc_insertion_point(destructor:InnerServerHandShakeRes)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  SharedDtor();
+}
+inline void InnerServerHandShakeRes::SharedDtor() {
+  ABSL_DCHECK(GetArena() == nullptr);
+  _impl_.service_name_.Destroy();
+  _impl_.service_id_.Destroy();
+  _impl_.~Impl_();
+}
+
+PROTOBUF_NOINLINE void InnerServerHandShakeRes::Clear() {
+// @@protoc_insertion_point(message_clear_start:InnerServerHandShakeRes)
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.service_name_.ClearToEmpty();
+  _impl_.service_id_.ClearToEmpty();
+  _impl_.areaid_ = 0;
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+const char* InnerServerHandShakeRes::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
+}
+
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<2, 3, 0, 54, 2> InnerServerHandShakeRes::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    3, 24,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967288,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    3,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_InnerServerHandShakeRes_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // string service_name = 1;
+    {::_pbi::TcParser::FastUS1,
+     {10, 63, 0, PROTOBUF_FIELD_OFFSET(InnerServerHandShakeRes, _impl_.service_name_)}},
+    // string service_id = 2;
+    {::_pbi::TcParser::FastUS1,
+     {18, 63, 0, PROTOBUF_FIELD_OFFSET(InnerServerHandShakeRes, _impl_.service_id_)}},
+    // int32 areaId = 3;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(InnerServerHandShakeRes, _impl_.areaid_), 63>(),
+     {24, 63, 0, PROTOBUF_FIELD_OFFSET(InnerServerHandShakeRes, _impl_.areaid_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // string service_name = 1;
+    {PROTOBUF_FIELD_OFFSET(InnerServerHandShakeRes, _impl_.service_name_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // string service_id = 2;
+    {PROTOBUF_FIELD_OFFSET(InnerServerHandShakeRes, _impl_.service_id_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // int32 areaId = 3;
+    {PROTOBUF_FIELD_OFFSET(InnerServerHandShakeRes, _impl_.areaid_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
+  }},
+  // no aux_entries
+  {{
+    "\27\14\12\0\0\0\0\0"
+    "InnerServerHandShakeRes"
+    "service_name"
+    "service_id"
+  }},
+};
+
+::uint8_t* InnerServerHandShakeRes::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:InnerServerHandShakeRes)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // string service_name = 1;
+  if (!this->_internal_service_name().empty()) {
+    const std::string& _s = this->_internal_service_name();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "InnerServerHandShakeRes.service_name");
+    target = stream->WriteStringMaybeAliased(1, _s, target);
+  }
+
+  // string service_id = 2;
+  if (!this->_internal_service_id().empty()) {
+    const std::string& _s = this->_internal_service_id();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "InnerServerHandShakeRes.service_id");
+    target = stream->WriteStringMaybeAliased(2, _s, target);
+  }
+
+  // int32 areaId = 3;
+  if (this->_internal_areaid() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::
+        WriteInt32ToArrayWithField<3>(
+            stream, this->_internal_areaid(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:InnerServerHandShakeRes)
+  return target;
+}
+
+::size_t InnerServerHandShakeRes::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:InnerServerHandShakeRes)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string service_name = 1;
+  if (!this->_internal_service_name().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                    this->_internal_service_name());
+  }
+
+  // string service_id = 2;
+  if (!this->_internal_service_id().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                    this->_internal_service_id());
+  }
+
+  // int32 areaId = 3;
+  if (this->_internal_areaid() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+        this->_internal_areaid());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::google::protobuf::Message::ClassData InnerServerHandShakeRes::_class_data_ = {
+    InnerServerHandShakeRes::MergeImpl,
+    nullptr,  // OnDemandRegisterArenaDtor
+};
+const ::google::protobuf::Message::ClassData* InnerServerHandShakeRes::GetClassData() const {
+  return &_class_data_;
+}
+
+void InnerServerHandShakeRes::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<InnerServerHandShakeRes*>(&to_msg);
+  auto& from = static_cast<const InnerServerHandShakeRes&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:InnerServerHandShakeRes)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_service_name().empty()) {
+    _this->_internal_set_service_name(from._internal_service_name());
+  }
+  if (!from._internal_service_id().empty()) {
+    _this->_internal_set_service_id(from._internal_service_id());
+  }
+  if (from._internal_areaid() != 0) {
+    _this->_internal_set_areaid(from._internal_areaid());
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void InnerServerHandShakeRes::CopyFrom(const InnerServerHandShakeRes& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:InnerServerHandShakeRes)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+PROTOBUF_NOINLINE bool InnerServerHandShakeRes::IsInitialized() const {
+  return true;
+}
+
+::_pbi::CachedSize* InnerServerHandShakeRes::AccessCachedSize() const {
+  return &_impl_._cached_size_;
+}
+void InnerServerHandShakeRes::InternalSwap(InnerServerHandShakeRes* PROTOBUF_RESTRICT other) {
+  using std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.service_name_, &other->_impl_.service_name_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.service_id_, &other->_impl_.service_id_, arena);
+        swap(_impl_.areaid_, other->_impl_.areaid_);
+}
+
+::google::protobuf::Metadata InnerServerHandShakeRes::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_ProtoInner_2eproto_getter, &descriptor_table_ProtoInner_2eproto_once,
+      file_level_metadata_ProtoInner_2eproto[12]);
 }
 // ===================================================================
 
@@ -2907,7 +3569,7 @@ void KickOutRequest::InternalSwap(KickOutRequest* PROTOBUF_RESTRICT other) {
 ::google::protobuf::Metadata KickOutRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_ProtoInner_2eproto_getter, &descriptor_table_ProtoInner_2eproto_once,
-      file_level_metadata_ProtoInner_2eproto[12]);
+      file_level_metadata_ProtoInner_2eproto[13]);
 }
 // ===================================================================
 
@@ -3077,7 +3739,7 @@ void KickOutResponse::InternalSwap(KickOutResponse* PROTOBUF_RESTRICT other) {
 ::google::protobuf::Metadata KickOutResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_ProtoInner_2eproto_getter, &descriptor_table_ProtoInner_2eproto_once,
-      file_level_metadata_ProtoInner_2eproto[13]);
+      file_level_metadata_ProtoInner_2eproto[14]);
 }
 // @@protoc_insertion_point(namespace_scope)
 namespace google {

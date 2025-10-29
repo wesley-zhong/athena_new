@@ -12,8 +12,8 @@
 #include "ProtoInner.pb.h"
 
 void InnerNetWorkHandler::initAllMsgRegister() {
-    REGISTER_MSG_ID_FUN(INNER_LOGIN_REQ, MsgHandler::onLoginRes);
-    REGISTER_MSG_ID_FUN(INNER_SERVER_HAND_SHAKE, MsgHandler::onShakeHandRes);
+    REGISTER_MSG_ID_FUN(INNER_TO_GAME_LOGIN_REQ, MsgHandler::onLoginRes);
+    REGISTER_MSG_ID_FUN(INNER_SERVER_HAND_SHAKE_RES, MsgHandler::onShakeHandRes);
 }
 
 void InnerNetWorkHandler::startThread(int threadNum) {
@@ -23,10 +23,13 @@ void InnerNetWorkHandler::startThread(int threadNum) {
 
 void InnerNetWorkHandler::onConnect(Channel *channel) {
     INFO_LOG("on new connection ={}", channel->getAddr());
+    auto req = std::make_shared<InnerServerHandShakeReq>();
+    req->set_service_id("JJJJJJJJJ");
+    channel->sendMsg(INNER_SERVER_HAND_SHAKE_REQ, req);
 }
 
 void InnerNetWorkHandler::onMsg(Channel *channel, void *buff, int len) {
-    INFO_LOG("  === on read ");
+    INFO_LOG("  === ------------on read len={} ", len);
     uint8 *data = static_cast<uint8 *>(buff);
     data = data + 4;
     int msgId = ByteUtils::readInt32(data);
@@ -39,7 +42,7 @@ void InnerNetWorkHandler::onMsg(Channel *channel, void *buff, int len) {
         ERR_LOG(" msgId ={} not found process function", msgId);
         return;
     }
-    if (msgId == INNER_LOGIN_REQ) {
+    if (msgId == INNER_TO_GAME_LOGIN_REQ) {
         processInnerLogin(msg_function, channel, data, len);
         return;
     }

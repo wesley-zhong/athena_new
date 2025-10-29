@@ -13,8 +13,8 @@
 
 
 void PlayerNetWorkHandller::initAllMsgRegister() {
-    REGISTER_MSG_ID_FUN(INNER_LOGIN_REQ, MsgHandler::onLoginRes);
-    REGISTER_MSG_ID_FUN(INNER_SERVER_HAND_SHAKE, MsgHandler::onShakeHandRes);
+    REGISTER_MSG_ID_FUN(INNER_TO_GAME_LOGIN_RES, MsgHandler::onLoginRes);
+    REGISTER_MSG_ID_FUN(INNER_SERVER_HAND_SHAKE_RES, MsgHandler::onShakeHandRes);
 }
 
 void PlayerNetWorkHandller::startThread(int threadNum) {

@@ -551,21 +551,23 @@ const char descriptor_table_protodef_ProtoInner_2eproto[] PROTOBUF_SECTION_VARIA
     "ice_name\030\001 \001(\t\022\022\n\nservice_id\030\002 \001(\t\022\016\n\006ar"
     "eaId\030\003 \001(\005\"=\n\016KickOutRequest\022\016\n\006roleId\030\001"
     " \001(\003\022\013\n\003sid\030\002 \001(\003\022\016\n\006reason\030\003 \001(\005\"!\n\017Kic"
-    "kOutResponse\022\016\n\006reason\030\001 \001(\005*\237\002\n\016InnerPr"
-    "otoCode\022\021\n\rINNER_INVALID\020\000\022$\n\027INNER_SERV"
-    "ER_HAND_SHAKE\020\377\377\377\377\377\377\377\377\377\001\022!\n\024INNER_HEART_"
-    "BEAT_REQ\020\376\377\377\377\377\377\377\377\377\001\022!\n\024INNER_HEART_BEAT_"
-    "RES\020\375\377\377\377\377\377\377\377\377\001\022\034\n\017INNER_LOGIN_REQ\020\374\377\377\377\377\377"
-    "\377\377\377\001\022\034\n\017INNER_LOGIN_RES\020\373\377\377\377\377\377\377\377\377\001\022(\n\033IN"
-    "NER_PLAYER_DISCONNECT_REQ\020\372\377\377\377\377\377\377\377\377\001\022(\n\033"
-    "INNER_PLAYER_DISCONNECT_RES\020\371\377\377\377\377\377\377\377\377\001B\033"
-    "\n\016com.game.protoZ\t/protoGenb\006proto3"
+    "kOutResponse\022\016\n\006reason\030\001 \001(\005*\335\002\n\016InnerPr"
+    "otoCode\022\021\n\rINNER_INVALID\020\000\022(\n\033INNER_SERV"
+    "ER_HAND_SHAKE_REQ\020\377\377\377\377\377\377\377\377\377\001\022(\n\033INNER_SE"
+    "RVER_HAND_SHAKE_RES\020\376\377\377\377\377\377\377\377\377\001\022!\n\024INNER_"
+    "HEART_BEAT_REQ\020\375\377\377\377\377\377\377\377\377\001\022!\n\024INNER_HEART"
+    "_BEAT_RES\020\374\377\377\377\377\377\377\377\377\001\022(\n\033INNER_PLAYER_DIS"
+    "CONNECT_REQ\020\372\377\377\377\377\377\377\377\377\001\022(\n\033INNER_PLAYER_D"
+    "ISCONNECT_RES\020\371\377\377\377\377\377\377\377\377\001\022$\n\027INNER_TO_GAM"
+    "E_LOGIN_REQ\020\366\377\377\377\377\377\377\377\377\001\022$\n\027INNER_TO_GAME_"
+    "LOGIN_RES\020\365\377\377\377\377\377\377\377\377\001B\033\n\016com.game.protoZ\t"
+    "/protoGenb\006proto3"
 };
 static ::absl::once_flag descriptor_table_ProtoInner_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_ProtoInner_2eproto = {
     false,
     false,
-    1235,
+    1297,
     descriptor_table_protodef_ProtoInner_2eproto,
     "ProtoInner.proto",
     &descriptor_table_ProtoInner_2eproto_once,
@@ -602,9 +604,9 @@ const ::google::protobuf::EnumDescriptor* InnerProtoCode_descriptor() {
   return file_level_enum_descriptors_ProtoInner_2eproto[0];
 }
 PROTOBUF_CONSTINIT const uint32_t InnerProtoCode_internal_data_[] = {
-    589817u, 0u, };
+    196597u, 32u, 1004u, };
 bool InnerProtoCode_IsValid(int value) {
-  return -7 <= value && value <= 0;
+  return ::_pbi::ValidateEnum(value, InnerProtoCode_internal_data_);
 }
 // ===================================================================
 

@@ -11,5 +11,5 @@ void MsgHandler::onLoginRes(int64_t playerId, InnerLoginResponse *res) {
 }
 
 void MsgHandler::onShakeHandRes(int64_t playerId, InnerServerHandShakeRes *res) {
-    INFO_LOG("----- on onShakeHandRes res ={}", res->service_name(), res->service_id());
+    INFO_LOG("----- on onShakeHandRes res ={} serviceId ={}", res->service_name(), res->service_id());
 }

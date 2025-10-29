@@ -47,7 +47,7 @@ int main(int argc, char **argv) {
     InnerNetWorkHandler::initAllMsgRegister();
     InnerNetWorkHandler::startThread(2);
     TcpClient tcp_client;
-    tcp_client.onConnected = InnerNetWorkHandler::onClosed;
+    tcp_client.onConnected = InnerNetWorkHandler::onConnect;
     tcp_client.onRead = InnerNetWorkHandler::onMsg;
 
     /**

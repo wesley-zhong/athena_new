@@ -4,11 +4,16 @@
 #include "ProtoInner.pb.h"
 
 
-void MsgHandler::onShakHand(int64_t playerId, InnerServerHandShakeReq *req) {
-    INFO_LOG("HELLO playerId ={} innherHeaderId = {}", playerId, req->service_id());
+void MsgHandler::onShakHandReq(int64_t playerId, InnerShakeHand *req) {
+    INFO_LOG("HELLO channle ={} innherHeaderId = {}", req->channel->getAddr(), playerId, req->req.service_id());
+    auto res = std::make_shared<InnerServerHandShakeRes>();
+    res->set_service_id("9999ttt");
+    req->channel->sendMsg(INNER_SERVER_HAND_SHAKE_RES, res);
 }
 
 void MsgHandler::onInnerLogin(int64_t playerId, InnerLogin *request) {
     INFO_LOG(" ON INNER LOGIN sid = {} roleId ={} channel ={}", request->req.sid(), request->req.roleid(),
              request->channel->getAddr());
+    auto res = std::make_shared<InnerLoginResponse>();
+    request->channel->sendMsg(INNER_TO_GAME_LOGIN_RES, res);
 }

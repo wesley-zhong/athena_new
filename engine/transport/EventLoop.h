@@ -19,7 +19,6 @@ class EventLoop {
 public:
     EventLoop(NetInterface *tcpInterFace) : _netInterface(tcpInterFace) {
         maxPackBody = static_cast<char *>(malloc(8192));
-        INFO_LOG("create msg buff {} len 8192", fmt::ptr(maxPackBody));
     }
 
     ~EventLoop() {
@@ -32,7 +31,6 @@ public:
     void push(std::function<void()> func) {
         auto it = Thread::RunTask::create(func);
         _waitTasks.push(it);
-        // INFO_LOG("--------  push task");
     }
 
     void onNewConnection(Channel *channel) const;

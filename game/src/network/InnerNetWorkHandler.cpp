@@ -11,8 +11,8 @@
 
 
 void InnerNetWorkHandler::initAllMsgRegister() {
-    REGISTER_MSG_ID_FUN(INNER_LOGIN_REQ, MsgHandler::onInnerLogin);
-    REGISTER_MSG_ID_FUN(INNER_SERVER_HAND_SHAKE, MsgHandler::onShakHand);
+    REGISTER_MSG_ID_FUN(INNER_TO_GAME_LOGIN_REQ, MsgHandler::onInnerLogin);
+    REGISTER_MSG_ID_FUN(INNER_SERVER_HAND_SHAKE_REQ, MsgHandler::onShakHandReq);
 }
 
 void InnerNetWorkHandler::startThread(int threadNum) {
@@ -38,8 +38,12 @@ void InnerNetWorkHandler::onMsg(Channel *channel, void *buff, int len) {
         ERR_LOG(" msgId ={} not found process function", msgId);
         return;
     }
-    if (msgId == INNER_LOGIN_REQ) {
+    if (msgId == INNER_TO_GAME_LOGIN_REQ) {
         processInnerLogin(msg_function, channel, data, len);
+        return;
+    }
+    if (msgId == INNER_SERVER_HAND_SHAKE_REQ) {
+        processInnerShakeReq(msg_function, channel, data, len);
         return;
     }
     auto *param = static_cast<google::protobuf::Message *>(msg_function->newParam());
@@ -61,6 +65,16 @@ void InnerNetWorkHandler::processInnerLogin(MsgFunction *msg_function, Channel *
     inner_login->channel = channel;
     threadPool->execute([msg_function, inner_login]() {
         msg_function->function(0, inner_login);
+    }, 0);
+}
+
+
+void InnerNetWorkHandler::processInnerShakeReq(MsgFunction *msg_function, Channel *channel, void *body, int len) {
+    InnerShakeHand *inner_shake = static_cast<InnerShakeHand *>(msg_function->newParam());
+    inner_shake->req.ParseFromArray(body, len);
+    inner_shake->channel = channel;
+    threadPool->execute([msg_function, inner_shake]() {
+        msg_function->function(0, inner_shake);
     }, 0);
 }
 

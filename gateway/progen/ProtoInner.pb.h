@@ -108,13 +108,14 @@ namespace protobuf {
 
 enum InnerProtoCode : int {
   INNER_INVALID = 0,
-  INNER_SERVER_HAND_SHAKE = -1,
-  INNER_HEART_BEAT_REQ = -2,
-  INNER_HEART_BEAT_RES = -3,
-  INNER_LOGIN_REQ = -4,
-  INNER_LOGIN_RES = -5,
+  INNER_SERVER_HAND_SHAKE_REQ = -1,
+  INNER_SERVER_HAND_SHAKE_RES = -2,
+  INNER_HEART_BEAT_REQ = -3,
+  INNER_HEART_BEAT_RES = -4,
   INNER_PLAYER_DISCONNECT_REQ = -6,
   INNER_PLAYER_DISCONNECT_RES = -7,
+  INNER_TO_GAME_LOGIN_REQ = -10,
+  INNER_TO_GAME_LOGIN_RES = -11,
   InnerProtoCode_INT_MIN_SENTINEL_DO_NOT_USE_ =
       std::numeric_limits<::int32_t>::min(),
   InnerProtoCode_INT_MAX_SENTINEL_DO_NOT_USE_ =
@@ -123,7 +124,7 @@ enum InnerProtoCode : int {
 
 bool InnerProtoCode_IsValid(int value);
 extern const uint32_t InnerProtoCode_internal_data_[];
-constexpr InnerProtoCode InnerProtoCode_MIN = static_cast<InnerProtoCode>(-7);
+constexpr InnerProtoCode InnerProtoCode_MIN = static_cast<InnerProtoCode>(-11);
 constexpr InnerProtoCode InnerProtoCode_MAX = static_cast<InnerProtoCode>(0);
 constexpr int InnerProtoCode_ARRAYSIZE = 0 + 1;
 const ::google::protobuf::EnumDescriptor*
@@ -138,7 +139,7 @@ const std::string& InnerProtoCode_Name(T value) {
 template <>
 inline const std::string& InnerProtoCode_Name(InnerProtoCode value) {
   return ::google::protobuf::internal::NameOfDenseEnum<InnerProtoCode_descriptor,
-                                                 -7, 0>(
+                                                 -11, 0>(
       static_cast<int>(value));
 }
 inline bool InnerProtoCode_Parse(absl::string_view name, InnerProtoCode* value) {

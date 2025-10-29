@@ -25,6 +25,7 @@ public:
 
 private:
     static void processInnerLogin(MsgFunction *msg_function, Channel *channel, void *body, int len);
+    static void processInnerShakeReq(MsgFunction *msg_function, Channel *channel, void *body, int len);
 };
 
 

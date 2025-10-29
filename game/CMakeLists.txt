@@ -14,16 +14,16 @@ file(GLOB_RECURSE SRC_FILES
         ${PROJECT_SOURCE_DIR}/src/*.cc
         ${PROJECT_SOURCE_DIR}/src/*.c
 
-        ${PROJECT_SOURCE_DIR}/progen/*.cpp
-        ${PROJECT_SOURCE_DIR}/progen/*.cc
-        ${PROJECT_SOURCE_DIR}/progen/*.c
+        ${SOLUTION_DIR}/proto-gen/*.cpp
+        ${SOLUTION_DIR}/proto-gen/*.cc
+        ${SOLUTION_DIR}/proto-gen/*.c
 )
 # 生成可执行文件
 add_executable(${PROJECT_NAME} ${SRC_FILES})
 
 target_include_directories(${PROJECT_NAME} PRIVATE
         ${PROJECT_SOURCE_DIR}/src
-        ${PROJECT_SOURCE_DIR}/progen
+        ${SOLUTION_DIR}/proto-gen
 )
 target_link_directories(${PROJECT_NAME} PRIVATE ${SOLUTION_DIR}/libs)
 # 链接操作

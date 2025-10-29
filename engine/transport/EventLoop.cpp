@@ -17,6 +17,11 @@ void async_connect_cb(uv_async_t *handle) {
     event_loop->execute();
 }
 
+void async_write_cb(uv_async_t *handle) {
+    EventLoop *event_loop = (EventLoop *) handle->data;
+    event_loop->execute();
+}
+
 void EventLoop::uv_alloc_cb(uv_handle_t *h, size_t s, uv_buf_t *buf) {
     buf->base = (char *) malloc(s);
     buf->len = s;
@@ -38,6 +43,7 @@ void EventLoop::uv_on_connect(uv_connect_t *req, int status) {
 void EventLoop::uv_read_cb(uv_stream_t *client, ssize_t nread, const uv_buf_t *buf) {
     Channel *channel = (Channel *) client->data;
     channel->onRead(client, nread, buf);
+    free(buf->base);
     EventLoop *event_loop = channel->event_loop();
     // get one complete packet
     while (true) {
@@ -49,10 +55,28 @@ void EventLoop::uv_read_cb(uv_stream_t *client, ssize_t nread, const uv_buf_t *b
     }
 }
 
+void EventLoop::uv_on_timer(uv_timer_t *timer) {
+    Channel *channel = (Channel *) timer->data;
 
-void async_write_cb(uv_async_t *handle) {
-    EventLoop *event_loop = (EventLoop *) handle->data;
-    event_loop->execute();
+    uint64_t now = uv_now(channel->event_loop()->uv_loop());
+
+    if (now - channel->last_recv_time > 15000) {
+        // 超过15秒无数据
+        INFO_LOG("Client timeout, closing...\n");
+        uv_close((uv_handle_t *) (channel->client), [](uv_handle_t *h) {
+            delete h;
+        });
+        uv_timer_stop(timer);
+        return;
+    }
+
+    // // 发送心跳包
+    // const char *msg = "PING";
+    // uv_buf_t buf = uv_buf_init((char *) msg, strlen(msg));
+    // uv_write_t *req = new uv_write_t;
+    // uv_write(req, (uv_stream_t *) &c->handle, &buf, 1, [](uv_write_t *req, int status) {
+    //     delete req;
+    // });
 }
 
 void EventLoop::asyncConnect(const std::string &ip, int port) {
@@ -138,8 +162,9 @@ void EventLoop::run() {
     uv_async_connect.data = this;
     INFO_LOG("############## event loop started");
     uv_run(_loop, UV_RUN_DEFAULT);
-    uv_close((uv_handle_t *) &uv_async_write, nullptr);
-    uv_close((uv_handle_t *) &uv_async_accept, nullptr);
+    uv_close(reinterpret_cast<uv_handle_t *>(&uv_async_write), nullptr);
+    uv_close(reinterpret_cast<uv_handle_t *>(&uv_async_accept), nullptr);
+    uv_close(reinterpret_cast<uv_handle_t *>(&uv_async_connect), nullptr);
 
     uv_loop_close(_loop);
     delete _loop;
@@ -160,4 +185,11 @@ void EventLoop::execute() {
 
 void EventLoop::start() {
     t = std::thread(&EventLoop::run, this);
+}
+
+
+void EventLoop::startHeartbeatTimer(Channel *channel) {
+    uv_timer_init(this->uv_loop(), channel->getTimer());
+    channel->getTimer()->data = channel;
+    uv_timer_start(channel->getTimer(), uv_on_timer, 5000, 0);
 }

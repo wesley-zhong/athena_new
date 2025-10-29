@@ -52,6 +52,10 @@ public:
         return this->userData;
     }
 
+    uv_timer_t *getTimer() {
+        return &heartbeat_timer;
+    }
+
     std::string getAddr();
 
     int getPack(char *outPacket) const {
@@ -61,6 +65,10 @@ public:
         }
         return packetLen;
     }
+
+    uint64 last_recv_time;
+    uv_timer_t heartbeat_timer;
+    uv_tcp_t *client;
 
 private:
     void eventLoopWrite(int msgId, std::shared_ptr<google::protobuf::Message> body);
@@ -74,7 +82,7 @@ private:
     ByteBuffer *recv_buffer;
     ByteBuffer *send_buff;
     EventLoop *_eventLoop;
-    uv_tcp_t *client;
+
     uint64 fd;
     void *userData;
     bool writing; // whether a uv_write is in-flight

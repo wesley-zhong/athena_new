@@ -10,6 +10,7 @@
 void Channel::onRead(uv_stream_t *client, ssize_t nread, const uv_buf_t *buf) {
     if (nread > 0) {
         recv_buffer->writeBytes(buf->base, nread);
+        last_recv_time = uv_now(_eventLoop->uv_loop());
         return;
     }
     _eventLoop->onClosed(this);
@@ -41,8 +42,7 @@ void Channel::eventLoopUvSend(void *data, size_t size) {
     uv_write(req, (uv_stream_t *) client, &b, 1,
              [](uv_write_t *req1, int status) {
                  INFO_LOG(" ------------write complete call back ={}", status);
-                 delete req1->data;
-                 delete req1;
+                 free(req1);
              });
 }
 

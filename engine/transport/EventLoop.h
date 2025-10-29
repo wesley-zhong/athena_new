@@ -15,6 +15,7 @@
 
 class NetInterface;
 
+
 class EventLoop {
 public:
     EventLoop(NetInterface *tcpInterFace) : _netInterface(tcpInterFace) {
@@ -40,6 +41,9 @@ public:
     void onRead(Channel *channel, char *body, int len) const;
 
     void asyncConnect(const std::string &ip, int port);
+
+    void startHeartbeatTimer(Channel* channel);
+
 
 
     Thread::TaskPtr pop() {
@@ -79,6 +83,8 @@ public:
     static void uv_alloc_cb(uv_handle_t *h, size_t s, uv_buf_t *buf);
 
     static void uv_read_cb(uv_stream_t *client, ssize_t nread, const uv_buf_t *buf);
+
+    static void uv_on_timer(uv_timer_t *timer);
 
     static void uv_on_connect(uv_connect_t *req, int status);
 

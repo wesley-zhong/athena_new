@@ -28,5 +28,5 @@ target_include_directories(${PROJECT_NAME} PRIVATE
 target_link_directories(${PROJECT_NAME} PRIVATE ${SOLUTION_DIR}/libs)
 # 链接操作
 
-set(PROJECT_LINK_LIBS mysqlclient hiredis engine engine-lua protobuf::libprotobuf)
+set(PROJECT_LINK_LIBS mysqlclient hiredis engine-lua protobuf::libprotobuf)
 target_link_libraries(${PROJECT_NAME} PRIVATE ${PROJECT_LINK_LIBS})

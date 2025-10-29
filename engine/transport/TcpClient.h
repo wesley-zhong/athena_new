@@ -16,7 +16,7 @@ public:
     ~TcpClient() {
     }
     void start();
-    void on_new_connection(Channel *channel) {}
+    void on_new_connection(Channel *channel) override {}
 
     void connect(const std::string &ip, int port);
 

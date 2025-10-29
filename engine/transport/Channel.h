@@ -66,6 +66,7 @@ public:
         return packetLen;
     }
 
+    EventLoop *_eventLoop;
     uint64 last_recv_time;
     uv_timer_t heartbeat_timer;
     uv_tcp_t *client;
@@ -81,7 +82,7 @@ private:
 
     ByteBuffer *recv_buffer;
     ByteBuffer *send_buff;
-    EventLoop *_eventLoop;
+
 
     uint64 fd;
     void *userData;

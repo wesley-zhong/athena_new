@@ -94,7 +94,6 @@ private:
     uv_async_t uv_async_write; // used by biz threads to notify reactor for pending writes
     uv_async_t uv_async_connect;
     std::mutex write_mtx;
-    uv_async_t async;
     //  std::unordered_map<uint64, std::unique_ptr<Channel> > channels;
     TQueue<Thread::TaskPtr> _waitTasks;
     std::thread t;

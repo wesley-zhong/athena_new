@@ -11,6 +11,7 @@
 
 #include "NetInterface.h"
 #include "Channel.h"
+#include "EventDefs.h"
 
 class AthenaTcpServer : public NetInterface {
 public:
@@ -29,7 +30,7 @@ public:
 
     void onAccept(uv_stream_t *server, int status);
 
-    void on_connected(Channel *channel) override {
+    void on_connected(Channel *channel, int status) override {
     }
 
     void on_new_connection(Channel *channel) override {
@@ -50,9 +51,14 @@ public:
         }
     }
 
+    AthenaTcpServer &setChannelIdleTime(uint64 idle_read_time, uint64 idle_write_time) ;
+
+    void triggerEvent(Channel *channel, TriggerEventEnum reason) override;
+
     std::function<void(Channel *)> onNewConnection;
     std::function<void(Channel *, char *, int)> onRead;
     std::function<void(Channel *)> onClosed;
+    std::function<void(Channel *, TriggerEventEnum reason)> onEventTrigger;
 
     static void uv_on_new_connection(uv_stream_t *server, int status);
 
@@ -61,6 +67,7 @@ private:
     std::vector<std::unique_ptr<EventLoop> > event_loops_;
     uv_loop_t main_loop;
     uv_tcp_t server;
+    EventTrigger *event_trigger;
 };
 
 

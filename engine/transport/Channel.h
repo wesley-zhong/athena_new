@@ -28,6 +28,7 @@ public:
                                                                         client(client), fd((uint64) fd) {
         recv_buffer = new ByteBuffer();
         send_buff = new ByteBuffer();
+        heartbeat_timer.data = this;
     }
 
     void sendMsg(int msgId, char *body, size_t size);
@@ -56,6 +57,11 @@ public:
         return &heartbeat_timer;
     }
 
+    void close() {
+        uv_close((uv_handle_t *) client, [](uv_handle_t *handle) {
+        });
+    }
+
     std::string getAddr();
 
     int getPack(char *outPacket) const {
@@ -68,6 +74,7 @@ public:
 
     EventLoop *_eventLoop;
     uint64 last_recv_time;
+    uint64 last_send_time;
     uv_timer_t heartbeat_timer;
     uv_tcp_t *client;
 

@@ -2,7 +2,7 @@
 // Created by zhongweiqi on 2025/10/28.
 //
 
-#include "PlayerNetWorkHandller.h"
+#include "ServerNetWorkHandler.h"
 #include "network/Dispatcher.h"
 #include "MsgHandler.h"
 #include "transport/Channel.h"
@@ -11,22 +11,21 @@
 #include "ProtoInner.pb.h"
 
 
-
-void PlayerNetWorkHandller::initAllMsgRegister() {
+void ServerNetWorkHandler::initAllMsgRegister() {
     REGISTER_MSG_ID_FUN(INNER_TO_GAME_LOGIN_RES, MsgHandler::onLoginRes);
     REGISTER_MSG_ID_FUN(INNER_SERVER_HAND_SHAKE_RES, MsgHandler::onShakeHandRes);
 }
 
-void PlayerNetWorkHandller::startThread(int threadNum) {
+void ServerNetWorkHandler::startThread(int threadNum) {
     threadPool = new AthenaThreadPool();
     threadPool->create(threadNum);
 }
 
-void PlayerNetWorkHandller::onConnect(Channel *channel) {
-    INFO_LOG("on new connection ={}", channel->getAddr());
+void ServerNetWorkHandler::onConnect(Channel *channel, int status) {
+    INFO_LOG(" PlayerNetWorkHandller on new connection ={}", channel->getAddr());
 }
 
-void PlayerNetWorkHandller::onMsg(Channel *channel, void *buff, int len) {
+void ServerNetWorkHandler::onMsg(Channel *channel, void *buff, int len) {
     INFO_LOG("  === on read ");
     uint8 *data = static_cast<uint8 *>(buff);
     data = data + 4;
@@ -53,11 +52,14 @@ void PlayerNetWorkHandller::onMsg(Channel *channel, void *buff, int len) {
 }
 
 
-void PlayerNetWorkHandller::onClosed(Channel *channel) {
+void ServerNetWorkHandler::onClosed(Channel *channel) {
     INFO_LOG("connection ={}  closed ", channel->getAddr());
 }
 
-void PlayerNetWorkHandller::processPlayerLogin(MsgFunction *msg_function, Channel *channel, void *body, int len) {
+void ServerNetWorkHandler::onEventTrigger(Channel *channel, TriggerEventEnum reason) {
+}
+
+void ServerNetWorkHandler::processPlayerLogin(MsgFunction *msg_function, Channel *channel, void *body, int len) {
     InnerLogin *inner_login = static_cast<InnerLogin *>(msg_function->newParam());
     inner_login->req.ParseFromArray(body, len);
     inner_login->channel = channel;
@@ -66,4 +68,4 @@ void PlayerNetWorkHandller::processPlayerLogin(MsgFunction *msg_function, Channe
     }, 0);
 }
 
-Thread::ThreadPool *PlayerNetWorkHandller::threadPool = nullptr;
+Thread::ThreadPool *ServerNetWorkHandler::threadPool = nullptr;

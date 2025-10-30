@@ -2,7 +2,7 @@
 // Created by zhongweiqi on 2025/10/28.
 //
 
-#include "InnerNetWorkHandler.h"
+#include "InnerClientNetWorkHandler.h"
 #include "network/Dispatcher.h"
 #include "MsgHandler.h"
 #include "transport/Channel.h"
@@ -11,24 +11,24 @@
 
 #include "ProtoInner.pb.h"
 
-void InnerNetWorkHandler::initAllMsgRegister() {
+void InnerClientNetWorkHandler::initAllMsgRegister() {
     REGISTER_MSG_ID_FUN(INNER_TO_GAME_LOGIN_REQ, MsgHandler::onLoginRes);
     REGISTER_MSG_ID_FUN(INNER_SERVER_HAND_SHAKE_RES, MsgHandler::onShakeHandRes);
 }
 
-void InnerNetWorkHandler::startThread(int threadNum) {
+void InnerClientNetWorkHandler::startThread(int threadNum) {
     threadPool = new AthenaThreadPool();
     threadPool->create(threadNum);
 }
 
-void InnerNetWorkHandler::onConnect(Channel *channel) {
+void InnerClientNetWorkHandler::onNewConnect(Channel *channel, int status) {
     INFO_LOG("on new connection ={}", channel->getAddr());
     auto req = std::make_shared<InnerServerHandShakeReq>();
     req->set_service_id("JJJJJJJJJ");
     channel->sendMsg(INNER_SERVER_HAND_SHAKE_REQ, req);
 }
 
-void InnerNetWorkHandler::onMsg(Channel *channel, void *buff, int len) {
+void InnerClientNetWorkHandler::onMsg(Channel *channel, void *buff, int len) {
     INFO_LOG("  === ------------on read len={} ", len);
     uint8 *data = static_cast<uint8 *>(buff);
     data = data + 4;
@@ -54,12 +54,27 @@ void InnerNetWorkHandler::onMsg(Channel *channel, void *buff, int len) {
     }, 2);
 }
 
+void InnerClientNetWorkHandler::onEventTrigger(Channel *channel, TriggerEventEnum reason) {
+    INFO_LOG("========== onEventTrigger ={}   reason ={} ", channel->getAddr(),(int)reason);
+    if (reason == WRITE_IDLE) {
+        auto msg = std::make_shared<InnerHeartBeatRequest>();
+        msg->set_time(8888);
+        channel->sendMsg(INNER_HEART_BEAT_REQ, msg);
+        return;
+    }
+    // this should be closed
+    if (reason == READ_IDLE) {
 
-void InnerNetWorkHandler::onClosed(Channel *channel) {
+
+    }
+}
+
+
+void InnerClientNetWorkHandler::onClosed(Channel *channel) {
     INFO_LOG("connection ={}  closed ", channel->getAddr());
 }
 
-void InnerNetWorkHandler::processInnerLogin(MsgFunction *msg_function, Channel *channel, void *body, int len) {
+void InnerClientNetWorkHandler::processInnerLogin(MsgFunction *msg_function, Channel *channel, void *body, int len) {
     InnerLogin *inner_login = static_cast<InnerLogin *>(msg_function->newParam());
     inner_login->req.ParseFromArray(body, len);
     inner_login->channel = channel;
@@ -68,4 +83,4 @@ void InnerNetWorkHandler::processInnerLogin(MsgFunction *msg_function, Channel *
     }, 0);
 }
 
-Thread::ThreadPool *InnerNetWorkHandler::threadPool = nullptr;
+Thread::ThreadPool *InnerClientNetWorkHandler::threadPool = nullptr;

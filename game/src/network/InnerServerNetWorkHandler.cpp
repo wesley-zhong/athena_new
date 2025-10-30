@@ -2,7 +2,7 @@
 // Created by zhongweiqi on 2025/10/28.
 //
 
-#include "InnerNetWorkHandler.h"
+#include "InnerServerNetWorkHandler.h"
 #include "network/Dispatcher.h"
 #include "MsgHandler.h"
 #include "transport/Channel.h"
@@ -10,21 +10,22 @@
 #include "transport/ByteUtils.h"
 
 
-void InnerNetWorkHandler::initAllMsgRegister() {
+void InnerServerNetWorkHandler::initAllMsgRegister() {
     REGISTER_MSG_ID_FUN(INNER_TO_GAME_LOGIN_REQ, MsgHandler::onInnerLogin);
     REGISTER_MSG_ID_FUN(INNER_SERVER_HAND_SHAKE_REQ, MsgHandler::onShakHandReq);
 }
 
-void InnerNetWorkHandler::startThread(int threadNum) {
+void InnerServerNetWorkHandler::startThread(int threadNum) {
     threadPool = new AthenaThreadPool();
     threadPool->create(2);
 }
 
-void InnerNetWorkHandler::onConnect(Channel *channel) {
+void InnerServerNetWorkHandler::onNewConnect(Channel *channel) {
     INFO_LOG("on new connection ={}", channel->getAddr());
+
 }
 
-void InnerNetWorkHandler::onMsg(Channel *channel, void *buff, int len) {
+void InnerServerNetWorkHandler::onMsg(Channel *channel, void *buff, int len) {
     INFO_LOG("  === on read ");
     uint8 *data = static_cast<uint8 *>(buff);
     data = data + 4;
@@ -55,12 +56,16 @@ void InnerNetWorkHandler::onMsg(Channel *channel, void *buff, int len) {
 }
 
 
-void InnerNetWorkHandler::onClosed(Channel *channel) {
+void InnerServerNetWorkHandler::onClosed(Channel *channel) {
     INFO_LOG("connection ={}  closed ", channel->getAddr());
 }
 
+void InnerServerNetWorkHandler::onEventTrigger(Channel *channel, TriggerEventEnum reason) {
+    INFO_LOG("====onEventTrigger ={}   reason ={} ", channel->getAddr(),(int)reason);
+}
+
 template<class T>
-void InnerNetWorkHandler::processMsgWithChannel(MsgFunction *msg_function, Channel *channel, void *body, int len) {
+void InnerServerNetWorkHandler::processMsgWithChannel(MsgFunction *msg_function, Channel *channel, void *body, int len) {
     auto msg = static_cast<ReqChannel<T> *>(msg_function->newParam());
     msg->req.ParseFromArray(body, len);
     msg->channel = channel;
@@ -69,4 +74,4 @@ void InnerNetWorkHandler::processMsgWithChannel(MsgFunction *msg_function, Chann
     }, 0);
 }
 
-Thread::ThreadPool *InnerNetWorkHandler::threadPool = nullptr;
+Thread::ThreadPool *InnerServerNetWorkHandler::threadPool = nullptr;

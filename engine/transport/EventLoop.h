@@ -5,21 +5,23 @@
 #ifndef ATHENA_EVENTLOOP_H
 #define ATHENA_EVENTLOOP_H
 
-#include <map>
+
 #include <mutex>
 
 #include "Channel.h"
 #include "uv.h"
 #include "ThreadPool.h"
-#include "XLog.h"
+#include "IdleStateHandler.h"
+
 
 class NetInterface;
 
 
 class EventLoop {
 public:
-    EventLoop(NetInterface *tcpInterFace) : _netInterface(tcpInterFace) {
+    EventLoop(NetInterface *tcpInterFace, EventTrigger *event_trigger) : _netInterface(tcpInterFace) {
         maxPackBody = static_cast<char *>(malloc(8192));
+        _eventTrigger = event_trigger;
     }
 
     ~EventLoop() {
@@ -34,7 +36,7 @@ public:
         _waitTasks.push(it);
     }
 
-    void onNewConnection(Channel *channel) const;
+    void onNewConnection(Channel *channel);
 
     void onClosed(Channel *channel) const;
 
@@ -42,9 +44,7 @@ public:
 
     void asyncConnect(const std::string &ip, int port);
 
-    void startHeartbeatTimer(Channel* channel);
-
-
+    void startHeartbeatTimer(Channel *channel);
 
     Thread::TaskPtr pop() {
         Thread::TaskPtr run_task;
@@ -71,13 +71,15 @@ public:
         uv_async_send(&uv_async_connect);
     }
 
-
     uv_loop_t *uv_loop() {
         return _loop;
     }
 
     char *getPacketBuff() {
         return maxPackBody;
+    }
+    EventTrigger *event_trigger() {
+        return _eventTrigger;
     }
 
     static void uv_alloc_cb(uv_handle_t *h, size_t s, uv_buf_t *buf);
@@ -94,10 +96,10 @@ private:
     uv_async_t uv_async_write; // used by biz threads to notify reactor for pending writes
     uv_async_t uv_async_connect;
     std::mutex write_mtx;
-    //  std::unordered_map<uint64, std::unique_ptr<Channel> > channels;
     TQueue<Thread::TaskPtr> _waitTasks;
     std::thread t;
     NetInterface *_netInterface;
+    EventTrigger *_eventTrigger;
     char *maxPackBody;
 };
 

@@ -18,7 +18,7 @@
 
 #include "transport/AthenaTcpServer.h"
 
-#include "network/InnerNetWorkHandler.h"
+#include "network/InnerServerNetWorkHandler.h"
 
 
 static std::atomic<bool> g_running(true);
@@ -38,17 +38,21 @@ int main(int argc, char **argv) {
 
 
     // init all functions call
-    InnerNetWorkHandler::initAllMsgRegister();
-    InnerNetWorkHandler::startThread(3);
+    InnerServerNetWorkHandler::initAllMsgRegister();
+    InnerServerNetWorkHandler::startThread(3);
 
     //start server
     AthenaTcpServer tcp_server;
-    tcp_server.onNewConnection = InnerNetWorkHandler::onConnect;
-    tcp_server.onRead = InnerNetWorkHandler::onMsg;
-    tcp_server.onClosed = InnerNetWorkHandler::onClosed;
+    tcp_server.setChannelIdleTime(5000, 0);
+    tcp_server.onNewConnection = InnerServerNetWorkHandler::onNewConnect;
+    tcp_server.onRead = InnerServerNetWorkHandler::onMsg;
+    tcp_server.onClosed = InnerServerNetWorkHandler::onClosed;
+    tcp_server.onEventTrigger = InnerServerNetWorkHandler::onEventTrigger;
 
     tcp_server.bind(9999).start(3);
 
+
+    // connect db
     std::string ip = "172.18.2.101";
     Dal::Cache::init(ip, 6379, "", "", "");
     //  Dal::Cache::execute()

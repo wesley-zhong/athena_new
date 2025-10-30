@@ -6,19 +6,20 @@
 #include "XLog.h"
 #include <string>
 #include "AthenaTcpServer.h"
+#include "IdleStateHandler.h"
 
 void async_accept_cb(uv_async_t *handle) {
-    EventLoop *event_loop = (EventLoop *) handle->data;
+    EventLoop *event_loop = static_cast<EventLoop *>(handle->data);
     event_loop->execute();
 }
 
 void async_connect_cb(uv_async_t *handle) {
-    EventLoop *event_loop = (EventLoop *) handle->data;
+    EventLoop *event_loop = static_cast<EventLoop *>(handle->data);
     event_loop->execute();
 }
 
 void async_write_cb(uv_async_t *handle) {
-    EventLoop *event_loop = (EventLoop *) handle->data;
+    EventLoop *event_loop = static_cast<EventLoop *>(handle->data);
     event_loop->execute();
 }
 
@@ -28,20 +29,23 @@ void EventLoop::uv_alloc_cb(uv_handle_t *h, size_t s, uv_buf_t *buf) {
 }
 
 void EventLoop::uv_on_connect(uv_connect_t *req, int status) {
+    Channel *channel = static_cast<Channel *>(req->data);
+    EventLoop *event_loop = channel->event_loop();
     if (status < 0) {
         INFO_LOG("xxxxxxxxxxxxxx CONNECT FAILED");
-        // this should free channel
+        event_loop->_netInterface->on_connected(channel, -1);
+        free(req);
         return;
     }
-    Channel *channel = (Channel *) req->data;
-    EventLoop *event_loop = channel->event_loop();
     uv_read_start(req->handle, uv_alloc_cb, uv_read_cb);
-    event_loop->_netInterface->on_connected(channel);
+    event_loop->_netInterface->on_connected(channel, 0);
+    event_loop->onNewConnection(channel);
+    free(req);
 }
 
 
 void EventLoop::uv_read_cb(uv_stream_t *client, ssize_t nread, const uv_buf_t *buf) {
-    Channel *channel = (Channel *) client->data;
+    Channel *channel = static_cast<Channel *>(client->data);
     channel->onRead(client, nread, buf);
     free(buf->base);
     EventLoop *event_loop = channel->event_loop();
@@ -57,26 +61,9 @@ void EventLoop::uv_read_cb(uv_stream_t *client, ssize_t nread, const uv_buf_t *b
 
 void EventLoop::uv_on_timer(uv_timer_t *timer) {
     Channel *channel = (Channel *) timer->data;
-
-    uint64_t now = uv_now(channel->event_loop()->uv_loop());
-
-    if (now - channel->last_recv_time > 15000) {
-        // 超过15秒无数据
-        INFO_LOG("Client timeout, closing...\n");
-        uv_close((uv_handle_t *) (channel->client), [](uv_handle_t *h) {
-            delete h;
-        });
-        uv_timer_stop(timer);
-        return;
-    }
-
-    // // 发送心跳包
-    // const char *msg = "PING";
-    // uv_buf_t buf = uv_buf_init((char *) msg, strlen(msg));
-    // uv_write_t *req = new uv_write_t;
-    // uv_write(req, (uv_stream_t *) &c->handle, &buf, 1, [](uv_write_t *req, int status) {
-    //     delete req;
-    // });
+    EventLoop *event_loop = channel->event_loop();
+    uint64_t now = uv_now(event_loop->uv_loop());
+    event_loop->event_trigger()->onTimer(channel, now);
 }
 
 void EventLoop::asyncConnect(const std::string &ip, int port) {
@@ -99,7 +86,6 @@ void EventLoop::asyncConnect(const std::string &ip, int port) {
             ERR_LOG("uv_tcp_connect  failed code =code {}:{}", ret, uv_strerror(ret));
         }
     });
-
     async_connect_task();
 }
 
@@ -122,8 +108,11 @@ void EventLoop::asyncAccept(uv_os_sock_t fd) {
     async_accept_task();
 }
 
-void EventLoop::onNewConnection(Channel *channel) const {
+void EventLoop::onNewConnection(Channel *channel)  {
     _netInterface->on_new_connection(channel);
+    if (_eventTrigger != nullptr) {
+        startHeartbeatTimer(channel);
+    }
 }
 
 void EventLoop::onClosed(Channel *channel) const {
@@ -189,7 +178,14 @@ void EventLoop::start() {
 
 
 void EventLoop::startHeartbeatTimer(Channel *channel) {
-    uv_timer_init(this->uv_loop(), channel->getTimer());
+    int erro =uv_timer_init(this->uv_loop(), channel->getTimer());
+    if (erro != 0) {
+        ERR_LOG("XXXXXXXXXX  uv_timer_init  erro ret ={}", erro);
+        return;
+    }
     channel->getTimer()->data = channel;
-    uv_timer_start(channel->getTimer(), uv_on_timer, 5000, 0);
+    erro =uv_timer_start(channel->getTimer(), uv_on_timer, 5000, 5000);
+    if (erro != 0) {
+        ERR_LOG("XXXXXXXXX  uv_timer_start erro ret ={}", erro);
+    }
 }

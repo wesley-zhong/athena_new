@@ -22,7 +22,7 @@
 #include <unistd.h>
 #endif
 #include "transport/TcpClient.h"
-#include "network/InnerNetWorkHandler.h"
+#include "network/InnerClientNetWorkHandler.h"
 
 static std::atomic<bool> g_running(true);
 static std::condition_variable g_cv;
@@ -44,35 +44,18 @@ int main(int argc, char **argv) {
     //
     // std::string ip = "172.18.2.101";
     // Dal::Cache::init(ip, 6379, "", "", "");
-    InnerNetWorkHandler::initAllMsgRegister();
-    InnerNetWorkHandler::startThread(2);
+    InnerClientNetWorkHandler::initAllMsgRegister();
+    InnerClientNetWorkHandler::startThread(2);
     TcpClient tcp_client;
-    tcp_client.onConnected = InnerNetWorkHandler::onConnect;
-    tcp_client.onRead = InnerNetWorkHandler::onMsg;
-
-    /**
-    *[](Channel *channel) {
-        INFO_LOG(" on   Connected...  {}", channel->getAddr());
-        std::shared_ptr<InnerLoginRequest> inner_login_request = std::make_shared<InnerLoginRequest>();
-        inner_login_request->set_sid(1111333);
-        inner_login_request->set_roleid(222222);
-        channel->sendMsg(INNER_LOGIN_REQ, inner_login_request);
-    };
-     **/
-
+    tcp_client.setChannelIdleTime(5000, 15000);
+    tcp_client.onConnected = InnerClientNetWorkHandler::onNewConnect;
+    tcp_client.onRead = InnerClientNetWorkHandler::onMsg;
+    tcp_client.onTriggerEvent = InnerClientNetWorkHandler::onEventTrigger;
     tcp_client.start();
 
     std::this_thread::sleep_for(std::chrono::milliseconds(100));
     tcp_client.connect("127.0.0.1", 9999);
 
-
-    // AthenaTcpClient athena_tcp_client;
-    // for (int i = 0; i < 2; ++i) {
-    //     int connRet = athena_tcp_client.connect("localhost", 38881);
-    //     if (connRet) {
-    //         ERR_LOG(" errror  connect rest ={}", connRet);
-    //     }
-    // }
     // 💡 主线程阻塞等待，无限期休眠（CPU 占用≈0）
     {
         std::unique_lock<std::mutex> lock(g_mutex);

@@ -80,6 +80,26 @@ bool RingByteBuf::tryWrite(const void *src, size_t len) {
     return true;
 }
 
+
+bool RingByteBuf::write(int write_index, const void *src, size_t len) const {
+    if (len == 0) return true;
+    std::lock_guard<std::mutex> lk(write_mtx_);
+    size_t writable = writableBytes();
+    if (len > writable) return false;
+
+
+    if (write_index + len <= cap_) {
+        // single contiguous write
+        std::memcpy(buf_ + write_index, src, len);
+    } else {
+        // wraps around
+        size_t first = cap_ - write_index;
+        std::memcpy(buf_ + write_index, src, first);
+        std::memcpy(buf_, static_cast<const uint8_t *>(src) + first, len - first);
+    }
+    return true;
+}
+
 size_t RingByteBuf::read(void *dst, size_t len) {
     if (len == 0) return 0;
     std::lock_guard<std::mutex> lk(read_mtx_);
@@ -116,6 +136,10 @@ size_t RingByteBuf::peek(void *dst, size_t len) const {
         std::memcpy(static_cast<uint8_t *>(dst) + first, buf_, toread - first);
     }
     return toread;
+}
+
+size_t RingByteBuf::writeTail() {
+    return tail_.load(std::memory_order_acquire);
 }
 
 
@@ -166,9 +190,8 @@ void RingByteBuf::clear() noexcept {
 
 void *RingByteBuf::je_malloc(size_t capacity) {
     return std::malloc(static_cast<size_t>(capacity));
-
 }
 
 void RingByteBuf::je_free(uint8_t *buf) {
-    std::free(buf);\
+    std::free(buf);
 }

@@ -61,9 +61,13 @@ public:
     // Here, buffer is fixed capacity so blocking write will return false if not enough space.
     bool write(const void *src, size_t len) { return tryWrite(src, len); }
 
+    bool write(int write_index, const void *src, size_t len) const;
+
 
     // Read data (thread-safe). Reads up to len bytes into dst; returns actual bytes read.
     size_t read(void *dst, size_t len);
+
+    size_t writeTail();
 
 
     // Peek without advancing read index (thread-safe). Copies up to len bytes into dst, returns bytes copied.
@@ -78,7 +82,7 @@ public:
     // Advance the read index by n bytes (thread-safe)
     void consume(size_t n);
 
-    void increase(size_t n);
+    void  increase(size_t n);
 
 
     // Reset indices

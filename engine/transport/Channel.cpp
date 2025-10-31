@@ -20,28 +20,32 @@ void Channel::onRead(uv_stream_t *client, ssize_t nread, const uv_buf_t *buf) {
 void Channel::sendMsg(int msgId, std::shared_ptr<google::protobuf::Message> msg) {
     _eventLoop->push([this, msgId, msg]() {
         std::string body = msg->SerializeAsString();
+        // msg->SerializeToArray()
         this->eventLoopDoSend(msgId, (char *) body.c_str(), body.size());
     });
     _eventLoop->async_write_task();
 }
 
-
-void Channel::sendMsg(int msgId, char *body, size_t size) {
-    _eventLoop->push([this, msgId, body, size]() {
-        this->eventLoopDoSend(msgId, body, size);
+void Channel::sendMsg(int msgId, google::protobuf::Message *msg) {
+    _eventLoop->push([this, msgId, msg]() {
+        this->eventLoopDoSend(msgId, msg);
     });
-    _eventLoop->async_write_task();
 }
-
 
 void Channel::eventLoopUvSend(void *data, size_t size) {
     INFO_LOG("*********  send data size ={} ", size);
     auto *req = new uv_write_t;
     uv_buf_t b = uv_buf_init((char *) data, size);
-    req->data = data;
+    WritePack *write_pack = new WritePack();
+    write_pack->_channel = this;
+    write_pack->sendSize = size;
+    req->data = write_pack;
     uv_write(req, (uv_stream_t *) client, &b, 1,
              [](uv_write_t *req1, int status) {
                  INFO_LOG(" ------------write complete call back ={}", status);
+                 WritePack *write_pack = (WritePack *) req1->data;
+                 //write_pack->consume();
+                 delete write_pack;
                  free(req1);
              });
 }
@@ -60,8 +64,18 @@ void Channel::eventLoopDoSend(int msgId, char *body, int32 bodyLen) {
             return;
         }
         this->eventLoopUvSend((void *) readTail, outLen);
-        send_buff->storage().consume(outLen);
+        this->send_buff->storage().consume(outLen);
+
     }
+}
+
+void Channel::eventLoopDoSend(int msgId, google::protobuf::Message *body) {
+    // int msgLen = 4 + bodyLen;
+    //
+    // send_buff->increaseWrite(8);
+    // int msgLenIndex = send_buff->writeTail();
+    // body->SerializePartialToArray()
+    // send_buff->writeInt32(msgLen);
 }
 
 

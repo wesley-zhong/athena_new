@@ -10,6 +10,7 @@
 #include "ByteUtils.h"
 
 class EventLoop;
+class Channel;
 
 struct SPackage {
     int32 _msgId;
@@ -22,6 +23,13 @@ struct SPackage {
     }
 };
 
+struct WritePack {
+    Channel *_channel;
+    int32 sendSize;
+
+    void consume();
+};
+
 class Channel {
 public:
     Channel(EventLoop *event_loop, uv_tcp_t *client, uv_os_sock_t fd) : _eventLoop(event_loop),
@@ -31,9 +39,9 @@ public:
         heartbeat_timer.data = this;
     }
 
-    void sendMsg(int msgId, char *body, size_t size);
-
     void sendMsg(int msgId, std::shared_ptr<google::protobuf::Message> msg);
+
+    void sendMsg(int msgId, google::protobuf::Message *msg);
 
     void onRead(uv_stream_t *client, ssize_t nread, const uv_buf_t *buf);
 
@@ -72,6 +80,8 @@ public:
         return packetLen;
     }
 
+    ByteBuffer *send_buff;
+
     EventLoop *_eventLoop;
     uint64 last_recv_time;
     uint64 last_send_time;
@@ -83,12 +93,13 @@ private:
 
     void eventLoopDoSend(int msgId, char *body, int32 bodyLen);
 
+    void eventLoopDoSend(int msgId, google::protobuf::Message *body);
+
     void eventLoopUvSend(void *data, size_t size);
 
     std::string getAddrString(const struct sockaddr_storage &addr);
 
     ByteBuffer *recv_buffer;
-    ByteBuffer *send_buff;
 
 
     uint64 fd;
@@ -96,6 +107,10 @@ private:
     bool writing; // whether a uv_write is in-flight
     bool closed; // connection closed
 };
+
+inline void WritePack::consume() {
+    _channel->send_buff->storage().consume(sendSize);
+}
 
 
 #endif //ATHENA_CHANNEL_H

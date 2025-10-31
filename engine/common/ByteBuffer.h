@@ -85,6 +85,24 @@ public:
         return _storage->read(body, size);
     }
 
+    size_t writeTail() {
+        return _storage->writeTail();
+    }
+    void increaseWrite(size_t amount) {
+        return _storage->increase(amount);
+    }
+
+    void writeIn32(size_t fromIndex, int32 value) {
+        value = Endian::toNetwork<uint32>(value);
+        _storage->write(fromIndex, &value, sizeof(value));
+    }
+
+    // void * writePtr() {
+    //     return _storage->writeTail()
+    // }
+
+
+
     int getNextPackLen();
 
 private:

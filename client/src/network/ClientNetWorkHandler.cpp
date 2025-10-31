@@ -12,8 +12,8 @@
 #include "ProtoInner.pb.h"
 
 void ClientNetWorkHandler::initAllMsgRegister() {
-    REGISTER_MSG_ID_FUN(INNER_TO_GAME_LOGIN_REQ, PlayerLoginHandler::onLoginRes);
-    REGISTER_MSG_ID_FUN(INNER_SERVER_HAND_SHAKE_RES, PlayerLoginHandler::onShakeHandRes);
+    // REGISTER_MSG_ID_FUN(INNER_TO_GAME_LOGIN_REQ, PlayerLoginHandler::onLoginRes);
+    // REGISTER_MSG_ID_FUN(INNER_SERVER_HAND_SHAKE_RES, PlayerLoginHandler::onShakeHandRes);
 }
 
 void ClientNetWorkHandler::startThread(int threadNum) {

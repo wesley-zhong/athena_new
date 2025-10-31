@@ -36,7 +36,7 @@ void GateClientNetWorkHandler::onMsg(Channel *channel, void *buff, int len) {
     int msgId = ByteUtils::readInt32(data);
     int playerId = 999;
     data += 4;
-    len -= 8;
+    len -= 4;
 
     MsgFunction *msg_function = Dispatcher::Instance()->findMsgFuncion(msgId);
     if (msg_function == nullptr) {
@@ -44,7 +44,7 @@ void GateClientNetWorkHandler::onMsg(Channel *channel, void *buff, int len) {
         return;
     }
 
-    void *msg = msg_function->newParam((char *) data + 4, len);
+    void *msg = msg_function->newParam(data, len);
     threadPool->execute([playerId, msg_function, channel, msg]() {
         msg_function->msgFunction(playerId, channel, msg);
     }, 2);

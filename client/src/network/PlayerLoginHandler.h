@@ -10,13 +10,11 @@ struct InnerLogin {
     Channel *channel;
 };
 
-class MsgHandler {
+class PlayerLoginHandler {
 public:
     static void onLoginRes(Channel *channel, InnerLoginResponse *res);
 
     static void onShakeHandRes(Channel *channel, InnerServerHandShakeRes *res);
-
-    static void onHeartBeatRes(Channel *channel, InnerHeartBeatResponse *res);
 };
 
 #endif

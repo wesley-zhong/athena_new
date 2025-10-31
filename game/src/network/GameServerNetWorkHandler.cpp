@@ -2,30 +2,29 @@
 // Created by zhongweiqi on 2025/10/28.
 //
 
-#include "ServerNetWorkHandler.h"
+#include "GameServerNetWorkHandler.h"
 #include "network/Dispatcher.h"
-#include "MsgHandler.h"
+#include "../controller/PlayerLoginHandler.h"
 #include "transport/Channel.h"
 #include "XLog.h"
 #include "transport/ByteUtils.h"
-#include "ProtoInner.pb.h"
+#include "SystemMsgHandler.h"
 
-
-void ServerNetWorkHandler::initAllMsgRegister() {
-    REGISTER_MSG_ID_FUN(INNER_TO_GAME_LOGIN_RES,InnerLoginResponse, MsgHandler::onLoginRes);
-    REGISTER_MSG_ID_FUN(INNER_SERVER_HAND_SHAKE_RES,InnerServerHandShakeRes, MsgHandler::onShakeHandRes);
+void GameServerNetWorkHandler::initAllMsgRegister() {
+    SystemMsgHandler::registMsg();
+    PlayerLoginHandler::registMsgHandler();
 }
 
-void ServerNetWorkHandler::startThread(int threadNum) {
+void GameServerNetWorkHandler::startThread(int threadNum) {
     threadPool = new AthenaThreadPool();
-    threadPool->create(threadNum);
+    threadPool->create(2);
 }
 
-void ServerNetWorkHandler::onConnect(Channel *channel, int status) {
-    INFO_LOG(" PlayerNetWorkHandller on new connection ={}", channel->getAddr());
+void GameServerNetWorkHandler::onNewConnect(Channel *channel) {
+    INFO_LOG("on new connection ={}", channel->getAddr());
 }
 
-void ServerNetWorkHandler::onMsg(Channel *channel, void *buff, int len) {
+void GameServerNetWorkHandler::onMsg(Channel *channel, void *buff, int len) {
     INFO_LOG("  === on read   channel ={} len ={}", channel->getAddr(), len);
     uint8 *data = static_cast<uint8 *>(buff);
     data = data + 4;
@@ -47,12 +46,12 @@ void ServerNetWorkHandler::onMsg(Channel *channel, void *buff, int len) {
 }
 
 
-void ServerNetWorkHandler::onClosed(Channel *channel) {
+void GameServerNetWorkHandler::onClosed(Channel *channel) {
     INFO_LOG("connection ={}  closed ", channel->getAddr());
 }
 
-void ServerNetWorkHandler::onEventTrigger(Channel *channel, TriggerEventEnum reason) {
+void GameServerNetWorkHandler::onEventTrigger(Channel *channel, TriggerEventEnum reason) {
+    INFO_LOG("====onEventTrigger ={}   reason ={} ", channel->getAddr(), (int)reason);
 }
 
-
-Thread::ThreadPool *ServerNetWorkHandler::threadPool = nullptr;
+Thread::ThreadPool *GameServerNetWorkHandler::threadPool = nullptr;

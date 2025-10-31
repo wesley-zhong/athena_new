@@ -2,33 +2,34 @@
 // Created by zhongweiqi on 2025/10/28.
 //
 
-#include "InnerClientNetWorkHandler.h"
+#include "GateClientNetWorkHandler.h"
 #include "network/Dispatcher.h"
-#include "MsgHandler.h"
+#include "controller/PlayerLoginHandler.h"
 #include "transport/Channel.h"
 #include "XLog.h"
 #include "transport/ByteUtils.h"
 
 #include "ProtoInner.pb.h"
+#include "SystemMsgHandler.h"
 
-void InnerClientNetWorkHandler::initAllMsgRegister() {
-    REGISTER_MSG_ID_FUN(INNER_TO_GAME_LOGIN_REQ, InnerLoginResponse, MsgHandler::onLoginRes);
-    REGISTER_MSG_ID_FUN(INNER_SERVER_HAND_SHAKE_RES, InnerServerHandShakeRes, MsgHandler::onShakeHandRes);
+void GateClientNetWorkHandler::initAllMsgRegister() {
+    SystemMsgHandler::registMsg();
+    PlayerLoginHandler::registMsgHandler();
 }
 
-void InnerClientNetWorkHandler::startThread(int threadNum) {
+void GateClientNetWorkHandler::startThread(int threadNum) {
     threadPool = new AthenaThreadPool();
     threadPool->create(threadNum);
 }
 
-void InnerClientNetWorkHandler::onNewConnect(Channel *channel, int status) {
+void GateClientNetWorkHandler::onNewConnect(Channel *channel, int status) {
     INFO_LOG("on new connection ={}", channel->getAddr());
     auto req = std::make_shared<InnerServerHandShakeReq>();
     req->set_service_id("JJJJJJJJJ");
     channel->sendMsg(INNER_SERVER_HAND_SHAKE_REQ, req);
 }
 
-void InnerClientNetWorkHandler::onMsg(Channel *channel, void *buff, int len) {
+void GateClientNetWorkHandler::onMsg(Channel *channel, void *buff, int len) {
     INFO_LOG("  === on read   channel ={} len ={}", channel->getAddr(), len);
     uint8 *data = static_cast<uint8 *>(buff);
     data = data + 4;
@@ -49,8 +50,7 @@ void InnerClientNetWorkHandler::onMsg(Channel *channel, void *buff, int len) {
     }, 2);
 }
 
-void InnerClientNetWorkHandler::onEventTrigger(Channel *channel, TriggerEventEnum reason) {
-    INFO_LOG("========== onEventTrigger ={}   reason ={} ", channel->getAddr(), (int)reason);
+void GateClientNetWorkHandler::onEventTrigger(Channel *channel, TriggerEventEnum reason) {
     if (reason == WRITE_IDLE) {
         auto msg = std::make_shared<InnerHeartBeatRequest>();
         msg->set_time(8888);
@@ -59,13 +59,14 @@ void InnerClientNetWorkHandler::onEventTrigger(Channel *channel, TriggerEventEnu
     }
     // this should be closed
     if (reason == READ_IDLE) {
+        INFO_LOG("========== onEventTrigger ={}   reason ={} idle should closed ", channel->getAddr(), (int)reason);
     }
 }
 
 
-void InnerClientNetWorkHandler::onClosed(Channel *channel) {
+void GateClientNetWorkHandler::onClosed(Channel *channel) {
     INFO_LOG("connection ={}  closed ", channel->getAddr());
 }
 
 
-Thread::ThreadPool *InnerClientNetWorkHandler::threadPool = nullptr;
+Thread::ThreadPool *GateClientNetWorkHandler::threadPool = nullptr;

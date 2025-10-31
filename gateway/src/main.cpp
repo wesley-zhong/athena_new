@@ -22,7 +22,7 @@
 #include <unistd.h>
 #endif
 #include "transport/TcpClient.h"
-#include "network/InnerClientNetWorkHandler.h"
+#include "network/GateClientNetWorkHandler.h"
 
 static std::atomic<bool> g_running(true);
 static std::condition_variable g_cv;
@@ -44,13 +44,13 @@ int main(int argc, char **argv) {
     //
     // std::string ip = "172.18.2.101";
     // Dal::Cache::init(ip, 6379, "", "", "");
-    InnerClientNetWorkHandler::initAllMsgRegister();
-    InnerClientNetWorkHandler::startThread(2);
+    GateClientNetWorkHandler::initAllMsgRegister();
+    GateClientNetWorkHandler::startThread(2);
     TcpClient tcp_client;
     tcp_client.setChannelIdleTime(5000, 15000);
-    tcp_client.onConnected = InnerClientNetWorkHandler::onNewConnect;
-    tcp_client.onRead = InnerClientNetWorkHandler::onMsg;
-    tcp_client.onTriggerEvent = InnerClientNetWorkHandler::onEventTrigger;
+    tcp_client.onConnected = GateClientNetWorkHandler::onNewConnect;
+    tcp_client.onRead = GateClientNetWorkHandler::onMsg;
+    tcp_client.onTriggerEvent = GateClientNetWorkHandler::onEventTrigger;
     tcp_client.start();
 
     std::this_thread::sleep_for(std::chrono::milliseconds(100));

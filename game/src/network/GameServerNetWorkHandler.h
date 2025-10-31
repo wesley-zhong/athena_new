@@ -10,13 +10,14 @@ struct MsgFunction;
 class Channel;
 
 
-class InnerServerNetWorkHandler {
+class GameServerNetWorkHandler {
 public:
     static void initAllMsgRegister();
 
     static void startThread(int threadNum);
 
     static void onNewConnect(Channel *channel);
+
 
     static void onMsg(Channel *channel, void *buff, int len);
 
@@ -25,6 +26,5 @@ public:
     static void onEventTrigger(Channel *channel, TriggerEventEnum reason);
 
     static Thread::ThreadPool *threadPool;
-
 };
 #endif //ATHENA_NETWORKHANDLER_H

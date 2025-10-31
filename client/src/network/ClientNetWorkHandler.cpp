@@ -4,7 +4,7 @@
 
 #include "ClientNetWorkHandler.h"
 #include "network/Dispatcher.h"
-#include "MsgHandler.h"
+#include "PlayerLoginHandler.h"
 #include "transport/Channel.h"
 #include "XLog.h"
 #include "transport/ByteUtils.h"
@@ -12,8 +12,8 @@
 #include "ProtoInner.pb.h"
 
 void ClientNetWorkHandler::initAllMsgRegister() {
-    REGISTER_MSG_ID_FUN(INNER_TO_GAME_LOGIN_REQ, MsgHandler::onLoginRes);
-    REGISTER_MSG_ID_FUN(INNER_SERVER_HAND_SHAKE_RES, MsgHandler::onShakeHandRes);
+    REGISTER_MSG_ID_FUN(INNER_TO_GAME_LOGIN_REQ, PlayerLoginHandler::onLoginRes);
+    REGISTER_MSG_ID_FUN(INNER_SERVER_HAND_SHAKE_RES, PlayerLoginHandler::onShakeHandRes);
 }
 
 void ClientNetWorkHandler::startThread(int threadNum) {

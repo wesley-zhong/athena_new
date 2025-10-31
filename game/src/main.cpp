@@ -18,7 +18,7 @@
 
 #include "transport/AthenaTcpServer.h"
 
-#include "network/InnerServerNetWorkHandler.h"
+#include "network/GameServerNetWorkHandler.h"
 
 
 static std::atomic<bool> g_running(true);
@@ -38,16 +38,16 @@ int main(int argc, char **argv) {
 
 
     // init all functions call
-    InnerServerNetWorkHandler::initAllMsgRegister();
-    InnerServerNetWorkHandler::startThread(3);
+    GameServerNetWorkHandler::initAllMsgRegister();
+    GameServerNetWorkHandler::startThread(3);
 
     //start server
     AthenaTcpServer tcp_server;
     tcp_server.setChannelIdleTime(5000, 0);
-    tcp_server.onNewConnection = InnerServerNetWorkHandler::onNewConnect;
-    tcp_server.onRead = InnerServerNetWorkHandler::onMsg;
-    tcp_server.onClosed = InnerServerNetWorkHandler::onClosed;
-    tcp_server.onEventTrigger = InnerServerNetWorkHandler::onEventTrigger;
+    tcp_server.onNewConnection = GameServerNetWorkHandler::onNewConnect;
+    tcp_server.onRead = GameServerNetWorkHandler::onMsg;
+    tcp_server.onClosed = GameServerNetWorkHandler::onClosed;
+    tcp_server.onEventTrigger = GameServerNetWorkHandler::onEventTrigger;
 
     tcp_server.bind(9999).start(3);
 

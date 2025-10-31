@@ -2,22 +2,19 @@
 // Created by zhongweiqi on 2025/10/28.
 //
 
-#ifndef ATHENA_PLAYERNETWORKHANDLLER_H
-#define ATHENA_PLAYERNETWORKHANDLLER_H
-#include "Event.h"
+#ifndef ATHENA_NETWORKHANDLER_H
+#define ATHENA_NETWORKHANDLER_H
 #include "thread/AthenaThreadPool.h"
 #include "transport/EventDefs.h"
-struct MsgFunction;
 class Channel;
 
-
-class ServerNetWorkHandler {
+class GateClientNetWorkHandler {
 public:
     static void initAllMsgRegister();
 
     static void startThread(int threadNum);
 
-    static void onConnect(Channel *channel, int status);
+    static void onNewConnect(Channel *channel, int status);
 
     static void onMsg(Channel *channel, void *buff, int len);
 
@@ -26,8 +23,7 @@ public:
     static void onEventTrigger(Channel *channel, TriggerEventEnum reason);
 
     static Thread::ThreadPool *threadPool;
-
 };
 
 
-#endif //ATHENA_PLAYERNETWORKHANDLLER_H
+#endif //ATHENA_NETWORKHANDLER_H

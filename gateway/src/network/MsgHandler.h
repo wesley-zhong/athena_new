@@ -16,7 +16,7 @@ public:
 
     static void onShakeHandRes(int64_t playerId, InnerServerHandShakeRes *res);
 
-    static onHeartBeatRes(int64 playerId, R)
+   // static onHeartBeatRes(int64 playerId, R)
 };
 
 #endif

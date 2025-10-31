@@ -4,22 +4,22 @@
 #include "ProtoInner.pb.h"
 
 
-void MsgHandler::onShakHandReq(int64_t playerId, ReqChannel<InnerServerHandShakeReq> *req) {
-    INFO_LOG("HELLO channle ={} innherHeaderId = {}", req->channel->getAddr(), playerId, req->req.service_id());
+void MsgHandler::onShakHandReq(Channel *channel, InnerServerHandShakeReq *req) {
+    INFO_LOG("HELLO channle ={} innherHeaderId = {}", channel->getAddr(), req->service_id());
     auto res = std::make_shared<InnerServerHandShakeRes>();
     res->set_service_id("9999ttt");
-    req->channel->sendMsg(INNER_SERVER_HAND_SHAKE_RES, res);
+    channel->sendMsg(INNER_SERVER_HAND_SHAKE_RES, res);
 }
 
-void MsgHandler::onHeartBeat(int64_t playerId, ReqChannel<InnerServerHandShakeReq> *req) {
+void MsgHandler::onHeartBeat(Channel *channel, InnerHeartBeatRequest *req) {
     auto res = std::make_shared<InnerHeartBeatRequest>();
-    req->channel->sendMsg(INNER_HEART_BEAT_RES, res);
+    channel->sendMsg(INNER_HEART_BEAT_RES, res);
 }
 
 
-void MsgHandler::onInnerLogin(int64_t playerId, ReqChannel<InnerLoginRequest> *request) {
-    INFO_LOG(" ON INNER LOGIN sid = {} roleId ={} channel ={}", request->req.sid(), request->req.roleid(),
-             request->channel->getAddr());
+void MsgHandler::onInnerLogin(Channel *channel, InnerLoginRequest *request) {
+    INFO_LOG(" ON INNER LOGIN sid = {} roleId ={} channel ={}", request->sid(), request->roleid(),
+             channel->getAddr());
     auto res = std::make_shared<InnerLoginResponse>();
-    request->channel->sendMsg(INNER_TO_GAME_LOGIN_RES, res);
+    channel->sendMsg(INNER_TO_GAME_LOGIN_RES, res);
 }

@@ -12,8 +12,8 @@
 
 
 void ServerNetWorkHandler::initAllMsgRegister() {
-    REGISTER_MSG_ID_FUN(INNER_TO_GAME_LOGIN_RES, MsgHandler::onLoginRes);
-    REGISTER_MSG_ID_FUN(INNER_SERVER_HAND_SHAKE_RES, MsgHandler::onShakeHandRes);
+    REGISTER_MSG_ID_FUN(INNER_TO_GAME_LOGIN_RES,InnerLoginResponse, MsgHandler::onLoginRes);
+    REGISTER_MSG_ID_FUN(INNER_SERVER_HAND_SHAKE_RES,InnerServerHandShakeRes, MsgHandler::onShakeHandRes);
 }
 
 void ServerNetWorkHandler::startThread(int threadNum) {
@@ -26,7 +26,7 @@ void ServerNetWorkHandler::onConnect(Channel *channel, int status) {
 }
 
 void ServerNetWorkHandler::onMsg(Channel *channel, void *buff, int len) {
-    INFO_LOG("  === on read ");
+    INFO_LOG("  === on read   channel ={} len ={}", channel->getAddr(), len);
     uint8 *data = static_cast<uint8 *>(buff);
     data = data + 4;
     int msgId = ByteUtils::readInt32(data);
@@ -39,15 +39,10 @@ void ServerNetWorkHandler::onMsg(Channel *channel, void *buff, int len) {
         ERR_LOG(" msgId ={} not found process function", msgId);
         return;
     }
-    // if (msgId == INNER_LOGIN_REQ) {
-    //     processInnerLogin(msg_function, channel, data, len);
-    //     return;
-    // }
-    auto *param = static_cast<google::protobuf::Message *>(msg_function->newParam());
-    param->ParseFromArray(data, len);
 
-    threadPool->execute([playerId, msg_function, param]() {
-        msg_function->function(playerId, param);
+    void *msg = msg_function->newParam((char *) data + 4, len);
+    threadPool->execute([playerId, msg_function, channel, msg]() {
+        msg_function->msgFunction(playerId, channel, msg);
     }, 2);
 }
 
@@ -59,13 +54,5 @@ void ServerNetWorkHandler::onClosed(Channel *channel) {
 void ServerNetWorkHandler::onEventTrigger(Channel *channel, TriggerEventEnum reason) {
 }
 
-void ServerNetWorkHandler::processPlayerLogin(MsgFunction *msg_function, Channel *channel, void *body, int len) {
-    InnerLogin *inner_login = static_cast<InnerLogin *>(msg_function->newParam());
-    inner_login->req.ParseFromArray(body, len);
-    inner_login->channel = channel;
-    threadPool->execute([msg_function, inner_login]() {
-        msg_function->function(0, inner_login);
-    }, 0);
-}
 
 Thread::ThreadPool *ServerNetWorkHandler::threadPool = nullptr;

@@ -17,10 +17,11 @@ struct ReqChannel {
 
 class MsgHandler {
 public:
-    static void onShakHandReq(int64_t playerId, ReqChannel<InnerServerHandShakeReq> *req);
-    static void onHeartBeat(int64_t playerId, ReqChannel<InnerServerHandShakeReq> *req);
+    static void onShakHandReq(Channel *channel, InnerServerHandShakeReq *req);
 
-    static void onInnerLogin(int64_t playerId, ReqChannel<InnerLoginRequest> *req);
+    static void onHeartBeat(Channel *channel, InnerHeartBeatRequest *req);
+
+    static void onInnerLogin(Channel *channel, InnerLoginRequest *req);
 };
 
 #endif

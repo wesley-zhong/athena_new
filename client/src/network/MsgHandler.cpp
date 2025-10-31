@@ -6,10 +6,10 @@
 #include "ProtoInner.pb.h"
 
 
-void MsgHandler::onLoginRes(int64_t playerId, InnerLoginResponse *res) {
+void MsgHandler::onLoginRes(Channel* channel, InnerLoginResponse *res) {
     INFO_LOG("----- on login res ={}", res->roleid(), res->sid());
 }
 
-void MsgHandler::onShakeHandRes(int64_t playerId, InnerServerHandShakeRes *res) {
+void MsgHandler::onShakeHandRes(Channel* channel, InnerServerHandShakeRes *res) {
     INFO_LOG("----- on onShakeHandRes res ={} serviceId ={}", res->service_name(), res->service_id());
 }

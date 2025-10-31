@@ -6,14 +6,14 @@
 #include "google/protobuf/message.h"
 #include "Singleton.h"
 #include "ObjectPool.hpp"
+#include "transport/Channel.h"
 
-
-#define REGISTER_MSG_ID_FUN(MSGID, FUNCTION) \
-Dispatcher::Instance()->registerMsgHandler(MSGID, std::function(FUNCTION))
+#define REGISTER_MSG_ID_FUN(MSGID, MSG_TYPE, FUNCTION) \
+Dispatcher::Instance()->registerMsgHandler<MSG_TYPE>(MSGID, std::function(FUNCTION))
 
 struct MsgFunction {
-    std::function<void(int64_t, void *)> function;
-    std::function<void *()> newParam; //this may be use obj pool
+    std::function<void(int64_t, Channel *, void *)> msgFunction;
+    std::function<void *(char *, int)> newParam; //this may be use obj pool
 };
 
 class Dispatcher : public Singleton<Dispatcher> {
@@ -25,7 +25,10 @@ public:
     template<typename T>
     void registerMsgHandler(int msgId, std::function<void(int64_t, T *)> msgFuc);
 
-    void processMsg(int msgId, int64_t playerId, const void *body, int len);
+    template<typename T>
+    void registerMsgHandler(int msgId, std::function<void(Channel *, T *)> msgFuc);
+
+    void processMsg(int msgId, int64_t playerId, Channel *channel, const void *body, int len);
 
     MsgFunction *findMsgFuncion(int msgId) {
         auto it = msgMap.find(msgId);
@@ -36,32 +39,38 @@ public:
     }
 
 private:
-    std::map<int, MsgFunction *> msgMap;
-    // std::map<int, std::function<void(int, std::shared_ptr<void> )>> msgSMap;
+    std::unordered_map<int, MsgFunction *> msgMap;
 };
 
 template<typename T>
 void Dispatcher::registerMsgHandler(int msgId, std::function<void(int64_t, T *)> msgFuc) {
     auto *msgFunction = new MsgFunction();
-    msgFunction->function = [msgFuc](int64_t p1, void *p2) {
-        msgFuc(p1, (T *) p2);
-        ObjPool::release<T>((T *) p2, true);
+    msgFunction->newParam = [](char *body, int len) {
+        T *msg = ObjPool::acquirePtr<T>();
+        msg->ParseFromArray(body, len);
+        return msg;
     };
-    msgFunction->newParam = []() {
-        // return new T();
-        return ObjPool::acquirePtr<T>();
+    msgFunction->msgFunction = [msgFuc](int64_t playerId, Channel *channel, void *msg) {
+        msgFuc(playerId, (T *) msg);
+        ObjPool::release<T>((T *) msg, true);
     };
     msgMap[msgId] = msgFunction;
 }
 
-// template <typename T>
-// void Dispatcher::registerMsgHandlers(int msgId, std::function<void(int, std::shared_ptr<T>)> msgFuc)
-// {
-//     msgMap[msgId] = [msgId, msgFuc](int p1, std::shared_ptr<void> p2)
-//   {
-//     msgFuc(msgId, (std::shared_ptr<T>)p2);
-//   };
-// }
+template<typename T>
+void Dispatcher::registerMsgHandler(int msgId, std::function<void(Channel *, T *)> msgFuc) {
+    auto *msgFunction = new MsgFunction();
+    msgFunction->newParam = [](char *body, int len) {
+        T *msg = ObjPool::acquirePtr<T>();
+        msg->ParseFromArray(body, len);
+        return msg;
+    };
+    msgFunction->msgFunction = [msgFuc](int64_t playerId, Channel *channel, void *msg) {
+        msgFuc(channel, (T *) msg);
+        ObjPool::release<T>((T *) msg, true);
+    };
+    msgMap[msgId] = msgFunction;
+}
 
 
 #endif

@@ -12,11 +12,11 @@ struct InnerLogin {
 
 class MsgHandler {
 public:
-    static void onLoginRes(int64_t playerId, InnerLoginResponse *res);
+    static void onLoginRes(Channel *channel, InnerLoginResponse *res);
 
-    static void onShakeHandRes(int64_t playerId, InnerServerHandShakeRes *res);
+    static void onShakeHandRes(Channel *channel, InnerServerHandShakeRes *res);
 
-   // static onHeartBeatRes(int64 playerId, R)
+    static void onHeartBeatRes(Channel *channel, InnerHeartBeatResponse *res);
 };
 
 #endif

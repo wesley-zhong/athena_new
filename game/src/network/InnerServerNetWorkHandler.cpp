@@ -11,10 +11,10 @@
 
 
 void InnerServerNetWorkHandler::initAllMsgRegister() {
-    REGISTER_MSG_ID_FUN(INNER_SERVER_HAND_SHAKE_REQ, MsgHandler::onShakHandReq);
-    REGISTER_MSG_ID_FUN(INNER_HEART_BEAT_REQ, MsgHandler::onHeartBeat);
+    REGISTER_MSG_ID_FUN(INNER_SERVER_HAND_SHAKE_REQ, InnerServerHandShakeReq, MsgHandler::onShakHandReq);
+    REGISTER_MSG_ID_FUN(INNER_HEART_BEAT_REQ, InnerHeartBeatRequest, MsgHandler::onHeartBeat);
 
-    REGISTER_MSG_ID_FUN(INNER_TO_GAME_LOGIN_REQ, MsgHandler::onInnerLogin);
+    REGISTER_MSG_ID_FUN(INNER_TO_GAME_LOGIN_REQ, InnerLoginRequest, MsgHandler::onInnerLogin);
 }
 
 void InnerServerNetWorkHandler::startThread(int threadNum) {
@@ -40,19 +40,10 @@ void InnerServerNetWorkHandler::onMsg(Channel *channel, void *buff, int len) {
         ERR_LOG(" msgId ={} not found process function", msgId);
         return;
     }
-    if (msgId == INNER_TO_GAME_LOGIN_REQ) {
-        processMsgWithChannel<InnerLoginRequest>(msg_function, channel, data, len);
-        return;
-    }
-    if (msgId == INNER_SERVER_HAND_SHAKE_REQ) {
-        processMsgWithChannel<InnerServerHandShakeReq>(msg_function, channel, data, len);
-        return;
-    }
-    auto *param = static_cast<google::protobuf::Message *>(msg_function->newParam());
-    param->ParseFromArray(data, len);
 
-    threadPool->execute([playerId, msg_function, param]() {
-        msg_function->function(playerId, param);
+    void *msg = msg_function->newParam((char *) data + 4, len);
+    threadPool->execute([playerId, msg_function, channel, msg]() {
+        msg_function->msgFunction(playerId, channel, msg);
     }, 2);
 }
 
@@ -64,16 +55,4 @@ void InnerServerNetWorkHandler::onClosed(Channel *channel) {
 void InnerServerNetWorkHandler::onEventTrigger(Channel *channel, TriggerEventEnum reason) {
     INFO_LOG("====onEventTrigger ={}   reason ={} ", channel->getAddr(), (int)reason);
 }
-
-template<class T>
-void InnerServerNetWorkHandler::processMsgWithChannel(MsgFunction *msg_function, Channel *channel, void *body,
-                                                      int len) {
-    auto msg = static_cast<ReqChannel<T> *>(msg_function->newParam());
-    msg->req.ParseFromArray(body, len);
-    msg->channel = channel;
-    threadPool->execute([msg_function, msg]() {
-        msg_function->function(0, msg);
-    }, 0);
-}
-
 Thread::ThreadPool *InnerServerNetWorkHandler::threadPool = nullptr;

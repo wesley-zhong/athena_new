@@ -26,8 +26,5 @@ public:
 
     static Thread::ThreadPool *threadPool;
 
-private:
-    template<class T>
-    static void processMsgWithChannel(MsgFunction *msg_function, Channel *channel, void *body, int len);
 };
 #endif //ATHENA_NETWORKHANDLER_H

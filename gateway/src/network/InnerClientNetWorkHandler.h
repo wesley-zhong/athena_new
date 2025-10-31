@@ -25,9 +25,6 @@ public:
     static void onEventTrigger(Channel *channel, TriggerEventEnum reason);
 
     static Thread::ThreadPool *threadPool;
-
-private:
-    static void processInnerLogin(MsgFunction *msg_function, Channel *channel, void *body, int len);
 };
 
 

@@ -50,7 +50,7 @@ void ClientNetWorkHandler::onMsg(Channel *channel, void *buff, int len) {
     param->ParseFromArray(data, len);
 
     threadPool->execute([playerId, msg_function, param]() {
-        msg_function->function(playerId, param);
+        msg_function->msgFunction(playerId, param);
     }, 2);
 }
 
@@ -64,7 +64,7 @@ void ClientNetWorkHandler::processInnerLogin(MsgFunction *msg_function, Channel 
     inner_login->req.ParseFromArray(body, len);
     inner_login->channel = channel;
     threadPool->execute([msg_function, inner_login]() {
-        msg_function->function(0, inner_login);
+        msg_function->msgFunction(0, inner_login);
     }, 0);
 }
 

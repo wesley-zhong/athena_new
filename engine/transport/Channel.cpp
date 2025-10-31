@@ -51,8 +51,8 @@ void Channel::eventLoopDoSend(int msgId, char *body, int32 bodyLen) {
     int msgLen = 4 + bodyLen;
     send_buff->writeInt32(msgLen);
     send_buff->writeInt32(msgId);
-    send_buff->writeBytes(body, msgLen);
-
+    send_buff->writeBytes(body, bodyLen);
+    last_send_time = uv_now(_eventLoop->uv_loop());
     while (true) {
         size_t outLen = 0;
         const uint8_t *readTail = send_buff->storage().linearReadablePtr(&outLen);

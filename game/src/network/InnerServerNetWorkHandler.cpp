@@ -11,8 +11,10 @@
 
 
 void InnerServerNetWorkHandler::initAllMsgRegister() {
-    REGISTER_MSG_ID_FUN(INNER_TO_GAME_LOGIN_REQ, MsgHandler::onInnerLogin);
     REGISTER_MSG_ID_FUN(INNER_SERVER_HAND_SHAKE_REQ, MsgHandler::onShakHandReq);
+    REGISTER_MSG_ID_FUN(INNER_HEART_BEAT_REQ, MsgHandler::onHeartBeat);
+
+    REGISTER_MSG_ID_FUN(INNER_TO_GAME_LOGIN_REQ, MsgHandler::onInnerLogin);
 }
 
 void InnerServerNetWorkHandler::startThread(int threadNum) {
@@ -22,11 +24,10 @@ void InnerServerNetWorkHandler::startThread(int threadNum) {
 
 void InnerServerNetWorkHandler::onNewConnect(Channel *channel) {
     INFO_LOG("on new connection ={}", channel->getAddr());
-
 }
 
 void InnerServerNetWorkHandler::onMsg(Channel *channel, void *buff, int len) {
-    INFO_LOG("  === on read ");
+    INFO_LOG("  === on read   channel ={} len ={}", channel->getAddr(), len);
     uint8 *data = static_cast<uint8 *>(buff);
     data = data + 4;
     int msgId = ByteUtils::readInt32(data);
@@ -61,11 +62,12 @@ void InnerServerNetWorkHandler::onClosed(Channel *channel) {
 }
 
 void InnerServerNetWorkHandler::onEventTrigger(Channel *channel, TriggerEventEnum reason) {
-    INFO_LOG("====onEventTrigger ={}   reason ={} ", channel->getAddr(),(int)reason);
+    INFO_LOG("====onEventTrigger ={}   reason ={} ", channel->getAddr(), (int)reason);
 }
 
 template<class T>
-void InnerServerNetWorkHandler::processMsgWithChannel(MsgFunction *msg_function, Channel *channel, void *body, int len) {
+void InnerServerNetWorkHandler::processMsgWithChannel(MsgFunction *msg_function, Channel *channel, void *body,
+                                                      int len) {
     auto msg = static_cast<ReqChannel<T> *>(msg_function->newParam());
     msg->req.ParseFromArray(body, len);
     msg->channel = channel;

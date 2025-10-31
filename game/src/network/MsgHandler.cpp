@@ -11,6 +11,12 @@ void MsgHandler::onShakHandReq(int64_t playerId, ReqChannel<InnerServerHandShake
     req->channel->sendMsg(INNER_SERVER_HAND_SHAKE_RES, res);
 }
 
+void MsgHandler::onHeartBeat(int64_t playerId, ReqChannel<InnerServerHandShakeReq> *req) {
+    auto res = std::make_shared<InnerHeartBeatRequest>();
+    req->channel->sendMsg(INNER_HEART_BEAT_RES, res);
+}
+
+
 void MsgHandler::onInnerLogin(int64_t playerId, ReqChannel<InnerLoginRequest> *request) {
     INFO_LOG(" ON INNER LOGIN sid = {} roleId ={} channel ={}", request->req.sid(), request->req.roleid(),
              request->channel->getAddr());
